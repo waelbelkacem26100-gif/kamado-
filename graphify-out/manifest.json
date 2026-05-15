@@ -1,0 +1,367 @@
+{
+  "C:\\Users\\waelb\\Desktop\\kamado\\eslint.config.mjs": {
+    "mtime": 1778869826.1568933,
+    "ast_hash": "f1e80e839db34357a0e228efe227e759",
+    "semantic_hash": "f1e80e839db34357a0e228efe227e759"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\next-env.d.ts": {
+    "mtime": 1778869826.2571182,
+    "ast_hash": "ba64ff7d54714a8f64db89b1003207d8",
+    "semantic_hash": "ba64ff7d54714a8f64db89b1003207d8"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\next.config.ts": {
+    "mtime": 1778871134.174683,
+    "ast_hash": "b4138996b131b598cd7eb9e1a636187b",
+    "semantic_hash": "b4138996b131b598cd7eb9e1a636187b"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\package.json": {
+    "mtime": 1778869901.0381248,
+    "ast_hash": "698828bd9cfe015d53d901685c0cc8f8",
+    "semantic_hash": "698828bd9cfe015d53d901685c0cc8f8"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\postcss.config.mjs": {
+    "mtime": 1778869826.1714435,
+    "ast_hash": "675899342e765a4d16acd75a53389101",
+    "semantic_hash": "675899342e765a4d16acd75a53389101"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\tsconfig.json": {
+    "mtime": 1778869826.5631309,
+    "ast_hash": "03391bd1893b0dcb6f9dd287b3471e66",
+    "semantic_hash": "03391bd1893b0dcb6f9dd287b3471e66"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\state.json": {
+    "mtime": 1778871980.5572293,
+    "ast_hash": "c5f2c615ba68ccfb2f5db212add6779a",
+    "semantic_hash": "c5f2c615ba68ccfb2f5db212add6779a"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\plugins\\package.json": {
+    "mtime": 1778871983.692356,
+    "ast_hash": "5de62533585eea99447fa640da41331f",
+    "semantic_hash": "5de62533585eea99447fa640da41331f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\0ef611c31cd1a399.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "7d8112de63d7cb4b08dd35fce009f91f",
+    "semantic_hash": "7d8112de63d7cb4b08dd35fce009f91f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\17722e3ac4e00587.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "eebb61c8d612f3379dee1fdf1bc85afa",
+    "semantic_hash": "eebb61c8d612f3379dee1fdf1bc85afa"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\1b89c1a545038d44.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "2828ab989a32db12d163fc2fc034e090",
+    "semantic_hash": "2828ab989a32db12d163fc2fc034e090"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\2040aff3c83ec845.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "a30bbe1bf3a015c32d5c91dedf38c6c5",
+    "semantic_hash": "a30bbe1bf3a015c32d5c91dedf38c6c5"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\24abd8b94056e974.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "6231ac3f555ec6dabd85bcf110a28055",
+    "semantic_hash": "6231ac3f555ec6dabd85bcf110a28055"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\2a3733d89796cc67.js": {
+    "mtime": 1778871994.0710652,
+    "ast_hash": "d08d9ff2085245339ba32fa5c69a5989",
+    "semantic_hash": "d08d9ff2085245339ba32fa5c69a5989"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\2fc7da1960b2415d.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "a940837657e2640daf448662950a0e96",
+    "semantic_hash": "a940837657e2640daf448662950a0e96"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\3b6b2abbcd7a158f.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "fc47a46e82415b2081eb41849cabc62c",
+    "semantic_hash": "fc47a46e82415b2081eb41849cabc62c"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\3fad2b45f04a091f.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "26037c1288f2985b9e052aa2e9f132d8",
+    "semantic_hash": "26037c1288f2985b9e052aa2e9f132d8"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\510bb183726c4ef1.js": {
+    "mtime": 1778871994.089296,
+    "ast_hash": "876bccae0113217c2a4f4aab518f4532",
+    "semantic_hash": "876bccae0113217c2a4f4aab518f4532"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\538cc02e54714b23.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "b4cef510adc3c3a8d61aa091c0f2e0ac",
+    "semantic_hash": "b4cef510adc3c3a8d61aa091c0f2e0ac"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\6420740671896b80.js": {
+    "mtime": 1778871994.089296,
+    "ast_hash": "9ff8e009706441578148e0e7e8da4666",
+    "semantic_hash": "9ff8e009706441578148e0e7e8da4666"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\7391da850785def5.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "b9c81782cf1c55b368b596a8cce920c6",
+    "semantic_hash": "b9c81782cf1c55b368b596a8cce920c6"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\7d1ba78e10eb3075.js": {
+    "mtime": 1778871994.090295,
+    "ast_hash": "9def5234e5b168c4de10aeaffd0aefdd",
+    "semantic_hash": "9def5234e5b168c4de10aeaffd0aefdd"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\7dd66bdf8a7e5707.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "99339e9f5cb37a473f24cbff4cb76c92",
+    "semantic_hash": "99339e9f5cb37a473f24cbff4cb76c92"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\9ea5322c0c7643ae.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "76cfcc6e014b1eef290f346052124c3c",
+    "semantic_hash": "76cfcc6e014b1eef290f346052124c3c"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\a6dad97d9634a72d.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "846118c33b2c0e922d7b3a7676f81f6f",
+    "semantic_hash": "846118c33b2c0e922d7b3a7676f81f6f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\bd2dcf98c9b362f6.js": {
+    "mtime": 1778871994.0710652,
+    "ast_hash": "49a3baf6988505183e0fdaf50fba0abb",
+    "semantic_hash": "49a3baf6988505183e0fdaf50fba0abb"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\db2a9a6742588eb7.js": {
+    "mtime": 1778871994.0710652,
+    "ast_hash": "760ff18215fe7e45b5be207d02107490",
+    "semantic_hash": "760ff18215fe7e45b5be207d02107490"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\e60ef129113f6e24.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "1213dfabcb125bba5f1f470f95943afd",
+    "semantic_hash": "1213dfabcb125bba5f1f470f95943afd"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\ff1a16fafef87110.js": {
+    "mtime": 1778871994.0710652,
+    "ast_hash": "5458632ee5cb3da028baebb11d5f70dd",
+    "semantic_hash": "5458632ee5cb3da028baebb11d5f70dd"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\turbopack-023b047aa55ef134.js": {
+    "mtime": 1778871994.0922048,
+    "ast_hash": "83a91f02e6d43eef54abd89e31505d05",
+    "semantic_hash": "83a91f02e6d43eef54abd89e31505d05"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\turbopack-26f55562019c5eed.js": {
+    "mtime": 1778871994.0710652,
+    "ast_hash": "7713f391502d4462089d4d0d43192a05",
+    "semantic_hash": "7713f391502d4462089d4d0d43192a05"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\chunks\\turbopack-daa992db97009ce1.js": {
+    "mtime": 1778871994.0710652,
+    "ast_hash": "49a4afed95e612d41ae8996788b42cfa",
+    "semantic_hash": "49a4afed95e612d41ae8996788b42cfa"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\NUczsota5uD1zLIcgDgYu\\_buildManifest.js": {
+    "mtime": 1778871994.1397238,
+    "ast_hash": "5329a765c78df795d3b6b257b045b1eb",
+    "semantic_hash": "5329a765c78df795d3b6b257b045b1eb"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\NUczsota5uD1zLIcgDgYu\\_clientMiddlewareManifest.json": {
+    "mtime": 1778871994.1407554,
+    "ast_hash": "d751713988987e9331980363e24189ce",
+    "semantic_hash": "d751713988987e9331980363e24189ce"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\_next\\static\\NUczsota5uD1zLIcgDgYu\\_ssgManifest.js": {
+    "mtime": 1778872001.5559998,
+    "ast_hash": "579893efa5fcc2193f28f1bfc38a25d3",
+    "semantic_hash": "579893efa5fcc2193f28f1bfc38a25d3"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\app\\layout.tsx": {
+    "mtime": 1778870540.0048912,
+    "ast_hash": "c828e06ef3b73bab0e5a7dd4f3f12931",
+    "semantic_hash": "c828e06ef3b73bab0e5a7dd4f3f12931"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\app\\page.tsx": {
+    "mtime": 1778870279.595103,
+    "ast_hash": "846461d62989e6accf08710f9927701f",
+    "semantic_hash": "846461d62989e6accf08710f9927701f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\app\\projets\\[slug]\\page.tsx": {
+    "mtime": 1778870336.5337565,
+    "ast_hash": "47532d3c8ef9eea6c34352e67b6ad6c3",
+    "semantic_hash": "47532d3c8ef9eea6c34352e67b6ad6c3"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\app\\projets\\[slug]\\ProjectPageClient.tsx": {
+    "mtime": 1778870311.0906184,
+    "ast_hash": "f28c8b67f38e05c82128dff2b034ab7f",
+    "semantic_hash": "f28c8b67f38e05c82128dff2b034ab7f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\layout\\CustomCursor.tsx": {
+    "mtime": 1778870044.2626305,
+    "ast_hash": "06ced4bc7a02c0867c1d30281a309ce0",
+    "semantic_hash": "06ced4bc7a02c0867c1d30281a309ce0"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\layout\\Footer.tsx": {
+    "mtime": 1778870034.956439,
+    "ast_hash": "845a18f905b7befafbe2f4b90760c26d",
+    "semantic_hash": "845a18f905b7befafbe2f4b90760c26d"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\layout\\Header.tsx": {
+    "mtime": 1778870027.7481744,
+    "ast_hash": "d5b758cc59371b3b4bdb65965e0e3fc7",
+    "semantic_hash": "d5b758cc59371b3b4bdb65965e0e3fc7"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\layout\\JsonLd.tsx": {
+    "mtime": 1778870523.2075746,
+    "ast_hash": "e531b28fd1c749e38a2a366fdfb1c414",
+    "semantic_hash": "e531b28fd1c749e38a2a366fdfb1c414"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\layout\\LenisProvider.tsx": {
+    "mtime": 1778870050.2608445,
+    "ast_hash": "df52c05ab2436c06dc8bdb02417ef98b",
+    "semantic_hash": "df52c05ab2436c06dc8bdb02417ef98b"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\layout\\Providers.tsx": {
+    "mtime": 1778870006.1468883,
+    "ast_hash": "b74577ce9fd6a669299c17abab4072b2",
+    "semantic_hash": "b74577ce9fd6a669299c17abab4072b2"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\About.tsx": {
+    "mtime": 1778870347.2494307,
+    "ast_hash": "9ff0b264d222772319d4a97cb4c22cfe",
+    "semantic_hash": "9ff0b264d222772319d4a97cb4c22cfe"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\Contact.tsx": {
+    "mtime": 1778870255.4727943,
+    "ast_hash": "616b98ee4b7a63915767602c9a4feb8d",
+    "semantic_hash": "616b98ee4b7a63915767602c9a4feb8d"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\Hero.tsx": {
+    "mtime": 1778870432.946825,
+    "ast_hash": "1e90453faaf4a7f855c9c21e1535c6a6",
+    "semantic_hash": "1e90453faaf4a7f855c9c21e1535c6a6"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\Intro.tsx": {
+    "mtime": 1778870157.784366,
+    "ast_hash": "c4cb5e17181fd6fb098747c28d40dc4d",
+    "semantic_hash": "c4cb5e17181fd6fb098747c28d40dc4d"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\Process.tsx": {
+    "mtime": 1778870468.9308853,
+    "ast_hash": "c8b07fd9d51c97d19bc7dadcf199d587",
+    "semantic_hash": "c8b07fd9d51c97d19bc7dadcf199d587"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\Projects.tsx": {
+    "mtime": 1778870180.7499957,
+    "ast_hash": "ca20667d1f5126d946c011ae65e10291",
+    "semantic_hash": "ca20667d1f5126d946c011ae65e10291"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\sections\\Stack.tsx": {
+    "mtime": 1778870218.2643385,
+    "ast_hash": "82e3d65216234a00257f0ae0232063f0",
+    "semantic_hash": "82e3d65216234a00257f0ae0232063f0"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\three\\HeroBlob.tsx": {
+    "mtime": 1778870099.0717132,
+    "ast_hash": "6aa8726767b762587fa4046b55beba30",
+    "semantic_hash": "6aa8726767b762587fa4046b55beba30"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\ui\\MagneticButton.tsx": {
+    "mtime": 1778870146.9920044,
+    "ast_hash": "f9aef1ebd09fd795027ab225a0a94f9f",
+    "semantic_hash": "f9aef1ebd09fd795027ab225a0a94f9f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\ui\\MarqueeText.tsx": {
+    "mtime": 1778870208.8257115,
+    "ast_hash": "8ebe85dcd1c25f3e305bb119dec0fae9",
+    "semantic_hash": "8ebe85dcd1c25f3e305bb119dec0fae9"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\ui\\ProjectCard.tsx": {
+    "mtime": 1778870171.9424598,
+    "ast_hash": "796810938d43468a492d836b4ee8a163",
+    "semantic_hash": "796810938d43468a492d836b4ee8a163"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\components\\ui\\SectionReveal.tsx": {
+    "mtime": 1778870139.681128,
+    "ast_hash": "e862130fe8922a60293309f36e159f16",
+    "semantic_hash": "e862130fe8922a60293309f36e159f16"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\lib\\animations.ts": {
+    "mtime": 1778869958.8738575,
+    "ast_hash": "f8a70b9e950fcf3d57b2d88053523e0a",
+    "semantic_hash": "f8a70b9e950fcf3d57b2d88053523e0a"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\lib\\constants.ts": {
+    "mtime": 1778869989.0816615,
+    "ast_hash": "7b02130024b7b2c47069e8234cc14a26",
+    "semantic_hash": "7b02130024b7b2c47069e8234cc14a26"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\lib\\projects.ts": {
+    "mtime": 1778869982.3372462,
+    "ast_hash": "84b0f46e379dc404bff54abef2fc0613",
+    "semantic_hash": "84b0f46e379dc404bff54abef2fc0613"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\README.md": {
+    "mtime": 1778869826.1337025,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\404.html": {
+    "mtime": 1778872007.251323,
+    "ast_hash": "cd32d8f41d18c269636d456ceef0943a",
+    "semantic_hash": "cd32d8f41d18c269636d456ceef0943a"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\index.html": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "60b642cac8fe66222e38297ec56d6265",
+    "semantic_hash": "60b642cac8fe66222e38297ec56d6265"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\index.txt": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "1fd5a51126a7e7f93015bc3c76c07b99",
+    "semantic_hash": "1fd5a51126a7e7f93015bc3c76c07b99"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\404\\index.html": {
+    "mtime": 1778872007.251323,
+    "ast_hash": "cd32d8f41d18c269636d456ceef0943a",
+    "semantic_hash": "cd32d8f41d18c269636d456ceef0943a"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\brainrot-club\\index.html": {
+    "mtime": 1778872001.0806997,
+    "ast_hash": "4a72cfe8801f1e0b84f8dcc0d2116c8a",
+    "semantic_hash": "4a72cfe8801f1e0b84f8dcc0d2116c8a"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\brainrot-club\\index.txt": {
+    "mtime": 1778872001.0806997,
+    "ast_hash": "b84492ab6243ca929d946adf5d738930",
+    "semantic_hash": "b84492ab6243ca929d946adf5d738930"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\clustea\\index.html": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "e68b2daf1365ad5c75323e30b92b4190",
+    "semantic_hash": "e68b2daf1365ad5c75323e30b92b4190"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\clustea\\index.txt": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "da1af4116b26bee4f8e8e4b5569501a7",
+    "semantic_hash": "da1af4116b26bee4f8e8e4b5569501a7"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\couvetoile\\index.html": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "8406b9cacd40655d3b98d8a0c96df74f",
+    "semantic_hash": "8406b9cacd40655d3b98d8a0c96df74f"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\couvetoile\\index.txt": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "44909f089aeb94f2b9475e4c5fc949ca",
+    "semantic_hash": "44909f089aeb94f2b9475e4c5fc949ca"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\screenbuild\\index.html": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "8c27c2dd69513d4ea447e28d0d50e0ea",
+    "semantic_hash": "8c27c2dd69513d4ea447e28d0d50e0ea"
+  },
+  "C:\\Users\\waelb\\Desktop\\kamado\\.netlify\\static\\projets\\screenbuild\\index.txt": {
+    "mtime": 1778872001.0562775,
+    "ast_hash": "c0ad30e73cbc97afd027e7f356fa2f24",
+    "semantic_hash": "c0ad30e73cbc97afd027e7f356fa2f24"
+  }
+}
