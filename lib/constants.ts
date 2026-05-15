@@ -1,13 +1,20 @@
-export const SITE_URL = "https://waelbendou.fr";
-export const SITE_NAME = "Waël Bendou";
+export const SITE_URL = "https://nexivo.fr";
+export const SITE_NAME = "Nexivo";
 export const SITE_DESCRIPTION =
-  "Je conçois des sites qui transforment les visiteurs en clients. Créateur de sites & SaaS pour entrepreneurs — basé en France.";
+  "Nexivo — Agence web qui transforme votre business en machine à vendre. Sites vitrine, boutiques Shopify et SaaS sur-mesure.";
 
 export const CONTACT = {
-  email: "wael@waelbendou.fr",
-  linkedin: "https://linkedin.com/in/waelbendou",
-  twitter: "https://twitter.com/waelbendou",
+  email: "contact@nexivo.fr",
+  linkedin: "https://linkedin.com/company/nexivo",
+  twitter: "https://twitter.com/nexivo_fr",
 };
+
+export const STATS = [
+  { value: 12, suffix: "+", label: "Projets livrés" },
+  { value: 100, suffix: "%", label: "Clients satisfaits" },
+  { value: 48, suffix: "h", label: "Délai de réponse" },
+  { value: 3, suffix: " ans", label: "D'expérience" },
+];
 
 export const STACK_MARQUEE = [
   "Shopify",
@@ -21,7 +28,5 @@ export const STACK_MARQUEE = [
   "Claude Code",
   "Vercel",
   "GSAP",
-  "Three.js",
   "Node.js",
-  "Figma",
 ];
