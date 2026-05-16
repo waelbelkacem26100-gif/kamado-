@@ -1,38 +1,49 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { STATS } from "@/lib/constants";
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const ref = useRef<HTMLDivElement>(null);
+  const started = useRef(false);
 
   useEffect(() => {
-    if (!inView) return;
-    let start = 0;
-    const duration = 1800;
-    const step = 16;
-    const increment = target / (duration / step);
+    const el = ref.current;
+    if (!el) return;
 
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, step);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          observer.disconnect();
+          const duration = 1800;
+          const step = 16;
+          const increment = target / (duration / step);
+          let current = 0;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              setCount(target);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(current));
+            }
+          }, step);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-    return () => clearInterval(timer);
-  }, [inView, target]);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [target]);
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <div ref={ref} className="tabular-nums">
       {count}{suffix}
-    </span>
+    </div>
   );
 }
 

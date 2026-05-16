@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#offres", label: "Offres" },
-  { href: "#projets", label: "Projets" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
+  { hash: "services", label: "Services" },
+  { hash: "offres", label: "Offres" },
+  { hash: "projets", label: "Projets" },
+  { hash: "contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -17,6 +18,8 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
+  const href = (hash: string) => pathname === "/" ? `#${hash}` : `/#${hash}`;
 
   useEffect(() => {
     setMounted(true);
@@ -44,8 +47,8 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
-              key={link.href}
-              href={link.href}
+              key={link.hash}
+              href={href(link.hash)}
               className="text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors duration-200"
             >
               {link.label}
@@ -77,7 +80,7 @@ export default function Header() {
           )}
 
           <a
-            href="#contact"
+            href={href("contact")}
             className="hidden md:inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity duration-200"
           >
             Démarrer un projet
@@ -106,11 +109,11 @@ export default function Header() {
           >
             <nav className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
-                <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="text-base text-[var(--fg)] py-1">
+                <a key={link.hash} href={href(link.hash)} onClick={() => setMenuOpen(false)} className="text-base text-[var(--fg)] py-1">
                   {link.label}
                 </a>
               ))}
-              <a href="#contact" className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)]">
+              <a href={href("contact")} className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)]">
                 Démarrer un projet
               </a>
             </nav>

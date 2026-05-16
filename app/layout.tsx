@@ -17,27 +17,60 @@ const geist = Geist({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Agence Web & SaaS`,
-    template: `%s — ${SITE_NAME}`,
+    default: `${SITE_NAME} — Agence Web France | Sites, Shopify & SaaS`,
+    template: `%s | ${SITE_NAME} — Agence Web`,
   },
   description: SITE_DESCRIPTION,
-  authors: [{ name: SITE_NAME }],
+  keywords: [
+    "agence web france",
+    "création site web",
+    "agence shopify france",
+    "développeur next.js",
+    "création site vitrine",
+    "boutique shopify sur-mesure",
+    "agence seo france",
+    "développement saas",
+    "webdesign sur-mesure",
+    "agence web professionnelle",
+    "refonte site internet",
+    "agence web Romans-sur-Isère",
+  ],
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: "Agence web",
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} — Agence Web & SaaS`,
+    title: `${SITE_NAME} — Agence Web France | Sites, Shopify & SaaS`,
     description: SITE_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Agence Web & SaaS`,
+    title: `${SITE_NAME} — Agence Web France`,
     description: SITE_DESCRIPTION,
     creator: "@nexivo_fr",
+    site: "@nexivo_fr",
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+    languages: { "fr-FR": SITE_URL },
+  },
+  verification: {
+    google: "nexivo-google-verify",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

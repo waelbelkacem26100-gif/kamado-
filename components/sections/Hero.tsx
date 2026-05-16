@@ -19,22 +19,22 @@ export default function Hero() {
 
   useEffect(() => {
     const phrase = phrases[phraseIndex];
-    const speed = isDeleting ? 35 : 75;
+    let timeout: ReturnType<typeof setTimeout>;
 
-    const timer = setTimeout(() => {
-      if (!isDeleting && displayed.length < phrase.length) {
-        setDisplayed(phrase.slice(0, displayed.length + 1));
-      } else if (!isDeleting && displayed.length === phrase.length) {
-        setTimeout(() => setIsDeleting(true), 2200);
-      } else if (isDeleting && displayed.length > 0) {
-        setDisplayed(phrase.slice(0, displayed.length - 1));
-      } else {
+    if (!isDeleting && displayed.length < phrase.length) {
+      timeout = setTimeout(() => setDisplayed(phrase.slice(0, displayed.length + 1)), 75);
+    } else if (!isDeleting && displayed.length === phrase.length) {
+      timeout = setTimeout(() => setIsDeleting(true), 2200);
+    } else if (isDeleting && displayed.length > 0) {
+      timeout = setTimeout(() => setDisplayed(phrase.slice(0, displayed.length - 1)), 35);
+    } else {
+      timeout = setTimeout(() => {
         setIsDeleting(false);
         setPhraseIndex((i) => (i + 1) % phrases.length);
-      }
-    }, speed);
+      }, 300);
+    }
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timeout);
   }, [displayed, isDeleting, phraseIndex]);
 
   return (

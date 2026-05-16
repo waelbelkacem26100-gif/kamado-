@@ -2,9 +2,9 @@ import Link from "next/link";
 import { CONTACT, SITE_NAME } from "@/lib/constants";
 
 const footerLinks = [
+  { label: "Services", href: "#services" },
   { label: "Offres", href: "#offres" },
   { label: "Projets", href: "#projets" },
-  { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
 ];
 

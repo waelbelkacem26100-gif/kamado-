@@ -44,17 +44,40 @@ function ProjectCard3D({ project }: { project: typeof projects[0] }) {
               : "border-[var(--border)]"
           }`}
         >
-          {/* Gradient visuel */}
-          <div className={`relative h-48 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
+          {/* Browser mockup */}
+          <div className={`relative h-52 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-            <motion.div
-              className="absolute inset-0"
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 0.5 }}
-            />
-            <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-              {project.stack.slice(0, 3).map((tech) => (
-                <span key={tech} className="text-xs font-medium px-2.5 py-1 rounded-full bg-white/20 text-white backdrop-blur-sm">
+            {/* Browser window frame */}
+            <div className="absolute inset-x-5 top-5 bottom-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden flex flex-col shadow-2xl">
+              {/* Browser chrome */}
+              <div className="flex items-center gap-2 px-3 py-2.5 bg-white/10 border-b border-white/10 flex-shrink-0">
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-red-400/80" />
+                  <div className="w-2 h-2 rounded-full bg-yellow-400/80" />
+                  <div className="w-2 h-2 rounded-full bg-green-400/80" />
+                </div>
+                <div className="flex-1 mx-2 h-4 bg-white/10 rounded-full flex items-center px-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-white/40 mr-1.5" />
+                  <div className="h-1.5 bg-white/20 rounded w-3/4" />
+                </div>
+              </div>
+              {/* Mock page content */}
+              <div className="flex-1 p-3 space-y-2">
+                <div className="h-2.5 bg-white/20 rounded-full w-2/3" />
+                <div className="h-2 bg-white/15 rounded-full w-full" />
+                <div className="h-2 bg-white/15 rounded-full w-5/6" />
+                <div className="grid grid-cols-3 gap-2 mt-3">
+                  <div className="h-10 bg-white/10 rounded-lg" />
+                  <div className="h-10 bg-white/15 rounded-lg" />
+                  <div className="h-10 bg-white/10 rounded-lg" />
+                </div>
+                <div className="h-2 bg-white/10 rounded-full w-1/2 mt-1" />
+              </div>
+            </div>
+            {/* Stack badges */}
+            <div className="absolute bottom-3 left-4 flex flex-wrap gap-1.5">
+              {project.stack.slice(0, 2).map((tech) => (
+                <span key={tech} className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/30 text-white/90 backdrop-blur-sm border border-white/10">
                   {tech}
                 </span>
               ))}
