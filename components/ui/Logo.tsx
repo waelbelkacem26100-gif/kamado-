@@ -22,35 +22,49 @@ export default function Logo({ size = "md", animate = true }: LogoProps) {
 
   return (
     <span className="inline-flex items-center gap-2.5">
-      <svg width={icon} height={icon} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <motion.svg
+        width={icon}
+        height={icon}
+        viewBox="0 0 32 32"
+        fill="none"
+        aria-hidden="true"
+        initial={doAnimate ? { opacity: 0, scale: 0.85 } : {}}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4, ease }}
+      >
         {/* Barre verticale gauche */}
         <rect x="3" y="4" width="5.5" height="24" rx="2.5" fill="currentColor" />
-        {/* Bras supérieur — accent, dessiné en premier */}
+        {/* Bras supérieur — accent */}
         <motion.path
           d="M8.5 15 L26 4"
           stroke="var(--accent)"
           strokeWidth="5.5"
           strokeLinecap="round"
-          initial={doAnimate ? { pathLength: 0, opacity: 0 } : {}}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 0.5, ease }}
+          initial={doAnimate ? { pathLength: 0 } : {}}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 0.5, delay: 0.15, ease }}
         />
-        {/* Bras inférieur — dessiné ensuite */}
+        {/* Bras inférieur */}
         <motion.path
           d="M8.5 15 L26 28"
           stroke="currentColor"
           strokeWidth="5.5"
           strokeLinecap="round"
-          initial={doAnimate ? { pathLength: 0, opacity: 0 } : {}}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.18, ease }}
+          initial={doAnimate ? { pathLength: 0 } : {}}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 0.5, delay: 0.3, ease }}
         />
-      </svg>
+      </motion.svg>
 
-      <span className={`${text} font-bold tracking-tight leading-none`}>
+      <motion.span
+        className={`${text} font-bold tracking-tight leading-none`}
+        initial={doAnimate ? { opacity: 0, x: -6 } : {}}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, delay: 0.1, ease }}
+      >
         <span className="text-[var(--fg)]">Kama</span>
         <span className="text-[var(--fg-muted)] font-normal"> Agency</span>
-      </span>
+      </motion.span>
     </span>
   );
 }

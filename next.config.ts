@@ -1,14 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  images: { unoptimized: true },
   trailingSlash: true,
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+    ],
+  },
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ["framer-motion", "lucide-react"],
   },
 };
