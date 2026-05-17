@@ -167,7 +167,6 @@ export default function Hero() {
             style={{ minHeight: "1.1em", fontSize: "clamp(1.9rem, 4.2vw, 4.2rem)" }}
           >
             {displayed}
-            <span className="animate-pulse">|</span>
           </motion.span>
         </h1>
 

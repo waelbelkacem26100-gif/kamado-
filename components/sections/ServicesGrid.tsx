@@ -178,10 +178,16 @@ function ServiceCard({ cat, wide = false }: { cat: typeof categories[0]; wide?: 
 export default function ServicesGrid() {
   return (
     <section id="services" className="relative overflow-hidden py-24 md:py-32 px-6">
-      {/* Fond dark */}
+      {/* Fond élevé */}
       <div
         className="absolute inset-0"
-        style={{ background: "linear-gradient(160deg, #03030a 0%, #070712 55%, #040410 100%)" }}
+        style={{ background: "linear-gradient(160deg, #16162a 0%, #1e1e38 50%, #16162a 100%)" }}
+      />
+      {/* Halo blanc central */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.035) 0%, transparent 70%)" }}
+        aria-hidden="true"
       />
       {/* Grille subtile */}
       <div

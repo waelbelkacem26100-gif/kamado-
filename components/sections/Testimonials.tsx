@@ -43,7 +43,8 @@ function Stars({ count }: { count: number }) {
 export default function Testimonials() {
   return (
     <section className="relative overflow-hidden py-24 md:py-32 px-6">
-      <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, #050508 0%, #08080f 55%, #040410 100%)" }} />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, #18182e 0%, #20203c 55%, #18182e 100%)" }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 70%)" }} aria-hidden="true" />
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
