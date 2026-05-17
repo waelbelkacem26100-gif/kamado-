@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: "Marie Dupont",
     role: "CEO, FleurShop",
-    text: "Nexivo a transformé notre boutique Shopify en machine à vendre. Notre taux de conversion a doublé en 3 mois. Je recommande les yeux fermés.",
+    text: "Kama Agency a transformé notre boutique Shopify en machine à vendre. Notre taux de conversion a doublé en 3 mois. Je recommande les yeux fermés.",
     stars: 5,
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop&crop=face",
   },

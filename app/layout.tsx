@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Nexivo, agence web française. Création de sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livrés 3× plus vite que la concurrence.",
+    "Kama Agency, agence web française. Création de sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livrés 3× plus vite que la concurrence.",
   keywords: [
     "agence web france",
     "création site web professionnel",
@@ -65,15 +65,15 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Agence Web France | Sites, Shopify & SaaS`,
     description:
-      "Nexivo crée des sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livraison 3× plus rapide.",
+      "Kama Agency crée des sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livraison 3× plus rapide.",
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} — Agence Web France | Sites, Shopify & SaaS`,
     description:
       "Création de sites vitrine, Shopify et SaaS sur-mesure qui convertissent. SEO inclus, livraison 3× plus rapide.",
-    creator: "@nexivo_fr",
-    site: "@nexivo_fr",
+    creator: "@kamaagency_fr",
+    site: "@kamaagency_fr",
   },
   robots: {
     index: true,
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "nexivo-google-verify",
+    google: "kamaagency-google-verify",
   },
   other: {
     "msapplication-TileColor": "#111111",

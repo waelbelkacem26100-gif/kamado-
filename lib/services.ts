@@ -25,9 +25,9 @@ export const services: Service[] = [
     slug: "creation-site-vitrine",
     name: "Création de site vitrine",
     shortDesc: "Un site professionnel qui transforme vos visiteurs en clients dès la première visite.",
-    metaTitle: "Création site vitrine professionnel — Nexivo",
-    metaDescription: "Nexivo crée votre site vitrine sur-mesure : design premium, SEO optimisé, chargement rapide. Obtenez un site qui convertit vos visiteurs en clients.",
-    intro: "Votre site vitrine est votre commercial le plus performant — il travaille 24h/24, 7j/7, sans jamais prendre de vacances. Chez Nexivo, nous créons des sites vitrine qui ne se contentent pas d'être beaux : ils sont conçus pour convertir, pour rassurer et pour vendre.",
+    metaTitle: "Création site vitrine professionnel — Kama Agency",
+    metaDescription: "Kama Agency crée votre site vitrine sur-mesure : design premium, SEO optimisé, chargement rapide. Obtenez un site qui convertit vos visiteurs en clients.",
+    intro: "Votre site vitrine est votre commercial le plus performant — il travaille 24h/24, 7j/7, sans jamais prendre de vacances. Chez Kama Agency, nous créons des sites vitrine qui ne se contentent pas d'être beaux : ils sont conçus pour convertir, pour rassurer et pour vendre.",
     sections: [
       {
         h2: "Pourquoi un site vitrine de qualité fait toute la différence",
@@ -42,13 +42,13 @@ export const services: Service[] = [
         body: "Un beau site invisible sur Google ne sert à rien. C'est pourquoi chaque site vitrine que nous créons intègre les meilleures pratiques SEO dès le départ : structure HTML sémantique, balises meta optimisées, temps de chargement inférieur à 2 secondes, images compressées au format WebP, et balisage Schema.org pour les extraits enrichis. Nous configurons également Google Analytics et Google Search Console pour que vous puissiez suivre votre trafic et vos performances dès le lancement.",
       },
       {
-        h2: "Ce que vous obtenez avec Nexivo",
-        body: "Un site vitrine Nexivo comprend : design sur-mesure responsive (mobile, tablette, desktop), optimisation SEO technique complète, formulaire de contact avec notification email, intégration Google Maps si besoin, certificat SSL, hébergement performant ou transfert vers votre hébergeur, et une formation complète pour que vous puissiez mettre à jour votre contenu en toute autonomie. Nous restons disponibles après la livraison pour toute question ou évolution.",
+        h2: "Ce que vous obtenez avec Kama Agency",
+        body: "Un site vitrine Kama Agency comprend : design sur-mesure responsive (mobile, tablette, desktop), optimisation SEO technique complète, formulaire de contact avec notification email, intégration Google Maps si besoin, certificat SSL, hébergement performant ou transfert vers votre hébergeur, et une formation complète pour que vous puissiez mettre à jour votre contenu en toute autonomie. Nous restons disponibles après la livraison pour toute question ou évolution.",
       },
     ],
     faq: [
       {
-        q: "Combien coûte la création d'un site vitrine avec Nexivo ?",
+        q: "Combien coûte la création d'un site vitrine avec Kama Agency ?",
         a: "Nos sites vitrine démarrent à partir de 1 000 €. Le prix final dépend du nombre de pages, du niveau de personnalisation et des fonctionnalités souhaitées. Nous fournissons un devis détaillé et transparent après notre appel de découverte.",
       },
       {
@@ -66,9 +66,9 @@ export const services: Service[] = [
     slug: "boutique-shopify",
     name: "Boutique Shopify",
     shortDesc: "Une boutique Shopify haute performance qui maximise votre chiffre d'affaires en ligne.",
-    metaTitle: "Création boutique Shopify sur-mesure — Nexivo",
-    metaDescription: "Nexivo développe votre boutique Shopify sur-mesure : design premium, tunnel de vente optimisé, intégrations avancées. Multipliez vos ventes dès le lancement.",
-    intro: "Shopify est la plateforme e-commerce la plus puissante du marché. Mais une boutique Shopify générique, c'est comme une belle voiture sans carburant. Chez Nexivo, nous construisons des boutiques Shopify sur-mesure qui sont des machines à vendre : design unique, parcours d'achat optimisé, et intégrations pensées pour maximiser chaque commande.",
+    metaTitle: "Création boutique Shopify sur-mesure — Kama Agency",
+    metaDescription: "Kama Agency développe votre boutique Shopify sur-mesure : design premium, tunnel de vente optimisé, intégrations avancées. Multipliez vos ventes dès le lancement.",
+    intro: "Shopify est la plateforme e-commerce la plus puissante du marché. Mais une boutique Shopify générique, c'est comme une belle voiture sans carburant. Chez Kama Agency, nous construisons des boutiques Shopify sur-mesure qui sont des machines à vendre : design unique, parcours d'achat optimisé, et intégrations pensées pour maximiser chaque commande.",
     sections: [
       {
         h2: "Pourquoi choisir Shopify pour votre e-commerce ?",
@@ -90,7 +90,7 @@ export const services: Service[] = [
     faq: [
       {
         q: "Quelle est la différence entre un thème Shopify standard et une boutique sur-mesure ?",
-        a: "Un thème standard est générique et identique à des milliers d'autres boutiques. Chez Nexivo, nous créons un design unique qui reflète votre marque, optimisé pour vos produits spécifiques et votre clientèle cible. Résultat : une boutique mémorable qui se démarque de la concurrence.",
+        a: "Un thème standard est générique et identique à des milliers d'autres boutiques. Chez Kama Agency, nous créons un design unique qui reflète votre marque, optimisé pour vos produits spécifiques et votre clientèle cible. Résultat : une boutique mémorable qui se démarque de la concurrence.",
       },
       {
         q: "Combien de temps faut-il pour lancer ma boutique Shopify ?",
@@ -107,9 +107,9 @@ export const services: Service[] = [
     slug: "refonte-de-site",
     name: "Refonte de site",
     shortDesc: "Modernisez votre site existant pour booster vos performances et vos conversions.",
-    metaTitle: "Refonte de site web professionnel — Nexivo",
-    metaDescription: "Refonte de site par Nexivo : nouveau design, meilleures performances, SEO préservé. Transformez votre site vieillissant en outil de vente puissant.",
-    intro: "Votre site web a peut-être été créé il y a 5 ou 10 ans — à une époque où les attentes des utilisateurs et les standards du web étaient très différents. Une refonte n'est pas un luxe, c'est souvent une nécessité business. Chez Nexivo, nous transformons votre site vieillissant en un outil performant, moderne et aligné avec vos objectifs actuels.",
+    metaTitle: "Refonte de site web professionnel — Kama Agency",
+    metaDescription: "Refonte de site par Kama Agency : nouveau design, meilleures performances, SEO préservé. Transformez votre site vieillissant en outil de vente puissant.",
+    intro: "Votre site web a peut-être été créé il y a 5 ou 10 ans — à une époque où les attentes des utilisateurs et les standards du web étaient très différents. Une refonte n'est pas un luxe, c'est souvent une nécessité business. Chez Kama Agency, nous transformons votre site vieillissant en un outil performant, moderne et aligné avec vos objectifs actuels.",
     sections: [
       {
         h2: "Les signes qu'il est temps de refondre votre site",
@@ -148,9 +148,9 @@ export const services: Service[] = [
     slug: "dropshipping",
     name: "Dropshipping",
     shortDesc: "Une boutique dropshipping clé en main, prête à générer des revenus sans gestion de stock.",
-    metaTitle: "Création boutique dropshipping clé en main — Nexivo",
-    metaDescription: "Nexivo crée votre boutique dropshipping sur Shopify : sélection de niche, design professionnel, automatisation des commandes. Lancez votre business sans stock.",
-    intro: "Le dropshipping permet de vendre des produits physiques sans jamais les stocker ni les expédier. C'est un modèle business attractif, mais qui nécessite une exécution irréprochable pour réussir. Chez Nexivo, nous créons des boutiques dropshipping qui inspirent confiance, convertissent efficacement et s'appuient sur les meilleurs fournisseurs.",
+    metaTitle: "Création boutique dropshipping clé en main — Kama Agency",
+    metaDescription: "Kama Agency crée votre boutique dropshipping sur Shopify : sélection de niche, design professionnel, automatisation des commandes. Lancez votre business sans stock.",
+    intro: "Le dropshipping permet de vendre des produits physiques sans jamais les stocker ni les expédier. C'est un modèle business attractif, mais qui nécessite une exécution irréprochable pour réussir. Chez Kama Agency, nous créons des boutiques dropshipping qui inspirent confiance, convertissent efficacement et s'appuient sur les meilleurs fournisseurs.",
     sections: [
       {
         h2: "Le dropshipping bien fait : au-delà du template basique",
@@ -189,13 +189,13 @@ export const services: Service[] = [
     slug: "webdesign-sur-mesure",
     name: "Webdesign sur-mesure",
     shortDesc: "Des designs uniques qui marquent les esprits et renforcent l'identité de votre marque.",
-    metaTitle: "Webdesign sur-mesure premium — Nexivo",
-    metaDescription: "Nexivo crée des designs web sur-mesure qui marquent les esprits. Chaque pixel est pensé pour votre marque, vos utilisateurs et vos objectifs de conversion.",
-    intro: "Un design générique, c'est une occasion manquée. Votre site web est le reflet de votre marque — et les meilleures marques investissent dans des designs qui leur appartiennent entièrement. Chez Nexivo, nous créons des expériences visuelles sur-mesure qui captivent, inspirent confiance et se démarquent instantanément de la concurrence.",
+    metaTitle: "Webdesign sur-mesure premium — Kama Agency",
+    metaDescription: "Kama Agency crée des designs web sur-mesure qui marquent les esprits. Chaque pixel est pensé pour votre marque, vos utilisateurs et vos objectifs de conversion.",
+    intro: "Un design générique, c'est une occasion manquée. Votre site web est le reflet de votre marque — et les meilleures marques investissent dans des designs qui leur appartiennent entièrement. Chez Kama Agency, nous créons des expériences visuelles sur-mesure qui captivent, inspirent confiance et se démarquent instantanément de la concurrence.",
     sections: [
       {
         h2: "Design et stratégie : les deux sont inséparables",
-        body: "Un beau design sans stratégie, c'est de l'art. Un design stratégique, c'est un outil business. Chez Nexivo, chaque décision visuelle est motivée par un objectif concret : guider l'œil vers le call-to-action, rassurer via les éléments de preuve sociale, hiérarchiser l'information pour faciliter la décision. Nous créons des designs qui plaisent et qui convertissent — les deux ne sont pas contradictoires.",
+        body: "Un beau design sans stratégie, c'est de l'art. Un design stratégique, c'est un outil business. Chez Kama Agency, chaque décision visuelle est motivée par un objectif concret : guider l'œil vers le call-to-action, rassurer via les éléments de preuve sociale, hiérarchiser l'information pour faciliter la décision. Nous créons des designs qui plaisent et qui convertissent — les deux ne sont pas contradictoires.",
       },
       {
         h2: "Notre processus de création en 4 étapes",
@@ -230,9 +230,9 @@ export const services: Service[] = [
     slug: "ux-ui-design",
     name: "UX/UI Design",
     shortDesc: "Des interfaces intuitives qui améliorent l'expérience utilisateur et boostent les conversions.",
-    metaTitle: "UX/UI Design professionnel — Nexivo",
-    metaDescription: "Nexivo conçoit des interfaces UX/UI centrées utilisateur. Audit d'expérience, wireframes, prototypes interactifs et tests utilisateurs pour des interfaces qui convertissent.",
-    intro: "L'UX/UI Design va bien au-delà de l'esthétique. C'est la science de créer des interfaces que les utilisateurs comprennent intuitivement, qui les guident naturellement vers leurs objectifs — et vers les vôtres. Chez Nexivo, nous combinons recherche utilisateur, psychologie comportementale et expertise technique pour créer des expériences digitales exceptionnelles.",
+    metaTitle: "UX/UI Design professionnel — Kama Agency",
+    metaDescription: "Kama Agency conçoit des interfaces UX/UI centrées utilisateur. Audit d'expérience, wireframes, prototypes interactifs et tests utilisateurs pour des interfaces qui convertissent.",
+    intro: "L'UX/UI Design va bien au-delà de l'esthétique. C'est la science de créer des interfaces que les utilisateurs comprennent intuitivement, qui les guident naturellement vers leurs objectifs — et vers les vôtres. Chez Kama Agency, nous combinons recherche utilisateur, psychologie comportementale et expertise technique pour créer des expériences digitales exceptionnelles.",
     sections: [
       {
         h2: "UX vs UI : deux disciplines complémentaires",
@@ -271,9 +271,9 @@ export const services: Service[] = [
     slug: "identite-visuelle",
     name: "Identité visuelle",
     shortDesc: "Une charte graphique complète pour une marque cohérente, mémorable et professionnelle.",
-    metaTitle: "Création identité visuelle marque — Nexivo",
-    metaDescription: "Nexivo crée votre identité visuelle complète : logo, charte graphique, palette de couleurs, typographie. Une marque cohérente qui marque les esprits.",
-    intro: "Votre identité visuelle, c'est la première impression que vous faites — et elle se forme en moins d'une seconde. Un logo professionnel, une palette de couleurs cohérente et une typographie bien choisie communiquent immédiatement votre positionnement, vos valeurs et votre niveau de qualité. Chez Nexivo, nous créons des identités visuelles qui vous différencient et vous représentent fidèlement.",
+    metaTitle: "Création identité visuelle marque — Kama Agency",
+    metaDescription: "Kama Agency crée votre identité visuelle complète : logo, charte graphique, palette de couleurs, typographie. Une marque cohérente qui marque les esprits.",
+    intro: "Votre identité visuelle, c'est la première impression que vous faites — et elle se forme en moins d'une seconde. Un logo professionnel, une palette de couleurs cohérente et une typographie bien choisie communiquent immédiatement votre positionnement, vos valeurs et votre niveau de qualité. Chez Kama Agency, nous créons des identités visuelles qui vous différencient et vous représentent fidèlement.",
     sections: [
       {
         h2: "Pourquoi une identité visuelle forte est un actif business",
@@ -285,7 +285,7 @@ export const services: Service[] = [
       },
       {
         h2: "Ce qu'inclut votre identité visuelle complète",
-        body: "Une identité visuelle Nexivo comprend : logo principal et ses variations (version sombre, claire, simplifiée), palette de couleurs primaire et secondaire avec codes hex/RGB/CMJN, sélection typographique (titres et corps de texte), guide d'utilisation complet, et fichiers sources en formats vectoriels (AI, SVG) et raster (PNG, JPG) pour tous les usages web et print.",
+        body: "Une identité visuelle Kama Agency comprend : logo principal et ses variations (version sombre, claire, simplifiée), palette de couleurs primaire et secondaire avec codes hex/RGB/CMJN, sélection typographique (titres et corps de texte), guide d'utilisation complet, et fichiers sources en formats vectoriels (AI, SVG) et raster (PNG, JPG) pour tous les usages web et print.",
       },
       {
         h2: "Déclinaison sur vos supports",
@@ -312,12 +312,12 @@ export const services: Service[] = [
     slug: "referencement-seo",
     name: "Référencement SEO",
     shortDesc: "Dominez les premiers résultats Google et générez un trafic qualifié sur le long terme.",
-    metaTitle: "Référencement SEO naturel — Nexivo",
-    metaDescription: "Nexivo optimise votre référencement naturel : audit SEO, optimisation technique, création de contenu, netlinking. Apparaissez en première page Google durablement.",
-    intro: "Le référencement naturel (SEO) est l'un des canaux d'acquisition les plus rentables à long terme. Contrairement à la publicité payante qui s'arrête dès que vous coupez le budget, un bon positionnement SEO génère un flux constant de trafic qualifié. Chez Nexivo, nous déployons des stratégies SEO complètes et durables pour vous positionner en tête de Google sur vos mots-clés stratégiques.",
+    metaTitle: "Référencement SEO naturel — Kama Agency",
+    metaDescription: "Kama Agency optimise votre référencement naturel : audit SEO, optimisation technique, création de contenu, netlinking. Apparaissez en première page Google durablement.",
+    intro: "Le référencement naturel (SEO) est l'un des canaux d'acquisition les plus rentables à long terme. Contrairement à la publicité payante qui s'arrête dès que vous coupez le budget, un bon positionnement SEO génère un flux constant de trafic qualifié. Chez Kama Agency, nous déployons des stratégies SEO complètes et durables pour vous positionner en tête de Google sur vos mots-clés stratégiques.",
     sections: [
       {
-        h2: "Les trois piliers du SEO selon Nexivo",
+        h2: "Les trois piliers du SEO selon Kama Agency",
         body: "Un référencement efficace repose sur trois piliers indissociables. Le SEO technique : vitesse de chargement, structure des URLs, balisage HTML, données structurées, crawlabilité. Le SEO de contenu : articles optimisés, pages services, structure des titres, réponse aux intentions de recherche. Le netlinking : acquisition de liens entrants de qualité depuis des sites d'autorité. Négliger l'un de ces piliers compromet les deux autres.",
       },
       {
@@ -353,9 +353,9 @@ export const services: Service[] = [
     slug: "optimisation-core-web-vitals",
     name: "Optimisation Core Web Vitals",
     shortDesc: "Performances techniques optimales pour un meilleur classement Google et une UX excellente.",
-    metaTitle: "Optimisation Core Web Vitals — Nexivo",
-    metaDescription: "Nexivo optimise vos Core Web Vitals : LCP, FID, CLS. Améliorez vos performances techniques pour un meilleur classement Google et une expérience utilisateur optimale.",
-    intro: "Depuis 2021, Google intègre les Core Web Vitals dans son algorithme de classement. Un site lent ou instable est pénalisé dans les résultats de recherche — et perd des clients avant même qu'ils aient lu une ligne. Chez Nexivo, nous optimisons vos performances techniques pour atteindre les scores verts sur tous les indicateurs Google et offrir une expérience utilisateur irréprochable.",
+    metaTitle: "Optimisation Core Web Vitals — Kama Agency",
+    metaDescription: "Kama Agency optimise vos Core Web Vitals : LCP, FID, CLS. Améliorez vos performances techniques pour un meilleur classement Google et une expérience utilisateur optimale.",
+    intro: "Depuis 2021, Google intègre les Core Web Vitals dans son algorithme de classement. Un site lent ou instable est pénalisé dans les résultats de recherche — et perd des clients avant même qu'ils aient lu une ligne. Chez Kama Agency, nous optimisons vos performances techniques pour atteindre les scores verts sur tous les indicateurs Google et offrir une expérience utilisateur irréprochable.",
     sections: [
       {
         h2: "Comprendre les Core Web Vitals",
@@ -394,9 +394,9 @@ export const services: Service[] = [
     slug: "analytics-et-suivi",
     name: "Analytics & Suivi",
     shortDesc: "Des tableaux de bord clairs pour prendre des décisions basées sur les données réelles.",
-    metaTitle: "Analytics et suivi web professionnel — Nexivo",
-    metaDescription: "Nexivo configure votre tracking analytique complet : Google Analytics 4, tableaux de bord personnalisés, suivi des conversions. Prenez des décisions basées sur des données fiables.",
-    intro: "Sans données fiables, vous pilotez votre business à l'aveugle. Combien de visiteurs viennent sur votre site ? D'où viennent-ils ? Quelle page les fait partir ? Quels canaux génèrent le plus de ventes ? Ces questions fondamentales méritent des réponses précises. Chez Nexivo, nous configurons votre infrastructure analytique pour que chaque décision soit éclairée par des données réelles.",
+    metaTitle: "Analytics et suivi web professionnel — Kama Agency",
+    metaDescription: "Kama Agency configure votre tracking analytique complet : Google Analytics 4, tableaux de bord personnalisés, suivi des conversions. Prenez des décisions basées sur des données fiables.",
+    intro: "Sans données fiables, vous pilotez votre business à l'aveugle. Combien de visiteurs viennent sur votre site ? D'où viennent-ils ? Quelle page les fait partir ? Quels canaux génèrent le plus de ventes ? Ces questions fondamentales méritent des réponses précises. Chez Kama Agency, nous configurons votre infrastructure analytique pour que chaque décision soit éclairée par des données réelles.",
     sections: [
       {
         h2: "Google Analytics 4 : le nouveau standard",
@@ -435,9 +435,9 @@ export const services: Service[] = [
     slug: "saas-sur-mesure",
     name: "SaaS sur-mesure",
     shortDesc: "Votre application SaaS de A à Z, de l'idée à la production avec les meilleures technologies.",
-    metaTitle: "Développement SaaS sur-mesure — Nexivo",
-    metaDescription: "Nexivo développe votre SaaS sur-mesure : authentification, abonnements, tableau de bord, API. Transformez votre idée en produit SaaS avec les meilleures technologies.",
-    intro: "Transformer une idée en produit SaaS fonctionnel est l'un des défis techniques les plus complexes du développement web. Il faut maîtriser l'authentification, la facturation récurrente, l'architecture évolutive, la gestion des rôles et permissions, les APIs, et bien plus. Chez Nexivo, nous avons l'expertise pour prendre votre idée de la maquette à la production en un temps record.",
+    metaTitle: "Développement SaaS sur-mesure — Kama Agency",
+    metaDescription: "Kama Agency développe votre SaaS sur-mesure : authentification, abonnements, tableau de bord, API. Transformez votre idée en produit SaaS avec les meilleures technologies.",
+    intro: "Transformer une idée en produit SaaS fonctionnel est l'un des défis techniques les plus complexes du développement web. Il faut maîtriser l'authentification, la facturation récurrente, l'architecture évolutive, la gestion des rôles et permissions, les APIs, et bien plus. Chez Kama Agency, nous avons l'expertise pour prendre votre idée de la maquette à la production en un temps record.",
     sections: [
       {
         h2: "De l'idée au MVP en 8 semaines",
@@ -467,7 +467,7 @@ export const services: Service[] = [
       },
       {
         q: "Qui sera propriétaire du code source ?",
-        a: "Vous. Le code source est entièrement le vôtre à la livraison. Nous vous le remettons sur un repository Git privé (GitHub ou GitLab) que vous contrôlez. Aucun lock-in technologique ni dépendance envers Nexivo.",
+        a: "Vous. Le code source est entièrement le vôtre à la livraison. Nous vous le remettons sur un repository Git privé (GitHub ou GitLab) que vous contrôlez. Aucun lock-in technologique ni dépendance envers Kama Agency.",
       },
     ],
     gradient: "from-sky-500 to-blue-600",
@@ -476,9 +476,9 @@ export const services: Service[] = [
     slug: "shopify-liquid",
     name: "Shopify Liquid",
     shortDesc: "Développement Shopify Liquid avancé pour personaliser votre boutique au-delà des limites des thèmes.",
-    metaTitle: "Développement Shopify Liquid avancé — Nexivo",
-    metaDescription: "Nexivo maîtrise Shopify Liquid : développement de thèmes sur-mesure, sections personnalisées, apps Shopify, Storefront API. Poussez Shopify au-delà de ses limites.",
-    intro: "Shopify est puissant, mais les thèmes standard ont leurs limites. Liquid, le langage de templating de Shopify, permet de créer des expériences e-commerce entièrement sur-mesure : sections personnalisées, logiques d'affichage complexes, intégrations avancées et apps Shopify. Chez Nexivo, nous maîtrisons Liquid à un niveau expert pour construire exactement ce dont vous avez besoin.",
+    metaTitle: "Développement Shopify Liquid avancé — Kama Agency",
+    metaDescription: "Kama Agency maîtrise Shopify Liquid : développement de thèmes sur-mesure, sections personnalisées, apps Shopify, Storefront API. Poussez Shopify au-delà de ses limites.",
+    intro: "Shopify est puissant, mais les thèmes standard ont leurs limites. Liquid, le langage de templating de Shopify, permet de créer des expériences e-commerce entièrement sur-mesure : sections personnalisées, logiques d'affichage complexes, intégrations avancées et apps Shopify. Chez Kama Agency, nous maîtrisons Liquid à un niveau expert pour construire exactement ce dont vous avez besoin.",
     sections: [
       {
         h2: "Qu'est-ce que Shopify Liquid et pourquoi c'est important ?",
@@ -517,13 +517,13 @@ export const services: Service[] = [
     slug: "wordpress",
     name: "WordPress",
     shortDesc: "Sites WordPress sur-mesure, performants et faciles à gérer sans connaissances techniques.",
-    metaTitle: "Création site WordPress sur-mesure — Nexivo",
-    metaDescription: "Nexivo développe votre site WordPress sur-mesure : thème custom, ACF, Gutenberg, optimisation performance. Un site rapide, sécurisé et facile à gérer.",
-    intro: "WordPress alimente 43% des sites web dans le monde — et pour de bonnes raisons. Sa flexibilité, son écosystème et sa facilité de gestion en font le CMS de référence pour les sites vitrine, blogs et sites institutionnels. Chez Nexivo, nous développons des sites WordPress sur-mesure qui vont bien au-delà des thèmes standard : performants, sécurisés et entièrement maîtrisés par vous.",
+    metaTitle: "Création site WordPress sur-mesure — Kama Agency",
+    metaDescription: "Kama Agency développe votre site WordPress sur-mesure : thème custom, ACF, Gutenberg, optimisation performance. Un site rapide, sécurisé et facile à gérer.",
+    intro: "WordPress alimente 43% des sites web dans le monde — et pour de bonnes raisons. Sa flexibilité, son écosystème et sa facilité de gestion en font le CMS de référence pour les sites vitrine, blogs et sites institutionnels. Chez Kama Agency, nous développons des sites WordPress sur-mesure qui vont bien au-delà des thèmes standard : performants, sécurisés et entièrement maîtrisés par vous.",
     sections: [
       {
         h2: "WordPress bien fait : thème sur-mesure vs thème standard",
-        body: "La majorité des sites WordPress souffrent des mêmes problèmes : thèmes génériques avec trop de fonctionnalités inutiles, plugins en excès qui ralentissent le site, design reconnaissable et peu différenciant. Chez Nexivo, nous développons des thèmes WordPress sur-mesure : code épuré, uniquement les fonctionnalités dont vous avez besoin, design unique qui reflète votre identité. Résultat : un site rapide, sécurisé et distinctif.",
+        body: "La majorité des sites WordPress souffrent des mêmes problèmes : thèmes génériques avec trop de fonctionnalités inutiles, plugins en excès qui ralentissent le site, design reconnaissable et peu différenciant. Chez Kama Agency, nous développons des thèmes WordPress sur-mesure : code épuré, uniquement les fonctionnalités dont vous avez besoin, design unique qui reflète votre identité. Résultat : un site rapide, sécurisé et distinctif.",
       },
       {
         h2: "Gutenberg et ACF pour une gestion simplifiée",
@@ -558,9 +558,9 @@ export const services: Service[] = [
     slug: "nextjs-et-react",
     name: "Next.js & React",
     shortDesc: "Applications web ultra-rapides avec les technologies les plus modernes du marché.",
-    metaTitle: "Développement Next.js & React sur-mesure — Nexivo",
-    metaDescription: "Nexivo développe vos applications Next.js et React : SSR, SSG, API Routes, App Router. Des applications ultra-performantes qui passent Google Lighthouse avec 100/100.",
-    intro: "Next.js est devenu la référence absolue pour construire des applications web modernes. Alliant la puissance de React avec des fonctionnalités de production avancées (Server Side Rendering, génération statique, API Routes), Next.js permet de créer des applications ultra-rapides, SEO-friendly et évolutives. Chez Nexivo, Next.js est notre framework de prédilection pour les projets ambitieux.",
+    metaTitle: "Développement Next.js & React sur-mesure — Kama Agency",
+    metaDescription: "Kama Agency développe vos applications Next.js et React : SSR, SSG, API Routes, App Router. Des applications ultra-performantes qui passent Google Lighthouse avec 100/100.",
+    intro: "Next.js est devenu la référence absolue pour construire des applications web modernes. Alliant la puissance de React avec des fonctionnalités de production avancées (Server Side Rendering, génération statique, API Routes), Next.js permet de créer des applications ultra-rapides, SEO-friendly et évolutives. Chez Kama Agency, Next.js est notre framework de prédilection pour les projets ambitieux.",
     sections: [
       {
         h2: "Pourquoi Next.js domine le développement web moderne",
@@ -599,9 +599,9 @@ export const services: Service[] = [
     slug: "chatbot-ia",
     name: "Chatbot & IA conversationnelle",
     shortDesc: "Un assistant IA sur votre site qui répond, qualifie et convertit vos visiteurs 24h/24.",
-    metaTitle: "Chatbot IA pour site web — Nexivo",
-    metaDescription: "Nexivo intègre un chatbot IA sur votre site : assistant conversationnel, qualification de leads, support client automatisé. Propulsé par GPT-4 ou Claude.",
-    intro: "Un visiteur qui n'obtient pas de réponse immédiate part chez la concurrence. Un chatbot IA bien conçu répond instantanément, qualifie vos prospects, prend des rendez-vous et réduit votre charge de support — tout ça sans aucune intervention humaine. Chez Nexivo, nous intégrons des assistants IA personnalisés qui connaissent votre business sur le bout des doigts.",
+    metaTitle: "Chatbot IA pour site web — Kama Agency",
+    metaDescription: "Kama Agency intègre un chatbot IA sur votre site : assistant conversationnel, qualification de leads, support client automatisé. Propulsé par GPT-4 ou Claude.",
+    intro: "Un visiteur qui n'obtient pas de réponse immédiate part chez la concurrence. Un chatbot IA bien conçu répond instantanément, qualifie vos prospects, prend des rendez-vous et réduit votre charge de support — tout ça sans aucune intervention humaine. Chez Kama Agency, nous intégrons des assistants IA personnalisés qui connaissent votre business sur le bout des doigts.",
     sections: [
       {
         h2: "Un chatbot IA qui connaît vraiment votre business",
@@ -617,7 +617,7 @@ export const services: Service[] = [
       },
       {
         h2: "Déploiement en quelques jours, ROI immédiat",
-        body: "Un chatbot IA Nexivo est opérationnel en 5 à 10 jours. Nous gérons l'entraînement sur vos données, la configuration des flux conversationnels, l'intégration sur votre site et les tests qualité. Après le lancement, nous affinons continuellement les réponses grâce aux conversations réelles. La plupart de nos clients constatent une réduction de 40 à 60% des emails de support et une augmentation mesurable du taux de conversion.",
+        body: "Un chatbot IA Kama Agency est opérationnel en 5 à 10 jours. Nous gérons l'entraînement sur vos données, la configuration des flux conversationnels, l'intégration sur votre site et les tests qualité. Après le lancement, nous affinons continuellement les réponses grâce aux conversations réelles. La plupart de nos clients constatent une réduction de 40 à 60% des emails de support et une augmentation mesurable du taux de conversion.",
       },
     ],
     faq: [
@@ -640,9 +640,9 @@ export const services: Service[] = [
     slug: "automatisation-ia",
     name: "Automatisation IA & Workflows",
     shortDesc: "Automatisez vos tâches répétitives avec l'IA et libérez votre équipe pour ce qui compte vraiment.",
-    metaTitle: "Automatisation IA et workflows — Nexivo",
-    metaDescription: "Nexivo automatise vos processus métier avec l'IA : génération de contenu, traitement de données, emails automatisés, workflows intelligents. Gagnez des heures chaque semaine.",
-    intro: "Combien d'heures votre équipe passe-t-elle sur des tâches répétitives qui pourraient être automatisées ? Rédaction d'emails, traitement de formulaires, génération de rapports, mise à jour de bases de données… L'IA peut prendre en charge tout ça, avec une précision et une vitesse impossible à atteindre manuellement. Chez Nexivo, nous construisons des pipelines d'automatisation IA qui font travailler votre business pendant que vous dormez.",
+    metaTitle: "Automatisation IA et workflows — Kama Agency",
+    metaDescription: "Kama Agency automatise vos processus métier avec l'IA : génération de contenu, traitement de données, emails automatisés, workflows intelligents. Gagnez des heures chaque semaine.",
+    intro: "Combien d'heures votre équipe passe-t-elle sur des tâches répétitives qui pourraient être automatisées ? Rédaction d'emails, traitement de formulaires, génération de rapports, mise à jour de bases de données… L'IA peut prendre en charge tout ça, avec une précision et une vitesse impossible à atteindre manuellement. Chez Kama Agency, nous construisons des pipelines d'automatisation IA qui font travailler votre business pendant que vous dormez.",
     sections: [
       {
         h2: "L'automatisation IA : bien plus que des simples scripts",
@@ -681,9 +681,9 @@ export const services: Service[] = [
     slug: "integration-api-ia",
     name: "Intégration API IA",
     shortDesc: "Intégrez GPT-4, Claude ou Mistral dans votre produit pour des fonctionnalités IA sur-mesure.",
-    metaTitle: "Intégration API IA GPT Claude dans votre site — Nexivo",
-    metaDescription: "Nexivo intègre les APIs IA (OpenAI GPT-4, Claude, Mistral) dans vos applications web. Génération de contenu, analyse de données, recommandations personnalisées.",
-    intro: "Les grandes entreprises intègrent l'IA dans leurs produits et prennent une longueur d'avance considérable. Mais accéder aux APIs d'OpenAI, d'Anthropic ou de Mistral et les intégrer correctement dans une application web nécessite une expertise technique pointue. Chez Nexivo, nous maîtrisons ces APIs et nous les intégrons dans vos produits existants ou vos nouveaux projets pour créer des fonctionnalités IA différenciantes.",
+    metaTitle: "Intégration API IA GPT Claude dans votre site — Kama Agency",
+    metaDescription: "Kama Agency intègre les APIs IA (OpenAI GPT-4, Claude, Mistral) dans vos applications web. Génération de contenu, analyse de données, recommandations personnalisées.",
+    intro: "Les grandes entreprises intègrent l'IA dans leurs produits et prennent une longueur d'avance considérable. Mais accéder aux APIs d'OpenAI, d'Anthropic ou de Mistral et les intégrer correctement dans une application web nécessite une expertise technique pointue. Chez Kama Agency, nous maîtrisons ces APIs et nous les intégrons dans vos produits existants ou vos nouveaux projets pour créer des fonctionnalités IA différenciantes.",
     sections: [
       {
         h2: "Quelles fonctionnalités IA peut-on intégrer dans votre produit ?",

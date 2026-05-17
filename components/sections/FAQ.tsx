@@ -7,12 +7,12 @@ import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 
 const faqs = [
   {
-    q: "Combien coûte la création d'un site web avec Nexivo ?",
+    q: "Combien coûte la création d'un site web avec Kama Agency ?",
     a: "Nos projets démarrent à partir de 1 000 € pour un site vitrine et peuvent aller jusqu'à 50 000 € pour un SaaS sur-mesure complexe. Chaque projet est devisé précisément après un appel de découverte gratuit — pas de forfaits génériques. Nous préférons vous donner un prix juste basé sur vos vrais besoins.",
   },
   {
     q: "Combien de temps faut-il pour livrer mon projet ?",
-    a: "Un site vitrine est livré en 3 à 5 semaines. Une boutique Shopify en 4 à 8 semaines. Un SaaS sur-mesure en 8 à 16 semaines selon la complexité. Nous respectons les délais convenus — c'est une priorité absolue chez Nexivo. Vous recevez des updates hebdomadaires tout au long du projet.",
+    a: "Un site vitrine est livré en 3 à 5 semaines. Une boutique Shopify en 4 à 8 semaines. Un SaaS sur-mesure en 8 à 16 semaines selon la complexité. Nous respectons les délais convenus — c'est une priorité absolue chez Kama Agency. Vous recevez des updates hebdomadaires tout au long du projet.",
   },
   {
     q: "Travaillez-vous avec des clients partout en France ?",

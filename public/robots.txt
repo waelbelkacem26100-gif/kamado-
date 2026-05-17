@@ -13,4 +13,4 @@ User-agent: Bingbot
 Allow: /
 Disallow: /api/
 
-Sitemap: https://nexivo.fr/sitemap.xml
+Sitemap: https://kamaagency.com/sitemap.xml

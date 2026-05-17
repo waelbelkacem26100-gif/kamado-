@@ -19,7 +19,6 @@ export default function AppleIcon() {
           position: "relative",
         }}
       >
-        {/* Glow */}
         <div
           style={{
             position: "absolute",
@@ -28,20 +27,31 @@ export default function AppleIcon() {
             width: 140,
             height: 140,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(0,229,255,0.25) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(0,229,255,0.2) 0%, transparent 70%)",
           }}
         />
         <span
           style={{
-            fontSize: 96,
-            fontWeight: 700,
+            fontSize: 100,
+            fontWeight: 800,
             color: "#ffffff",
             letterSpacing: -4,
             lineHeight: 1,
           }}
         >
-          N
+          K
         </span>
+        <div
+          style={{
+            position: "absolute",
+            top: 28,
+            right: 28,
+            width: 22,
+            height: 22,
+            borderRadius: "50%",
+            background: "#00e5ff",
+          }}
+        />
       </div>
     ),
     { ...size }

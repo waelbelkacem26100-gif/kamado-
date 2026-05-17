@@ -63,7 +63,7 @@ export default function ValueProp() {
           className="text-center mb-16"
         >
           <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
-            Pourquoi Nexivo
+            Pourquoi Kama Agency
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-section font-bold text-white">
             Ce qui nous différencie

@@ -10,19 +10,37 @@ export default function Icon() {
         style={{
           width: 32,
           height: 32,
-          background: "linear-gradient(135deg, #00e5ff 0%, #7c3aed 100%)",
+          background: "#0b0b16",
           borderRadius: 8,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
           fontFamily: "system-ui, sans-serif",
-          fontWeight: 700,
-          fontSize: 18,
-          color: "#000000",
-          letterSpacing: -1,
         }}
       >
-        N
+        <span
+          style={{
+            fontSize: 21,
+            fontWeight: 800,
+            color: "#ffffff",
+            letterSpacing: -1,
+            lineHeight: 1,
+          }}
+        >
+          K
+        </span>
+        <div
+          style={{
+            position: "absolute",
+            top: 5,
+            right: 5,
+            width: 6,
+            height: 6,
+            borderRadius: "50%",
+            background: "#00e5ff",
+          }}
+        />
       </div>
     ),
     { ...size }

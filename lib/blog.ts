@@ -34,8 +34,8 @@ export const posts: BlogPost[] = [
     date: "12 mai 2026",
     readTime: "7 min",
     excerpt: "Google continue de faire évoluer ses algorithmes. Découvrez les signaux qui feront la différence en 2026 pour dominer les résultats de recherche.",
-    metaTitle: "SEO 2026 : les nouveaux critères Google — Guide complet | Nexivo",
-    metaDescription: "Découvrez les critères SEO qui comptent vraiment en 2026 : AI Overviews, E-E-A-T renforcé, Core Web Vitals, contenu expert. Guide pratique par l'agence Nexivo.",
+    metaTitle: "SEO 2026 : les nouveaux critères Google — Guide complet | Kama Agency",
+    metaDescription: "Découvrez les critères SEO qui comptent vraiment en 2026 : AI Overviews, E-E-A-T renforcé, Core Web Vitals, contenu expert. Guide pratique par l'agence Kama Agency.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop",
     intro: "Le référencement naturel en 2026 n'a plus grand-chose à voir avec celui d'il y a cinq ans. L'arrivée de l'intelligence artificielle dans les résultats Google, le renforcement des critères E-E-A-T et l'évolution des Core Web Vitals ont redéfini les règles du jeu. Bonne nouvelle : les agences et entreprises qui s'y adaptent rapidement prennent une avance considérable sur leurs concurrents. Mauvaise nouvelle : celles qui restent sur leurs acquis perdent des positions chaque semaine. Voici ce que vous devez savoir pour 2026.",
     sections: [
@@ -104,8 +104,8 @@ export const posts: BlogPost[] = [
     date: "5 mai 2026",
     readTime: "8 min",
     excerpt: "Deux plateformes, deux philosophies. On compare les coûts, la performance, la scalabilité et l'expérience marchand pour vous aider à faire le bon choix.",
-    metaTitle: "Shopify vs WooCommerce 2026 : comparatif complet | Nexivo",
-    metaDescription: "Shopify ou WooCommerce en 2026 ? Comparatif complet des coûts, performances, SEO et facilité de gestion. L'avis d'experts de l'agence Nexivo pour choisir la bonne plateforme.",
+    metaTitle: "Shopify vs WooCommerce 2026 : comparatif complet | Kama Agency",
+    metaDescription: "Shopify ou WooCommerce en 2026 ? Comparatif complet des coûts, performances, SEO et facilité de gestion. L'avis d'experts de l'agence Kama Agency pour choisir la bonne plateforme.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop",
     intro: "Shopify vs WooCommerce. C'est la question que nous posent presque tous nos clients e-commerce avant de démarrer un projet. Et en 2026, la réponse n'est pas aussi simple qu'un 'l'un est mieux que l'autre'. Ces deux plateformes servent des besoins différents, avec des modèles économiques opposés et des implications techniques très distinctes. Après avoir travaillé sur des dizaines de boutiques sur les deux plateformes, voici notre analyse complète et sans langue de bois.",
     sections: [
@@ -173,11 +173,11 @@ export const posts: BlogPost[] = [
     category: "Développement",
     date: "28 avril 2026",
     readTime: "6 min",
-    excerpt: "Performance, SEO, expérience développeur : Next.js coche toutes les cases. Voici pourquoi nous l'avons adopté comme framework principal chez Nexivo.",
-    metaTitle: "Pourquoi Next.js est le meilleur framework web en 2026 | Nexivo",
+    excerpt: "Performance, SEO, expérience développeur : Next.js coche toutes les cases. Voici pourquoi nous l'avons adopté comme framework principal chez Kama Agency.",
+    metaTitle: "Pourquoi Next.js est le meilleur framework web en 2026 | Kama Agency",
     metaDescription: "Next.js : performances, SEO, App Router, Server Components. Découvrez pourquoi ce framework React est devenu le choix numéro 1 des agences web premium en 2026.",
     image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&auto=format&fit=crop",
-    intro: "Il y a cinq ans, Next.js était un framework prometteur utilisé par quelques startups tech. Aujourd'hui, il alimente des millions de sites dans le monde — de petites boutiques locales aux plus grandes plateformes mondiales. Chez Nexivo, nous l'avons adopté comme framework principal dès 2023 et nous n'avons jamais regardé en arrière. Voici pourquoi Next.js s'est imposé comme le standard des agences web sérieuses.",
+    intro: "Il y a cinq ans, Next.js était un framework prometteur utilisé par quelques startups tech. Aujourd'hui, il alimente des millions de sites dans le monde — de petites boutiques locales aux plus grandes plateformes mondiales. Chez Kama Agency, nous l'avons adopté comme framework principal dès 2023 et nous n'avons jamais regardé en arrière. Voici pourquoi Next.js s'est imposé comme le standard des agences web sérieuses.",
     sections: [
       {
         h2: "Des performances qui font la différence dans les SERP Google",
@@ -244,8 +244,8 @@ export const posts: BlogPost[] = [
     date: "17 mai 2026",
     readTime: "9 min",
     excerpt: "Site vitrine, boutique e-commerce ou SaaS : les prix varient de 500€ à 100 000€. Guide complet des tarifs 2026 pour budgéter votre projet web sans mauvaise surprise.",
-    metaTitle: "Prix site web 2026 : combien ça coûte vraiment ? | Nexivo",
-    metaDescription: "Combien coûte un site web en 2026 ? Site vitrine (500-8 000€), e-commerce (1 500-15 000€), SaaS (10 000€+). Guide complet des tarifs et facteurs de prix par Nexivo.",
+    metaTitle: "Prix site web 2026 : combien ça coûte vraiment ? | Kama Agency",
+    metaDescription: "Combien coûte un site web en 2026 ? Site vitrine (500-8 000€), e-commerce (1 500-15 000€), SaaS (10 000€+). Guide complet des tarifs et facteurs de prix par Kama Agency.",
     image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80&auto=format&fit=crop",
     intro: "\"Combien ça coûte un site web ?\" — c'est la question que nous recevons le plus souvent. Et la réponse honnête est : ça dépend. En 2026, le prix d'un site web peut aller de 500€ pour un site vitrine simple à plusieurs centaines de milliers d'euros pour une application web complexe. Cette fourchette large s'explique par des différences fondamentales de complexité, de technologie et d'expertise. Dans ce guide, on vous donne les vrais prix du marché français, les facteurs qui font varier les tarifs, et surtout comment calculer le retour sur investissement de votre projet.",
     sections: [
@@ -259,7 +259,7 @@ export const posts: BlogPost[] = [
       },
       {
         h2: "Prix d'une application web ou SaaS : de 10 000€ à 100 000€+",
-        body: "Les applications web (tableaux de bord, plateformes SaaS, intranets, marketplaces) nécessitent un développement entièrement sur-mesure. Les fourchettes 2026 : MVP simple (10 000 à 25 000€) : authentification utilisateur, fonctionnalités core, interface admin basique. Nécessite 2 à 3 mois de développement. Produit complet (25 000 à 75 000€) : multi-rôles, paiements récurrents (Stripe), analytics, notifications, API. Plateforme complexe (75 000€+) : marketplace, IA intégrée, scale enterprise, équipe dédiée. Chez Nexivo, nous avons réalisé Clustea (plateforme SaaS B2B) et ScreenBuild (SaaS IA) dans la fourchette 15 000 à 40 000€, en 8 à 12 semaines de développement intensif.",
+        body: "Les applications web (tableaux de bord, plateformes SaaS, intranets, marketplaces) nécessitent un développement entièrement sur-mesure. Les fourchettes 2026 : MVP simple (10 000 à 25 000€) : authentification utilisateur, fonctionnalités core, interface admin basique. Nécessite 2 à 3 mois de développement. Produit complet (25 000 à 75 000€) : multi-rôles, paiements récurrents (Stripe), analytics, notifications, API. Plateforme complexe (75 000€+) : marketplace, IA intégrée, scale enterprise, équipe dédiée. Chez Kama Agency, nous avons réalisé Clustea (plateforme SaaS B2B) et ScreenBuild (SaaS IA) dans la fourchette 15 000 à 40 000€, en 8 à 12 semaines de développement intensif.",
       },
       {
         h2: "Les 5 facteurs qui font vraiment varier le prix",

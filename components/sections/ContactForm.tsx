@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 import { CONTACT, WEB3FORMS_KEY } from "@/lib/constants";
@@ -51,7 +51,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
@@ -65,9 +65,9 @@ export default function ContactForm() {
           access_key: WEB3FORMS_KEY,
           name: form.nom,
           email: form.email,
-          subject: `Nouveau projet — ${form.type || "Contact"} | Nexivo`,
+          subject: `Nouveau projet — ${form.type || "Contact"} | Kama Agency`,
           message: `Type de projet : ${form.type || "Non précisé"}\nBudget estimé : ${form.budget || "Non précisé"}\n\n${form.message}`,
-          from_name: "Nexivo Contact Form",
+          from_name: "Kama Agency Contact Form",
           replyto: form.email,
         }),
       });

@@ -234,14 +234,14 @@ export default function Hero() {
             </div>
             <div className="flex-1 mx-3 h-5 bg-white/[0.06] rounded-full flex items-center px-3 gap-2">
               <div className="w-2 h-2 rounded-full bg-green-400/60" />
-              <span className="text-[10px] text-white/30 font-mono">nexivo.fr</span>
+              <span className="text-[10px] text-white/30 font-mono">kamaagency.com</span>
             </div>
           </div>
           {/* Screenshot */}
           <div className="relative aspect-[16/7] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=85&auto=format&fit=crop"
-              alt="Aperçu d'un site web Nexivo"
+              alt="Aperçu d'un site web Kama Agency"
               fill
               className="object-cover object-top"
               sizes="768px"

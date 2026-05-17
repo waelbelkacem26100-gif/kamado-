@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_NAME} — Agence Web France | Sites, Shopify & SaaS`,
     description:
-      "Nexivo crée des sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livrés 3× plus vite.",
+      "Kama Agency crée des sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livrés 3× plus vite.",
     url: `${SITE_URL}/`,
     siteName: SITE_NAME,
     locale: "fr_FR",
@@ -43,7 +43,7 @@ const homepageFaqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Combien coûte la création d'un site web avec Nexivo ?",
+      name: "Combien coûte la création d'un site web avec Kama Agency ?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Nos projets démarrent à partir de 1 000 € pour un site vitrine et peuvent aller jusqu'à 50 000 € pour un SaaS sur-mesure complexe. Chaque projet est devisé précisément après un appel de découverte gratuit — pas de forfaits génériques.",
@@ -95,7 +95,7 @@ const homepageFaqSchema = {
 const serviceListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Services Nexivo — Agence Web France",
+  name: "Services Kama Agency — Agence Web France",
   description: "Sites vitrine, Shopify, SaaS, SEO, design et intelligence artificielle.",
   url: `${SITE_URL}/#services`,
   numberOfItems: 6,

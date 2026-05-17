@@ -26,7 +26,7 @@ export default function JsonLd() {
     },
     sameAs: [CONTACT.linkedin, CONTACT.twitter],
     description:
-      "Nexivo est une agence web française spécialisée en création de sites vitrine, boutiques Shopify, SaaS sur-mesure, SEO et intelligence artificielle. Nous transformons votre business en machine à vendre — livrés 3× plus vite que la concurrence.",
+      "Kama Agency est une agence web française spécialisée en création de sites vitrine, boutiques Shopify, SaaS sur-mesure, SEO et intelligence artificielle. Nous transformons votre business en machine à vendre — livrés 3× plus vite que la concurrence.",
     slogan: "Transformez votre business en machine à vendre",
     address: {
       "@type": "PostalAddress",
@@ -75,7 +75,7 @@ export default function JsonLd() {
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Services web Nexivo",
+      name: "Services web Kama Agency",
       itemListElement: [
         {
           "@type": "Offer",
@@ -140,7 +140,7 @@ export default function JsonLd() {
         author: { "@type": "Person", name: "Marie Dupont" },
         reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
         reviewBody:
-          "Nexivo a transformé notre boutique Shopify en machine à vendre. Notre taux de conversion a doublé en 3 mois. Je recommande les yeux fermés.",
+          "Kama Agency a transformé notre boutique Shopify en machine à vendre. Notre taux de conversion a doublé en 3 mois. Je recommande les yeux fermés.",
         datePublished: "2025-03-01",
         publisher: { "@type": "Organization", name: SITE_NAME },
       },
@@ -205,7 +205,7 @@ export default function JsonLd() {
     url: SITE_URL,
     name: `${SITE_NAME} — Agence Web France | Sites, Shopify & SaaS`,
     description:
-      "Nexivo crée des sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livrés 3× plus vite.",
+      "Kama Agency crée des sites vitrine, boutiques Shopify et SaaS sur-mesure qui convertissent vos visiteurs en clients. SEO inclus, livrés 3× plus vite.",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#organization` },
     datePublished: "2022-01-01",

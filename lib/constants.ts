@@ -1,12 +1,12 @@
-export const SITE_URL = "https://nexivo.fr";
-export const SITE_NAME = "Nexivo";
+export const SITE_URL = "https://kamaagency.com";
+export const SITE_NAME = "Kama Agency";
 export const SITE_DESCRIPTION =
-  "Nexivo — Agence web qui transforme votre business en machine à vendre. Sites vitrine, boutiques Shopify et SaaS sur-mesure.";
+  "Kama Agency — Agence web qui transforme votre business en machine à vendre. Sites vitrine, boutiques Shopify et SaaS sur-mesure.";
 
 export const CONTACT = {
-  email: "contact@nexivo.fr",
-  linkedin: "https://linkedin.com/company/nexivo",
-  twitter: "https://twitter.com/nexivo_fr",
+  email: "contact@kamaagency.com",
+  linkedin: "https://linkedin.com/company/kama-agency",
+  twitter: "https://twitter.com/kamaagency_fr",
 };
 
 // Clé Web3Forms — à remplacer après inscription sur web3forms.com (gratuit)

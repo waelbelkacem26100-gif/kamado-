@@ -5,14 +5,14 @@ import { posts } from "@/lib/blog";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Blog Agence Web — SEO, Développement & E-commerce | Nexivo",
+  title: "Blog Agence Web — SEO, Développement & E-commerce | Kama Agency",
   description:
-    "Le blog agence web de Nexivo : conseils pratiques en SEO, développement web et e-commerce pour booster votre présence en ligne et convertir plus de clients.",
+    "Le blog agence web de Kama Agency : conseils pratiques en SEO, développement web et e-commerce pour booster votre présence en ligne et convertir plus de clients.",
   alternates: { canonical: `${SITE_URL}/blog/` },
   openGraph: {
-    title: "Blog Agence Web — SEO, Développement & E-commerce | Nexivo",
+    title: "Blog Agence Web — SEO, Développement & E-commerce | Kama Agency",
     description:
-      "Le blog agence web de Nexivo : conseils pratiques en SEO, développement web et e-commerce pour booster votre présence en ligne et convertir plus de clients.",
+      "Le blog agence web de Kama Agency : conseils pratiques en SEO, développement web et e-commerce pour booster votre présence en ligne et convertir plus de clients.",
     url: `${SITE_URL}/blog/`,
     siteName: SITE_NAME,
     locale: "fr_FR",
@@ -80,9 +80,9 @@ export default function BlogPage() {
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Blog Nexivo — Agence Web",
+    name: "Blog Kama Agency — Agence Web",
     description:
-      "Conseils pratiques en SEO, développement web et e-commerce par l'agence Nexivo.",
+      "Conseils pratiques en SEO, développement web et e-commerce par l'agence Kama Agency.",
     url: `${SITE_URL}/blog/`,
     publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     hasPart: posts.map((p) => ({
@@ -106,7 +106,7 @@ export default function BlogPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Articles du blog Nexivo",
+    name: "Articles du blog Kama Agency",
     itemListElement: posts.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -154,7 +154,7 @@ export default function BlogPage() {
               Développement &amp; E-commerce
             </h1>
             <p className="text-lg text-[var(--fg-muted)] max-w-2xl leading-relaxed mb-8">
-              Bienvenue sur le blog agence web de Nexivo. Chaque semaine, nous partageons des
+              Bienvenue sur le blog agence web de Kama Agency. Chaque semaine, nous partageons des
               conseils concrets en{" "}
               <Link href="/services/referencement-seo/" className="text-[var(--accent)] hover:underline">
                 référencement SEO
@@ -311,7 +311,7 @@ export default function BlogPage() {
                 Ressources recommandées
               </h2>
               <p className="text-sm text-[var(--fg-muted)] mb-8 max-w-xl">
-                Les outils et références que nous utilisons au quotidien chez Nexivo pour
+                Les outils et références que nous utilisons au quotidien chez Kama Agency pour
                 optimiser les sites de nos clients.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -357,7 +357,7 @@ export default function BlogPage() {
           {/* CTA interne */}
           <section
             className="rounded-3xl border border-[var(--accent)]/30 bg-[var(--surface)] p-10 text-center"
-            aria-label="Contactez Nexivo"
+            aria-label="Contactez Kama Agency"
           >
             <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
               Passez à l&apos;action

@@ -35,7 +35,7 @@ const columns = [
     ],
   },
   {
-    title: "Nexivo",
+    title: "Kama Agency",
     links: [
       { label: "Nos projets", href: "/#projets" },
       { label: "Notre méthode", href: "/#process" },
@@ -55,8 +55,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-14">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-block text-xl font-bold tracking-tight text-[var(--fg)] mb-4">
-              Nex<span className="text-[var(--accent)]">ivo</span>
+            <Link href="/" className="inline-block mb-4">
+              <span className="text-xl font-bold tracking-tight text-[var(--fg)]">Kama<span className="font-normal text-[var(--fg-muted)]"> Agency</span></span>
             </Link>
             <p className="text-xs text-[var(--fg-muted)] leading-relaxed mb-5 max-w-[200px]">
               Agence web française spécialisée en sites vitrine, Shopify, SaaS et IA.
