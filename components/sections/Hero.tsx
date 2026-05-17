@@ -158,18 +158,17 @@ export default function Hero() {
             </motion.span>
           )}
 
-          {/* Ligne typewriter — hauteur fixe pour éviter le layout shift */}
-          <span className="block" style={{ minHeight: "1.1em" }}>
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: shouldReduce ? 0.2 : 0.7 }}
-              className="text-[var(--accent)] accent-glow whitespace-nowrap"
-            >
-              {displayed}
-              <span className="animate-pulse">|</span>
-            </motion.span>
-          </span>
+          {/* Ligne typewriter — minHeight évite le saut 0→1 ligne au démarrage */}
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: shouldReduce ? 0.2 : 0.7 }}
+            className="block text-[var(--accent)] accent-glow"
+            style={{ minHeight: "1.1em" }}
+          >
+            {displayed}
+            <span className="animate-pulse">|</span>
+          </motion.span>
         </h1>
 
         {/* Sous-titre */}
