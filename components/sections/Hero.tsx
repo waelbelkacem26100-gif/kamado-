@@ -164,7 +164,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: shouldReduce ? 0.2 : 0.7 }}
             className="block text-[var(--accent)] accent-glow"
-            style={{ minHeight: "1.1em" }}
+            style={{ minHeight: "1.1em", fontSize: "clamp(1.6rem, 4vw, 3.5rem)" }}
           >
             {displayed}
             <span className="animate-pulse">|</span>
