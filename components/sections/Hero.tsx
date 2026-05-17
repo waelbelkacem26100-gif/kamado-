@@ -128,7 +128,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Titre — mot par mot (ou ligne si reduced motion) */}
-        <h1 className="text-display font-bold text-[var(--fg)] mb-4">
+        <h1 className="text-display font-bold text-[var(--fg)] mb-4" style={{ fontSize: "clamp(2.2rem, 5vw, 5rem)" }}>
           {shouldReduce ? (
             <motion.span
               variants={lineReveal}
@@ -164,7 +164,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: shouldReduce ? 0.2 : 0.7 }}
             className="block text-[var(--accent)] accent-glow"
-            style={{ minHeight: "1.1em", fontSize: "clamp(1.6rem, 4vw, 3.5rem)" }}
+            style={{ minHeight: "1.1em", fontSize: "clamp(1.9rem, 4.2vw, 4.2rem)" }}
           >
             {displayed}
             <span className="animate-pulse">|</span>
