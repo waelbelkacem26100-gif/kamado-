@@ -1,5 +1,16 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Crawl-delay: 1
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
 
 Sitemap: https://nexivo.fr/sitemap.xml

@@ -1,15 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { fadeUp, staggerContainer, defaultViewport } from "@/lib/animations";
+import { motion, useReducedMotion } from "framer-motion";
+import { fadeUp, fadeIn, staggerContainer, defaultViewport } from "@/lib/animations";
 
-interface SectionRevealProps {
+interface Props {
   children: React.ReactNode;
   className?: string;
   stagger?: boolean;
 }
 
-export default function SectionReveal({ children, className = "", stagger = false }: SectionRevealProps) {
+export default function SectionReveal({ children, className = "", stagger = false }: Props) {
+  const shouldReduce = useReducedMotion();
+
   if (stagger) {
     return (
       <motion.div
@@ -27,7 +29,7 @@ export default function SectionReveal({ children, className = "", stagger = fals
   return (
     <motion.div
       className={className}
-      variants={fadeUp}
+      variants={shouldReduce ? fadeIn : fadeUp}
       initial="hidden"
       whileInView="visible"
       viewport={defaultViewport}

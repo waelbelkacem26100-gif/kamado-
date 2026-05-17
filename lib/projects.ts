@@ -3,6 +3,7 @@ export interface Project {
   name: string;
   tagline: string;
   url: string;
+  image: string;
   role: string;
   duration: string;
   stack: string[];
@@ -30,6 +31,7 @@ export const projects: Project[] = [
       "Pipeline IA multi-étapes avec Claude : analyse image, décomposition en sections Shopify, génération Liquid, validation et packaging.",
     result: "Réduit de 90% le temps de création d'un thème Shopify custom.",
     gradient: "from-blue-600 to-indigo-800",
+    image: "https://images.unsplash.com/photo-1607706189992-eae578626c86?w=800&q=80&auto=format&fit=crop",
   },
   {
     slug: "clustea",
@@ -47,6 +49,7 @@ export const projects: Project[] = [
       "Architecture Next.js App Router, design system custom, focus sur performance et fluidité.",
     result: "Plateforme en production, base utilisateurs active.",
     gradient: "from-emerald-600 to-teal-800",
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80&auto=format&fit=crop",
   },
   {
     slug: "couvetoile",
@@ -64,6 +67,7 @@ export const projects: Project[] = [
       "WordPress optimisé, copywriting orienté bénéfices, structure de conversion éprouvée.",
     result: "Taux de conversion formulaire multiplié par 2,4 après mise en ligne.",
     gradient: "from-orange-500 to-rose-700",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop",
   },
   {
     slug: "brainrot-club",
@@ -81,5 +85,6 @@ export const projects: Project[] = [
       "Thème Liquid custom, fiches produits SEO, A/B testing, tunnel d'achat simplifié, upsells intégrés.",
     result: "Taux de conversion +47%. Première page Google sur les mots-clés cibles.",
     gradient: "from-purple-600 to-pink-700",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop",
   },
 ];

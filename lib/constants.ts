@@ -9,6 +9,10 @@ export const CONTACT = {
   twitter: "https://twitter.com/nexivo_fr",
 };
 
+// Clé Web3Forms — à remplacer après inscription sur web3forms.com (gratuit)
+// L'email de réception est lié au compte créé sur web3forms.com
+export const WEB3FORMS_KEY = "REMPLACER_PAR_VOTRE_CLE_WEB3FORMS";
+
 export const STATS = [
   { value: 12, suffix: "+", label: "Projets livrés" },
   { value: 100, suffix: "%", label: "Clients satisfaits" },

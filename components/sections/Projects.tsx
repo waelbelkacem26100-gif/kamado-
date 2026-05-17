@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 import { projects } from "@/lib/projects";
@@ -44,40 +45,56 @@ function ProjectCard3D({ project }: { project: typeof projects[0] }) {
               : "border-[var(--border)]"
           }`}
         >
-          {/* Browser mockup */}
-          <div className={`relative h-52 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-            {/* Browser window frame */}
-            <div className="absolute inset-x-5 top-5 bottom-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden flex flex-col shadow-2xl">
-              {/* Browser chrome */}
-              <div className="flex items-center gap-2 px-3 py-2.5 bg-white/10 border-b border-white/10 flex-shrink-0">
-                <div className="flex gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-400/80" />
-                  <div className="w-2 h-2 rounded-full bg-yellow-400/80" />
-                  <div className="w-2 h-2 rounded-full bg-green-400/80" />
-                </div>
-                <div className="flex-1 mx-2 h-4 bg-white/10 rounded-full flex items-center px-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-white/40 mr-1.5" />
-                  <div className="h-1.5 bg-white/20 rounded w-3/4" />
-                </div>
-              </div>
-              {/* Mock page content */}
-              <div className="flex-1 p-3 space-y-2">
-                <div className="h-2.5 bg-white/20 rounded-full w-2/3" />
-                <div className="h-2 bg-white/15 rounded-full w-full" />
-                <div className="h-2 bg-white/15 rounded-full w-5/6" />
-                <div className="grid grid-cols-3 gap-2 mt-3">
-                  <div className="h-10 bg-white/10 rounded-lg" />
-                  <div className="h-10 bg-white/15 rounded-lg" />
-                  <div className="h-10 bg-white/10 rounded-lg" />
-                </div>
-                <div className="h-2 bg-white/10 rounded-full w-1/2 mt-1" />
-              </div>
+          {/* Zone image */}
+          <div className="relative h-52 overflow-hidden bg-[var(--bg-secondary)]">
+
+            {/* Photo de fond avec zoom au hover */}
+            <motion.div
+              className="absolute inset-0"
+              whileHover={{ scale: 1.06 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <Image
+                src={project.image}
+                alt={project.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+            </motion.div>
+
+            {/* Overlay gradient coloré (garde l'identité du projet) */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent`}
+            />
+
+            {/* Overlay hover "Voir le projet" */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 z-10 flex items-center justify-center">
+              <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white border border-white/40 bg-white/10 backdrop-blur-sm">
+                Voir le projet
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M7 17L17 7M17 7H7M17 7v10" />
+                </svg>
+              </span>
             </div>
-            {/* Stack badges */}
-            <div className="absolute bottom-3 left-4 flex flex-wrap gap-1.5">
+
+            {/* Browser frame miniature en haut */}
+            <div className="absolute inset-x-4 top-4 h-6 rounded-lg bg-black/40 backdrop-blur-sm border border-white/20 flex items-center gap-1.5 px-2.5 z-10">
+              <div className="flex gap-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-400/80" />
+                <div className="w-1.5 h-1.5 rounded-full bg-yellow-400/80" />
+                <div className="w-1.5 h-1.5 rounded-full bg-green-400/80" />
+              </div>
+              <div className="flex-1 h-3 bg-white/10 rounded-full" />
+            </div>
+
+            {/* Stack badges en bas */}
+            <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5 z-10">
               {project.stack.slice(0, 2).map((tech) => (
-                <span key={tech} className="text-xs font-medium px-2 py-0.5 rounded-full bg-black/30 text-white/90 backdrop-blur-sm border border-white/10">
+                <span
+                  key={tech}
+                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-sm border border-white/15"
+                >
                   {tech}
                 </span>
               ))}
@@ -113,7 +130,7 @@ export default function Projects() {
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
-          className="mb-14"
+          className="text-center mb-14"
         >
           <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
             Réalisations

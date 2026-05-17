@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 
@@ -9,24 +10,21 @@ const testimonials = [
     role: "CEO, FleurShop",
     text: "Nexivo a transformé notre boutique Shopify en machine à vendre. Notre taux de conversion a doublé en 3 mois. Je recommande les yeux fermés.",
     stars: 5,
-    initials: "MD",
-    color: "from-pink-500 to-rose-600",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
     name: "Thomas Bernard",
     role: "Fondateur, TechStart",
     text: "Notre SaaS est passé de maquette à production en 8 semaines. Code propre, design premium, zéro compromis sur la qualité. Exactement ce qu'on voulait.",
     stars: 5,
-    initials: "TB",
-    color: "from-blue-500 to-indigo-600",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80&auto=format&fit=crop&crop=face",
   },
   {
     name: "Sophie Laurent",
     role: "Directrice, CaféNomade",
     text: "Site livré en 3 semaines, référencé en première page Google en 2 mois. L'équipe est réactive, professionnelle, et surtout — elle obtient des résultats.",
     stars: 5,
-    initials: "SL",
-    color: "from-emerald-500 to-teal-600",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80&auto=format&fit=crop&crop=face",
   },
 ];
 
@@ -44,8 +42,20 @@ function Stars({ count }: { count: number }) {
 
 export default function Testimonials() {
   return (
-    <section className="py-24 md:py-32 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative overflow-hidden py-24 md:py-32 px-6">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, #050508 0%, #08080f 55%, #040410 100%)" }} />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute rounded-full pointer-events-none" style={{ width: 600, height: 600, top: "-15%", left: "-5%", background: "radial-gradient(circle, #a855f7 0%, transparent 65%)", opacity: 0.05, filter: "blur(80px)", animation: "blobMove1 20s ease-in-out infinite", willChange: "transform", transform: "translateZ(0)" }} aria-hidden="true" />
+      <div className="absolute rounded-full pointer-events-none" style={{ width: 400, height: 400, bottom: "0%", right: "0%", background: "radial-gradient(circle, #00e5ff 0%, transparent 65%)", opacity: 0.04, filter: "blur(70px)", animation: "blobMove2 26s ease-in-out infinite", willChange: "transform", transform: "translateZ(0)" }} aria-hidden="true" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -56,7 +66,7 @@ export default function Testimonials() {
           <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
             Témoignages
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
+          <motion.h2 variants={fadeUp} className="text-section font-bold text-white">
             Ils nous font confiance
           </motion.h2>
         </motion.div>
@@ -72,19 +82,32 @@ export default function Testimonials() {
             <motion.div
               key={t.name}
               variants={fadeUp}
-              className="p-7 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/40 hover:shadow-[0_0_30px_var(--accent-glow)] transition-all duration-300"
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="p-7 rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:border-[var(--accent)]/40 hover:shadow-[0_0_40px_var(--accent-glow)] transition-colors duration-300"
             >
               <Stars count={t.stars} />
-              <p className="text-sm text-[var(--fg-muted)] leading-relaxed mt-4 mb-6">
+              <p className="text-sm leading-relaxed mt-4 mb-6" style={{ color: "rgba(255,255,255,0.6)" }}>
                 &ldquo;{t.text}&rdquo;
               </p>
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}>
-                  {t.initials}
-                </div>
+                {/* Avatar photo réelle */}
+                <motion.div
+                  className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-[var(--accent)]/20"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                >
+                  <Image
+                    src={t.avatar}
+                    alt={t.name}
+                    fill
+                    className="object-cover"
+                    sizes="40px"
+                  />
+                </motion.div>
                 <div>
-                  <p className="text-sm font-semibold text-[var(--fg)]">{t.name}</p>
-                  <p className="text-xs text-[var(--fg-muted)]">{t.role}</p>
+                  <p className="text-sm font-semibold text-white">{t.name}</p>
+                  <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{t.role}</p>
                 </div>
               </div>
             </motion.div>

@@ -1,58 +1,205 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/components/ui/Logo";
 
-const navLinks = [
-  { hash: "services", label: "Services" },
-  { hash: "offres", label: "Offres" },
-  { hash: "projets", label: "Projets" },
-  { hash: "contact", label: "Contact" },
+const expertiseCategories = [
+  { title: "Site internet",    tag: "4 services", accent: "#00e5ff", href: "/services/creation-site-vitrine/" },
+  { title: "Design",           tag: "3 services", accent: "#a855f7", href: "/services/webdesign-sur-mesure/" },
+  { title: "Performance",      tag: "3 services", accent: "#10b981", href: "/services/referencement-seo/" },
+  { title: "Technologie",      tag: "4 services", accent: "#3b82f6", href: "/services/saas-sur-mesure/" },
+  { title: "Intelligence IA",  tag: "3 services", accent: "#f97316", href: "/services/chatbot-ia/" },
+];
+
+const realisationsLinks = [
+  { label: "ScreenBuild", tag: "SaaS", href: "/projets/screenbuild/" },
+  { label: "Clustea", tag: "SaaS B2B", href: "/projets/clustea/" },
+  { label: "Couvetoile", tag: "Site vitrine", href: "/projets/couvetoile/" },
+  { label: "Brainrot Club", tag: "Shopify", href: "/projets/brainrot-club/" },
+];
+
+type DropdownId = "expertise" | "realisations";
+
+const navItems: { id: string; label: string; hash?: string; href?: string; dropdown?: DropdownId }[] = [
+  { id: "expertise", label: "Expertise", hash: "services", dropdown: "expertise" },
+  { id: "realisations", label: "Réalisations", hash: "projets", dropdown: "realisations" },
+  { id: "tarifs", label: "Tarifs", hash: "offres" },
+  { id: "blog", label: "Blog", href: "/blog/" },
+  { id: "contact", label: "Contact", hash: "contact" },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
-  const href = (hash: string) => pathname === "/" ? `#${hash}` : `/#${hash}`;
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const href = (hash: string) => (pathname === "/" ? `#${hash}` : `/#${hash}`);
 
   useEffect(() => {
     setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
   }, []);
+
+  const openMenu = (id: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenDropdown(id);
+  };
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 120);
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? "py-3 backdrop-blur-2xl border-b border-[var(--border)]" : "py-5"
       }`}
-      style={{ backgroundColor: scrolled ? "var(--surface)" : "transparent" }}
+      style={{ backgroundColor: scrolled ? "var(--header-bg)" : "transparent" }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg font-bold tracking-tight text-[var(--fg)]">
-            Nex<span className="text-[var(--accent)]">ivo</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Logo size="md" />
         </Link>
 
         {/* Nav desktop */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.hash}
-              href={href(link.hash)}
-              className="text-sm text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors duration-200"
+        <nav className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <div
+              key={item.id}
+              className="relative"
+              onMouseEnter={() => item.dropdown && openMenu(item.id)}
+              onMouseLeave={() => item.dropdown && scheduleClose()}
             >
-              {link.label}
-            </a>
+              <a
+                href={item.href ?? href(item.hash ?? "")}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                  openDropdown === item.id || (item.href && pathname.startsWith(item.href))
+                    ? "text-[var(--accent)]"
+                    : "text-[var(--fg-muted)] hover:text-[var(--fg)]"
+                }`}
+              >
+                {item.label}
+                {item.dropdown && (
+                  <motion.svg
+                    animate={{ rotate: openDropdown === item.id ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    width="11"
+                    height="11"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </motion.svg>
+                )}
+              </a>
+
+              <AnimatePresence>
+                {openDropdown === item.id && item.dropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -4, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                    transition={{ duration: 0.16, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 z-50 pt-1"
+                    onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
+                    onMouseLeave={scheduleClose}
+                  >
+                    {/* Expertise dropdown — même style que Réalisations */}
+                    {item.dropdown === "expertise" && (
+                      <div
+                        className="rounded-2xl border border-[var(--border)] p-3 shadow-[0_24px_64px_rgba(0,0,0,0.5)]"
+                        style={{ width: 280, backgroundColor: "var(--dropdown-bg)", backdropFilter: "blur(24px)" }}
+                      >
+                        <p className="text-[9px] font-bold uppercase tracking-widest text-[var(--accent)] mb-2 px-2">
+                          Nos expertises
+                        </p>
+                        <ul className="space-y-0.5">
+                          {expertiseCategories.map((cat) => (
+                            <li key={cat.href}>
+                              <Link
+                                href={cat.href}
+                                className="group flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/[0.04] transition-colors duration-150"
+                              >
+                                <span className="text-sm font-medium text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
+                                  {cat.title}
+                                </span>
+                                <span
+                                  className="text-[9px] font-semibold px-2 py-0.5 rounded-full border"
+                                  style={{ color: cat.accent, background: `${cat.accent}15`, borderColor: `${cat.accent}30` }}
+                                >
+                                  {cat.tag}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-2 pt-2 border-t border-white/5">
+                          <Link
+                            href="/#services"
+                            className="block text-[10px] font-semibold text-center text-[var(--accent)] hover:underline py-1"
+                          >
+                            Voir tous les services →
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Réalisations dropdown */}
+                    {item.dropdown === "realisations" && (
+                      <div
+                        className="rounded-2xl border border-[var(--border)] p-3 shadow-[0_24px_64px_rgba(0,0,0,0.5)]"
+                        style={{ width: 280, backgroundColor: "var(--dropdown-bg)", backdropFilter: "blur(24px)" }}
+                      >
+                        <p className="text-[9px] font-bold uppercase tracking-widest text-[var(--accent)] mb-2 px-2">
+                          Nos réalisations
+                        </p>
+                        <ul className="space-y-0.5">
+                          {realisationsLinks.map((proj) => (
+                            <li key={proj.href}>
+                              <Link
+                                href={proj.href}
+                                className="group flex items-center justify-between px-3 py-2.5 rounded-xl hover:bg-white/[0.04] transition-colors duration-150"
+                              >
+                                <span className="text-sm font-medium text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
+                                  {proj.label}
+                                </span>
+                                <span className="text-[9px] font-semibold px-2 py-0.5 rounded-full bg-[var(--accent-glow)] text-[var(--accent)] border border-[var(--accent)]/20">
+                                  {proj.tag}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-2 pt-2 border-t border-white/5">
+                          <Link
+                            href="/#projets"
+                            className="block text-[10px] font-semibold text-center text-[var(--accent)] hover:underline py-1"
+                          >
+                            Toutes les réalisations →
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </nav>
 
@@ -66,10 +213,15 @@ export default function Header() {
             >
               {theme === "dark" ? (
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
               ) : (
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -81,7 +233,7 @@ export default function Header() {
 
           <a
             href={href("contact")}
-            className="hidden md:inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity duration-200"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity duration-200 shadow-[0_0_20px_var(--accent-glow)]"
           >
             Démarrer un projet
           </a>
@@ -97,6 +249,7 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -104,16 +257,25 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden border-t border-[var(--border)] backdrop-blur-2xl"
-            style={{ backgroundColor: "var(--surface)" }}
+            className="md:hidden overflow-hidden border-t border-[var(--border)]"
+            style={{ backgroundColor: "var(--dropdown-bg)", backdropFilter: "blur(24px)" }}
           >
-            <nav className="flex flex-col px-6 py-4 gap-4">
-              {navLinks.map((link) => (
-                <a key={link.hash} href={href(link.hash)} onClick={() => setMenuOpen(false)} className="text-base text-[var(--fg)] py-1">
-                  {link.label}
+            <nav className="flex flex-col px-6 py-5 gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href ?? href(item.hash ?? "")}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-base font-medium text-[var(--fg-muted)] hover:text-[var(--accent)] py-2.5 border-b border-white/5 transition-colors"
+                >
+                  {item.label}
                 </a>
               ))}
-              <a href={href("contact")} className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)]">
+              <a
+                href={href("contact")}
+                onClick={() => setMenuOpen(false)}
+                className="mt-4 inline-flex items-center justify-center px-4 py-3 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)]"
+              >
                 Démarrer un projet
               </a>
             </nav>

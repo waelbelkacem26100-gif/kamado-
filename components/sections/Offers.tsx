@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 
@@ -103,8 +104,8 @@ export default function Offers() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
                   offer.accent
                     ? "text-[#050508] bg-[var(--accent)] hover:opacity-90"
@@ -112,7 +113,7 @@ export default function Offers() {
                 }`}
               >
                 Obtenir un devis
-              </a>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

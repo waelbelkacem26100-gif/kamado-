@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { services, getService } from "@/lib/services";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
+import BackButton from "@/components/ui/BackButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -82,6 +83,10 @@ export default async function ServicePage({ params }: Props) {
 
       <div className="min-h-screen pt-24 pb-20 px-6">
         <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <BackButton fallback="/#services" label="Retour aux services" />
+          </div>
+
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-[var(--fg-muted)] mb-10" aria-label="Fil d'Ariane">
             <Link href="/" className="hover:text-[var(--accent)] transition-colors">

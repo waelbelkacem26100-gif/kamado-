@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 import type { Project } from "@/lib/projects";
+import BackButton from "@/components/ui/BackButton";
 
 interface Props {
   project: Project;
@@ -25,15 +26,9 @@ export default function ProjectPageClient({ project, prevProject, nextProject }:
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="relative z-10 px-6 pb-16 max-w-7xl mx-auto w-full"
         >
-          <Link
-            href="/#projets"
-            className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white mb-6 transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7" />
-            </svg>
-            Retour
-          </Link>
+          <div className="mb-6">
+            <BackButton fallback="/#projets" label="Retour aux projets" variant="light" />
+          </div>
           <h1 className="text-section font-bold text-white">{project.name}</h1>
           <p className="text-lead text-white/70 mt-3">{project.tagline}</p>
         </motion.div>

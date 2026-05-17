@@ -11,6 +11,7 @@ const values = [
       </svg>
     ),
     title: "Rapidité",
+    accent: "#00e5ff",
     description:
       "Grâce à l'IA et nos processus rodés, nous livrons 3x plus vite que la moyenne du marché — sans sacrifier la qualité.",
   },
@@ -21,6 +22,7 @@ const values = [
       </svg>
     ),
     title: "Performance",
+    accent: "#a855f7",
     description:
       "Chaque site est optimisé SEO, Core Web Vitals, et conversion dès la conception. Pas en rattrapage.",
   },
@@ -31,6 +33,7 @@ const values = [
       </svg>
     ),
     title: "Sur-mesure",
+    accent: "#10b981",
     description:
       "Aucun template. Chaque projet est construit pour votre business, vos objectifs et votre audience spécifique.",
   },
@@ -38,8 +41,20 @@ const values = [
 
 export default function ValueProp() {
   return (
-    <section className="py-24 md:py-32 px-6">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative overflow-hidden py-24 md:py-32 px-6">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, #040410 0%, #06060f 60%, #030308 100%)" }} />
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute rounded-full pointer-events-none" style={{ width: 500, height: 500, top: "-10%", right: "5%", background: "radial-gradient(circle, #3b82f6 0%, transparent 65%)", opacity: 0.04, filter: "blur(70px)", animation: "blobMove2 24s ease-in-out infinite", willChange: "transform", transform: "translateZ(0)" }} aria-hidden="true" />
+      <div className="absolute rounded-full pointer-events-none" style={{ width: 400, height: 400, bottom: "-5%", left: "10%", background: "radial-gradient(circle, #a855f7 0%, transparent 65%)", opacity: 0.04, filter: "blur(70px)", animation: "blobMove1 30s ease-in-out infinite reverse", willChange: "transform", transform: "translateZ(0)" }} aria-hidden="true" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -50,7 +65,7 @@ export default function ValueProp() {
           <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
             Pourquoi Nexivo
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
+          <motion.h2 variants={fadeUp} className="text-section font-bold text-white">
             Ce qui nous différencie
           </motion.h2>
         </motion.div>
@@ -66,13 +81,26 @@ export default function ValueProp() {
             <motion.div
               key={val.title}
               variants={fadeUp}
-              className="group p-8 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)] hover:bg-[var(--surface-hover)] transition-all duration-300"
+              className="group p-8 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.04] transition-all duration-300 overflow-hidden relative"
             >
-              <div className="w-12 h-12 rounded-xl bg-[var(--accent-glow)] border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] mb-6">
+              {/* Hover glow */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${val.accent}10 0%, transparent 70%)` }}
+              />
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: val.accent }} />
+
+              <div
+                className="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300"
+                style={{ background: `${val.accent}15`, border: `1px solid ${val.accent}30`, color: val.accent }}
+              >
                 {val.icon}
               </div>
-              <h3 className="text-lg font-semibold text-[var(--fg)] mb-3">{val.title}</h3>
-              <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{val.description}</p>
+              <h3 className="relative z-10 text-lg font-semibold text-white mb-3">{val.title}</h3>
+              <p className="relative z-10 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                {val.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>

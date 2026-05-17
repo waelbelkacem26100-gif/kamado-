@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, WEB3FORMS_KEY } from "@/lib/constants";
 
 interface FormData {
   nom: string;
@@ -27,6 +27,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [sendError, setSendError] = useState(false);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -50,13 +51,37 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    setSendError(false);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: form.nom,
+          email: form.email,
+          subject: `Nouveau projet — ${form.type || "Contact"} | Nexivo`,
+          message: `Type de projet : ${form.type || "Non précisé"}\nBudget estimé : ${form.budget || "Non précisé"}\n\n${form.message}`,
+          from_name: "Nexivo Contact Form",
+          replyto: form.email,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSendError(true);
+      }
+    } catch {
+      setSendError(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = (field: keyof FormErrors) =>
@@ -172,11 +197,23 @@ export default function ContactForm() {
                 <p className="text-xs text-[var(--fg-muted)] mt-1.5">{form.message.length} / 20 caractères minimum</p>
               </div>
 
+              {sendError && (
+                <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-red-500/30 bg-red-500/10 text-sm text-red-400">
+                  <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" /><path d="M12 8v4M12 16h.01" />
+                  </svg>
+                  Erreur d&apos;envoi. Réessayez ou écrivez-nous directement par email.
+                </div>
+              )}
+
               <div className="flex flex-col sm:flex-row items-center gap-4">
-                <button
+                <motion.button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 disabled:opacity-60 transition-all duration-200 shadow-[0_0_30px_var(--accent-glow)]"
+                  whileHover={loading ? {} : { scale: 1.04 }}
+                  whileTap={loading ? {} : { scale: 0.96 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] disabled:opacity-60 shadow-[0_0_30px_var(--accent-glow)]"
                 >
                   {loading ? (
                     <>
@@ -193,7 +230,7 @@ export default function ContactForm() {
                       </svg>
                     </>
                   )}
-                </button>
+                </motion.button>
                 <p className="text-xs text-[var(--fg-muted)]">
                   Ou écrivez directement à{" "}
                   <a href={`mailto:${CONTACT.email}`} className="text-[var(--accent)] hover:underline">
