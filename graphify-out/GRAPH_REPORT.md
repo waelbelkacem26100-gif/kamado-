@@ -1,172 +1,165 @@
-# Graph Report - .  (2026-05-15)
+# Graph Report - C:\Users\waelb\OneDrive\Bureau\kamado  (2026-05-19)
 
 ## Corpus Check
-- 73 files · ~68,515 words
+- 103 files · ~96,633 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 3872 nodes · 9436 edges · 168 communities (107 shown, 61 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 75 edges (avg confidence: 0.82)
-- Token cost: 42,000 input · 3,200 output
+- 3846 nodes · 9423 edges · 164 communities (106 shown, 58 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 44 edges (avg confidence: 0.8)
+- Token cost: 118,375 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Minified Build Artifacts|Minified Build Artifacts]]
-- [[_COMMUNITY_React Runtime Functions|React Runtime Functions]]
-- [[_COMMUNITY_Three.js Color & Euler Math|Three.js Color & Euler Math]]
-- [[_COMMUNITY_Three.js 3D Object System|Three.js 3D Object System]]
-- [[_COMMUNITY_Three.js Vector Math|Three.js Vector Math]]
-- [[_COMMUNITY_Next.js Internal Chunks|Next.js Internal Chunks]]
-- [[_COMMUNITY_Next.js App Router Internals|Next.js App Router Internals]]
-- [[_COMMUNITY_WebGL Renderer & Canvas|WebGL Renderer & Canvas]]
-- [[_COMMUNITY_Animation System (Framer Motion)|Animation System (Framer Motion)]]
-- [[_COMMUNITY_Three.js Geometry & Bounds|Three.js Geometry & Bounds]]
-- [[_COMMUNITY_Three.js Vector Algebra|Three.js Vector Algebra]]
-- [[_COMMUNITY_Three.js Material & Texture|Three.js Material & Texture]]
-- [[_COMMUNITY_React Reconciler|React Reconciler]]
-- [[_COMMUNITY_Next.js Router State|Next.js Router State]]
-- [[_COMMUNITY_Build Chunk Utilities|Build Chunk Utilities]]
-- [[_COMMUNITY_Three.js Raycasting|Three.js Raycasting]]
-- [[_COMMUNITY_Next.js Client Router|Next.js Client Router]]
-- [[_COMMUNITY_Framer Motion Engine|Framer Motion Engine]]
-- [[_COMMUNITY_Build Utilities|Build Utilities]]
-- [[_COMMUNITY_Three.js Object3D & Matrix|Three.js Object3D & Matrix]]
-- [[_COMMUNITY_Module Cluster 20|Module Cluster 20]]
-- [[_COMMUNITY_Module Cluster 21|Module Cluster 21]]
-- [[_COMMUNITY_Module Cluster 22|Module Cluster 22]]
-- [[_COMMUNITY_Module Cluster 23|Module Cluster 23]]
-- [[_COMMUNITY_Module Cluster 24|Module Cluster 24]]
-- [[_COMMUNITY_Module Cluster 25|Module Cluster 25]]
-- [[_COMMUNITY_Module Cluster 26|Module Cluster 26]]
-- [[_COMMUNITY_Module Cluster 27|Module Cluster 27]]
-- [[_COMMUNITY_Module Cluster 28|Module Cluster 28]]
-- [[_COMMUNITY_Module Cluster 29|Module Cluster 29]]
-- [[_COMMUNITY_Module Cluster 30|Module Cluster 30]]
-- [[_COMMUNITY_Module Cluster 31|Module Cluster 31]]
-- [[_COMMUNITY_Module Cluster 32|Module Cluster 32]]
-- [[_COMMUNITY_Module Cluster 33|Module Cluster 33]]
-- [[_COMMUNITY_Module Cluster 34|Module Cluster 34]]
-- [[_COMMUNITY_Module Cluster 35|Module Cluster 35]]
-- [[_COMMUNITY_Module Cluster 36|Module Cluster 36]]
-- [[_COMMUNITY_Module Cluster 37|Module Cluster 37]]
-- [[_COMMUNITY_Module Cluster 38|Module Cluster 38]]
-- [[_COMMUNITY_Module Cluster 39|Module Cluster 39]]
-- [[_COMMUNITY_Module Cluster 40|Module Cluster 40]]
-- [[_COMMUNITY_Module Cluster 41|Module Cluster 41]]
-- [[_COMMUNITY_Module Cluster 42|Module Cluster 42]]
-- [[_COMMUNITY_Module Cluster 43|Module Cluster 43]]
-- [[_COMMUNITY_Module Cluster 44|Module Cluster 44]]
-- [[_COMMUNITY_Module Cluster 45|Module Cluster 45]]
-- [[_COMMUNITY_Module Cluster 46|Module Cluster 46]]
-- [[_COMMUNITY_Module Cluster 47|Module Cluster 47]]
-- [[_COMMUNITY_Module Cluster 48|Module Cluster 48]]
-- [[_COMMUNITY_Module Cluster 49|Module Cluster 49]]
-- [[_COMMUNITY_Module Cluster 50|Module Cluster 50]]
-- [[_COMMUNITY_Module Cluster 51|Module Cluster 51]]
-- [[_COMMUNITY_Module Cluster 52|Module Cluster 52]]
-- [[_COMMUNITY_Module Cluster 53|Module Cluster 53]]
-- [[_COMMUNITY_Module Cluster 54|Module Cluster 54]]
-- [[_COMMUNITY_Module Cluster 55|Module Cluster 55]]
-- [[_COMMUNITY_Module Cluster 56|Module Cluster 56]]
-- [[_COMMUNITY_Module Cluster 57|Module Cluster 57]]
-- [[_COMMUNITY_Module Cluster 58|Module Cluster 58]]
-- [[_COMMUNITY_Module Cluster 59|Module Cluster 59]]
-- [[_COMMUNITY_Module Cluster 60|Module Cluster 60]]
-- [[_COMMUNITY_Module Cluster 61|Module Cluster 61]]
-- [[_COMMUNITY_Module Cluster 62|Module Cluster 62]]
-- [[_COMMUNITY_Module Cluster 63|Module Cluster 63]]
-- [[_COMMUNITY_Module Cluster 64|Module Cluster 64]]
-- [[_COMMUNITY_Module Cluster 65|Module Cluster 65]]
-- [[_COMMUNITY_Module Cluster 66|Module Cluster 66]]
-- [[_COMMUNITY_Module Cluster 67|Module Cluster 67]]
-- [[_COMMUNITY_Module Cluster 68|Module Cluster 68]]
-- [[_COMMUNITY_Module Cluster 69|Module Cluster 69]]
-- [[_COMMUNITY_Module Cluster 70|Module Cluster 70]]
-- [[_COMMUNITY_Module Cluster 71|Module Cluster 71]]
-- [[_COMMUNITY_Module Cluster 72|Module Cluster 72]]
-- [[_COMMUNITY_Module Cluster 73|Module Cluster 73]]
-- [[_COMMUNITY_Module Cluster 74|Module Cluster 74]]
-- [[_COMMUNITY_Module Cluster 75|Module Cluster 75]]
-- [[_COMMUNITY_Module Cluster 76|Module Cluster 76]]
-- [[_COMMUNITY_Module Cluster 77|Module Cluster 77]]
-- [[_COMMUNITY_Module Cluster 78|Module Cluster 78]]
-- [[_COMMUNITY_Module Cluster 79|Module Cluster 79]]
-- [[_COMMUNITY_Module Cluster 80|Module Cluster 80]]
-- [[_COMMUNITY_Module Cluster 81|Module Cluster 81]]
-- [[_COMMUNITY_Module Cluster 82|Module Cluster 82]]
-- [[_COMMUNITY_Module Cluster 83|Module Cluster 83]]
-- [[_COMMUNITY_Module Cluster 84|Module Cluster 84]]
-- [[_COMMUNITY_Module Cluster 85|Module Cluster 85]]
-- [[_COMMUNITY_Module Cluster 86|Module Cluster 86]]
-- [[_COMMUNITY_Module Cluster 87|Module Cluster 87]]
-- [[_COMMUNITY_Module Cluster 88|Module Cluster 88]]
-- [[_COMMUNITY_Module Cluster 89|Module Cluster 89]]
-- [[_COMMUNITY_Module Cluster 90|Module Cluster 90]]
-- [[_COMMUNITY_Module Cluster 92|Module Cluster 92]]
-- [[_COMMUNITY_Module Cluster 93|Module Cluster 93]]
-- [[_COMMUNITY_Module Cluster 94|Module Cluster 94]]
-- [[_COMMUNITY_Module Cluster 95|Module Cluster 95]]
-- [[_COMMUNITY_Module Cluster 96|Module Cluster 96]]
-- [[_COMMUNITY_Module Cluster 97|Module Cluster 97]]
-- [[_COMMUNITY_Module Cluster 98|Module Cluster 98]]
-- [[_COMMUNITY_Module Cluster 99|Module Cluster 99]]
-- [[_COMMUNITY_Module Cluster 100|Module Cluster 100]]
-- [[_COMMUNITY_Module Cluster 101|Module Cluster 101]]
-- [[_COMMUNITY_Module Cluster 102|Module Cluster 102]]
-- [[_COMMUNITY_Module Cluster 103|Module Cluster 103]]
-- [[_COMMUNITY_Module Cluster 104|Module Cluster 104]]
-- [[_COMMUNITY_Module Cluster 105|Module Cluster 105]]
-- [[_COMMUNITY_Module Cluster 106|Module Cluster 106]]
-- [[_COMMUNITY_Module Cluster 107|Module Cluster 107]]
-- [[_COMMUNITY_Module Cluster 108|Module Cluster 108]]
-- [[_COMMUNITY_Module Cluster 109|Module Cluster 109]]
-- [[_COMMUNITY_Module Cluster 110|Module Cluster 110]]
-- [[_COMMUNITY_Module Cluster 111|Module Cluster 111]]
-- [[_COMMUNITY_Module Cluster 112|Module Cluster 112]]
-- [[_COMMUNITY_Module Cluster 113|Module Cluster 113]]
-- [[_COMMUNITY_Module Cluster 114|Module Cluster 114]]
-- [[_COMMUNITY_Module Cluster 115|Module Cluster 115]]
-- [[_COMMUNITY_Module Cluster 116|Module Cluster 116]]
-- [[_COMMUNITY_Module Cluster 117|Module Cluster 117]]
-- [[_COMMUNITY_Module Cluster 118|Module Cluster 118]]
-- [[_COMMUNITY_Module Cluster 119|Module Cluster 119]]
-- [[_COMMUNITY_Module Cluster 120|Module Cluster 120]]
-- [[_COMMUNITY_Module Cluster 121|Module Cluster 121]]
-- [[_COMMUNITY_Module Cluster 122|Module Cluster 122]]
-- [[_COMMUNITY_Module Cluster 123|Module Cluster 123]]
-- [[_COMMUNITY_Module Cluster 124|Module Cluster 124]]
-- [[_COMMUNITY_Module Cluster 125|Module Cluster 125]]
-- [[_COMMUNITY_Module Cluster 126|Module Cluster 126]]
-- [[_COMMUNITY_Module Cluster 127|Module Cluster 127]]
-- [[_COMMUNITY_Module Cluster 128|Module Cluster 128]]
-- [[_COMMUNITY_Module Cluster 129|Module Cluster 129]]
-- [[_COMMUNITY_Module Cluster 130|Module Cluster 130]]
-- [[_COMMUNITY_Module Cluster 131|Module Cluster 131]]
-- [[_COMMUNITY_Module Cluster 132|Module Cluster 132]]
-- [[_COMMUNITY_Module Cluster 134|Module Cluster 134]]
-- [[_COMMUNITY_Module Cluster 135|Module Cluster 135]]
-- [[_COMMUNITY_Module Cluster 136|Module Cluster 136]]
-- [[_COMMUNITY_Module Cluster 137|Module Cluster 137]]
-- [[_COMMUNITY_Module Cluster 138|Module Cluster 138]]
-- [[_COMMUNITY_Module Cluster 139|Module Cluster 139]]
-- [[_COMMUNITY_Module Cluster 140|Module Cluster 140]]
-- [[_COMMUNITY_Module Cluster 141|Module Cluster 141]]
-- [[_COMMUNITY_Module Cluster 142|Module Cluster 142]]
-- [[_COMMUNITY_Module Cluster 143|Module Cluster 143]]
-- [[_COMMUNITY_Module Cluster 144|Module Cluster 144]]
-- [[_COMMUNITY_Module Cluster 145|Module Cluster 145]]
-- [[_COMMUNITY_Module Cluster 146|Module Cluster 146]]
-- [[_COMMUNITY_Module Cluster 147|Module Cluster 147]]
-- [[_COMMUNITY_Module Cluster 148|Module Cluster 148]]
-- [[_COMMUNITY_Module Cluster 149|Module Cluster 149]]
-- [[_COMMUNITY_Module Cluster 151|Module Cluster 151]]
-- [[_COMMUNITY_Module Cluster 153|Module Cluster 153]]
-- [[_COMMUNITY_Module Cluster 155|Module Cluster 155]]
-- [[_COMMUNITY_Module Cluster 162|Module Cluster 162]]
-- [[_COMMUNITY_Module Cluster 163|Module Cluster 163]]
-- [[_COMMUNITY_Module Cluster 164|Module Cluster 164]]
-- [[_COMMUNITY_Module Cluster 165|Module Cluster 165]]
-- [[_COMMUNITY_Module Cluster 166|Module Cluster 166]]
-- [[_COMMUNITY_Module Cluster 167|Module Cluster 167]]
+- [[_COMMUNITY_Next.js Runtime Bundle A|Next.js Runtime Bundle A]]
+- [[_COMMUNITY_Next.js Runtime Bundle B|Next.js Runtime Bundle B]]
+- [[_COMMUNITY_Animation Vector Math|Animation Vector Math]]
+- [[_COMMUNITY_Next.js Bundle C|Next.js Bundle C]]
+- [[_COMMUNITY_Interpolation & Easing|Interpolation & Easing]]
+- [[_COMMUNITY_Geometry & UV Mapping|Geometry & UV Mapping]]
+- [[_COMMUNITY_Next.js Bundle D|Next.js Bundle D]]
+- [[_COMMUNITY_Next.js Bundle E|Next.js Bundle E]]
+- [[_COMMUNITY_Runtime Objects & State|Runtime Objects & State]]
+- [[_COMMUNITY_Data Structures|Data Structures]]
+- [[_COMMUNITY_Matrix & Vector Ops|Matrix & Vector Ops]]
+- [[_COMMUNITY_Scene Graph  Transform|Scene Graph / Transform]]
+- [[_COMMUNITY_Bundle 12|Bundle 12]]
+- [[_COMMUNITY_Bundle 13|Bundle 13]]
+- [[_COMMUNITY_Bundle 14|Bundle 14]]
+- [[_COMMUNITY_Bundle 15|Bundle 15]]
+- [[_COMMUNITY_Bundle 16|Bundle 16]]
+- [[_COMMUNITY_Bundle 17|Bundle 17]]
+- [[_COMMUNITY_Bundle 18|Bundle 18]]
+- [[_COMMUNITY_Bundle 19|Bundle 19]]
+- [[_COMMUNITY_Bundle 20|Bundle 20]]
+- [[_COMMUNITY_Bundle 21|Bundle 21]]
+- [[_COMMUNITY_Bundle 22|Bundle 22]]
+- [[_COMMUNITY_Bundle 23|Bundle 23]]
+- [[_COMMUNITY_Bundle 24|Bundle 24]]
+- [[_COMMUNITY_Bundle 25|Bundle 25]]
+- [[_COMMUNITY_Bundle 26|Bundle 26]]
+- [[_COMMUNITY_Bundle 27|Bundle 27]]
+- [[_COMMUNITY_Bundle 28|Bundle 28]]
+- [[_COMMUNITY_Bundle 29|Bundle 29]]
+- [[_COMMUNITY_Bundle 30|Bundle 30]]
+- [[_COMMUNITY_Bundle 31|Bundle 31]]
+- [[_COMMUNITY_Bundle 32|Bundle 32]]
+- [[_COMMUNITY_Bundle 33|Bundle 33]]
+- [[_COMMUNITY_Bundle 34|Bundle 34]]
+- [[_COMMUNITY_Bundle 35|Bundle 35]]
+- [[_COMMUNITY_Bundle 36|Bundle 36]]
+- [[_COMMUNITY_Bundle 37|Bundle 37]]
+- [[_COMMUNITY_Bundle 38|Bundle 38]]
+- [[_COMMUNITY_Bundle 39|Bundle 39]]
+- [[_COMMUNITY_Bundle 40|Bundle 40]]
+- [[_COMMUNITY_Bundle 41|Bundle 41]]
+- [[_COMMUNITY_Bundle 42|Bundle 42]]
+- [[_COMMUNITY_Bundle 43|Bundle 43]]
+- [[_COMMUNITY_Bundle 44|Bundle 44]]
+- [[_COMMUNITY_Bundle 45|Bundle 45]]
+- [[_COMMUNITY_Bundle 46|Bundle 46]]
+- [[_COMMUNITY_Bundle 47|Bundle 47]]
+- [[_COMMUNITY_SEO & Project Pages|SEO & Project Pages]]
+- [[_COMMUNITY_Bundle 49|Bundle 49]]
+- [[_COMMUNITY_Bundle 50|Bundle 50]]
+- [[_COMMUNITY_Bundle 51|Bundle 51]]
+- [[_COMMUNITY_Bundle 52|Bundle 52]]
+- [[_COMMUNITY_Bundle 53|Bundle 53]]
+- [[_COMMUNITY_Bundle 54|Bundle 54]]
+- [[_COMMUNITY_Bundle 55|Bundle 55]]
+- [[_COMMUNITY_Bundle 56|Bundle 56]]
+- [[_COMMUNITY_Bundle 57|Bundle 57]]
+- [[_COMMUNITY_Bundle 58|Bundle 58]]
+- [[_COMMUNITY_Bundle 59|Bundle 59]]
+- [[_COMMUNITY_Bundle 60|Bundle 60]]
+- [[_COMMUNITY_Bundle 61|Bundle 61]]
+- [[_COMMUNITY_Bundle 62|Bundle 62]]
+- [[_COMMUNITY_Bundle 63|Bundle 63]]
+- [[_COMMUNITY_Bundle 64|Bundle 64]]
+- [[_COMMUNITY_Bundle 65|Bundle 65]]
+- [[_COMMUNITY_Bundle 66|Bundle 66]]
+- [[_COMMUNITY_Bundle 67|Bundle 67]]
+- [[_COMMUNITY_Bundle 68|Bundle 68]]
+- [[_COMMUNITY_Bundle 69|Bundle 69]]
+- [[_COMMUNITY_Bundle 70|Bundle 70]]
+- [[_COMMUNITY_Bundle 71|Bundle 71]]
+- [[_COMMUNITY_Bundle 72|Bundle 72]]
+- [[_COMMUNITY_Bundle 73|Bundle 73]]
+- [[_COMMUNITY_Bundle 74|Bundle 74]]
+- [[_COMMUNITY_Bundle 75|Bundle 75]]
+- [[_COMMUNITY_Bundle 76|Bundle 76]]
+- [[_COMMUNITY_Bundle 77|Bundle 77]]
+- [[_COMMUNITY_Bundle 78|Bundle 78]]
+- [[_COMMUNITY_Bundle 79|Bundle 79]]
+- [[_COMMUNITY_Bundle 80|Bundle 80]]
+- [[_COMMUNITY_Bundle 81|Bundle 81]]
+- [[_COMMUNITY_Bundle 82|Bundle 82]]
+- [[_COMMUNITY_Bundle 83|Bundle 83]]
+- [[_COMMUNITY_Bundle 84|Bundle 84]]
+- [[_COMMUNITY_Bundle 85|Bundle 85]]
+- [[_COMMUNITY_Bundle 86|Bundle 86]]
+- [[_COMMUNITY_Bundle 87|Bundle 87]]
+- [[_COMMUNITY_Bundle 88|Bundle 88]]
+- [[_COMMUNITY_Bundle 89|Bundle 89]]
+- [[_COMMUNITY_Bundle 90|Bundle 90]]
+- [[_COMMUNITY_Bundle 91|Bundle 91]]
+- [[_COMMUNITY_Bundle 92|Bundle 92]]
+- [[_COMMUNITY_Bundle 93|Bundle 93]]
+- [[_COMMUNITY_Bundle 94|Bundle 94]]
+- [[_COMMUNITY_Bundle 95|Bundle 95]]
+- [[_COMMUNITY_Bundle 96|Bundle 96]]
+- [[_COMMUNITY_Bundle 97|Bundle 97]]
+- [[_COMMUNITY_Bundle 98|Bundle 98]]
+- [[_COMMUNITY_Bundle 99|Bundle 99]]
+- [[_COMMUNITY_Bundle 100|Bundle 100]]
+- [[_COMMUNITY_Bundle 101|Bundle 101]]
+- [[_COMMUNITY_Bundle 102|Bundle 102]]
+- [[_COMMUNITY_Bundle 103|Bundle 103]]
+- [[_COMMUNITY_Bundle 104|Bundle 104]]
+- [[_COMMUNITY_Bundle 105|Bundle 105]]
+- [[_COMMUNITY_Bundle 106|Bundle 106]]
+- [[_COMMUNITY_Bundle 107|Bundle 107]]
+- [[_COMMUNITY_Bundle 108|Bundle 108]]
+- [[_COMMUNITY_Bundle 109|Bundle 109]]
+- [[_COMMUNITY_Bundle 110|Bundle 110]]
+- [[_COMMUNITY_Bundle 111|Bundle 111]]
+- [[_COMMUNITY_Bundle 112|Bundle 112]]
+- [[_COMMUNITY_Bundle 113|Bundle 113]]
+- [[_COMMUNITY_Bundle 114|Bundle 114]]
+- [[_COMMUNITY_Bundle 116|Bundle 116]]
+- [[_COMMUNITY_Bundle 117|Bundle 117]]
+- [[_COMMUNITY_Bundle 118|Bundle 118]]
+- [[_COMMUNITY_Bundle 119|Bundle 119]]
+- [[_COMMUNITY_Bundle 120|Bundle 120]]
+- [[_COMMUNITY_Bundle 121|Bundle 121]]
+- [[_COMMUNITY_Bundle 122|Bundle 122]]
+- [[_COMMUNITY_Bundle 123|Bundle 123]]
+- [[_COMMUNITY_Bundle 124|Bundle 124]]
+- [[_COMMUNITY_Bundle 125|Bundle 125]]
+- [[_COMMUNITY_Bundle 127|Bundle 127]]
+- [[_COMMUNITY_Bundle 128|Bundle 128]]
+- [[_COMMUNITY_Bundle 129|Bundle 129]]
+- [[_COMMUNITY_Bundle 130|Bundle 130]]
+- [[_COMMUNITY_Bundle 132|Bundle 132]]
+- [[_COMMUNITY_Bundle 133|Bundle 133]]
+- [[_COMMUNITY_Bundle 134|Bundle 134]]
+- [[_COMMUNITY_Bundle 135|Bundle 135]]
+- [[_COMMUNITY_Bundle 136|Bundle 136]]
+- [[_COMMUNITY_Bundle 137|Bundle 137]]
+- [[_COMMUNITY_Bundle 138|Bundle 138]]
+- [[_COMMUNITY_Bundle 139|Bundle 139]]
+- [[_COMMUNITY_Bundle 141|Bundle 141]]
+- [[_COMMUNITY_Bundle 142|Bundle 142]]
+- [[_COMMUNITY_Bundle 143|Bundle 143]]
+- [[_COMMUNITY_Bundle 144|Bundle 144]]
+- [[_COMMUNITY_Bundle 146|Bundle 146]]
+- [[_COMMUNITY_Bundle 147|Bundle 147]]
+- [[_COMMUNITY_Bundle 148|Bundle 148]]
+- [[_COMMUNITY_Bundle 149|Bundle 149]]
+- [[_COMMUNITY_Bundle 150|Bundle 150]]
+- [[_COMMUNITY_Bundle 151|Bundle 151]]
+- [[_COMMUNITY_Bundle 153|Bundle 153]]
+- [[_COMMUNITY_Bundle 154|Bundle 154]]
+- [[_COMMUNITY_Bundle 156|Bundle 156]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `u()` - 76 edges
@@ -181,437 +174,406 @@
 10. `e2` - 47 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Hero containerVariants (stagger children)` --semantically_similar_to--> `staggerContainer Animation Variant`  [INFERRED] [semantically similar]
-  components/sections/Hero.tsx → lib/animations.ts
-- `Hero charVariants (per-character 3D flip)` --semantically_similar_to--> `fadeUp Animation Variant`  [INFERRED] [semantically similar]
-  components/sections/Hero.tsx → lib/animations.ts
-- `Static Home Page (built output)` --references--> `ProjectCard Component`  [INFERRED]
-  .netlify/static/index.html → components/ui/ProjectCard.tsx
-- `Static Home Page (built output)` --shares_data_with--> `projects Array`  [INFERRED]
-  .netlify/static/index.html → lib/projects.ts
-- `ScreenBuild Project` --references--> `Static ScreenBuild Page (built output)`  [INFERRED]
-  lib/projects.ts → .netlify/static/projets/screenbuild/index.html
+- `Waël Bendou` --conceptually_related_to--> `Nexivo (Web Agency)`  [INFERRED]
+  .netlify/static/index.html → README.md
+- `generateMetadata()` --calls--> `getPost()`  [INFERRED]
+  app/services/[slug]/page.tsx → lib/blog.ts
+- `Homepage — Waël Bendou Portfolio` --references--> `Framer Motion`  [EXTRACTED]
+  .netlify/static/index.html → README.md
+- `robots.txt — SEO crawl rules` --references--> `Homepage — Waël Bendou Portfolio`  [EXTRACTED]
+  public/robots.txt → .netlify/static/index.html
+- `Clustea Project Page` --references--> `Tailwind CSS`  [EXTRACTED]
+  .netlify/static/projets/clustea/index.html → README.md
 
-## Hyperedges (group relationships)
-- **Home Page Section Composition** — page_home, section_hero, section_intro, section_projects, section_process, section_stack, section_about, section_contact [EXTRACTED 1.00]
-- **Sections Using Shared Animation Variants** — section_about, section_contact, section_projects, section_process, section_stack, projectpageclient, anim_staggercontainer, anim_fadeup, anim_defaultviewport [EXTRACTED 1.00]
-- **Components Consuming CONTACT Constant** — layout_footer, layout_header, layout_jsonld, section_contact [EXTRACTED 1.00]
-- **Project Data Flow from lib to UI** — lib_projects, section_projects, ui_projectcard, page_projet_slug, projectpageclient, type_project [EXTRACTED 1.00]
-- **Provider/Layout Wrapping Hierarchy** — layout_providers, layout_lenisprovider, layout_header, layout_footer, layout_customcursor, layout_jsonld [INFERRED 0.85]
-- **Framer-Motion Interactive Animation Components** — layout_customcursor, ui_magneticbutton, pattern_spring_cursor, pattern_magnetic, pattern_cursor_scale [EXTRACTED 1.00]
-- **Scroll-Driven Animation Sections** — section_intro, section_process, pattern_scroll_progress [EXTRACTED 1.00]
-- **Hero Section Local Animation Variants** — section_hero, anim_hero_container, anim_hero_char, anim_hero_subtitle, anim_hero_line [EXTRACTED 1.00]
-- **Shared Animation System** — animations_module, animations_fadeup, animations_staggercontainer, animations_defaultviewport, sectionreveal_component, projectcard_component [EXTRACTED 1.00]
-- **Project Data Flow (projects.ts → ProjectCard → Static Pages)** — projects_module, projects_array, project_screenbuild, project_clustea, project_couvetoile, project_brainrotclub, projectcard_component, static_screenbuild_html, static_clustea_html, static_couvetoile_html, static_brainrotclub_html [EXTRACTED 0.95]
-- **Library Configuration Layer** — constants_module, projects_module, animations_module, constants_siteurl, constants_contact, constants_stackmarquee, projects_interface, projects_array [INFERRED 0.90]
-- **UI Component Cluster** — marquetext_component, projectcard_component, sectionreveal_component, design_framer_motion, design_css_vars [INFERRED 0.90]
-- **Netlify Static Build Output** — static_index_html, static_404_html, static_screenbuild_html, static_clustea_html, static_couvetoile_html, static_brainrotclub_html [EXTRACTED 0.95]
+## Communities (164 total, 58 thin omitted)
 
-## Communities (168 total, 61 thin omitted)
-
-### Community 0 - "Minified Build Artifacts"
+### Community 0 - "Next.js Runtime Bundle A"
 Cohesion: 0.01
-Nodes (129): a0, a4, ak, c0, c1, c2, ca, ce() (+121 more)
+Nodes (134): a0, a4, ak, c0, c1, c2, ca, ce() (+126 more)
 
-### Community 1 - "React Runtime Functions"
+### Community 1 - "Next.js Runtime Bundle B"
 Cohesion: 0.02
-Nodes (92): b, c(), E, e0(), e1(), e3(), e4(), e5() (+84 more)
+Nodes (86): b, c(), E, e0(), e1(), e3(), e4(), e5() (+78 more)
 
-### Community 2 - "Three.js Color & Euler Math"
-Cohesion: 0.03
-Nodes (10): ci(), ct(), el, er, ll(), ob, rf, sp (+2 more)
-
-### Community 3 - "Three.js 3D Object System"
-Cohesion: 0.05
-Nodes (5): cu(), e2, nv, sl, sy
-
-### Community 4 - "Three.js Vector Math"
+### Community 2 - "Animation Vector Math"
 Cohesion: 0.04
-Nodes (5): id, il, ng, nr, T()
+Nodes (4): k(), nr, oy, ss
 
-### Community 5 - "Next.js Internal Chunks"
+### Community 3 - "Next.js Bundle C"
 Cohesion: 0.05
-Nodes (59): a1(), a2(), a3(), a4(), at(), b, cc(), cd() (+51 more)
+Nodes (78): b, cf(), e1(), e2(), e3(), e4(), e6(), e8() (+70 more)
 
-### Community 6 - "Next.js App Router Internals"
+### Community 4 - "Interpolation & Easing"
 Cohesion: 0.05
-Nodes (56): cf(), e1(), e2(), e3(), e4(), e5(), e6(), e8() (+48 more)
+Nodes (6): az, ho, om, ry, tn, ty
 
-### Community 7 - "WebGL Renderer & Canvas"
-Cohesion: 0.04
-Nodes (17): ew, i1, i5, i7, la, li, lo, o0 (+9 more)
+### Community 5 - "Geometry & UV Mapping"
+Cohesion: 0.05
+Nodes (9): B(), ee(), et(), nt, td, tf, to, tv (+1 more)
 
-### Community 8 - "Animation System (Framer Motion)"
+### Community 6 - "Next.js Bundle D"
 Cohesion: 0.06
-Nodes (63): defaultViewport Intersection Config, fadeUp Animation Variant, Hero charVariants (per-character 3D flip), Hero containerVariants (stagger children), Hero lineVariants, Hero subtitleVariants, scaleIn Animation Variant, staggerContainer Animation Variant (+55 more)
+Nodes (4): cf, cu(), e2, sl
 
-### Community 9 - "Three.js Geometry & Bounds"
+### Community 7 - "Next.js Bundle E"
+Cohesion: 0.06
+Nodes (54): a1(), a2(), a3(), a4(), cc(), cd(), cf(), cm() (+46 more)
+
+### Community 8 - "Runtime Objects & State"
 Cohesion: 0.05
-Nodes (5): N(), o1, om, tn, ty
+Nodes (9): aC, ae, ah, id, il, nv, oh, rf (+1 more)
 
-### Community 11 - "Three.js Material & Texture"
+### Community 9 - "Data Structures"
 Cohesion: 0.05
-Nodes (7): a7, e7(), ef(), ep(), se, te, ti
+Nodes (11): aa, as, at, ay, iu, ix, iy(), np (+3 more)
 
-### Community 12 - "React Reconciler"
+### Community 10 - "Matrix & Vector Ops"
+Cohesion: 0.06
+Nodes (6): ci(), ct(), er, o4, u3(), u8()
+
+### Community 11 - "Scene Graph / Transform"
+Cohesion: 0.08
+Nodes (8): cl, i0(), ig, ih, N(), nb, ng, nh
+
+### Community 12 - "Bundle 12"
+Cohesion: 0.08
+Nodes (12): ea(), eg(), eh(), em(), ex, ey(), I, iB() (+4 more)
+
+### Community 13 - "Bundle 13"
 Cohesion: 0.13
 Nodes (33): $(), a(), B(), c(), D(), E(), ee(), ei() (+25 more)
 
-### Community 13 - "Next.js Router State"
+### Community 14 - "Bundle 14"
 Cohesion: 0.1
-Nodes (32): a(), a5(), an(), aV(), C(), cm(), d(), f() (+24 more)
+Nodes (49): aB(), b, ci(), ec, eE(), eg(), ek(), em() (+41 more)
 
-### Community 14 - "Build Chunk Utilities"
-Cohesion: 0.1
-Nodes (48): a(), a0(), a5(), a8(), aa(), ab(), ac(), ad() (+40 more)
-
-### Community 15 - "Three.js Raycasting"
-Cohesion: 0.08
-Nodes (6): i0(), ig, ih, ir, nb, nh
-
-### Community 16 - "Next.js Client Router"
-Cohesion: 0.06
-Nodes (19): $(), ae(), ea, el, eo(), G(), H(), j() (+11 more)
-
-### Community 17 - "Framer Motion Engine"
-Cohesion: 0.08
-Nodes (11): ea(), eg(), eh(), em(), ex, ey(), iB(), K() (+3 more)
-
-### Community 18 - "Build Utilities"
-Cohesion: 0.11
-Nodes (46): ad(), ah(), ai(), am(), au(), l5(), lj(), lz() (+38 more)
-
-### Community 19 - "Three.js Object3D & Matrix"
-Cohesion: 0.06
-Nodes (4): a5, o2, o4, t0
-
-### Community 20 - "Module Cluster 20"
-Cohesion: 0.07
-Nodes (16): a(), i0(), i3(), i4(), i5(), ij(), l(), nb (+8 more)
-
-### Community 21 - "Module Cluster 21"
-Cohesion: 0.06
-Nodes (4): o6, rm, ro, rz
-
-### Community 22 - "Module Cluster 22"
-Cohesion: 0.12
-Nodes (43): ae(), l5(), l6(), l7(), l8(), lN(), lS(), lw() (+35 more)
-
-### Community 23 - "Module Cluster 23"
-Cohesion: 0.06
-Nodes (16): bind(), ed, eh, eq, eu, ex, eY, getValue() (+8 more)
-
-### Community 24 - "Module Cluster 24"
-Cohesion: 0.1
-Nodes (3): ok, oq, t9
-
-### Community 25 - "Module Cluster 25"
-Cohesion: 0.06
-Nodes (15): ee(), i8(), io, nc(), nm(), nv(), t3(), t6 (+7 more)
-
-### Community 27 - "Module Cluster 27"
-Cohesion: 0.05
-Nodes (8): ao, n5, od, r5, re, rl, rn, sb
-
-### Community 28 - "Module Cluster 28"
-Cohesion: 0.13
-Nodes (37): aa(), aB(), ec, eE(), eg(), ek(), eS(), et (+29 more)
-
-### Community 29 - "Module Cluster 29"
+### Community 16 - "Bundle 16"
 Cohesion: 0.09
-Nodes (38): b, c(), ca(), cc(), ce(), ci(), ck(), cn() (+30 more)
+Nodes (29): a(), a5(), at(), C(), cs(), d(), eD(), f() (+21 more)
 
-### Community 30 - "Module Cluster 30"
+### Community 17 - "Bundle 17"
+Cohesion: 0.07
+Nodes (47): cg(), cp(), e6(), eH(), eI(), eq(), eU(), ev() (+39 more)
+
+### Community 18 - "Bundle 18"
+Cohesion: 0.05
+Nodes (12): i1, i7, lo, o0, o1, o5, of, og() (+4 more)
+
+### Community 19 - "Bundle 19"
+Cohesion: 0.07
+Nodes (16): $(), ae(), G(), H(), j(), l2(), l3(), l4() (+8 more)
+
+### Community 20 - "Bundle 20"
+Cohesion: 0.1
+Nodes (45): ae(), it(), K(), l5(), l6(), l7(), l8(), lL() (+37 more)
+
+### Community 21 - "Bundle 21"
+Cohesion: 0.12
+Nodes (44): ad(), ah(), ai(), am(), au(), ew(), l5(), lj() (+36 more)
+
+### Community 22 - "Bundle 22"
+Cohesion: 0.1
+Nodes (44): a8(), aa(), ac(), af(), al(), an(), as(), aV() (+36 more)
+
+### Community 24 - "Bundle 24"
+Cohesion: 0.06
+Nodes (16): d(), i8(), ik, io, iq(), nc(), nm(), np() (+8 more)
+
+### Community 26 - "Bundle 26"
+Cohesion: 0.07
+Nodes (9): ek, ew, F(), i5, la, li, ll(), u0 (+1 more)
+
+### Community 27 - "Bundle 27"
+Cohesion: 0.1
+Nodes (16): defaultViewport, easeApple, easeOut, fadeIn, fadeUp, scaleIn, slideLeft, staggerContainer (+8 more)
+
+### Community 28 - "Bundle 28"
 Cohesion: 0.08
-Nodes (12): n1(), n6(), n7(), n9(), r(), ra, rq(), sb() (+4 more)
+Nodes (17): a(), i4(), ig(), l(), n1(), n6(), n7(), n9() (+9 more)
 
-### Community 31 - "Module Cluster 31"
+### Community 29 - "Bundle 29"
+Cohesion: 0.14
+Nodes (36): eC(), ek(), eP(), eT(), ew(), ex(), i(), ia() (+28 more)
+
+### Community 30 - "Bundle 30"
+Cohesion: 0.09
+Nodes (10): i0(), i3(), i5(), ij(), nw, o(), t3(), t5 (+2 more)
+
+### Community 32 - "Bundle 32"
 Cohesion: 0.12
 Nodes (21): _, a, b, c, d, E, f, g (+13 more)
 
-### Community 32 - "Module Cluster 32"
+### Community 33 - "Bundle 33"
 Cohesion: 0.06
 Nodes (33): dependencies, clsx, framer-motion, gsap, @gsap/react, lenis, next, next-themes (+25 more)
 
-### Community 33 - "Module Cluster 33"
-Cohesion: 0.1
-Nodes (33): e2(), e3(), e4(), e6(), e7(), e8(), eD(), eH() (+25 more)
-
-### Community 34 - "Module Cluster 34"
-Cohesion: 0.07
-Nodes (4): ai, al, an, aq
-
-### Community 35 - "Module Cluster 35"
-Cohesion: 0.15
-Nodes (32): at(), e9(), eC(), ek(), eP(), eS(), eT(), ew() (+24 more)
-
-### Community 38 - "Module Cluster 38"
+### Community 34 - "Bundle 34"
 Cohesion: 0.08
-Nodes (15): _(), d(), e6, e9(), ec, ef, ek, eR() (+7 more)
+Nodes (15): bind(), ed, eh, eq, eu, ex, eY, getValue() (+7 more)
 
-### Community 39 - "Module Cluster 39"
-Cohesion: 0.13
-Nodes (7): a3, a6, a8, a9, H(), i(), so
+### Community 35 - "Bundle 35"
+Cohesion: 0.12
+Nodes (32): e5(), eQ(), M(), o3(), o5(), o6(), o9(), or() (+24 more)
 
-### Community 40 - "Module Cluster 40"
+### Community 36 - "Bundle 36"
+Cohesion: 0.07
+Nodes (5): constructor(), ev, j, or, t7
+
+### Community 37 - "Bundle 37"
 Cohesion: 0.15
 Nodes (22): _, a, b(), c, d, e, f, g (+14 more)
 
-### Community 41 - "Module Cluster 41"
+### Community 38 - "Bundle 38"
+Cohesion: 0.1
+Nodes (19): categoryColors, externalResources, metadata, BlogExternalLink, BlogPost, BlogSection, getPost(), posts (+11 more)
+
+### Community 39 - "Bundle 39"
 Cohesion: 0.08
-Nodes (31): Framer Motion Animation Variants (fadeUp, scaleIn, staggerContainer), App Page Chunk Loader (_app), CONTACT Data (Email/LinkedIn/Twitter), Custom Cursor Component, LenisProvider Smooth Scroll Wrapper, Navbar Header Component, Next.js Internal Utilities (WEB_VITALS, PageNotFoundError, etc.), Project Detail Page Component (+23 more)
+Nodes (7): eu, sr(), tc(), td(), tK(), tm(), tq
 
-### Community 42 - "Module Cluster 42"
-Cohesion: 0.09
-Nodes (30): defaultViewport Config, easeApple Curve, fadeUp Variant, animations.ts Module, scaleIn Variant, slideLeft Variant, staggerContainer Variant, Data Layer Pattern (lib/) (+22 more)
-
-### Community 43 - "Module Cluster 43"
-Cohesion: 0.12
-Nodes (30): a0(), a6(), a7(), a9(), ag(), aj(), aK(), aq() (+22 more)
-
-### Community 44 - "Module Cluster 44"
-Cohesion: 0.15
-Nodes (30): a8(), ac(), af(), al(), as(), aW(), i4(), l8() (+22 more)
-
-### Community 45 - "Module Cluster 45"
+### Community 40 - "Bundle 40"
 Cohesion: 0.09
 Nodes (15): [b,E], cleanUpClassName(), d(), destroy(), e, isLocked(), isScrolling(), isStopped() (+7 more)
 
-### Community 48 - "Module Cluster 48"
+### Community 42 - "Bundle 42"
+Cohesion: 0.1
+Nodes (19): a(), C, c8(), cm, cX(), D, e(), hB() (+11 more)
+
+### Community 43 - "Bundle 43"
 Cohesion: 0.11
 Nodes (25): _, a(), b, c(), get(), h(), k(), L (+17 more)
 
-### Community 49 - "Module Cluster 49"
+### Community 44 - "Bundle 44"
+Cohesion: 0.13
+Nodes (29): a0(), a6(), a7(), a9(), ag(), aj(), aK(), aq() (+21 more)
+
+### Community 45 - "Bundle 45"
+Cohesion: 0.07
+Nodes (6): ao, n5, od, r5, sb, se
+
+### Community 46 - "Bundle 46"
 Cohesion: 0.11
 Nodes (25): _, a(), b, c(), get(), h(), k(), L (+17 more)
 
-### Community 50 - "Module Cluster 50"
+### Community 47 - "Bundle 47"
 Cohesion: 0.11
 Nodes (25): _, a(), b, c(), get(), h(), k(), L (+17 more)
 
-### Community 51 - "Module Cluster 51"
+### Community 48 - "SEO & Project Pages"
+Cohesion: 0.15
+Nodes (29): Nexivo (Web Agency), SaaS Development, SEO and CRO Optimisation, Shopify E-commerce, 404 Error Page, 404 Not Found Page (route), Brainrot Club Project Page, Clustea Project Page (+21 more)
+
+### Community 49 - "Bundle 49"
 Cohesion: 0.15
 Nodes (8): cd(), lb, lc(), le(), lm, ls, lt(), lw()
 
-### Community 52 - "Module Cluster 52"
-Cohesion: 0.1
-Nodes (26): cg(), cp(), eq(), eX(), ia(), ii(), il(), ir() (+18 more)
+### Community 50 - "Bundle 50"
+Cohesion: 0.15
+Nodes (28): a0(), aa(), ab(), ac(), ad(), af(), ag(), ah() (+20 more)
 
-### Community 53 - "Module Cluster 53"
-Cohesion: 0.08
-Nodes (4): n4, ru, sm, tr
+### Community 51 - "Bundle 51"
+Cohesion: 0.16
+Nodes (6): a3, a8, H(), i(), sa, so
 
-### Community 54 - "Module Cluster 54"
-Cohesion: 0.09
-Nodes (16): _, am(), cc(), cg, ch(), cn(), co, cp (+8 more)
-
-### Community 55 - "Module Cluster 55"
-Cohesion: 0.11
-Nodes (19): a(), C, c8(), cm, cX(), D, e(), F() (+11 more)
-
-### Community 58 - "Module Cluster 58"
+### Community 54 - "Bundle 54"
 Cohesion: 0.11
 Nodes (17): _, A(), b(), C(), E(), f(), h, k() (+9 more)
 
-### Community 59 - "Module Cluster 59"
+### Community 55 - "Bundle 55"
+Cohesion: 0.11
+Nodes (19): aj, c4(), c5(), c6(), cb, cj(), ck(), cq (+11 more)
+
+### Community 56 - "Bundle 56"
+Cohesion: 0.11
+Nodes (3): ab, ar, aw
+
+### Community 58 - "Bundle 58"
+Cohesion: 0.1
+Nodes (3): sd, sp, sv
+
+### Community 59 - "Bundle 59"
 Cohesion: 0.13
 Nodes (19): a(), b, c(), d(), f(), g, h, i() (+11 more)
 
-### Community 60 - "Module Cluster 60"
-Cohesion: 0.16
-Nodes (10): e2(), im(), nx(), ny(), rm(), rp(), rr(), rs() (+2 more)
+### Community 60 - "Bundle 60"
+Cohesion: 0.09
+Nodes (18): e_(), sQ(), ih(), il(), ir, iz(), n(), nb (+10 more)
 
-### Community 61 - "Module Cluster 61"
-Cohesion: 0.15
-Nodes (26): eQ(), o1(), o5(), o6(), o9(), s(), sa(), sB() (+18 more)
+### Community 61 - "Bundle 61"
+Cohesion: 0.09
+Nodes (15): _, am(), cc(), cg, ch(), cn(), co, cp (+7 more)
 
-### Community 64 - "Module Cluster 64"
-Cohesion: 0.1
-Nodes (6): az, ho, o7, o9(), ry, uu()
-
-### Community 65 - "Module Cluster 65"
+### Community 62 - "Bundle 62"
 Cohesion: 0.12
 Nodes (19): a, b, c, d, E(), f(), H(), j (+11 more)
 
-### Community 66 - "Module Cluster 66"
-Cohesion: 0.1
-Nodes (24): React Core + Process Polyfill Chunk (6420740671), AsyncLocalStorage Abstraction, HandleISRError Component, React 19.2.0 (canary) Runtime, Work Async Storage, Next.js App Router Infrastructure Chunk (7dd66bdf), ClientPageRoot, ClientSegmentRoot (+16 more)
+### Community 64 - "Bundle 64"
+Cohesion: 0.17
+Nodes (24): $(), a(), l, lf(), lh(), li(), lm(), lR() (+16 more)
 
-### Community 67 - "Module Cluster 67"
-Cohesion: 0.12
-Nodes (3): ab, ar, aw
+### Community 65 - "Bundle 65"
+Cohesion: 0.19
+Nodes (8): e2(), im(), ny(), rm(), rp(), rs(), rw(), ry
 
-### Community 69 - "Module Cluster 69"
-Cohesion: 0.11
-Nodes (5): geist, metadata, navLinks, CONTACT, MagneticButtonProps
-
-### Community 70 - "Module Cluster 70"
-Cohesion: 0.12
-Nodes (8): A(), c(), f(), H(), k(), o(), p(), s()
-
-### Community 71 - "Module Cluster 71"
+### Community 66 - "Bundle 66"
 Cohesion: 0.15
 Nodes (22): l0(), l1(), l2(), l3(), l5(), l6(), l7(), l8() (+14 more)
 
-### Community 72 - "Module Cluster 72"
+### Community 67 - "Bundle 67"
+Cohesion: 0.19
+Nodes (23): at(), E(), ik(), iv(), iw(), lB(), lD(), oG() (+15 more)
+
+### Community 70 - "Bundle 70"
 Cohesion: 0.12
-Nodes (13): r0(), r1, r2, r3(), r4(), rb, rg, rh (+5 more)
+Nodes (8): A(), c(), f(), H(), k(), o(), p(), s()
 
-### Community 73 - "Module Cluster 73"
-Cohesion: 0.21
-Nodes (22): E(), ik(), iv(), iw(), lB(), lD(), oG(), oj() (+14 more)
-
-### Community 74 - "Module Cluster 74"
+### Community 71 - "Bundle 71"
 Cohesion: 0.1
-Nodes (9): ec, em, ol, ug(), ui(), uj(), uq(), uv() (+1 more)
+Nodes (12): _(), e6, e9(), ec, ef, ek, eR(), ev (+4 more)
 
-### Community 75 - "Module Cluster 75"
-Cohesion: 0.1
-Nodes (3): ev, j, t7
+### Community 73 - "Bundle 73"
+Cohesion: 0.11
+Nodes (7): ee(), ei, t0, t6, t7(), t9(), t8
 
-### Community 77 - "Module Cluster 77"
-Cohesion: 0.13
-Nodes (5): eu, sr(), tc(), td(), tm()
+### Community 74 - "Bundle 74"
+Cohesion: 0.16
+Nodes (21): c(), ca(), cc(), ce(), ci(), ck(), cn(), co() (+13 more)
 
-### Community 78 - "Module Cluster 78"
-Cohesion: 0.15
-Nodes (18): c4(), c5(), c6(), cb, cj(), ck(), cq, cr (+10 more)
+### Community 75 - "Bundle 75"
+Cohesion: 0.19
+Nodes (21): a1(), a2(), a3(), a4(), a5(), a6(), a8(), a9() (+13 more)
 
-### Community 79 - "Module Cluster 79"
+### Community 77 - "Bundle 77"
 Cohesion: 0.1
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
-### Community 80 - "Module Cluster 80"
-Cohesion: 0.13
-Nodes (15): I, ig(), ih(), ii, ik, il(), iq(), ir (+7 more)
+### Community 82 - "Bundle 82"
+Cohesion: 0.14
+Nodes (5): columns, CONTACT, STATS, metadata, metadata
 
-### Community 81 - "Module Cluster 81"
-Cohesion: 0.15
-Nodes (19): $(), a1(), K(), le(), lf(), li(), lm(), lP() (+11 more)
+### Community 83 - "Bundle 83"
+Cohesion: 0.12
+Nodes (11): homepageFaqSchema, metadata, serviceListSchema, lineReveal, wordContainer, wordReveal, ease, phrases (+3 more)
 
-### Community 84 - "Module Cluster 84"
-Cohesion: 0.18
-Nodes (4): td, tf, to, tz
-
-### Community 86 - "Module Cluster 86"
-Cohesion: 0.17
-Nodes (9): defaultViewport, easeApple, easeOut, fadeIn, scaleIn, slideLeft, staggerContainer, steps (+1 more)
-
-### Community 87 - "Module Cluster 87"
-Cohesion: 0.18
-Nodes (6): fadeUp, Project, projects, Props, Props, ProjectCardProps
-
-### Community 89 - "Module Cluster 89"
+### Community 86 - "Bundle 86"
 Cohesion: 0.17
 Nodes (7): e(), eb(), ib(), nb(), ob(), rb(), t()
 
-### Community 93 - "Module Cluster 93"
-Cohesion: 0.13
-Nodes (3): aj, ek, ov()
+### Community 87 - "Bundle 87"
+Cohesion: 0.2
+Nodes (11): r0(), r1, r2, r3(), r4(), rb, rh, rj() (+3 more)
 
-### Community 94 - "Module Cluster 94"
-Cohesion: 0.13
-Nodes (5): r, v(), constructor(), or, n
+### Community 88 - "Bundle 88"
+Cohesion: 0.14
+Nodes (4): a1, a5, su, sw
 
-### Community 96 - "Module Cluster 96"
+### Community 89 - "Bundle 89"
+Cohesion: 0.13
+Nodes (3): a6, a9, T()
+
+### Community 90 - "Bundle 90"
+Cohesion: 0.13
+Nodes (3): re, rl, rn
+
+### Community 92 - "Bundle 92"
 Cohesion: 0.2
 Nodes (12): a, c(), d(), h(), i, l, n, o (+4 more)
 
-### Community 97 - "Module Cluster 97"
+### Community 93 - "Bundle 93"
+Cohesion: 0.15
+Nodes (5): Project, projects, metadata, Props, ProjectCardProps
+
+### Community 95 - "Bundle 95"
 Cohesion: 0.14
 Nodes (3): ra, rc, rr
 
-### Community 102 - "Module Cluster 102"
+### Community 97 - "Bundle 97"
+Cohesion: 0.14
+Nodes (4): geist, metadata, darkParticles, lightParticles
+
+### Community 98 - "Bundle 98"
+Cohesion: 0.19
+Nodes (9): nx(), rc(), rd(), rh(), rl, rn(), rr(), ru() (+1 more)
+
+### Community 99 - "Bundle 99"
+Cohesion: 0.18
+Nodes (7): a, e, r, t, u(), v(), n
+
+### Community 100 - "Bundle 100"
 Cohesion: 0.17
-Nodes (3): a1, su, sw
+Nodes (3): ec, em, ol
 
-### Community 103 - "Module Cluster 103"
-Cohesion: 0.2
-Nodes (9): e_(), sQ(), n(), ng, nk, nZ(), sd(), sh() (+1 more)
+### Community 101 - "Bundle 101"
+Cohesion: 0.15
+Nodes (3): rg, ru, rw()
 
-### Community 104 - "Module Cluster 104"
-Cohesion: 0.23
-Nodes (12): a2(), a3(), a4(), a6(), a9(), cr(), eN(), ez() (+4 more)
+### Community 105 - "Bundle 105"
+Cohesion: 0.17
+Nodes (8): metadata, budgetOptions, delaiOptions, FormData, FormErrors, sourceOptions, trustItems, typeOptions
 
-### Community 105 - "Module Cluster 105"
-Cohesion: 0.3
-Nodes (12): it(), lL(), lt(), o0(), o2(), o4(), o7(), om() (+4 more)
+### Community 106 - "Bundle 106"
+Cohesion: 0.17
+Nodes (11): background_color, categories, description, display, icons, lang, name, screenshots (+3 more)
 
-### Community 108 - "Module Cluster 108"
+### Community 111 - "Bundle 111"
+Cohesion: 0.18
+Nodes (4): ad(), af(), ap(), av
+
+### Community 113 - "Bundle 113"
+Cohesion: 0.18
+Nodes (7): DropdownId, expertiseCategories, navItems, realisationsLinks, ease, LogoProps, sizes
+
+### Community 114 - "Bundle 114"
 Cohesion: 0.29
 Nodes (10): checkOverflow(), constructor(), emit(), internalStart(), internalStop(), on(), reset(), resize() (+2 more)
 
-### Community 109 - "Module Cluster 109"
-Cohesion: 0.22
-Nodes (3): ad(), ap(), av
-
-### Community 113 - "Module Cluster 113"
-Cohesion: 0.22
-Nodes (7): chars, charVariants, containerVariants, ease, HeroBlob, lineVariants, subtitleVariants
-
-### Community 114 - "Module Cluster 114"
+### Community 116 - "Bundle 116"
 Cohesion: 0.22
 Nodes (8): author, dependencies, @netlify/plugin-nextjs, description, license, name, private, version
 
-### Community 115 - "Module Cluster 115"
+### Community 120 - "Bundle 120"
 Cohesion: 0.25
 Nodes (8): advance(), c(), fromTo(), h, N, preventNextNativeScrollEvent(), scrollTo(), setScroll()
 
-### Community 117 - "Module Cluster 117"
+### Community 121 - "Bundle 121"
 Cohesion: 0.25
 Nodes (5): d, l, n, r, u
 
-### Community 118 - "Module Cluster 118"
-Cohesion: 0.25
-Nodes (8): Build Manifest (_buildManifest.js), Next.js Head Manager Chunk (538cc02e), AmpStateContext, Next.js Error Page Component, Head Manager Component, Error Page Chunk Loader (7391da85), Route: /_error, Turbopack Runtime Chunk (daa992db) - Error Page Alt Entry
-
-### Community 122 - "Module Cluster 122"
-Cohesion: 0.38
-Nodes (4): a, e, t, u()
-
-### Community 123 - "Module Cluster 123"
+### Community 124 - "Bundle 124"
 Cohesion: 0.29
 Nodes (4): M, s(), x(), y()
 
-### Community 126 - "Module Cluster 126"
+### Community 129 - "Bundle 129"
 Cohesion: 0.33
 Nodes (4): a, i, r, t
 
-### Community 129 - "Module Cluster 129"
-Cohesion: 0.4
-Nodes (4): compat, __dirname, eslintConfig, __filename
-
-### Community 130 - "Module Cluster 130"
+### Community 134 - "Bundle 134"
 Cohesion: 0.4
 Nodes (4): a, e, n, t
 
-### Community 131 - "Module Cluster 131"
-Cohesion: 0.5
-Nodes (4): Static Export Deployment Strategy, @netlify/plugin-nextjs Build Plugin, siteId, Next.js Static Export Config
-
-### Community 151 - "Module Cluster 151"
-Cohesion: 0.67
-Nodes (3): CONTACT Config Object, SITE_NAME Constant, Waël Bendou (Portfolio Author)
+### Community 138 - "Bundle 138"
+Cohesion: 0.4
+Nodes (4): compat, __dirname, eslintConfig, __filename
 
 ## Knowledge Gaps
 - **353 isolated node(s):** `__filename`, `__dirname`, `compat`, `eslintConfig`, `nextConfig` (+348 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **61 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **58 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `o_` connect `Module Cluster 111` to `Minified Build Artifacts`, `Build Utilities`, `Module Cluster 22`?**
-  _High betweenness centrality (0.171) - this node is a cross-community bridge._
-- **Why does `oD()` connect `Build Utilities` to `Module Cluster 33`, `Next.js Internal Chunks`, `Module Cluster 44`, `Next.js Router State`, `Module Cluster 111`, `Next.js Client Router`, `Module Cluster 52`, `Module Cluster 28`?**
-  _High betweenness centrality (0.065) - this node is a cross-community bridge._
-- **Why does `r()` connect `Module Cluster 30` to `React Runtime Functions`, `Module Cluster 20`, `Module Cluster 25`, `Module Cluster 90`, `Module Cluster 60`, `Module Cluster 94`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
+- **Why does `o_` connect `Bundle 119` to `Next.js Runtime Bundle A`, `Bundle 20`, `Bundle 21`?**
+  _High betweenness centrality (0.172) - this node is a cross-community bridge._
+- **Why does `oD()` connect `Bundle 21` to `Next.js Bundle E`, `Bundle 14`, `Bundle 16`, `Bundle 17`, `Bundle 19`, `Bundle 22`, `Bundle 119`?**
+  _High betweenness centrality (0.067) - this node is a cross-community bridge._
+- **Why does `ov()` connect `Bundle 20` to `Bundle 64`, `Bundle 35`, `Bundle 67`, `Next.js Bundle C`, `Bundle 75`, `Bundle 119`, `Bundle 29`?**
+  _High betweenness centrality (0.048) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `compat` to the rest of the system?**
   _353 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Minified Build Artifacts` be split into smaller, more focused modules?**
+- **Should `Next.js Runtime Bundle A` be split into smaller, more focused modules?**
   _Cohesion score 0.01 - nodes in this community are weakly interconnected._
-- **Should `React Runtime Functions` be split into smaller, more focused modules?**
+- **Should `Next.js Runtime Bundle B` be split into smaller, more focused modules?**
   _Cohesion score 0.02 - nodes in this community are weakly interconnected._
-- **Should `Three.js Color & Euler Math` be split into smaller, more focused modules?**
-  _Cohesion score 0.03 - nodes in this community are weakly interconnected._
+- **Should `Animation Vector Math` be split into smaller, more focused modules?**
+  _Cohesion score 0.04 - nodes in this community are weakly interconnected._

@@ -26,7 +26,7 @@ type DropdownId = "expertise" | "realisations";
 
 const navItems: { id: string; label: string; href: string; dropdown?: DropdownId }[] = [
   { id: "expertise",    label: "Expertise",     href: "/services/",  dropdown: "expertise" },
-  { id: "realisations", label: "Réalisations",  href: "/projets/",   dropdown: "realisations" },
+  { id: "realisations", label: "Nos Réalisations",  href: "/projets/",   dropdown: "realisations" },
   { id: "tarifs",       label: "Tarifs",        href: "/tarifs/" },
   { id: "blog",         label: "Blog",          href: "/blog/" },
   { id: "contact",      label: "Contact",       href: "/contact/" },

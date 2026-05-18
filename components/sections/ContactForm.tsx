@@ -228,7 +228,7 @@ export default function ContactForm() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Prénom</label>
+                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Prénom <span className="text-[var(--fg-muted)] font-normal">(optionnel)</span></label>
                     <input
                       type="text"
                       placeholder="Jean"

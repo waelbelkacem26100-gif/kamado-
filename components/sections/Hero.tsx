@@ -239,7 +239,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Badge flottant gauche */}
+        {/* Badge flottant gauche — résultat Brainrot Club */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -248,16 +248,16 @@ export default function Hero() {
         >
           <div className="w-8 h-8 rounded-lg bg-green-500/20 border border-green-500/30 flex items-center justify-center">
             <svg className="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
             </svg>
           </div>
           <div>
-            <p className="text-xs font-bold text-[var(--fg)]">+247%</p>
-            <p className="text-[10px] text-[var(--fg-muted)]">conversions</p>
+            <p className="text-xs font-bold text-[var(--fg)]">+47% conversion</p>
+            <p className="text-[10px] text-[var(--fg-muted)]">Brainrot Club</p>
           </div>
         </motion.div>
 
-        {/* Badge flottant droite */}
+        {/* Badge flottant droite — résultat Couvetoile */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -266,12 +266,12 @@ export default function Hero() {
         >
           <div className="w-8 h-8 rounded-lg bg-[var(--accent)]/20 border border-[var(--accent)]/30 flex items-center justify-center">
             <svg className="w-4 h-4 text-[var(--accent)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
             </svg>
           </div>
           <div>
-            <p className="text-xs font-bold text-[var(--fg)]">3 semaines</p>
-            <p className="text-[10px] text-[var(--fg-muted)]">délai moyen</p>
+            <p className="text-xs font-bold text-[var(--fg)]">×2,4 leads</p>
+            <p className="text-[10px] text-[var(--fg-muted)]">Couvetoile</p>
           </div>
         </motion.div>
       </motion.div>

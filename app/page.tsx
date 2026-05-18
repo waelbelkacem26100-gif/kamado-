@@ -6,7 +6,6 @@ import ValueProp from "@/components/sections/ValueProp";
 import Offers from "@/components/sections/Offers";
 import Projects from "@/components/sections/Projects";
 import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
 import FAQ from "@/components/sections/FAQ";
 import ContactForm from "@/components/sections/ContactForm";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
@@ -154,7 +153,6 @@ export default function Home() {
       <Offers />
       <Projects />
       <Process />
-      <Testimonials />
       <FAQ />
       <ContactForm />
     </>
