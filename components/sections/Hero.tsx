@@ -97,18 +97,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Ligne d'horizon */}
-      <div
-        className="absolute left-0 right-0 pointer-events-none"
-        style={{
-          bottom: "42%",
-          height: "1px",
-          background:
-            "linear-gradient(90deg, transparent 0%, rgba(0,229,255,0.5) 30%, rgba(0,229,255,0.8) 50%, rgba(0,229,255,0.5) 70%, transparent 100%)",
-          boxShadow: "0 0 40px 8px rgba(0,229,255,0.15)",
-        }}
-        aria-hidden="true"
-      />
 
       {/* Contenu */}
       <div className="relative z-10 max-w-5xl w-full mx-auto text-center">
