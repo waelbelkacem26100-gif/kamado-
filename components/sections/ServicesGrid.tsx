@@ -197,7 +197,7 @@ export default function ServicesGrid() {
                   className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 hover:gap-3"
                   style={{ color: service.accent }}
                 >
-                  Explorer
+                  Démarrer mon projet
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
