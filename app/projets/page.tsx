@@ -69,7 +69,7 @@ export default function ProjetsPage() {
             <h1 className="text-section font-bold text-[var(--fg)] mb-6">
               Des projets qui
               <br />
-              <span className="text-[var(--accent)] accent-glow">parlent d'eux-mêmes</span>
+              <span className="text-[var(--accent)] accent-glow">parlent d&apos;eux-mêmes</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto mb-12">
               Chaque projet est une collaboration unique. Voici ce que nous avons construit pour

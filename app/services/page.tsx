@@ -62,7 +62,7 @@ export default function ServicesPage() {
               <span className="text-[var(--accent)] accent-glow">business a besoin</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto mb-8">
-              Du site vitrine au SaaS, en passant par le SEO et l'IA — chaque service est conçu
+              Du site vitrine au SaaS, en passant par le SEO et l&apos;IA — chaque service est conçu
               pour générer des résultats mesurables pour votre entreprise.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3">

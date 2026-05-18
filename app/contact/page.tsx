@@ -108,7 +108,7 @@ export default function ContactPage() {
             <h1 className="text-section font-bold text-[var(--fg)] mb-6">
               Votre projet mérite
               <br />
-              <span className="text-[var(--accent)] accent-glow">mieux qu'un template</span>
+              <span className="text-[var(--accent)] accent-glow">mieux qu&apos;un template</span>
             </h1>
             <p className="text-lead max-w-2xl mx-auto mb-12">
               Décrivez votre projet en quelques lignes. On vous répond sous 48h avec
