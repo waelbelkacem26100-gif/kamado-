@@ -141,7 +141,7 @@ export default function FAQ() {
         >
           <p className="text-sm text-[var(--fg-muted)]">
             Une autre question ?{" "}
-            <Link href="/#contact" className="text-[var(--accent)] hover:underline font-medium">
+            <Link href="/contact/" className="text-[var(--accent)] hover:underline font-medium">
               Écrivez-nous directement
             </Link>
           </p>

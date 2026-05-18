@@ -139,7 +139,7 @@ export default async function BlogPage({ params }: Props) {
               Discutons de votre projet. On vous répond sous 48h avec une proposition concrète.
             </p>
             <Link
-              href="/#contact"
+              href="/contact/"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity shadow-[0_0_30px_var(--accent-glow)]"
             >
               Démarrer un projet

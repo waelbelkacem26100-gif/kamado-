@@ -37,10 +37,10 @@ const columns = [
   {
     title: "Kama Agency",
     links: [
-      { label: "Nos projets", href: "/#projets" },
-      { label: "Notre méthode", href: "/#process" },
+      { label: "Nos projets", href: "/projets/" },
+      { label: "Notre méthode", href: "/tarifs/#processus" },
       { label: "Blog & Ressources", href: "/blog/" },
-      { label: "Démarrer un projet", href: "/#contact" },
+      { label: "Démarrer un projet", href: "/contact/" },
       { label: "LinkedIn", href: CONTACT.linkedin },
       { label: "Twitter / X", href: CONTACT.twitter },
     ],
@@ -51,12 +51,13 @@ export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] pt-16 pb-10 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Top: logo + desc + columns */}
+        {/* Top */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-14">
-          {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-xl font-bold tracking-tight text-[var(--fg)]">Kama<span className="font-normal text-[var(--fg-muted)]"> Agency</span></span>
+              <span className="text-xl font-bold tracking-tight text-[var(--fg)]">
+                Kama<span className="font-normal text-[var(--fg-muted)]"> Agency</span>
+              </span>
             </Link>
             <p className="text-xs text-[var(--fg-muted)] leading-relaxed mb-5 max-w-[200px]">
               Agence web française spécialisée en sites vitrine, Shopify, SaaS et IA.
@@ -69,7 +70,6 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Columns */}
           {columns.map((col) => (
             <div key={col.title}>
               <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--fg)] mb-5">
@@ -91,12 +91,14 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom */}
         <div className="border-t border-[var(--border)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--fg-muted)]">
           <span>© 2026 {SITE_NAME}. Tous droits réservés.</span>
           <div className="flex items-center gap-6">
             <span>Fait avec passion en France</span>
-            <Link href="/#contact" className="hover:text-[var(--accent)] transition-colors">Mentions légales</Link>
+            <Link href="/mentions-legales/" className="hover:text-[var(--accent)] transition-colors">
+              Mentions légales
+            </Link>
           </div>
         </div>
       </div>

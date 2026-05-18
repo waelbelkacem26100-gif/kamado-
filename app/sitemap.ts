@@ -6,7 +6,7 @@ import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { posts } from "@/lib/blog";
 
-const TODAY = "2026-05-17";
+const TODAY = "2026-05-19";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const serviceUrls: MetadataRoute.Sitemap = services.map((s) => ({
@@ -38,10 +38,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE_URL}/services/`,
+      lastModified: TODAY,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/projets/`,
+      lastModified: TODAY,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/tarifs/`,
+      lastModified: TODAY,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${SITE_URL}/contact/`,
+      lastModified: TODAY,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/blog/`,
       lastModified: TODAY,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/mentions-legales/`,
+      lastModified: TODAY,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
     ...serviceUrls,
     ...blogUrls,
