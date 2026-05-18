@@ -4,190 +4,98 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 
-const categories = [
+const services = [
   {
-    number: "01",
-    title: "Site internet",
+    title: "Création site vitrine",
+    description:
+      "Un site professionnel qui transforme vos visiteurs en clients. Design sur-mesure, SEO on-page inclus, livré en 3 à 5 semaines.",
+    slug: "creation-site-vitrine",
     accent: "#00e5ff",
-    shadow: "rgba(0,229,255,0.15)",
-    services: [
-      { name: "Création site vitrine", slug: "creation-site-vitrine" },
-      { name: "Boutique Shopify", slug: "boutique-shopify" },
-      { name: "Refonte de site", slug: "refonte-de-site" },
-      { name: "Dropshipping", slug: "dropshipping" },
-    ],
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </svg>
+    ),
   },
   {
-    number: "02",
-    title: "Design",
+    title: "Boutique Shopify",
+    description:
+      "E-commerce performant et optimisé pour vendre. Thème Liquid sur-mesure, tunnel d'achat CRO, intégration paiement & livraison.",
+    slug: "boutique-shopify",
     accent: "#a855f7",
-    shadow: "rgba(168,85,247,0.15)",
-    services: [
-      { name: "Webdesign sur-mesure", slug: "webdesign-sur-mesure" },
-      { name: "UX/UI Design", slug: "ux-ui-design" },
-      { name: "Identité visuelle", slug: "identite-visuelle" },
-    ],
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
+      </svg>
+    ),
   },
   {
-    number: "03",
-    title: "Performance",
+    title: "SaaS sur-mesure",
+    description:
+      "Votre produit digital de A à Z. Architecture Next.js scalable, authentification, dashboard, intégration API et déploiement.",
+    slug: "saas-sur-mesure",
     accent: "#10b981",
-    shadow: "rgba(16,185,129,0.15)",
-    services: [
-      { name: "Référencement SEO", slug: "referencement-seo" },
-      { name: "Core Web Vitals", slug: "optimisation-core-web-vitals" },
-      { name: "Analytics & Suivi", slug: "analytics-et-suivi" },
-    ],
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <rect x="2" y="2" width="20" height="8" rx="2" />
+        <rect x="2" y="14" width="20" height="8" rx="2" />
+        <line x1="6" y1="6" x2="6.01" y2="6" />
+        <line x1="6" y1="18" x2="6.01" y2="18" />
+      </svg>
+    ),
   },
   {
-    number: "04",
-    title: "Technologie",
-    accent: "#3b82f6",
-    shadow: "rgba(59,130,246,0.15)",
-    services: [
-      { name: "SaaS sur-mesure", slug: "saas-sur-mesure" },
-      { name: "Shopify Liquid", slug: "shopify-liquid" },
-      { name: "WordPress", slug: "wordpress" },
-      { name: "Next.js & React", slug: "nextjs-et-react" },
-    ],
-  },
-  {
-    number: "05",
-    title: "Intelligence IA",
+    title: "Référencement SEO",
+    description:
+      "Visibilité durable sur Google. Audit technique, stratégie de mots-clés, contenu optimisé et suivi des positions.",
+    slug: "referencement-seo",
     accent: "#f97316",
-    shadow: "rgba(249,115,22,0.15)",
-    services: [
-      { name: "Chatbot & IA", slug: "chatbot-ia" },
-      { name: "Automatisation IA", slug: "automatisation-ia" },
-      { name: "Intégration API IA", slug: "integration-api-ia" },
-    ],
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.35-4.35" />
+        <path d="M11 8v6M8 11h6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Webdesign sur-mesure",
+    description:
+      "Interfaces intuitives et élégantes. UX/UI design, identité visuelle, prototypage Figma et design system complet.",
+    slug: "webdesign-sur-mesure",
+    accent: "#3b82f6",
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Chatbot & IA",
+    description:
+      "Automatisez votre relation client. Chatbots intelligents, intégration OpenAI & Claude, recommandations personnalisées.",
+    slug: "chatbot-ia",
+    accent: "#ec4899",
+    icon: (
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+        <path d="M12 2a8 8 0 0 1 8 8c0 5.25-8 12-8 12S4 15.25 4 10a8 8 0 0 1 8-8z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    ),
   },
 ];
-
-function ServiceCard({ cat, wide = false }: { cat: typeof categories[0]; wide?: boolean }) {
-  return (
-    <motion.div
-      variants={fadeUp}
-      className="group relative rounded-2xl border border-white/[0.07] bg-white/[0.025] overflow-hidden transition-all duration-500 hover:-translate-y-1 flex flex-col"
-      style={
-        {
-          "--card-accent": cat.accent,
-          "--card-shadow": cat.shadow,
-        } as React.CSSProperties
-      }
-    >
-      {/* Top accent line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-[2px]"
-        style={{ background: cat.accent }}
-      />
-
-      {/* Hover glow background */}
-      <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{
-          background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${cat.shadow} 0%, transparent 70%)`,
-        }}
-      />
-
-      {/* Watermark number */}
-      <span
-        className="absolute bottom-3 right-5 text-8xl font-black select-none leading-none pointer-events-none"
-        style={{ color: `${cat.accent}08` }}
-      >
-        {cat.number}
-      </span>
-
-      <div className="relative z-10 p-7 flex flex-col flex-1">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span
-            className="text-[10px] font-bold font-mono px-2 py-1 rounded-md"
-            style={{ color: cat.accent, background: `${cat.accent}15` }}
-          >
-            {cat.number}
-          </span>
-          <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 group-hover:text-white/90 transition-colors duration-300">
-            {cat.title}
-          </h3>
-        </div>
-
-        {/* Divider */}
-        <div
-          className="w-8 h-px mb-6 transition-all duration-500 group-hover:w-full"
-          style={{ background: `${cat.accent}40` }}
-        />
-
-        {/* Services list */}
-        <ul className={`flex-1 ${wide ? "grid grid-cols-2 gap-x-8 gap-y-2" : "space-y-2"}`}>
-          {cat.services.map((service) => (
-            <li key={service.slug}>
-              <Link
-                href={`/services/${service.slug}/`}
-                className="group/link flex items-center gap-2.5 text-sm py-1.5 px-2.5 -mx-2.5 rounded-lg hover:bg-white/[0.05] transition-all duration-200"
-                style={{ color: "rgba(255,255,255,0.65)" }}
-              >
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  className="flex-shrink-0 opacity-30 group-hover/link:opacity-100 transition-all duration-200"
-                  style={{ color: cat.accent }}
-                >
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-                <span className="group-hover/link:text-white transition-colors duration-200">{service.name}</span>
-                <svg
-                  width="10"
-                  height="10"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  className="ml-auto flex-shrink-0 opacity-0 group-hover/link:opacity-100 -translate-x-1 group-hover/link:translate-x-0 transition-all duration-200"
-                  style={{ color: cat.accent }}
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        {/* Bottom CTA */}
-        <div className="mt-6 pt-5 border-t border-white/[0.06]">
-          <Link
-            href={`/services/${cat.services[0].slug}/`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:gap-2.5"
-            style={{ color: cat.accent }}
-          >
-            Explorer
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
 
 export default function ServicesGrid() {
   return (
     <section id="services" className="relative overflow-hidden py-24 md:py-32 px-6">
-      {/* Fond élevé */}
+      {/* Fond */}
       <div
         className="absolute inset-0"
         style={{ background: "linear-gradient(160deg, #16162a 0%, #1e1e38 50%, #16162a 100%)" }}
-      />
-      {/* Halo blanc central */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.035) 0%, transparent 70%)" }}
-        aria-hidden="true"
       />
       {/* Grille subtile */}
       <div
@@ -200,7 +108,7 @@ export default function ServicesGrid() {
         aria-hidden="true"
       />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           variants={staggerContainer}
@@ -216,44 +124,90 @@ export default function ServicesGrid() {
             Nos services
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-section font-bold text-white">
-            Un partenaire à chaque étape
+            Ce qu&apos;on fait pour vous
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="mt-4 max-w-xl mx-auto text-base leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.4)" }}
+            style={{ color: "rgba(255,255,255,0.45)" }}
           >
-            Du design à la performance, nous couvrons l&apos;intégralité du spectre digital pour faire
-            grandir votre business.
+            Du site vitrine au SaaS, en passant par le SEO et l&apos;IA — on couvre tout
+            ce dont votre business a besoin pour performer en ligne.
           </motion.p>
         </motion.div>
 
-        {/* Grille 3 + 2 */}
+        {/* Grille 3×2 */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          {categories.slice(0, 3).map((cat) => (
-            <ServiceCard key={cat.title} cat={cat} />
+          {services.map((service) => (
+            <motion.div
+              key={service.slug}
+              variants={fadeUp}
+              className="group relative rounded-2xl border border-white/[0.07] bg-white/[0.025] p-8 flex flex-col overflow-hidden transition-all duration-400 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.04]"
+              style={{ "--card-accent": service.accent } as React.CSSProperties}
+            >
+              {/* Ligne accent haut */}
+              <div
+                className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                style={{ background: service.accent }}
+              />
+
+              {/* Glow hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{
+                  background: `radial-gradient(ellipse 70% 40% at 50% 0%, ${service.accent}18 0%, transparent 70%)`,
+                }}
+              />
+
+              {/* Icône */}
+              <div
+                className="relative z-10 w-14 h-14 rounded-xl flex items-center justify-center mb-6 flex-shrink-0 transition-all duration-300"
+                style={{
+                  background: `${service.accent}14`,
+                  border: `1px solid ${service.accent}30`,
+                  color: service.accent,
+                }}
+              >
+                {service.icon}
+              </div>
+
+              {/* Titre */}
+              <h3 className="relative z-10 text-lg font-bold text-white mb-3 group-hover:text-white transition-colors">
+                {service.title}
+              </h3>
+
+              {/* Description */}
+              <p
+                className="relative z-10 text-sm leading-relaxed flex-1"
+                style={{ color: "rgba(255,255,255,0.5)" }}
+              >
+                {service.description}
+              </p>
+
+              {/* Lien */}
+              <div className="relative z-10 mt-6 pt-5 border-t border-white/[0.06]">
+                <Link
+                  href={`/services/${service.slug}/`}
+                  className="inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 hover:gap-3"
+                  style={{ color: service.accent }}
+                >
+                  Explorer
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
           ))}
         </motion.div>
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4"
-        >
-          {categories.slice(3).map((cat) => (
-            <ServiceCard key={cat.title} cat={cat} wide />
-          ))}
-        </motion.div>
-
-        {/* CTA */}
+        {/* CTA bas */}
         <motion.div
           variants={fadeUp}
           initial="hidden"

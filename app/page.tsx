@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
-import Stats from "@/components/sections/Stats";
 import LogoCarousel from "@/components/sections/LogoCarousel";
-import ValueProp from "@/components/sections/ValueProp";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import ValueProp from "@/components/sections/ValueProp";
 import Offers from "@/components/sections/Offers";
 import Projects from "@/components/sections/Projects";
 import Process from "@/components/sections/Process";
-import PressBar from "@/components/sections/PressBar";
 import Testimonials from "@/components/sections/Testimonials";
-import Blog from "@/components/sections/Blog";
 import FAQ from "@/components/sections/FAQ";
 import ContactForm from "@/components/sections/ContactForm";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
@@ -151,16 +148,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }}
       />
       <Hero />
-      <Stats />
       <LogoCarousel />
-      <ValueProp />
       <ServicesGrid />
+      <ValueProp />
       <Offers />
       <Projects />
       <Process />
-      <PressBar />
       <Testimonials />
-      <Blog />
       <FAQ />
       <ContactForm />
     </>
