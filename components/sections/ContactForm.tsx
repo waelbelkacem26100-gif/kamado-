@@ -96,8 +96,8 @@ export default function ContactForm() {
     if (form.telephone && !/^(\+33|0)[1-9](\d{2}){4}$/.test(form.telephone.replace(/[\s\-.]/g, ""))) {
       e.telephone = "Format de téléphone invalide (ex: 06 12 34 56 78).";
     }
-    if (!form.message.trim() || form.message.length < 20) {
-      e.message = "Décrivez votre projet en au moins 20 caractères.";
+    if (!form.message.trim() || form.message.length < 50) {
+      e.message = "Décrivez votre projet en au moins 50 caractères.";
     }
     if (!rgpd) e.rgpd = "Veuillez accepter la politique de confidentialité.";
     setErrors(e);
@@ -373,8 +373,8 @@ export default function ContactForm() {
                   {errors.message && <p className="text-xs text-red-400 mt-1.5">{errors.message}</p>}
                   <div className="flex items-center justify-between mt-1.5">
                     <p className="text-xs text-[var(--fg-muted)]">Plus vous êtes précis, plus notre réponse sera pertinente.</p>
-                    <p className={`text-xs font-medium ${form.message.length >= 20 ? "text-green-400" : "text-[var(--fg-muted)]"}`}>
-                      {form.message.length} / 20 min
+                    <p className={`text-xs font-medium ${form.message.length >= 50 ? "text-green-400" : "text-[var(--fg-muted)]"}`}>
+                      {form.message.length} / 50 min
                     </p>
                   </div>
                 </div>
