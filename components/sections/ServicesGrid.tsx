@@ -220,7 +220,7 @@ export default function ServicesGrid() {
           </p>
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
             <Link
-              href="/#contact"
+              href="/contact/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] shadow-[0_0_30px_var(--accent-glow)]"
             >
               Discuter de votre projet

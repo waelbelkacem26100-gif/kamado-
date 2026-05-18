@@ -371,7 +371,7 @@ export default function BlogPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/#contact"
+                href="/contact/"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity shadow-[0_0_30px_var(--accent-glow)]"
               >
                 Démarrer un projet
@@ -380,7 +380,7 @@ export default function BlogPage() {
                 </svg>
               </Link>
               <Link
-                href="/#services"
+                href="/services/"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[var(--fg)] border border-[var(--border)] hover:border-[var(--accent)]/40 transition-colors"
               >
                 Voir nos services

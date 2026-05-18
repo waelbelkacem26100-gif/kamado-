@@ -24,24 +24,22 @@ const realisationsLinks = [
 
 type DropdownId = "expertise" | "realisations";
 
-const navItems: { id: string; label: string; hash?: string; href?: string; dropdown?: DropdownId }[] = [
-  { id: "expertise", label: "Expertise", hash: "services", dropdown: "expertise" },
-  { id: "realisations", label: "Réalisations", hash: "projets", dropdown: "realisations" },
-  { id: "tarifs", label: "Tarifs", hash: "offres" },
-  { id: "blog", label: "Blog", href: "/blog/" },
-  { id: "contact", label: "Contact", hash: "contact" },
+const navItems: { id: string; label: string; href: string; dropdown?: DropdownId }[] = [
+  { id: "expertise",    label: "Expertise",     href: "/services/",  dropdown: "expertise" },
+  { id: "realisations", label: "Réalisations",  href: "/projets/",   dropdown: "realisations" },
+  { id: "tarifs",       label: "Tarifs",        href: "/tarifs/" },
+  { id: "blog",         label: "Blog",          href: "/blog/" },
+  { id: "contact",      label: "Contact",       href: "/contact/" },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled]       = useState(false);
+  const [menuOpen, setMenuOpen]       = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
-  const pathname = usePathname();
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const href = (hash: string) => (pathname === "/" ? `#${hash}` : `/#${hash}`);
+  const [mounted, setMounted]         = useState(false);
+  const { theme, setTheme }           = useTheme();
+  const pathname                      = usePathname();
+  const closeTimer                    = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -53,14 +51,8 @@ export default function Header() {
     };
   }, []);
 
-  const openMenu = (id: string) => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setOpenDropdown(id);
-  };
-
-  const scheduleClose = () => {
-    closeTimer.current = setTimeout(() => setOpenDropdown(null), 120);
-  };
+  const openMenu     = (id: string) => { if (closeTimer.current) clearTimeout(closeTimer.current); setOpenDropdown(id); };
+  const scheduleClose = () => { closeTimer.current = setTimeout(() => setOpenDropdown(null), 120); };
 
   return (
     <header
@@ -84,10 +76,10 @@ export default function Header() {
               onMouseEnter={() => item.dropdown && openMenu(item.id)}
               onMouseLeave={() => item.dropdown && scheduleClose()}
             >
-              <a
-                href={item.href ?? href(item.hash ?? "")}
+              <Link
+                href={item.href}
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
-                  openDropdown === item.id || (item.href && pathname.startsWith(item.href))
+                  openDropdown === item.id || pathname.startsWith(item.href)
                     ? "text-[var(--accent)]"
                     : "text-[var(--fg-muted)] hover:text-[var(--fg)]"
                 }`}
@@ -97,17 +89,13 @@ export default function Header() {
                   <motion.svg
                     animate={{ rotate: openDropdown === item.id ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
-                    width="11"
-                    height="11"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
+                    width="11" height="11" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" strokeWidth="2.5"
                   >
                     <path d="M6 9l6 6 6-6" />
                   </motion.svg>
                 )}
-              </a>
+              </Link>
 
               <AnimatePresence>
                 {openDropdown === item.id && item.dropdown && (
@@ -120,7 +108,6 @@ export default function Header() {
                     onMouseEnter={() => { if (closeTimer.current) clearTimeout(closeTimer.current); }}
                     onMouseLeave={scheduleClose}
                   >
-                    {/* Expertise dropdown — même style que Réalisations */}
                     {item.dropdown === "expertise" && (
                       <div
                         className="rounded-2xl border border-[var(--border)] p-3 shadow-[0_24px_64px_rgba(0,0,0,0.5)]"
@@ -151,7 +138,7 @@ export default function Header() {
                         </ul>
                         <div className="mt-2 pt-2 border-t border-white/5">
                           <Link
-                            href="/#services"
+                            href="/services/"
                             className="block text-[10px] font-semibold text-center text-[var(--accent)] hover:underline py-1"
                           >
                             Voir tous les services →
@@ -160,7 +147,6 @@ export default function Header() {
                       </div>
                     )}
 
-                    {/* Réalisations dropdown */}
                     {item.dropdown === "realisations" && (
                       <div
                         className="rounded-2xl border border-[var(--border)] p-3 shadow-[0_24px_64px_rgba(0,0,0,0.5)]"
@@ -188,7 +174,7 @@ export default function Header() {
                         </ul>
                         <div className="mt-2 pt-2 border-t border-white/5">
                           <Link
-                            href="/#projets"
+                            href="/projets/"
                             className="block text-[10px] font-semibold text-center text-[var(--accent)] hover:underline py-1"
                           >
                             Toutes les réalisations →
@@ -214,14 +200,10 @@ export default function Header() {
               {theme === "dark" ? (
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" />
-                  <line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" />
-                  <line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                  <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                 </svg>
               ) : (
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -231,12 +213,12 @@ export default function Header() {
             </button>
           )}
 
-          <a
-            href={href("contact")}
+          <Link
+            href="/contact/"
             className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity duration-200 shadow-[0_0_20px_var(--accent-glow)]"
           >
             Démarrer un projet
-          </a>
+          </Link>
 
           <button
             className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
@@ -262,22 +244,22 @@ export default function Header() {
           >
             <nav className="flex flex-col px-6 py-5 gap-1">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.id}
-                  href={item.href ?? href(item.hash ?? "")}
+                  href={item.href}
                   onClick={() => setMenuOpen(false)}
                   className="text-base font-medium text-[var(--fg-muted)] hover:text-[var(--accent)] py-2.5 border-b border-white/5 transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href={href("contact")}
+              <Link
+                href="/contact/"
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 inline-flex items-center justify-center px-4 py-3 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)]"
               >
                 Démarrer un projet
-              </a>
+              </Link>
             </nav>
           </motion.div>
         )}

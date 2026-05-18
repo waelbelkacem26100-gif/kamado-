@@ -105,7 +105,7 @@ export default function Offers() {
               </ul>
 
               <Link
-                href="/#contact"
+                href="/contact/"
                 className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
                   offer.accent
                     ? "text-[#050508] bg-[var(--accent)] hover:opacity-90"
