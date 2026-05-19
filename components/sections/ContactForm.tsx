@@ -162,7 +162,7 @@ export default function ContactForm() {
   const plain = `${base} border-[var(--border)]`;
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 bg-[var(--bg-secondary)]">
+    <section id="contact" className="py-24 md:py-32 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
           variants={staggerContainer}

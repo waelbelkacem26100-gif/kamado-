@@ -10,8 +10,8 @@
   --bg-secondary: #f5f5f5;
   --fg: #000000;
   --fg-muted: rgba(0, 0, 0, 0.5);
-  --accent: #00b8d4;
-  --accent-glow: rgba(0, 184, 212, 0.2);
+  --accent: #00c853;
+  --accent-glow: rgba(0, 200, 83, 0.2);
   --border: rgba(0, 0, 0, 0.1);
   --surface: rgba(0, 0, 0, 0.04);
   --surface-hover: rgba(0, 0, 0, 0.07);
@@ -30,8 +30,8 @@
   --border: rgba(255, 255, 255, 0.07);
   --surface: rgba(255, 255, 255, 0.04);
   --surface-hover: rgba(255, 255, 255, 0.07);
-  --header-bg: rgba(10, 10, 10, 0.92);
-  --dropdown-bg: rgba(12, 12, 12, 0.99);
+  --header-bg: rgba(10, 10, 10, 0.85);
+  --dropdown-bg: rgba(10, 10, 10, 0.97);
 }
 
 @theme inline {
@@ -46,33 +46,25 @@
   --font-syne: var(--font-syne-var);
 }
 
-/* ─── Section theming — alternating dark/light layout ─── */
-[data-section="dark"] {
-  --bg: #0a0a0a;
-  --bg-secondary: #141414;
-  --fg: #f0f0f0;
-  --fg-muted: rgba(240, 240, 240, 0.45);
-  --accent: #00ff87;
-  --accent-glow: rgba(0, 255, 135, 0.18);
-  --border: rgba(255, 255, 255, 0.07);
-  --surface: rgba(255, 255, 255, 0.04);
-  --surface-hover: rgba(255, 255, 255, 0.07);
-  background-color: var(--bg);
-  color: var(--fg);
+/* ─── Section fade divider ─── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 135, 0.12) 30%, rgba(0, 255, 135, 0.25) 50%, rgba(0, 255, 135, 0.12) 70%, transparent 100%);
+  position: relative;
+  z-index: 1;
 }
 
-[data-section="light"] {
-  --bg: #ffffff;
-  --bg-secondary: #f5f5f5;
-  --fg: #0a0a0a;
-  --fg-muted: rgba(0, 0, 0, 0.5);
-  --accent: #00b8d4;
-  --accent-glow: rgba(0, 184, 212, 0.2);
-  --border: rgba(0, 0, 0, 0.1);
-  --surface: rgba(0, 0, 0, 0.03);
-  --surface-hover: rgba(0, 0, 0, 0.06);
-  background-color: var(--bg);
-  color: var(--fg);
+.section-fade-in {
+  position: relative;
+}
+.section-fade-in::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* ─── Base ─── */
@@ -85,13 +77,17 @@ html {
 }
 
 body {
-  background-color: var(--bg);
+  background-color: #0a0a0a;
   color: var(--fg);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.light body {
+  background-color: var(--bg);
 }
 
 /* ─── Typographie ─── */

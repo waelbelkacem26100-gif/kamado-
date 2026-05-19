@@ -11,9 +11,9 @@ const values = [
       </svg>
     ),
     title: "Rapidité",
-    accent: "#00e5ff",
+    accent: "#00ff87",
     description:
-      "Grâce à l'IA et nos processus rodés, nous livrons 3x plus vite que la moyenne du marché — sans sacrifier la qualité.",
+      "Grâce à l'IA et nos processus rodés, nous livrons 3× plus vite que la moyenne du marché — sans sacrifier la qualité.",
   },
   {
     icon: (
@@ -33,7 +33,7 @@ const values = [
       </svg>
     ),
     title: "Sur-mesure",
-    accent: "#10b981",
+    accent: "#3b82f6",
     description:
       "Aucun template. Chaque projet est construit pour votre business, vos objectifs et votre audience spécifique.",
   },
@@ -42,17 +42,12 @@ const values = [
 export default function ValueProp() {
   return (
     <section className="relative overflow-hidden py-24 md:py-32 px-6">
-      <div className="absolute inset-0" style={{ background: "linear-gradient(160deg, #040410 0%, #06060f 60%, #030308 100%)" }} />
+      {/* Ambient glow */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
-        }}
+        className="absolute rounded-full pointer-events-none"
+        style={{ width: 600, height: 400, top: "10%", left: "50%", transform: "translateX(-50%)", background: "radial-gradient(ellipse, rgba(0,255,135,0.06) 0%, transparent 70%)", filter: "blur(60px)" }}
         aria-hidden="true"
       />
-      <div className="absolute rounded-full pointer-events-none" style={{ width: 500, height: 500, top: "-10%", right: "5%", background: "radial-gradient(circle, #3b82f6 0%, transparent 65%)", opacity: 0.04, filter: "blur(70px)", animation: "blobMove2 24s ease-in-out infinite", willChange: "transform", transform: "translateZ(0)" }} aria-hidden="true" />
-      <div className="absolute rounded-full pointer-events-none" style={{ width: 400, height: 400, bottom: "-5%", left: "10%", background: "radial-gradient(circle, #a855f7 0%, transparent 65%)", opacity: 0.04, filter: "blur(70px)", animation: "blobMove1 30s ease-in-out infinite reverse", willChange: "transform", transform: "translateZ(0)" }} aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -65,7 +60,7 @@ export default function ValueProp() {
           <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
             Pourquoi Kama Agency
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-section font-bold text-white">
+          <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
             Ce qui nous différencie
           </motion.h2>
         </motion.div>
@@ -81,24 +76,28 @@ export default function ValueProp() {
             <motion.div
               key={val.title}
               variants={fadeUp}
-              className="group p-8 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.04] transition-all duration-300 overflow-hidden relative"
+              className="group p-8 rounded-2xl border border-white/[0.07] relative overflow-hidden transition-all duration-300 hover:-translate-y-1"
+              style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
             >
               {/* Hover glow */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${val.accent}10 0%, transparent 70%)` }}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                style={{ background: `radial-gradient(ellipse 80% 50% at 50% 0%, ${val.accent}12 0%, transparent 70%)` }}
               />
               {/* Top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: val.accent }} />
+              <div
+                className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: val.accent }}
+              />
 
               <div
-                className="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-all duration-300"
+                className="relative z-10 w-12 h-12 rounded-xl flex items-center justify-center mb-6"
                 style={{ background: `${val.accent}15`, border: `1px solid ${val.accent}30`, color: val.accent }}
               >
                 {val.icon}
               </div>
-              <h3 className="relative z-10 text-lg font-semibold text-white mb-3">{val.title}</h3>
-              <p className="relative z-10 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <h3 className="relative z-10 text-lg font-semibold text-[var(--fg)] mb-3">{val.title}</h3>
+              <p className="relative z-10 text-sm leading-relaxed text-[var(--fg-muted)]">
                 {val.description}
               </p>
             </motion.div>

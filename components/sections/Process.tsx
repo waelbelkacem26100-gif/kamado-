@@ -28,7 +28,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 md:py-32 px-6 bg-[var(--bg-secondary)]">
+    <section id="process" className="py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={staggerContainer}

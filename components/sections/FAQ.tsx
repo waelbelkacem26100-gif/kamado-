@@ -32,7 +32,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-32 px-6 bg-[var(--bg-secondary)]">
+    <section className="py-24 md:py-32 px-6">
       <div className="max-w-4xl mx-auto">
         <motion.div
           variants={staggerContainer}

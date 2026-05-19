@@ -102,7 +102,7 @@ function ProjectCard3D({ project }: { project: typeof projects[0] }) {
           </div>
 
           {/* Infos */}
-          <div className="p-5 bg-[var(--bg-secondary)]">
+          <div className="p-5" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h3 className="font-semibold text-[var(--fg)]">{project.name}</h3>

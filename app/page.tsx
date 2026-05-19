@@ -147,45 +147,24 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }}
       />
-      {/* Hero — always dark */}
       <Hero />
-
-      {/* Clients + Services — light */}
-      <div data-section="light">
-        <LogoCarousel />
-        <ServicesGrid />
-      </div>
-
-      {/* Différenciateurs — dark */}
-      <div data-section="dark">
-        <ValueProp />
-      </div>
-
-      {/* Projets + Avis — light */}
-      <div data-section="light">
-        <Projects />
-        <Reviews />
-      </div>
-
-      {/* Méthode — dark */}
-      <div data-section="dark">
-        <Process />
-      </div>
-
-      {/* Tarifs — light */}
-      <div data-section="light">
-        <Offers />
-      </div>
-
-      {/* FAQ — dark */}
-      <div data-section="dark">
-        <FAQ />
-      </div>
-
-      {/* Contact — light */}
-      <div data-section="light">
-        <ContactForm />
-      </div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><LogoCarousel /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><ServicesGrid /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><ValueProp /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><Projects /></div>
+      <div className="section-fade-in"><Reviews /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><Process /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><Offers /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><FAQ /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><ContactForm /></div>
     </>
   );
 }

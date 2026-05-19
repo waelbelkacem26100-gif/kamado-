@@ -12,7 +12,7 @@ const techsRow2 = ["Framer Motion", "Three.js", "OpenAI API", "Claude AI", "Figm
 
 export default function LogoCarousel() {
   return (
-    <section className="py-14 border-b border-[var(--border)] px-6">
+    <section className="py-14 border-b border-[var(--border)] px-6 backdrop-blur-sm">
       <div className="max-w-5xl mx-auto">
         {/* Client references */}
         <p className="text-center text-xs font-semibold tracking-widest uppercase text-[var(--fg-muted)] mb-8">
