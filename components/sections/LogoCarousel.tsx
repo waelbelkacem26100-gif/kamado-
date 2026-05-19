@@ -7,8 +7,49 @@ const clients = [
   { name: "Clustea", tag: "SaaS B2B", color: "#10b981" },
 ];
 
-const techsRow1 = ["Next.js", "Shopify", "WordPress", "TypeScript", "Tailwind CSS", "Vercel", "Stripe", "PostgreSQL"];
-const techsRow2 = ["Framer Motion", "Three.js", "OpenAI API", "Claude AI", "Figma", "React", "Node.js", "Prisma"];
+interface Tech {
+  name: string;
+  icon: string;
+}
+
+const techsRow1: Tech[] = [
+  { name: "Next.js", icon: "nextdotjs" },
+  { name: "Shopify", icon: "shopify" },
+  { name: "WordPress", icon: "wordpress" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "Tailwind CSS", icon: "tailwindcss" },
+  { name: "Vercel", icon: "vercel" },
+  { name: "Stripe", icon: "stripe" },
+  { name: "PostgreSQL", icon: "postgresql" },
+];
+
+const techsRow2: Tech[] = [
+  { name: "Framer Motion", icon: "framer" },
+  { name: "Three.js", icon: "threedotjs" },
+  { name: "OpenAI", icon: "openai" },
+  { name: "Anthropic", icon: "anthropic" },
+  { name: "Figma", icon: "figma" },
+  { name: "React", icon: "react" },
+  { name: "Node.js", icon: "nodedotjs" },
+  { name: "Prisma", icon: "prisma" },
+];
+
+function TechPill({ tech }: { tech: Tech }) {
+  return (
+    <span className="inline-flex items-center gap-2 text-xs font-medium text-[var(--fg-muted)] flex-shrink-0 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)]">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={`https://cdn.simpleicons.org/${tech.icon}/ffffff`}
+        alt=""
+        width={14}
+        height={14}
+        className="opacity-70"
+        aria-hidden="true"
+      />
+      {tech.name}
+    </span>
+  );
+}
 
 export default function LogoCarousel() {
   return (
@@ -32,7 +73,7 @@ export default function LogoCarousel() {
           ))}
         </div>
 
-        {/* 2-row bidirectional tech marquee */}
+        {/* 2-row bidirectional tech marquee with logos */}
         <div className="space-y-3">
           <p className="text-center text-[10px] font-semibold tracking-widest uppercase text-[var(--fg-muted)] mb-4">
             Technologies maîtrisées
@@ -42,12 +83,7 @@ export default function LogoCarousel() {
           <div className="relative overflow-hidden">
             <div className="flex gap-6 animate-marquee whitespace-nowrap">
               {[...techsRow1, ...techsRow1].map((t, i) => (
-                <span
-                  key={`r1-${t}-${i}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--fg-muted)] opacity-60 flex-shrink-0 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)]"
-                >
-                  {t}
-                </span>
+                <TechPill key={`r1-${t.name}-${i}`} tech={t} />
               ))}
             </div>
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--bg)] to-transparent pointer-events-none" />
@@ -58,12 +94,7 @@ export default function LogoCarousel() {
           <div className="relative overflow-hidden">
             <div className="flex gap-6 animate-marquee-reverse whitespace-nowrap">
               {[...techsRow2, ...techsRow2].map((t, i) => (
-                <span
-                  key={`r2-${t}-${i}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--fg-muted)] opacity-50 flex-shrink-0 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--surface)]"
-                >
-                  {t}
-                </span>
+                <TechPill key={`r2-${t.name}-${i}`} tech={t} />
               ))}
             </div>
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[var(--bg)] to-transparent pointer-events-none" />

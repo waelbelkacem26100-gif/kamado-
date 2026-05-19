@@ -45,7 +45,7 @@ const offers = [
 
 export default function Offers() {
   return (
-    <section id="offres" className="py-24 md:py-32 px-6">
+    <section id="tarifs" className="py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={staggerContainer}
