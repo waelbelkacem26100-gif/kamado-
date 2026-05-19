@@ -50,12 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
-      url: `${SITE_URL}/tarifs/`,
-      lastModified: TODAY,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
       url: `${SITE_URL}/contact/`,
       lastModified: TODAY,
       changeFrequency: "monthly",

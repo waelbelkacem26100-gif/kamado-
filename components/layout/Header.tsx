@@ -25,12 +25,11 @@ const realisationsLinks = [
 type DropdownId = "expertise" | "realisations";
 
 const navItems: { id: string; label: string; href: string; dropdown?: DropdownId }[] = [
-  { id: "accueil",      label: "Accueil",       href: "/" },
-  { id: "expertise",    label: "Expertise",     href: "/services/",  dropdown: "expertise" },
+  { id: "accueil",      label: "Accueil",           href: "/" },
+  { id: "expertise",    label: "Nos Services",       href: "/services/",  dropdown: "expertise" },
   { id: "realisations", label: "Nos Réalisations",  href: "/projets/",   dropdown: "realisations" },
-  { id: "tarifs",       label: "Tarifs",        href: "/tarifs/" },
-  { id: "blog",         label: "Blog",          href: "/blog/" },
-  { id: "contact",      label: "Contact",       href: "/contact/" },
+  { id: "blog",         label: "Blog",              href: "/blog/" },
+  { id: "contact",      label: "Contact",           href: "/contact/" },
 ];
 
 export default function Header() {

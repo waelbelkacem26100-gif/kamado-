@@ -7,33 +7,33 @@ const reviews = [
   {
     name: "Julien R.",
     company: "Couvetoile",
-    role: "Fondateur",
-    text: "Kama Agency a refait notre site vitrine en 4 semaines. Résultat : notre formulaire de contact génère maintenant 2,4 fois plus de leads qualifiés. L'équipe est réactive, pro et force de proposition.",
-    metric: "×2,4 leads",
-    accent: "#0891b2",
+    text: "2,4× plus de leads qualifiés. Livraison en 4 semaines, délai tenu.",
+    metric: "×2,4",
+    metricLabel: "leads",
+    accent: "#00ff87",
   },
   {
     name: "Camille D.",
     company: "BotanicShop",
-    role: "Directrice e-commerce",
-    text: "La refonte de notre boutique Shopify a transformé notre taux de conversion. Le tunnel d'achat repensé par Kama est fluide, rapide, et nos clients le remarquent. Je recommande sans hésitation.",
-    metric: "+38% CA",
-    accent: "#10b981",
+    text: "Tunnel d'achat repensé, +38% de CA le mois suivant la mise en ligne.",
+    metric: "+38%",
+    metricLabel: "CA",
+    accent: "#a855f7",
   },
   {
     name: "Alexandre M.",
     company: "TechStart",
-    role: "CEO",
-    text: "Nous avons confié le développement de notre SaaS à Kama Agency. Ils ont livré une plateforme robuste, bien architecturée, et scalable — en 12 semaines. Un vrai partenaire technique.",
-    metric: "12 sem.",
+    text: "SaaS livré en 12 semaines, solide, scalable. Un vrai partenaire technique.",
+    metric: "12sem",
+    metricLabel: "délai",
     accent: "#3b82f6",
   },
   {
     name: "Nadia B.",
     company: "AgriTech Sud",
-    role: "Responsable marketing",
-    text: "Depuis la refonte SEO de notre site, nous sommes passés en première page sur nos 3 mots-clés principaux. Le trafic organique a doublé en 4 mois. Investissement largement rentabilisé.",
-    metric: "×2 trafic",
+    text: "Première page Google sur 3 mots-clés. Trafic organique doublé en 4 mois.",
+    metric: "×2",
+    metricLabel: "trafic",
     accent: "#f97316",
   },
 ];
@@ -47,14 +47,19 @@ export default function Reviews() {
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
-          className="text-center mb-12"
+          className="flex items-end justify-between mb-10 gap-4 flex-wrap"
         >
-          <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
-            Avis clients
-          </motion.span>
-          <motion.h2 variants={fadeUp} className="text-3xl font-bold text-[var(--fg)]">
-            Ce qu&apos;ils disent de nous
-          </motion.h2>
+          <div>
+            <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-3">
+              Avis clients
+            </motion.span>
+            <motion.h2 variants={fadeUp} className="text-3xl font-bold text-[var(--fg)]">
+              Ce qu&apos;ils disent de nous
+            </motion.h2>
+          </div>
+          <motion.p variants={fadeUp} className="text-sm text-[var(--fg-muted)]">
+            4 projets · 4 résultats mesurables
+          </motion.p>
         </motion.div>
 
         <motion.div
@@ -62,42 +67,47 @@ export default function Reviews() {
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {reviews.map((r, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
-              className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] relative overflow-hidden"
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="relative p-5 rounded-2xl border border-[var(--border)] overflow-hidden group cursor-default"
+              style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(10px)" }}
             >
+              <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ background: r.accent }} />
               <div
-                className="absolute top-0 left-0 right-0 h-[2px]"
-                style={{ background: r.accent }}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none rounded-2xl"
+                style={{ background: `radial-gradient(ellipse 80% 60% at 50% 0%, ${r.accent}10 0%, transparent 70%)` }}
               />
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <p className="font-bold text-[var(--fg)]">{r.name}</p>
-                  <p className="text-xs text-[var(--fg-muted)]">
-                    {r.role} — <span style={{ color: r.accent }}>{r.company}</span>
-                  </p>
-                </div>
-                <div className="text-right flex-shrink-0">
-                  <p className="text-lg font-black" style={{ color: r.accent }}>{r.metric}</p>
-                </div>
+
+              {/* Metric */}
+              <div className="flex items-baseline gap-1 mb-3">
+                <span className="text-3xl font-black" style={{ color: r.accent }}>{r.metric}</span>
+                <span className="text-xs font-medium" style={{ color: r.accent, opacity: 0.7 }}>{r.metricLabel}</span>
               </div>
 
               {/* Stars */}
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: 5 }).map((_, s) => (
-                  <svg key={s} width="12" height="12" viewBox="0 0 24 24" fill={r.accent} stroke="none">
+                  <svg key={s} width="10" height="10" viewBox="0 0 24 24" fill={r.accent}>
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ))}
               </div>
 
-              <p className="text-sm text-[var(--fg-muted)] leading-relaxed">
+              {/* Quote */}
+              <p className="text-sm text-[var(--fg-muted)] leading-relaxed mb-4">
                 &ldquo;{r.text}&rdquo;
               </p>
+
+              {/* Author */}
+              <div className="border-t border-[var(--border)] pt-3">
+                <p className="text-xs font-semibold text-[var(--fg)]">{r.name}</p>
+                <p className="text-[10px] text-[var(--fg-muted)]" style={{ color: r.accent }}>{r.company}</p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

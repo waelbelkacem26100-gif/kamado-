@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Projects from "@/components/sections/Projects";
+import Reviews from "@/components/sections/Reviews";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -84,6 +85,8 @@ export default function ProjetsPage() {
         </section>
 
         <Projects />
+
+        <Reviews />
 
         {/* Résultats clients réels */}
         <section className="py-20 px-6 bg-[var(--bg-secondary)]">
