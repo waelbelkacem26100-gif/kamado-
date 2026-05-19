@@ -5,6 +5,7 @@ import ServicesGrid from "@/components/sections/ServicesGrid";
 import ValueProp from "@/components/sections/ValueProp";
 import Offers from "@/components/sections/Offers";
 import Projects from "@/components/sections/Projects";
+import Reviews from "@/components/sections/Reviews";
 import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
 import ContactForm from "@/components/sections/ContactForm";
@@ -146,15 +147,45 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceListSchema) }}
       />
+      {/* Hero — always dark */}
       <Hero />
-      <LogoCarousel />
-      <ServicesGrid />
-      <ValueProp />
-      <Offers />
-      <Projects />
-      <Process />
-      <FAQ />
-      <ContactForm />
+
+      {/* Clients + Services — light */}
+      <div data-section="light">
+        <LogoCarousel />
+        <ServicesGrid />
+      </div>
+
+      {/* Différenciateurs — dark */}
+      <div data-section="dark">
+        <ValueProp />
+      </div>
+
+      {/* Projets + Avis — light */}
+      <div data-section="light">
+        <Projects />
+        <Reviews />
+      </div>
+
+      {/* Méthode — dark */}
+      <div data-section="dark">
+        <Process />
+      </div>
+
+      {/* Tarifs — light */}
+      <div data-section="light">
+        <Offers />
+      </div>
+
+      {/* FAQ — dark */}
+      <div data-section="dark">
+        <FAQ />
+      </div>
+
+      {/* Contact — light */}
+      <div data-section="light">
+        <ContactForm />
+      </div>
     </>
   );
 }

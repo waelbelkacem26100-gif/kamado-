@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Syne } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/layout/Providers";
 import Header from "@/components/layout/Header";
@@ -17,6 +17,13 @@ const geist = Geist({
   weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
+});
+
+const syne = Syne({
+  variable: "--font-syne-var",
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -123,7 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${geist.variable} antialiased`}>
+      <body className={`${geist.variable} ${syne.variable} antialiased`}>
         <Providers>
           <LenisProvider>
             <ScrollProgress />

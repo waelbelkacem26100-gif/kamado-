@@ -19,19 +19,19 @@
   --dropdown-bg: rgba(255, 255, 255, 0.99);
 }
 
-/* Thème 🌙 = Noir doux */
+/* Thème 🌙 = Noir profond */
 .dark {
-  --bg: #111111;
-  --bg-secondary: #1a1a1a;
+  --bg: #0a0a0a;
+  --bg-secondary: #141414;
   --fg: #f0f0f0;
-  --fg-muted: rgba(240, 240, 240, 0.5);
-  --accent: #00e5ff;
-  --accent-glow: rgba(0, 229, 255, 0.2);
-  --border: rgba(255, 255, 255, 0.08);
+  --fg-muted: rgba(240, 240, 240, 0.45);
+  --accent: #00ff87;
+  --accent-glow: rgba(0, 255, 135, 0.18);
+  --border: rgba(255, 255, 255, 0.07);
   --surface: rgba(255, 255, 255, 0.04);
   --surface-hover: rgba(255, 255, 255, 0.07);
-  --header-bg: rgba(17, 17, 17, 0.95);
-  --dropdown-bg: rgba(20, 20, 20, 0.99);
+  --header-bg: rgba(10, 10, 10, 0.92);
+  --dropdown-bg: rgba(12, 12, 12, 0.99);
 }
 
 @theme inline {
@@ -43,6 +43,36 @@
   --color-border: var(--border);
   --color-surface: var(--surface);
   --font-sans: var(--font-geist-sans);
+  --font-syne: var(--font-syne-var);
+}
+
+/* ─── Section theming — alternating dark/light layout ─── */
+[data-section="dark"] {
+  --bg: #0a0a0a;
+  --bg-secondary: #141414;
+  --fg: #f0f0f0;
+  --fg-muted: rgba(240, 240, 240, 0.45);
+  --accent: #00ff87;
+  --accent-glow: rgba(0, 255, 135, 0.18);
+  --border: rgba(255, 255, 255, 0.07);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+[data-section="light"] {
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --fg: #0a0a0a;
+  --fg-muted: rgba(0, 0, 0, 0.5);
+  --accent: #00b8d4;
+  --accent-glow: rgba(0, 184, 212, 0.2);
+  --border: rgba(0, 0, 0, 0.1);
+  --surface: rgba(0, 0, 0, 0.03);
+  --surface-hover: rgba(0, 0, 0, 0.06);
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 /* ─── Base ─── */
@@ -158,12 +188,27 @@ body {
   100% { transform: translateX(-50%); }
 }
 
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
 .animate-marquee {
   animation: marquee 28s linear infinite;
 }
 
-.animate-marquee:hover {
+.animate-marquee-reverse {
+  animation: marquee-reverse 28s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
   animation-play-state: paused;
+}
+
+/* ─── Syne headings ─── */
+h1, h2 {
+  font-family: var(--font-syne-var, inherit);
 }
 
 /* ─── Light mode universe ─── */
