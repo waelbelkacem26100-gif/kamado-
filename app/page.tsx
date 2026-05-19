@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import LogoCarousel from "@/components/sections/LogoCarousel";
 import ServicesGrid from "@/components/sections/ServicesGrid";
+import ProblemSolution from "@/components/sections/ProblemSolution";
+import ChiffresKeys from "@/components/sections/ChiffresKeys";
 import ValueProp from "@/components/sections/ValueProp";
 import Offers from "@/components/sections/Offers";
 import Projects from "@/components/sections/Projects";
 import Reviews from "@/components/sections/Reviews";
+import BlogPreview from "@/components/sections/BlogPreview";
+import ZoneIntervention from "@/components/sections/ZoneIntervention";
 import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
 import ContactForm from "@/components/sections/ContactForm";
@@ -151,12 +155,20 @@ export default function Home() {
       <div className="section-divider" />
       <div className="section-fade-in"><LogoCarousel /></div>
       <div className="section-divider" />
+      <div className="section-fade-in"><ProblemSolution /></div>
+      <div className="section-divider" />
       <div className="section-fade-in"><ServicesGrid /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><ChiffresKeys /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><ValueProp /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><Projects /></div>
       <div className="section-fade-in"><Reviews /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><BlogPreview /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><ZoneIntervention /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><Process /></div>
       <div className="section-divider" />

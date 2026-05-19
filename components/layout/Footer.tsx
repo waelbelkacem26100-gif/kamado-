@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CONTACT, SITE_NAME } from "@/lib/constants";
+import NewsletterForm from "@/components/ui/NewsletterForm";
 
 const services = [
   { label: "Site vitrine", href: "/services/creation-site-vitrine/" },
@@ -45,6 +46,12 @@ export default function Footer() {
             >
               {CONTACT.email}
             </a>
+            <p className="text-xs mt-2" style={{ color: "rgba(240,240,240,0.3)" }}>
+              Romans-sur-Isère · Drôme · France
+            </p>
+            <p className="text-xs mt-0.5" style={{ color: "rgba(240,240,240,0.3)" }}>
+              Lun – Ven · 9h – 18h
+            </p>
           </div>
 
           {/* Services */}
@@ -87,17 +94,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Newsletter + Social */}
           <div>
             <p className="text-[10px] font-semibold tracking-widest uppercase mb-5" style={{ color: "rgba(240,240,240,0.3)" }}>
-              Contact
+              Newsletter
             </p>
-            <div className="space-y-3 text-sm" style={{ color: "rgba(240,240,240,0.5)" }}>
-              <p>Romans-sur-Isère, Drôme</p>
-              <p>Auvergne-Rhône-Alpes, France</p>
-              <p>100% à distance</p>
-            </div>
-            <div className="mt-6 flex gap-3">
+            <p className="text-xs mb-4 leading-relaxed" style={{ color: "rgba(240,240,240,0.4)" }}>
+              Conseils web, SEO et IA — 1 email par mois, sans spam.
+            </p>
+            <NewsletterForm />
+            <div className="flex gap-3">
               <a
                 href={CONTACT.linkedin}
                 target="_blank"
@@ -111,12 +117,24 @@ export default function Footer() {
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>
+              <a
+                href={CONTACT.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00ff87] hover:text-[#00ff87]"
+                style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
+                aria-label="Twitter / X"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
               <Link
                 href="/contact/"
                 className="h-9 px-4 rounded-lg border flex items-center text-xs font-semibold transition-all hover:border-[#00ff87] hover:text-[#00ff87]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
               >
-                Démarrer un projet →
+                Démarrer →
               </Link>
             </div>
           </div>

@@ -26,6 +26,26 @@ const faqs = [
     q: "Travaillez-vous avec des clients partout en France ?",
     a: "Oui, 100% de nos projets sont menés à distance. Nous avons des clients à Paris, Lyon, Bordeaux, Marseille et dans toutes les régions françaises. La distance n'a aucun impact sur la qualité.",
   },
+  {
+    q: "Proposez-vous de la maintenance après la livraison ?",
+    a: "Oui. Nous proposons des forfaits de maintenance mensuelle : mises à jour de sécurité, sauvegardes automatiques, monitoring des performances et un quota d'heures pour les évolutions. Devis sur demande selon votre projet.",
+  },
+  {
+    q: "Que se passe-t-il si je ne suis pas satisfait du résultat ?",
+    a: "Nous travaillons en itérations courtes avec votre validation à chaque étape. Des révisions sont incluses dans chaque prestation. Notre objectif est votre satisfaction totale — et nos 100% de clients satisfaits en attestent.",
+  },
+  {
+    q: "Utilisez-vous des templates ou tout est créé sur-mesure ?",
+    a: "Tout est créé sur-mesure. Nous ne revendons jamais de templates. Chaque ligne de design et de code est conçue spécifiquement pour votre projet, votre marque et vos objectifs business.",
+  },
+  {
+    q: "Intégrez-vous l'intelligence artificielle dans les projets web ?",
+    a: "Oui, c'est l'une de nos spécialités. Chatbots IA, automatisations, recommandations personnalisées, génération de contenu — nous intégrons les APIs OpenAI et Anthropic Claude selon vos besoins.",
+  },
+  {
+    q: "Comment se déroule le premier contact avec Kama Agency ?",
+    a: "Envoyez-nous votre projet via le formulaire de contact. Nous vous répondons sous 48h avec un appel de découverte de 30 minutes pour cerner vos besoins, puis nous vous envoyons un devis détaillé et un planning. Aucun engagement à cette étape.",
+  },
 ];
 
 export default function FAQ() {

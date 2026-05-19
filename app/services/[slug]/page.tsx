@@ -190,7 +190,7 @@ export default async function ServicePage({ params }: Props) {
                     </svg>
                   </Link>
                   <Link
-                    href="/tarifs/"
+                    href="/services/#tarifs"
                     className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-[var(--fg)] border border-[var(--border)] hover:border-[var(--accent)]/40 transition-colors"
                   >
                     Voir les tarifs
