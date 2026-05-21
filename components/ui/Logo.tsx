@@ -62,8 +62,8 @@ export default function Logo({ size = "md", animate = true }: LogoProps) {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4, delay: 0.1, ease }}
       >
-        <span className="text-[var(--fg)]">Kama</span>
-        <span className="text-[var(--fg-muted)] font-normal"> Agency</span>
+        <span>Kama</span>
+        <span className="opacity-50 font-normal"> Agency</span>
       </motion.span>
     </span>
   );

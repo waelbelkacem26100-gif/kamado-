@@ -63,7 +63,12 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          className={`flex items-center transition-colors duration-300 ${
+            scrolled ? "text-[var(--fg)]" : "text-white"
+          }`}
+        >
           <Logo size="md" />
         </Link>
 
