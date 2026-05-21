@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { services, getService } from "@/lib/services";
+import type { ServiceStep } from "@/lib/services";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
 import BackButton from "@/components/ui/BackButton";
 
@@ -77,11 +78,11 @@ const serviceImages: Record<string, string> = {
     "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=85&auto=format&fit=crop",
 };
 
-const defaultSteps = [
-  { num: "01", title: "Découverte", desc: "Appel de 30 min pour comprendre votre business, vos objectifs et vos contraintes." },
-  { num: "02", title: "Proposition", desc: "Devis détaillé, planning et roadmap adaptés à vos besoins spécifiques." },
-  { num: "03", title: "Création", desc: "Notre équipe travaille en itérations courtes avec des points réguliers." },
-  { num: "04", title: "Livraison", desc: "Mise en ligne, formation et support post-livraison pendant 30 jours." },
+const defaultSteps: ServiceStep[] = [
+  { num: "01", title: "Découverte", duration: "Jour 1 — Appel 30 min", desc: "Comprendre votre business, vos objectifs et vos contraintes." },
+  { num: "02", title: "Proposition", duration: "Jours 2-3 — Devis", desc: "Devis détaillé, planning et roadmap adaptés à vos besoins." },
+  { num: "03", title: "Création", duration: "Semaines 2-4 — Dev", desc: "Notre équipe travaille en itérations courtes avec des points réguliers." },
+  { num: "04", title: "Livraison", duration: "Semaine 5 — Lancement", desc: "Mise en ligne, formation et support post-livraison pendant 30 jours." },
 ];
 
 export default async function ServicePage({ params }: Props) {
@@ -233,6 +234,37 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </section>
 
+        {/* ─── Highlights ─── */}
+        {service.highlights && service.highlights.length > 0 && (
+          <section className="py-20 px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
+                  Ce qui est inclus
+                </span>
+                <h2 className="text-3xl font-bold text-[var(--fg)]">
+                  Tout ce que vous obtenez
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {service.highlights.map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/30 transition-colors duration-300"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-[var(--accent)]/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="3">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span className="text-sm text-[var(--fg-muted)] leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ─── Article ─── */}
         <section className="py-20 px-6">
           <div className="max-w-5xl mx-auto">
@@ -303,7 +335,7 @@ export default async function ServicePage({ params }: Props) {
 
         {/* ─── Process ─── */}
         <section className="py-20 px-6 bg-[var(--bg-secondary)]">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
                 Notre processus
@@ -312,22 +344,68 @@ export default async function ServicePage({ params }: Props) {
                 Comment on travaille ensemble
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {defaultSteps.map((step) => (
-                <div
-                  key={step.num}
-                  className="relative p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] group hover:border-[var(--accent)]/40 transition-colors duration-300"
-                >
-                  <span className="text-4xl font-black text-[var(--accent)]/15 group-hover:text-[var(--accent)]/25 transition-colors mb-3 block">
-                    {step.num}
-                  </span>
-                  <h3 className="text-base font-bold text-[var(--fg)] mb-2">{step.title}</h3>
-                  <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{step.desc}</p>
-                </div>
-              ))}
+            <div className="relative">
+              {/* Ligne verticale */}
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--accent)]/40 via-[var(--accent)]/20 to-transparent" aria-hidden="true" />
+              <div className="space-y-0">
+                {(service.steps ?? defaultSteps).map((step, i, arr) => (
+                  <div key={step.num} className={`relative flex gap-6 ${i < arr.length - 1 ? "pb-8" : ""}`}>
+                    {/* Bullet */}
+                    <div className="relative z-10 w-12 h-12 rounded-xl border border-[var(--accent)]/40 bg-[var(--bg)] flex items-center justify-center flex-shrink-0">
+                      <span className="text-sm font-bold text-[var(--accent)]">{step.num}</span>
+                    </div>
+                    {/* Content */}
+                    <div className="flex-1 pt-1 pb-1">
+                      {"duration" in step && step.duration && (
+                        <span className="inline-block text-[10px] font-semibold tracking-widest uppercase text-[var(--accent)] bg-[var(--accent)]/10 border border-[var(--accent)]/20 px-2.5 py-0.5 rounded-full mb-2">
+                          {step.duration}
+                        </span>
+                      )}
+                      <h3 className="text-base font-bold text-[var(--fg)] mb-1">{step.title}</h3>
+                      <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
+
+        {/* ─── Target Profiles ─── */}
+        {service.targetProfiles && service.targetProfiles.length > 0 && (
+          <section className="py-20 px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-12">
+                <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
+                  Pour qui ?
+                </span>
+                <h2 className="text-3xl font-bold text-[var(--fg)]">
+                  Ce service est fait pour vous si…
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {service.targetProfiles.map((profile, i) => (
+                  <div
+                    key={i}
+                    className="relative p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/30 transition-colors duration-300 overflow-hidden group"
+                  >
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                      style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow) 0%, transparent 70%)" }}
+                      aria-hidden="true"
+                    />
+                    <div className="relative flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-lg bg-[var(--accent)]/15 border border-[var(--accent)]/25 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs font-bold text-[var(--accent)]">{String(i + 1).padStart(2, "0")}</span>
+                      </div>
+                      <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{profile}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ─── FAQ ─── */}
         <section className="py-20 px-6">
