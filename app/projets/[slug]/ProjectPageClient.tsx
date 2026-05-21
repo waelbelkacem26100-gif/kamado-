@@ -5,6 +5,36 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 import type { Project } from "@/lib/projects";
+
+const TECH_COLORS: Record<string, string> = {
+  "Next.js": "#ffffff",
+  "Next.js 14": "#ffffff",
+  "Next.js 15": "#ffffff",
+  "React": "#61dafb",
+  "TypeScript": "#3178c6",
+  "Tailwind CSS": "#38bdf8",
+  "Shopify": "#96bf48",
+  "Liquid": "#96bf48",
+  "Shopify Liquid": "#96bf48",
+  "WordPress": "#21759b",
+  "Supabase": "#3ecf8e",
+  "Prisma": "#2d3748",
+  "Stripe": "#635bff",
+  "Claude API": "#d97706",
+  "Vercel": "#ffffff",
+  "Resend": "#ffffff",
+  "Klaviyo": "#1a1a1a",
+  "Meta Pixel": "#1877f2",
+  "Google Analytics 4": "#e37400",
+  "SEO": "#00b894",
+  "CRO": "#e17055",
+  "JavaScript": "#f7df1e",
+  "CSS custom": "#264de4",
+};
+
+function getTechColor(tech: string): string {
+  return TECH_COLORS[tech] ?? "var(--accent)";
+}
 import BackButton from "@/components/ui/BackButton";
 
 interface Props {
@@ -140,11 +170,19 @@ export default function ProjectPageClient({ project, prevProject, nextProject }:
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={defaultViewport}>
             <motion.h2 variants={fadeUp} className="text-sm font-bold text-[var(--fg)] mb-5">Stack technique</motion.h2>
             <motion.div variants={fadeUp} className="flex flex-wrap gap-2">
-              {project.stack.map((tech) => (
-                <span key={tech} className="text-xs font-medium px-3 py-1.5 rounded-full border border-[var(--border)] text-[var(--fg-muted)] bg-[var(--surface)]">
-                  {tech}
-                </span>
-              ))}
+              {project.stack.map((tech) => {
+                const color = getTechColor(tech);
+                return (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full border bg-[var(--surface)]"
+                    style={{ borderColor: `${color}30`, color: "var(--fg-muted)" }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: color }} />
+                    {tech}
+                  </span>
+                );
+              })}
             </motion.div>
           </motion.div>
 
@@ -166,6 +204,48 @@ export default function ProjectPageClient({ project, prevProject, nextProject }:
           )}
         </div>
       </section>
+
+      {/* Timeline du projet */}
+      {project.timeline && project.timeline.length > 0 && (
+        <section className="py-16 px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={defaultViewport}
+            >
+              <motion.div variants={fadeUp} className="mb-10">
+                <span className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
+                  Chronologie
+                </span>
+                <h2 className="text-2xl font-bold text-[var(--fg)]">Déroulé du projet</h2>
+              </motion.div>
+
+              <div className="relative">
+                {/* Ligne horizontale desktop */}
+                <div className="hidden md:block absolute top-5 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, var(--accent), transparent)", opacity: 0.3 }} aria-hidden="true" />
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                  {project.timeline.map((phase, i) => (
+                    <motion.div key={i} variants={fadeUp} custom={i} className="relative">
+                      {/* Bullet */}
+                      <div className="w-10 h-10 rounded-xl border border-[var(--accent)]/40 bg-[var(--bg)] flex items-center justify-center mb-4 relative z-10">
+                        <span className="text-xs font-bold text-[var(--accent)]">{String(i + 1).padStart(2, "0")}</span>
+                      </div>
+                      <span className="inline-block text-[10px] font-semibold tracking-widest uppercase text-[var(--accent)] bg-[var(--accent)]/10 px-2 py-0.5 rounded-full mb-2">
+                        {phase.duration}
+                      </span>
+                      <h3 className="text-sm font-bold text-[var(--fg)] mb-1.5">{phase.phase}</h3>
+                      <p className="text-xs text-[var(--fg-muted)] leading-relaxed">{phase.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-20 px-6 text-center">

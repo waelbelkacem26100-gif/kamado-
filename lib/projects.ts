@@ -1,3 +1,9 @@
+export interface ProjectPhase {
+  phase: string;
+  duration: string;
+  description: string;
+}
+
 export interface Project {
   slug: string;
   name: string;
@@ -14,6 +20,7 @@ export interface Project {
   gradient: string;
   metrics?: { value: string; label: string }[];
   features?: string[];
+  timeline?: ProjectPhase[];
 }
 
 export const projects: Project[] = [
@@ -49,6 +56,12 @@ export const projects: Project[] = [
       "Historique des thèmes générés par utilisateur",
       "Dashboard admin avec métriques d'usage",
     ],
+    timeline: [
+      { phase: "Discovery & Architecture", duration: "Semaines 1-2", description: "Définition du MVP, architecture du pipeline IA multi-étapes et conception de l'API Shopify Liquid." },
+      { phase: "Pipeline IA core", duration: "Semaines 3-6", description: "Développement du pipeline Claude API (analyse visuelle → génération Liquid → validation syntaxique)." },
+      { phase: "Intégrations SaaS", duration: "Semaines 7-10", description: "Stripe (crédits), authentification, historique des générations et dashboard admin." },
+      { phase: "Beta & optimisation", duration: "Semaines 11-12", description: "Tests avec les 50 premiers utilisateurs, corrections et optimisation du taux de succès à 84%." },
+    ],
   },
   {
     slug: "clustea",
@@ -81,6 +94,12 @@ export const projects: Project[] = [
       "Notifications email transactionnelles (Resend)",
       "Design system custom avec 40+ composants",
       "CI/CD automatisé via Vercel avec previews par PR",
+    ],
+    timeline: [
+      { phase: "Discovery & Design système", duration: "Semaine 1", description: "Architecture multi-tenant, conception du schéma de données Prisma et design system custom." },
+      { phase: "Authentification & permissions", duration: "Semaines 2-3", description: "Auth Supabase avec Row Level Security, système de rôles (admin, membre, viewer) et workspaces." },
+      { phase: "Fonctionnalités métier", duration: "Semaines 4-6", description: "Gestion de projets, attribution de tâches, tableaux de bord temps réel et notifications email." },
+      { phase: "Tests & lancement MVP", duration: "Semaines 7-8", description: "Tests de charge, CI/CD Vercel avec previews automatiques et mise en production en 8 semaines." },
     ],
   },
   {
@@ -115,6 +134,12 @@ export const projects: Project[] = [
       "Page par zone géographique pour le SEO local",
       "Score Lighthouse : 91/100 Performance",
     ],
+    timeline: [
+      { phase: "Audit & stratégie UX", duration: "Semaine 1", description: "Analyse du site existant, recherche des mots-clés locaux et définition de l'architecture de conversion." },
+      { phase: "Développement WordPress", duration: "Semaines 2-4", description: "Thème enfant custom sans Elementor, galerie réalisations, formulaire 3 étapes et CTA mobile persistant." },
+      { phase: "SEO local & contenu", duration: "Semaine 5", description: "Pages par zone géographique, schema LocalBusiness, optimisation on-page et Google Search Console." },
+      { phase: "Lancement & monitoring", duration: "Semaine 6", description: "Mise en ligne, suivi des positions sur 8 mots-clés cibles et premières optimisations post-lancement." },
+    ],
   },
   {
     slug: "brainrot-club",
@@ -147,6 +172,12 @@ export const projects: Project[] = [
       "Flows Klaviyo : abandon panier, post-achat, winback",
       "SEO : maillage interne, fiches produits optimisées, schema",
       "Tracking GA4 + Meta Pixel avec événements e-commerce complets",
+    ],
+    timeline: [
+      { phase: "Audit CRO & heatmaps", duration: "Semaines 1-2", description: "Analyse Hotjar du tunnel existant, identification des 5 points de friction majeurs et stratégie de refonte." },
+      { phase: "Redesign Liquid", duration: "Semaines 3-5", description: "Nouveau thème Shopify Liquid custom dans l'univers gaming/humour de la chaîne, avec CRO intégré." },
+      { phase: "SEO & automatisations", duration: "Semaines 6-8", description: "Fiches produits optimisées, flows Klaviyo (abandon panier à 18% de récupération) et tracking complet." },
+      { phase: "Scaling & A/B tests", duration: "Semaines 9-16", description: "Tests A/B, analyse des données GA4 et optimisation continue ayant conduit au +340% de CA." },
     ],
   },
 ];
