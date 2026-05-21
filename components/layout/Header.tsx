@@ -215,7 +215,11 @@ export default function Header() {
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="w-9 h-9 rounded-full flex items-center justify-center text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface-hover)] transition-all duration-200"
+              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 ${
+                scrolled
+                  ? "text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface-hover)]"
+                  : "text-white/70 hover:text-white"
+              }`}
               aria-label="Basculer le thème"
             >
               {theme === "dark" ? (
