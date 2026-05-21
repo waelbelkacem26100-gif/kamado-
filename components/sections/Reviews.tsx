@@ -6,35 +6,43 @@ import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 const reviews = [
   {
     name: "Julien R.",
+    initials: "JR",
     company: "Couvetoile",
     text: "2,4× plus de leads qualifiés. Livraison en 4 semaines, délai tenu.",
     metric: "×2,4",
     metricLabel: "leads",
     accent: "#00ff87",
+    avatarBg: "#6366f1",
   },
   {
     name: "Camille D.",
+    initials: "CD",
     company: "BotanicShop",
     text: "Tunnel d'achat repensé, +38% de CA le mois suivant la mise en ligne.",
     metric: "+38%",
     metricLabel: "CA",
     accent: "#a855f7",
+    avatarBg: "#10b981",
   },
   {
     name: "Alexandre M.",
+    initials: "AM",
     company: "TechStart",
     text: "SaaS livré en 12 semaines, solide, scalable. Un vrai partenaire technique.",
     metric: "12sem",
     metricLabel: "délai",
     accent: "#3b82f6",
+    avatarBg: "#f59e0b",
   },
   {
     name: "Nadia B.",
+    initials: "NB",
     company: "AgriTech Sud",
     text: "Première page Google sur 3 mots-clés. Trafic organique doublé en 4 mois.",
     metric: "×2",
     metricLabel: "trafic",
     accent: "#f97316",
+    avatarBg: "#ec4899",
   },
 ];
 
@@ -104,9 +112,18 @@ export default function Reviews() {
               </p>
 
               {/* Author */}
-              <div className="border-t border-[var(--border)] pt-3">
-                <p className="text-xs font-semibold text-[var(--fg)]">{r.name}</p>
-                <p className="text-[10px] text-[var(--fg-muted)]" style={{ color: r.accent }}>{r.company}</p>
+              <div className="border-t border-[var(--border)] pt-3 flex items-center gap-2.5">
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
+                  style={{ backgroundColor: r.avatarBg }}
+                  aria-hidden="true"
+                >
+                  {r.initials}
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[var(--fg)]">{r.name}</p>
+                  <p className="text-[10px]" style={{ color: r.accent }}>{r.company}</p>
+                </div>
               </div>
             </motion.div>
           ))}

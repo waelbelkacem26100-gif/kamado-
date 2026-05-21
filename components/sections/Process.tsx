@@ -7,21 +7,25 @@ const steps = [
   {
     number: "01",
     title: "Comprendre",
+    duration: "Jour 1 — Appel découverte 30 min",
     description: "Ton business, ta cible, tes objectifs. On ne code pas avant d'avoir compris où tu veux aller.",
   },
   {
     number: "02",
     title: "Concevoir",
+    duration: "Jours 2-5 — Maquette Figma sur-mesure",
     description: "Maquettes et UX pensés conversion. Chaque décision visuelle guide vers l'action.",
   },
   {
     number: "03",
     title: "Construire",
+    duration: "Semaines 2-4 — Développement & tests",
     description: "Code propre, performant, évolutif. La bonne techno pour ton besoin, pas la plus trendy.",
   },
   {
     number: "04",
     title: "Lancer",
+    duration: "Semaine 5 — Mise en ligne & formation",
     description: "SEO, analytics, optimisation continue. Le lancement est le début, pas la fin.",
   },
 ];
@@ -71,6 +75,7 @@ export default function Process() {
                 <span className="text-xl font-bold text-[var(--accent)]">{step.number}</span>
               </div>
 
+              <p className="text-[10px] font-semibold text-[var(--accent)] uppercase tracking-widest mb-1.5">{step.duration}</p>
               <h3 className="text-lg font-semibold text-[var(--fg)] mb-2">{step.title}</h3>
               <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{step.description}</p>
             </motion.div>

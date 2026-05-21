@@ -4,10 +4,19 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 
+interface Offer {
+  name: string;
+  tagline: string;
+  price: string;
+  features: string[];
+  accent: boolean;
+}
+
 const offers = [
   {
     name: "Site Vitrine",
     tagline: "Votre meilleur commercial en ligne",
+    price: "À partir de 1 000 €",
     features: [
       "Design sur-mesure premium",
       "SEO on-page complet",
@@ -20,6 +29,7 @@ const offers = [
   {
     name: "Boutique Shopify",
     tagline: "E-commerce optimisé pour vendre",
+    price: "À partir de 2 000 €",
     features: [
       "Thème Liquid sur-mesure",
       "Tunnel d'achat optimisé CRO",
@@ -32,6 +42,7 @@ const offers = [
   {
     name: "SaaS Sur-mesure",
     tagline: "Votre produit digital de A à Z",
+    price: "À partir de 8 000 €",
     features: [
       "Architecture Next.js scalable",
       "Authentification & dashboard",
@@ -72,7 +83,7 @@ export default function Offers() {
           viewport={defaultViewport}
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
-          {offers.map((offer) => (
+          {(offers as Offer[]).map((offer) => (
             <motion.div
               key={offer.name}
               variants={fadeUp}
@@ -90,7 +101,13 @@ export default function Offers() {
 
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-[var(--fg)] mb-1">{offer.name}</h3>
-                <p className="text-sm text-[var(--fg-muted)]">{offer.tagline}</p>
+                <p className="text-sm text-[var(--fg-muted)] mb-3">{offer.tagline}</p>
+                <div className="flex items-baseline gap-1.5">
+                  <span className={`text-2xl font-black ${offer.accent ? "text-[#050508]" : "text-[var(--accent)]"}`}>
+                    {offer.price}
+                  </span>
+                </div>
+                <p className="text-[10px] text-[var(--fg-muted)] mt-0.5">Prix indicatif — devis gratuit et personnalisé</p>
               </div>
 
               <ul className="space-y-3 mb-8 flex-1">
