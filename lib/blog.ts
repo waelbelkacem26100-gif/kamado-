@@ -34,9 +34,9 @@ export const posts: BlogPost[] = [
     date: "12 mai 2026",
     readTime: "8 min",
     excerpt: "Google continue de faire évoluer ses algorithmes. Découvrez les signaux qui feront la différence en 2026 pour dominer les résultats de recherche.",
-    metaTitle: "SEO 2026 : les nouveaux critères Google — Guide complet | Kama Agency",
+    metaTitle: "SEO 2026 : les nouveaux critères Google — Guide complet",
     metaDescription: "Découvrez les critères SEO qui comptent vraiment en 2026 : AI Overviews, E-E-A-T renforcé, Core Web Vitals, contenu expert. Guide pratique par l'agence Kama Agency.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=85&auto=format&fit=crop",
     intro: "Le référencement naturel en 2026 n'a plus grand-chose à voir avec celui d'il y a cinq ans. L'arrivée de l'intelligence artificielle dans les résultats Google, le renforcement des critères E-E-A-T et l'évolution des Core Web Vitals ont redéfini les règles du jeu. Bonne nouvelle : les agences et entreprises qui s'y adaptent rapidement prennent une avance considérable sur leurs concurrents. Mauvaise nouvelle : celles qui restent sur leurs acquis perdent des positions chaque semaine. Voici ce que vous devez savoir pour 2026 — avec des exemples concrets, des chiffres réels et des actions immédiatement applicables.",
     sections: [
       {
@@ -112,7 +112,7 @@ export const posts: BlogPost[] = [
     date: "5 mai 2026",
     readTime: "9 min",
     excerpt: "Deux plateformes, deux philosophies. On compare les coûts, la performance, la scalabilité et l'expérience marchand pour vous aider à faire le bon choix.",
-    metaTitle: "Shopify vs WooCommerce 2026 : comparatif complet | Kama Agency",
+    metaTitle: "Shopify vs WooCommerce 2026 : comparatif complet",
     metaDescription: "Shopify ou WooCommerce en 2026 ? Comparatif complet des coûts, performances, SEO et facilité de gestion. L'avis d'experts de l'agence Kama Agency pour choisir la bonne plateforme.",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop",
     intro: "Shopify vs WooCommerce. C'est la question que nous posent presque tous nos clients e-commerce avant de démarrer un projet. Et en 2026, la réponse n'est pas aussi simple qu'un \"l'un est mieux que l'autre\". Ces deux plateformes servent des besoins différents, avec des modèles économiques opposés et des implications techniques très distinctes. Après avoir travaillé sur des dizaines de boutiques sur les deux plateformes — de la boutique artisanale à l'e-commerce à 7 chiffres — voici notre analyse complète, sans langue de bois, avec des chiffres réels et des exemples concrets tirés de nos projets.",
@@ -186,9 +186,9 @@ export const posts: BlogPost[] = [
     date: "28 avril 2026",
     readTime: "7 min",
     excerpt: "Performance, SEO, expérience développeur : Next.js coche toutes les cases. Voici pourquoi nous l'avons adopté comme framework principal chez Kama Agency.",
-    metaTitle: "Pourquoi Next.js est le meilleur framework web en 2026 | Kama Agency",
+    metaTitle: "Pourquoi Next.js est le meilleur framework web en 2026",
     metaDescription: "Next.js : performances, SEO, App Router, Server Components. Découvrez pourquoi ce framework React est devenu le choix numéro 1 des agences web premium en 2026.",
-    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=85&auto=format&fit=crop",
     intro: "Il y a cinq ans, Next.js était un framework prometteur utilisé par quelques startups tech avancées. Aujourd'hui, il alimente des millions de sites dans le monde — de petites boutiques locales aux plus grandes plateformes mondiales comme TikTok, Twitch et Notion. Chez Kama Agency, nous l'avons adopté comme framework principal dès 2023, après avoir comparé sérieusement toutes les alternatives. Trois ans plus tard, ce choix nous semble plus évident que jamais. Voici pourquoi Next.js s'est imposé — avec des exemples concrets de nos projets et des métriques réelles.",
     sections: [
       {
@@ -260,7 +260,7 @@ export const posts: BlogPost[] = [
     date: "17 mai 2026",
     readTime: "9 min",
     excerpt: "Site vitrine, boutique e-commerce ou SaaS : les prix varient de 500€ à 100 000€. Guide complet des tarifs 2026 pour budgéter votre projet web sans mauvaise surprise.",
-    metaTitle: "Prix site web 2026 : combien ça coûte vraiment ? | Kama Agency",
+    metaTitle: "Prix site web 2026 : combien ça coûte vraiment ?",
     metaDescription: "Combien coûte un site web en 2026 ? Site vitrine (500-8 000€), e-commerce (1 500-15 000€), SaaS (10 000€+). Guide complet des tarifs et facteurs de prix par Kama Agency.",
     image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80&auto=format&fit=crop",
     intro: "\"Combien ça coûte un site web ?\" — c'est la question que nous recevons le plus souvent. Et la réponse honnête est : ça dépend. En 2026, le prix d'un site web peut aller de 500€ pour un site vitrine simple à plusieurs centaines de milliers d'euros pour une application web complexe. Cette fourchette large s'explique par des différences fondamentales de complexité, de technologie et d'expertise. Dans ce guide, on vous donne les vrais prix du marché français, les facteurs qui font varier les tarifs, et surtout comment calculer le retour sur investissement de votre projet pour savoir si l'investissement en vaut la peine.",

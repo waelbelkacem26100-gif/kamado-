@@ -81,7 +81,9 @@ export default function Header() {
                 className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                   openDropdown === item.id || pathname.startsWith(item.href)
                     ? "text-[var(--accent)]"
-                    : "text-[var(--fg-muted)] hover:text-[var(--fg)]"
+                    : scrolled
+                    ? "text-[var(--fg-muted)] hover:text-[var(--fg)]"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -216,6 +218,7 @@ export default function Header() {
           <Link
             href="/contact/"
             className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-[#050508] bg-[var(--accent)] hover:opacity-90 transition-opacity duration-200 shadow-[0_0_20px_var(--accent-glow)]"
+            style={{ boxShadow: "0 0 20px rgba(0,255,135,0.3)" }}
           >
             Démarrer un projet
           </Link>
@@ -225,8 +228,8 @@ export default function Header() {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Menu"
           >
-            <span className={`block w-5 h-px bg-[var(--fg)] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
-            <span className={`block w-5 h-px bg-[var(--fg)] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`} />
+            <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? "bg-[var(--fg)]" : "bg-white"} ${menuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
+            <span className={`block w-5 h-px transition-all duration-300 ${scrolled ? "bg-[var(--fg)]" : "bg-white"} ${menuOpen ? "-rotate-45 -translate-y-[3.5px]" : ""}`} />
           </button>
         </div>
       </div>

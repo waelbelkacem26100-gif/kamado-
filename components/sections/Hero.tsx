@@ -18,11 +18,15 @@ const stats = [
 
 export default function Hero() {
   const shouldReduce = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
   const [phraseIndex, setPhraseIndex] = useState(0);
-  const [displayed, setDisplayed] = useState("");
+  const [displayed, setDisplayed] = useState(phrases[0]);
   const [isDeleting, setIsDeleting] = useState(false);
 
+  useEffect(() => { setMounted(true); }, []);
+
   useEffect(() => {
+    if (!mounted) return;
     const phrase = phrases[phraseIndex];
     let timeout: ReturnType<typeof setTimeout>;
 
@@ -105,11 +109,13 @@ export default function Hero() {
               textShadow: "0 0 40px rgba(0,255,135,0.35)",
             }}
           >
-            {displayed}
-            <span
-              className="inline-block w-0.5 align-middle ml-1"
-              style={{ height: "0.85em", background: "#00ff87", opacity: isDeleting || displayed.length < phrases[phraseIndex].length ? 1 : 0.5 }}
-            />
+            {mounted ? displayed : phrases[0]}
+            {mounted && (
+              <span
+                className="inline-block w-0.5 align-middle ml-1"
+                style={{ height: "0.85em", background: "#00ff87", opacity: isDeleting || displayed.length < phrases[phraseIndex].length ? 1 : 0.5 }}
+              />
+            )}
           </motion.span>
         </h1>
 
