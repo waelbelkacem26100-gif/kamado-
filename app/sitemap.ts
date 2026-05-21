@@ -6,7 +6,7 @@ import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { posts } from "@/lib/blog";
 
-const TODAY = "2026-05-19";
+const TODAY = "2026-05-21";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const serviceUrls: MetadataRoute.Sitemap = services.map((s) => ({

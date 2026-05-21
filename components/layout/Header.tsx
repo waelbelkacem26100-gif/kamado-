@@ -78,7 +78,7 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                className={`relative flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 group ${
                   openDropdown === item.id || pathname.startsWith(item.href)
                     ? "text-[var(--accent)]"
                     : scrolled
@@ -87,7 +87,7 @@ export default function Header() {
                 }`}
               >
                 {item.label}
-                {item.dropdown && (
+                {item.dropdown ? (
                   <motion.svg
                     animate={{ rotate: openDropdown === item.id ? 180 : 0 }}
                     transition={{ duration: 0.2 }}
@@ -96,6 +96,20 @@ export default function Header() {
                   >
                     <path d="M6 9l6 6 6-6" />
                   </motion.svg>
+                ) : (
+                  <span
+                    className="absolute bottom-1 left-4 right-4 h-px rounded-full origin-center scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                    style={{
+                      background: pathname === item.href
+                        ? "var(--accent)"
+                        : scrolled
+                        ? "var(--fg)"
+                        : "white",
+                      opacity: pathname === item.href ? 1 : 0.4,
+                      transform: pathname === item.href ? "scaleX(1)" : undefined,
+                    }}
+                    aria-hidden="true"
+                  />
                 )}
               </Link>
 
