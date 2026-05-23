@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "kamaagency-google-verify",
+    google: "jLA41AIAjJ9o95yAdnShagpFrg3Vemd1IOBYHhft1_4",
   },
   other: {
     "msapplication-TileColor": "#111111",
