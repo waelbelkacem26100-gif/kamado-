@@ -1,94 +1,124 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, slideLeft, slideRight, defaultViewport } from "@/lib/animations";
 
-const LINES = [
-  { text: "$ screenbuild convert --input screenshot.png", color: "var(--accent)", delay: 0 },
-  { text: "▸ Analyzing design with Claude Vision API...",  color: "#666",          delay: 1400 },
-  { text: "▸ Detecting components: navbar, hero, cards...", color: "#666",         delay: 2800 },
-  { text: "▸ Generating Liquid templates...",              color: "#666",          delay: 4200 },
-  { text: "▸ Compiling theme.zip (47 files)...",           color: "#666",          delay: 5600 },
-  { text: "✓ theme.zip ready — Deploy to Shopify",        color: "var(--accent)", delay: 7000 },
-];
-
-const LOOP_DELAY = 10000;
-
 const STEPS = [
-  { num: "01", title: "Capture d'écran", desc: "Upload n'importe quelle image — maquette, site existant, wireframe" },
-  { num: "02", title: "Analyse IA",      desc: "Claude Vision API détecte chaque composant, couleur et structure" },
-  { num: "03", title: "Thème Shopify",   desc: "Export Liquid OS 2.0 complet, prêt à déployer en boutique" },
+  { num: "01", title: "Gestion d'équipes",         desc: "Invitez vos collaborateurs et organisez vos projets en quelques clics" },
+  { num: "02", title: "Workflows automatisés",     desc: "Créez des processus sans code, gagnez en efficacité opérationnelle" },
+  { num: "03", title: "Dashboard analytique",      desc: "Visualisez les performances de vos équipes en temps réel" },
 ];
 
-function TypingLine({ text, color }: { text: string; color: string }) {
-  const [displayed, setDisplayed] = useState("");
-  const idx = useRef(0);
+const dashStats = [
+  { label: "Tâches complétées", value: "1 284", delta: "+12%", color: "#10b981" },
+  { label: "Membres actifs",    value: "47",     delta: "+3",   color: "#a855f7" },
+  { label: "Projets en cours",  value: "9",      delta: "2 en retard", color: "#f97316" },
+];
 
-  useEffect(() => {
-    idx.current = 0;
-    setDisplayed("");
-    const iv = setInterval(() => {
-      idx.current++;
-      setDisplayed(text.slice(0, idx.current));
-      if (idx.current >= text.length) clearInterval(iv);
-    }, 22);
-    return () => clearInterval(iv);
-  }, [text]);
+const barData = [42, 67, 55, 80, 91, 74, 88];
+const barLabels = ["L", "M", "M", "J", "V", "S", "D"];
 
-  return <span style={{ color }}>{displayed}</span>;
+function DashboardMockup() {
+  const maxBar = Math.max(...barData);
+  return (
+    <div
+      className="rounded-2xl overflow-hidden border"
+      style={{ borderColor: "rgba(255,255,255,0.08)", background: "#0d0d1a" }}
+    >
+      {/* Chrome */}
+      <div
+        className="flex items-center gap-2 px-4 py-3 border-b"
+        style={{ borderColor: "rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.03)" }}
+      >
+        <div className="flex gap-1.5">
+          <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
+          <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
+          <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
+        </div>
+        <span className="text-xs text-white/30 ml-2 font-mono">clustea — dashboard</span>
+      </div>
+
+      {/* Body */}
+      <div className="p-5 space-y-4">
+        {/* Stat cards */}
+        <div className="grid grid-cols-3 gap-3">
+          {dashStats.map((s) => (
+            <div
+              key={s.label}
+              className="rounded-xl p-3"
+              style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+            >
+              <p className="text-[10px] text-white/40 mb-1.5 leading-tight">{s.label}</p>
+              <p className="text-lg font-black text-white leading-none">{s.value}</p>
+              <p className="text-[10px] mt-1 font-semibold" style={{ color: s.color }}>{s.delta}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Bar chart */}
+        <div
+          className="rounded-xl p-4"
+          style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)" }}
+        >
+          <p className="text-[10px] text-white/40 mb-3">Activité hebdomadaire</p>
+          <div className="flex items-end gap-2 h-[72px]">
+            {barData.map((v, i) => (
+              <div key={i} className="flex-1 flex flex-col items-center gap-1">
+                <motion.div
+                  className="w-full rounded-sm"
+                  style={{ background: i === 4 ? "#a855f7" : "rgba(168,85,247,0.3)" }}
+                  initial={{ height: 0 }}
+                  whileInView={{ height: `${(v / maxBar) * 64}px` }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.6, delay: i * 0.07, ease: "easeOut" }}
+                />
+                <span className="text-[9px] text-white/30">{barLabels[i]}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Task list */}
+        <div className="space-y-2">
+          {[
+            { label: "Intégration Stripe Billing", done: true,  tag: "Dev" },
+            { label: "Onboarding flow v2",         done: false, tag: "Design" },
+            { label: "Dashboard permissions",      done: false, tag: "Dev" },
+          ].map((t, i) => (
+            <div key={i} className="flex items-center gap-2.5">
+              <div
+                className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center border"
+                style={{
+                  borderColor: t.done ? "#10b981" : "rgba(255,255,255,0.15)",
+                  background:  t.done ? "#10b98122" : "transparent",
+                }}
+              >
+                {t.done && (
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3.5">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-xs flex-1" style={{ color: t.done ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.65)", textDecoration: t.done ? "line-through" : "none" }}>
+                {t.label}
+              </span>
+              <span
+                className="text-[9px] font-semibold px-1.5 py-0.5 rounded"
+                style={{ background: "rgba(168,85,247,0.15)", color: "#a855f7" }}
+              >
+                {t.tag}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function TerminalSection() {
-  const [visibleLines, setVisibleLines] = useState<number[]>([]);
-  const [isInView,     setIsInView]     = useState(false);
-  const sectionRef  = useRef<HTMLElement>(null);
-  const loopRef     = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
-  const lineTimers  = useRef<ReturnType<typeof setTimeout>[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsInView(true); },
-      { threshold: 0.2 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    const runLoop = () => {
-      /* Nettoyer les anciens timers de lignes */
-      lineTimers.current.forEach(clearTimeout);
-      lineTimers.current = [];
-
-      setVisibleLines([]);
-
-      LINES.forEach((line, i) => {
-        const t = setTimeout(() => {
-          setVisibleLines((prev) => [...prev, i]);
-        }, line.delay);
-        lineTimers.current.push(t);
-      });
-
-      loopRef.current = setTimeout(
-        runLoop,
-        LOOP_DELAY + LINES[LINES.length - 1].delay
-      );
-    };
-
-    runLoop();
-
-    return () => {
-      if (loopRef.current) clearTimeout(loopRef.current);
-      lineTimers.current.forEach(clearTimeout);
-      lineTimers.current = [];
-    };
-  }, [isInView]);
-
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 px-6 overflow-hidden">
+    <section className="py-24 md:py-32 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -103,54 +133,23 @@ export default function TerminalSection() {
             Projet phare
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
-            ScreenBuild — Screenshot to Shopify
+            Clustea — SaaS B2B
           </motion.h2>
           <motion.p variants={fadeUp} className="text-lead mt-4 max-w-xl mx-auto">
-            De la capture d&apos;écran au thème Shopify déployable en 2 minutes. Propulsé par Claude Vision API.
+            Plateforme de gestion d&apos;équipes et de workflows. MVP en production en 8 semaines.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-10 items-center">
 
-          {/* Terminal */}
+          {/* Dashboard mockup */}
           <motion.div
             variants={slideLeft}
             initial="hidden"
             whileInView="visible"
             viewport={defaultViewport}
-            className="rounded-2xl overflow-hidden border"
-            style={{ borderColor: "rgba(255,255,255,0.08)", background: "#0a0a0a" }}
           >
-            {/* Chrome */}
-            <div
-              className="flex items-center gap-2 px-4 py-3 border-b"
-              style={{ borderColor: "rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.03)" }}
-            >
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-[#FF5F56]" />
-                <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
-                <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
-              </div>
-              <span className="text-xs text-white/30 ml-2 font-mono">screenbuild — terminal</span>
-            </div>
-
-            {/* Body */}
-            <div className="p-6 font-mono text-sm min-h-[280px] space-y-2">
-              {LINES.map((line, i) =>
-                visibleLines.includes(i) ? (
-                  <div key={i} className="leading-relaxed">
-                    <TypingLine text={line.text} color={line.color} />
-                  </div>
-                ) : null
-              )}
-              {visibleLines.length > 0 && visibleLines.length < LINES.length && (
-                <motion.span
-                  animate={{ opacity: [1, 0, 1] }}
-                  transition={{ duration: 0.8, repeat: Infinity }}
-                  className="inline-block w-2 h-4 align-middle bg-[var(--accent)]"
-                />
-              )}
-            </div>
+            <DashboardMockup />
           </motion.div>
 
           {/* Right — description */}
@@ -161,15 +160,34 @@ export default function TerminalSection() {
             viewport={defaultViewport}
             className="space-y-8"
           >
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2">
+              {["Next.js 15", "TypeScript", "Prisma", "Supabase"].map((t) => (
+                <span
+                  key={t}
+                  className="text-xs font-medium px-3 py-1 rounded-full border"
+                  style={{ borderColor: "rgba(168,85,247,0.3)", color: "#a855f7", background: "rgba(168,85,247,0.08)" }}
+                >
+                  {t}
+                </span>
+              ))}
+              <span
+                className="text-xs font-semibold px-3 py-1 rounded-full"
+                style={{ background: "rgba(16,185,129,0.12)", color: "#10b981", border: "1px solid rgba(16,185,129,0.25)" }}
+              >
+                8 sem — MVP en production
+              </span>
+            </div>
+
             <div className="space-y-6">
               {STEPS.map((step) => (
                 <div key={step.num} className="flex gap-4">
                   <div
                     className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold"
                     style={{
-                      background:   "var(--accent-glow)",
-                      color:        "var(--accent)",
-                      border:       "1px solid rgba(255,255,255,0.1)",
+                      background: "rgba(168,85,247,0.12)",
+                      color:      "#a855f7",
+                      border:     "1px solid rgba(168,85,247,0.25)",
                     }}
                   >
                     {step.num}
@@ -182,29 +200,18 @@ export default function TerminalSection() {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://screenbuild.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-[#0a0a0a] bg-[var(--accent)] transition-opacity hover:opacity-90"
-              >
-                Essayer ScreenBuild
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              </a>
-
-              <div
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-full text-xs font-medium border border-[var(--border)]"
-                style={{ color: "var(--fg-muted)" }}
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-                Powered by Anthropic Claude
-              </div>
-            </div>
+            <a
+              href="https://clustea.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ background: "#a855f7", color: "#fff" }}
+            >
+              Découvrir Clustea
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </a>
           </motion.div>
         </div>
       </div>

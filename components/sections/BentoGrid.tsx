@@ -6,8 +6,6 @@ import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 const stats = [
   { value: "3×", label: "plus rapide que la concurrence", accent: "var(--accent)" },
   { value: "95+", label: "score Lighthouse moyen", accent: "#a855f7" },
-  { value: "0", label: "template — 100% sur-mesure", accent: "#3b82f6" },
-  { value: "48h", label: "délai de réponse max", accent: "#f97316" },
 ];
 
 const features = [
@@ -157,27 +155,6 @@ export default function BentoGrid() {
             <FeatureCard key={feat.title} feat={feat} index={i} />
           ))}
 
-          {/* Stats cards row */}
-          {stats.slice(2).map((s, i) => (
-            <motion.div
-              key={s.value}
-              variants={fadeUp}
-              custom={features.length + i}
-              className="p-6 rounded-2xl border border-[var(--border)] flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-300"
-              style={{ background: "rgba(255,255,255,0.02)", backdropFilter: "blur(8px)" }}
-            >
-              <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: `${s.accent}12`, border: `1px solid ${s.accent}25` }}
-              >
-                <div className="w-2 h-2 rounded-full" style={{ background: s.accent, boxShadow: `0 0 8px ${s.accent}` }} />
-              </div>
-              <div>
-                <span className="text-3xl font-black" style={{ color: s.accent }}>{s.value}</span>
-                <p className="text-sm text-[var(--fg-muted)] mt-1">{s.label}</p>
-              </div>
-            </motion.div>
-          ))}
         </motion.div>
       </div>
     </section>
