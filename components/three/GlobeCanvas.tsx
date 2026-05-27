@@ -15,7 +15,7 @@ export default function GlobeCanvas() {
     // Scene
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000)
-    camera.position.z = 2.5
+    camera.position.z = 25
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(width, height)
