@@ -22,7 +22,7 @@ const fragmentShader = `
     float ll = length(xy);
     if (ll > 0.5) discard;
     float alpha = smoothstep(0.5, 0.08, ll) * vOpacity;
-    gl_FragColor = vec4(0.0, 0.82, 1.0, alpha);
+    gl_FragColor = vec4(0.0, 1.0, 0.53, alpha);
   }
 `;
 

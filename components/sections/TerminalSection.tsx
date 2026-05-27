@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, slideLeft, slideRight, defaultViewport } from "@/lib/animations";
 
 const LINES = [
-  { text: "$ screenbuild convert --input screenshot.png", color: "#00D1FF", delay: 0 },
-  { text: "▸ Analyzing design with Claude Vision API...",  color: "#666",    delay: 1400 },
-  { text: "▸ Detecting components: navbar, hero, cards...", color: "#666",   delay: 2800 },
-  { text: "▸ Generating Liquid templates...",              color: "#666",    delay: 4200 },
-  { text: "▸ Compiling theme.zip (47 files)...",           color: "#666",    delay: 5600 },
-  { text: "✓ theme.zip ready — Deploy to Shopify",        color: "#00D1FF", delay: 7000 },
+  { text: "$ screenbuild convert --input screenshot.png", color: "var(--accent)", delay: 0 },
+  { text: "▸ Analyzing design with Claude Vision API...",  color: "#666",          delay: 1400 },
+  { text: "▸ Detecting components: navbar, hero, cards...", color: "#666",         delay: 2800 },
+  { text: "▸ Generating Liquid templates...",              color: "#666",          delay: 4200 },
+  { text: "▸ Compiling theme.zip (47 files)...",           color: "#666",          delay: 5600 },
+  { text: "✓ theme.zip ready — Deploy to Shopify",        color: "var(--accent)", delay: 7000 },
 ];
 
 const LOOP_DELAY = 10000;
@@ -40,10 +40,11 @@ function TypingLine({ text, color }: { text: string; color: string }) {
 }
 
 export default function TerminalSection() {
-  const [visibleLines, setVisibleLines]  = useState<number[]>([]);
-  const [isInView,     setIsInView]      = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-  const loopRef    = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const [visibleLines, setVisibleLines] = useState<number[]>([]);
+  const [isInView,     setIsInView]     = useState(false);
+  const sectionRef  = useRef<HTMLElement>(null);
+  const loopRef     = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const lineTimers  = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -58,15 +59,32 @@ export default function TerminalSection() {
     if (!isInView) return;
 
     const runLoop = () => {
+      /* Nettoyer les anciens timers de lignes */
+      lineTimers.current.forEach(clearTimeout);
+      lineTimers.current = [];
+
       setVisibleLines([]);
+
       LINES.forEach((line, i) => {
-        setTimeout(() => setVisibleLines((prev) => [...prev, i]), line.delay);
+        const t = setTimeout(() => {
+          setVisibleLines((prev) => [...prev, i]);
+        }, line.delay);
+        lineTimers.current.push(t);
       });
-      loopRef.current = setTimeout(() => runLoop(), LOOP_DELAY + LINES[LINES.length - 1].delay);
+
+      loopRef.current = setTimeout(
+        runLoop,
+        LOOP_DELAY + LINES[LINES.length - 1].delay
+      );
     };
 
     runLoop();
-    return () => { if (loopRef.current) clearTimeout(loopRef.current); };
+
+    return () => {
+      if (loopRef.current) clearTimeout(loopRef.current);
+      lineTimers.current.forEach(clearTimeout);
+      lineTimers.current = [];
+    };
   }, [isInView]);
 
   return (
@@ -101,7 +119,7 @@ export default function TerminalSection() {
             whileInView="visible"
             viewport={defaultViewport}
             className="rounded-2xl overflow-hidden border"
-            style={{ borderColor: "rgba(255,255,255,0.08)", background: "#0A0A0A" }}
+            style={{ borderColor: "rgba(255,255,255,0.08)", background: "#0a0a0a" }}
           >
             {/* Chrome */}
             <div
@@ -129,8 +147,7 @@ export default function TerminalSection() {
                 <motion.span
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{ duration: 0.8, repeat: Infinity }}
-                  className="inline-block w-2 h-4 align-middle"
-                  style={{ background: "#00D1FF" }}
+                  className="inline-block w-2 h-4 align-middle bg-[var(--accent)]"
                 />
               )}
             </div>
@@ -149,7 +166,11 @@ export default function TerminalSection() {
                 <div key={step.num} className="flex gap-4">
                   <div
                     className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold"
-                    style={{ background: "rgba(0,209,255,0.1)", color: "#00D1FF", border: "1px solid rgba(0,209,255,0.2)" }}
+                    style={{
+                      background:   "var(--accent-glow)",
+                      color:        "var(--accent)",
+                      border:       "1px solid rgba(255,255,255,0.1)",
+                    }}
                   >
                     {step.num}
                   </div>
@@ -166,7 +187,7 @@ export default function TerminalSection() {
                 href="https://screenbuild.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-[#0A0A0A] bg-[var(--accent)] transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-[#0a0a0a] bg-[var(--accent)] transition-opacity hover:opacity-90"
               >
                 Essayer ScreenBuild
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -175,8 +196,8 @@ export default function TerminalSection() {
               </a>
 
               <div
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-full text-xs font-medium border"
-                style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.45)" }}
+                className="inline-flex items-center gap-2 px-4 py-3 rounded-full text-xs font-medium border border-[var(--border)]"
+                style={{ color: "var(--fg-muted)" }}
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z" />

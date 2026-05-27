@@ -29,13 +29,14 @@ const metricMap: Record<string, { value: string; label: string }> = {
 export default function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef     = useRef<HTMLDivElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  /* SSR-safe: démarre en mode grille (mobile), switch desktop après hydration */
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 1024);
-    const onResize = () => setIsMobile(window.innerWidth < 1024);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    const update = () => setIsMobile(window.innerWidth < 1024);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   /* ── GSAP horizontal scroll ── */

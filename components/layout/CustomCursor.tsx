@@ -7,42 +7,49 @@ export default function CustomCursor() {
   const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    /* Désactiver sur touch devices */
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
     if (isTouch) return;
 
-    document.documentElement.style.cursor = "none";
+    /* Cacher le curseur natif via une classe CSS au lieu d'un style inline global */
+    document.documentElement.classList.add("custom-cursor-active");
 
     let mouseX = -100, mouseY = -100;
     let followerX = -100, followerY = -100;
+    let scale = 1, targetScale = 1;
     let rafId: number;
-    let scale = 1;
-    let targetScale = 1;
 
     const onMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       if (innerRef.current) {
-        innerRef.current.style.transform =
-          `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
+        innerRef.current.style.transform = `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
       }
     };
 
     const onEnter = (e: Event) => {
       const el = e.currentTarget as HTMLElement;
-      targetScale = el.dataset.cursorGrow ? 3 : 2.0;
+      targetScale = el.dataset.cursorGrow ? 3 : 1.8;
     };
     const onLeave = () => { targetScale = 1; };
 
     window.addEventListener("mousemove", onMove);
 
-    const interactive = document.querySelectorAll<HTMLElement>(
-      "a, button, [data-cursor-grow]"
-    );
-    interactive.forEach((el) => {
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
-      el.style.cursor = "none";
-    });
+    /* Délégation d'événements au lieu de querySelectorAll au mount */
+    const onDocEnter = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a, button, [data-cursor-grow]")) {
+        targetScale = 1.8;
+      }
+    };
+    const onDocLeave = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a, button, [data-cursor-grow]")) {
+        targetScale = 1;
+      }
+    };
+    document.addEventListener("mouseover",  onDocEnter);
+    document.addEventListener("mouseout",   onDocLeave);
 
     const animate = () => {
       rafId = requestAnimationFrame(animate);
@@ -61,12 +68,9 @@ export default function CustomCursor() {
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener("mousemove", onMove);
-      document.documentElement.style.cursor = "";
-      interactive.forEach((el) => {
-        el.removeEventListener("mouseenter", onEnter);
-        el.removeEventListener("mouseleave", onLeave);
-        el.style.cursor = "";
-      });
+      document.removeEventListener("mouseover",  onDocEnter);
+      document.removeEventListener("mouseout",   onDocLeave);
+      document.documentElement.classList.remove("custom-cursor-active");
     };
   }, []);
 
@@ -82,8 +86,8 @@ export default function CustomCursor() {
         <div
           className="w-9 h-9 rounded-full border mix-blend-difference"
           style={{
-            borderColor: "#00D1FF",
-            boxShadow: "0 0 12px rgba(0,209,255,0.4)",
+            borderColor: "var(--accent)",
+            boxShadow:   "0 0 12px var(--accent-glow)",
           }}
         />
       </div>
@@ -95,10 +99,7 @@ export default function CustomCursor() {
         style={{ willChange: "transform" }}
         aria-hidden="true"
       >
-        <div
-          className="w-1.5 h-1.5 rounded-full"
-          style={{ background: "#00D1FF" }}
-        />
+        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)]" />
       </div>
     </>
   );

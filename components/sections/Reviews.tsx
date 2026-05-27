@@ -11,7 +11,7 @@ const reviews = [
     text: "2,4× plus de leads qualifiés. Livraison en 4 semaines, délai tenu.",
     metric: "×2,4",
     metricLabel: "leads",
-    accent: "#00ff87",
+    accent: "var(--accent)",
     avatarBg: "#6366f1",
   },
   {

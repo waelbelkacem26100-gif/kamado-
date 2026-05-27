@@ -9,9 +9,9 @@
   --bg-secondary: #f5f5f5;
   --fg: #000000;
   --fg-muted: rgba(0, 0, 0, 0.5);
-  --accent: #0099bb;
-  --accent-hover: #00b8d4;
-  --accent-glow: rgba(0, 209, 255, 0.18);
+  --accent: #00c853;
+  --accent-hover: #00a847;
+  --accent-glow: rgba(0, 200, 83, 0.2);
   --border: rgba(0, 0, 0, 0.1);
   --border-hover: rgba(0, 0, 0, 0.2);
   --surface: rgba(0, 0, 0, 0.04);
@@ -21,13 +21,13 @@
 }
 
 .dark {
-  --bg: #0A0A0A;
+  --bg: #0a0a0a;
   --bg-secondary: #141414;
   --fg: #f0f0f0;
   --fg-muted: rgba(240, 240, 240, 0.45);
-  --accent: #00D1FF;
-  --accent-hover: #5CE1FF;
-  --accent-glow: rgba(0, 209, 255, 0.18);
+  --accent: #00ff87;
+  --accent-hover: #44ffaa;
+  --accent-glow: rgba(0, 255, 135, 0.18);
   --border: rgba(255, 255, 255, 0.07);
   --border-hover: rgba(255, 255, 255, 0.15);
   --surface: rgba(255, 255, 255, 0.04);
@@ -73,10 +73,10 @@ body::after {
 
 /* ─── Glow system ─── */
 .glow-cyan {
-  box-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(0,209,255,0.08);
+  box-shadow: 0 0 20px var(--accent-glow), 0 0 60px rgba(0,255,135,0.06);
 }
 .glow-text-cyan {
-  background: linear-gradient(135deg, #00D1FF 0%, #ffffff 45%, #5CE1FF 100%);
+  background: linear-gradient(135deg, #00ff87 0%, #ffffff 45%, #44ffaa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,7 +84,7 @@ body::after {
 .glow-border {
   border: 1px solid transparent;
   background: linear-gradient(var(--bg-secondary, #141414), var(--bg-secondary, #141414)) padding-box,
-              linear-gradient(135deg, #00D1FF, transparent, #00D1FF) border-box;
+              linear-gradient(135deg, #00ff87, transparent, #00ff87) border-box;
 }
 
 /* ─── Gradient border animation ─── */
@@ -100,7 +100,7 @@ body::after {
 .border-gradient-rotate {
   border: 1px solid transparent;
   background: linear-gradient(var(--bg), var(--bg)) padding-box,
-              conic-gradient(from var(--gradient-angle), #00D1FF, transparent 40%, #00D1FF 60%, transparent) border-box;
+              conic-gradient(from var(--gradient-angle), #00ff87, transparent 40%, #00ff87 60%, transparent) border-box;
   animation: rotateBorder 4s linear infinite;
 }
 
@@ -116,7 +116,7 @@ body::after {
 /* ─── Section fade divider ─── */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 209, 255, 0.1) 30%, rgba(0, 209, 255, 0.22) 50%, rgba(0, 209, 255, 0.1) 70%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 135, 0.1) 30%, rgba(0, 255, 135, 0.22) 50%, rgba(0, 255, 135, 0.1) 70%, transparent 100%);
   position: relative;
   z-index: 1;
 }
@@ -200,6 +200,14 @@ body {
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ─── Curseur custom — appliqué via classe JS, pas style inline ─── */
+.custom-cursor-active,
+.custom-cursor-active a,
+.custom-cursor-active button,
+.custom-cursor-active [role="button"] {
+  cursor: none !important;
 }
 
 /* ─── Scrollbar ─── */

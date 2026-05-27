@@ -11,7 +11,7 @@ const values = [
       </svg>
     ),
     title: "Rapidité",
-    accent: "#00ff87",
+    accent: "var(--accent)",
     description:
       "Grâce à l'IA et nos processus rodés, nous livrons 3× plus vite que la moyenne du marché — sans sacrifier la qualité.",
   },
@@ -45,7 +45,7 @@ export default function ValueProp() {
       {/* Ambient glow */}
       <div
         className="absolute rounded-full pointer-events-none"
-        style={{ width: 600, height: 400, top: "10%", left: "50%", transform: "translateX(-50%)", background: "radial-gradient(ellipse, rgba(0,255,135,0.06) 0%, transparent 70%)", filter: "blur(60px)" }}
+        style={{ width: 600, height: 400, top: "10%", left: "50%", transform: "translateX(-50%)", background: "radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%)", filter: "blur(60px)" }}
         aria-hidden="true"
       />
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,10 +8,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
+  /* Stocker la référence pour un cleanup propre */
+  const rafCallbackRef = useRef<((time: number) => void) | null>(null);
+
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (isMobile) {
+      /* Pas de Lenis sur mobile, juste rafraîchir les positions ScrollTrigger */
       ScrollTrigger.refresh();
       return;
     }
@@ -24,12 +28,17 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
     lenis.on("scroll", ScrollTrigger.update);
 
+    /* Référence stable pour le cleanup */
     const rafCallback = (time: number) => lenis.raf(time * 1000);
+    rafCallbackRef.current = rafCallback;
     gsap.ticker.add(rafCallback);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      gsap.ticker.remove(rafCallback);
+      if (rafCallbackRef.current) {
+        gsap.ticker.remove(rafCallbackRef.current);
+        rafCallbackRef.current = null;
+      }
       lenis.destroy();
     };
   }, []);

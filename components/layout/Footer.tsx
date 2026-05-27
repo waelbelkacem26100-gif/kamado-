@@ -36,7 +36,7 @@ export default function Footer() {
           letterSpacing:    "-0.05em",
           lineHeight:       1,
           opacity:          0.022,
-          background:       "linear-gradient(135deg, #00D1FF 0%, #ffffff 50%, #5CE1FF 100%)",
+          background:       "linear-gradient(135deg, #00ff87 0%, #ffffff 50%, #44ffaa 100%)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor:  "transparent",
           backgroundClip:   "text",
@@ -70,7 +70,7 @@ export default function Footer() {
             <a
               href={`mailto:${CONTACT.email}`}
               className="text-xs font-medium hover:underline transition-colors"
-              style={{ color: "#00D1FF" }}
+              style={{ color: "var(--accent)" }}
             >
               {CONTACT.email}
             </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-sm transition-colors hover:text-[#00D1FF]"
+                    className="text-sm transition-colors hover:text-[var(--accent)]"
                     style={{ color: "rgba(240,240,240,0.5)" }}
                   >
                     {s.label}
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={c.href}>
                   <Link
                     href={c.href}
-                    className="text-sm transition-colors hover:text-[#00D1FF]"
+                    className="text-sm transition-colors hover:text-[var(--accent)]"
                     style={{ color: "rgba(240,240,240,0.5)" }}
                   >
                     {c.label}
@@ -136,7 +136,7 @@ export default function Footer() {
                 href={CONTACT.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00D1FF] hover:text-[#00D1FF]"
+                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
                 aria-label="LinkedIn"
               >
@@ -149,7 +149,7 @@ export default function Footer() {
                 href={CONTACT.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00D1FF] hover:text-[#00D1FF]"
+                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
                 aria-label="Twitter / X"
               >
@@ -159,7 +159,7 @@ export default function Footer() {
               </a>
               <Link
                 href="/contact/"
-                className="h-9 px-4 rounded-lg border flex items-center text-xs font-semibold transition-all hover:border-[#00D1FF] hover:text-[#00D1FF]"
+                className="h-9 px-4 rounded-lg border flex items-center text-xs font-semibold transition-all hover:border-[var(--accent)] hover:text-[var(--accent)]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
               >
                 Démarrer →
@@ -177,7 +177,7 @@ export default function Footer() {
           <div className="flex items-center gap-1.5">
             <span
               className="inline-flex h-1.5 w-1.5 rounded-full animate-pulse"
-              style={{ background: "#00D1FF" }}
+              style={{ background: "var(--accent)" }}
             />
             <span>Disponible pour nouveaux projets</span>
           </div>

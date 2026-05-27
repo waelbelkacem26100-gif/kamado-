@@ -11,7 +11,7 @@ const services = [
     title: "Création site vitrine",
     description: "Un site professionnel qui transforme vos visiteurs en clients. Design sur-mesure, SEO on-page inclus, livré en 3 à 5 semaines.",
     slug: "creation-site-vitrine",
-    accent: "#00ff87",
+    accent: "var(--accent)",
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80&auto=format&fit=crop",
   },
   {
