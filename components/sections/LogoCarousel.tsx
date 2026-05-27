@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
+
 const clients = [
-  { name: "Brainrot Club", tag: "E-commerce Shopify", color: "#a855f7" },
-  { name: "Couvetoile", tag: "Site vitrine", color: "#0891b2" },
-  { name: "ScreenBuild", tag: "SaaS IA", color: "#3b82f6" },
-  { name: "Clustea", tag: "SaaS B2B", color: "#10b981" },
+  { name: "Brainrot Club", tag: "E-commerce Shopify", color: "#a855f7", href: "/projets/brainrot-club/" },
+  { name: "Couvetoile",    tag: "Site vitrine",        color: "#0891b2", href: "/projets/couvetoile/" },
+  { name: "ScreenBuild",   tag: "SaaS IA",             color: "#3b82f6", href: "/projets/screenbuild/" },
+  { name: "Clustea",       tag: "SaaS B2B",            color: "#10b981", href: "/projets/clustea/" },
 ];
 
 interface Tech {
@@ -61,15 +63,22 @@ export default function LogoCarousel() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
           {clients.map((c) => (
-            <div
+            <Link
               key={c.name}
-              className="flex flex-col items-center justify-center gap-1.5 p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/30 transition-colors duration-200"
+              href={c.href}
+              className="group flex flex-col items-center justify-center gap-1.5 p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)] transition-all duration-200 hover:border-[var(--accent)]/40 hover:scale-[1.02] cursor-pointer active:scale-[0.98]"
             >
               <span className="text-sm font-bold" style={{ color: c.color }}>
                 {c.name}
               </span>
               <span className="text-[10px] text-[var(--fg-muted)]">{c.tag}</span>
-            </div>
+              <span
+                className="text-xs mt-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                style={{ color: c.color }}
+              >
+                →
+              </span>
+            </Link>
           ))}
         </div>
 

@@ -129,6 +129,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const ref      = useRef<HTMLDivElement>(null);
   const accent   = accentMap[project.slug] ?? "#00D1FF";
   const metric   = metricMap[project.slug];
+  const isFeatured = project.slug === "clustea";
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [hovered, setHovered] = useState(false);
 
@@ -158,7 +159,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           href={`/projets/${project.slug}/`}
           className="group block rounded-3xl border overflow-hidden transition-all duration-500"
           style={{
-            borderColor: hovered ? `${accent}50` : "rgba(255,255,255,0.07)",
+            borderColor: hovered ? `${accent}50` : isFeatured ? `${accent}28` : "rgba(255,255,255,0.07)",
             boxShadow:   hovered ? `0 0 50px ${accent}22, 0 24px 60px rgba(0,0,0,0.4)` : "0 8px 40px rgba(0,0,0,0.3)",
             background:  "rgba(255,255,255,0.03)",
             backdropFilter: "blur(12px)",
@@ -167,8 +168,16 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
           {/* Accent top bar */}
           <div
             className="h-[2px] transition-opacity duration-300"
-            style={{ background: accent, opacity: hovered ? 1 : 0 }}
+            style={{ background: accent, opacity: hovered ? 1 : isFeatured ? 0.5 : 0 }}
           />
+
+          {/* Featured badge */}
+          {isFeatured && (
+            <div className="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-xs font-semibold border"
+              style={{ background: `${accent}20`, borderColor: `${accent}40`, color: accent }}>
+              ⭐ Projet phare
+            </div>
+          )}
 
           {/* Image */}
           <div className="relative h-80 overflow-hidden bg-[#141414]">
@@ -208,11 +217,11 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             )}
 
             {/* Stack pills */}
-            <div className="absolute bottom-4 right-4 flex gap-1.5 flex-wrap justify-end">
+            <div className="absolute bottom-4 right-4 flex gap-1.5 flex-wrap justify-end max-w-[60%]">
               {project.stack.slice(0, 2).map((tech) => (
                 <span
                   key={tech}
-                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/85 backdrop-blur-sm border border-white/12"
+                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/85 backdrop-blur-sm border border-white/12 whitespace-nowrap shrink-0"
                 >
                   {tech}
                 </span>
@@ -226,6 +235,18 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               <div>
                 <h3 className="text-lg font-bold text-white mb-1.5">{project.name}</h3>
                 <p className="text-sm text-white/50 leading-relaxed line-clamp-2">{project.tagline}</p>
+                {isFeatured && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 text-sm mt-2 transition-colors duration-200 hover:text-white"
+                    style={{ color: accent }}
+                  >
+                    Voir le site live →
+                  </a>
+                )}
               </div>
               <div
                 className="flex-shrink-0 w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300"

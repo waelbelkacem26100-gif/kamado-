@@ -111,30 +111,32 @@ export default function ContactPage() {
               <br />
               <span className="text-[var(--accent)] accent-glow">mieux qu&apos;un template</span>
             </h1>
-            <p className="text-lead max-w-2xl mx-auto mb-12">
+            <p className="text-lead max-w-2xl mx-auto">
               Décrivez votre projet en quelques lignes. On vous répond sous 48h avec
               une proposition concrète et un devis transparent.
             </p>
-
-            {/* Promesses */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-              {promises.map((p) => (
-                <div
-                  key={p.title}
-                  className="flex flex-col items-center text-center p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)]"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/25 text-[var(--accent)] flex items-center justify-center mb-3">
-                    {p.icon}
-                  </div>
-                  <p className="text-sm font-semibold text-[var(--fg)] mb-1">{p.title}</p>
-                  <p className="text-xs text-[var(--fg-muted)] leading-relaxed">{p.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 
         <ContactForm />
+
+        {/* Promesses */}
+        <section className="pb-8 px-6">
+          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+            {promises.map((p) => (
+              <div
+                key={p.title}
+                className="flex flex-col items-center text-center p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)]"
+              >
+                <div className="w-10 h-10 rounded-xl bg-[var(--accent)]/15 border border-[var(--accent)]/25 text-[var(--accent)] flex items-center justify-center mb-3">
+                  {p.icon}
+                </div>
+                <p className="text-sm font-semibold text-[var(--fg)] mb-1">{p.title}</p>
+                <p className="text-xs text-[var(--fg-muted)] leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Info complémentaire */}
         <section className="py-16 px-6">
