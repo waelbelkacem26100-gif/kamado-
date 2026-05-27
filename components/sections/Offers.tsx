@@ -7,7 +7,7 @@ import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 interface Offer {
   name: string;
   tagline: string;
-  price: string;
+  badge: string;
   features: string[];
   accent: boolean;
 }
@@ -16,20 +16,20 @@ const offers = [
   {
     name: "Site Vitrine",
     tagline: "Votre meilleur commercial en ligne",
-    price: "À partir de 1 000 €",
+    badge: "Livraison 2 à 4 semaines",
     features: [
       "Design sur-mesure premium",
       "SEO on-page complet",
       "Formulaire de contact intégré",
       "Optimisé mobile & performance",
-      "Livraison en 2 à 4 semaines",
+      "CMS inclus — modifiable sans dev",
     ],
     accent: false,
   },
   {
     name: "Boutique Shopify",
     tagline: "E-commerce optimisé pour vendre",
-    price: "À partir de 2 000 €",
+    badge: "Le plus demandé",
     features: [
       "Thème Liquid sur-mesure",
       "Tunnel d'achat optimisé CRO",
@@ -42,7 +42,7 @@ const offers = [
   {
     name: "SaaS Sur-mesure",
     tagline: "Votre produit digital de A à Z",
-    price: "À partir de 8 000 €",
+    badge: "Sur devis — appel découverte",
     features: [
       "Architecture Next.js scalable",
       "Authentification & dashboard",
@@ -69,10 +69,10 @@ export default function Offers() {
             Nos offres
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
-            Choisissez votre formule
+            Ce qu&apos;on peut faire pour vous
           </motion.h2>
           <motion.p variants={fadeUp} className="text-lead mt-4 max-w-xl mx-auto">
-            Chaque projet est devisé sur-mesure. Les tarifs varient selon vos besoins.
+            Chaque projet est unique. On vous prépare un devis sur-mesure — gratuit et sans engagement.
           </motion.p>
         </motion.div>
 
@@ -101,13 +101,17 @@ export default function Offers() {
 
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-[var(--fg)] mb-1">{offer.name}</h3>
-                <p className="text-sm text-[var(--fg-muted)] mb-3">{offer.tagline}</p>
-                <div className="flex items-baseline gap-1.5">
-                  <span className={`text-2xl font-black ${offer.accent ? "text-[#050508]" : "text-[var(--accent)]"}`}>
-                    {offer.price}
-                  </span>
-                </div>
-                <p className="text-[10px] text-[var(--fg-muted)] mt-0.5">Prix indicatif — devis gratuit et personnalisé</p>
+                <p className="text-sm text-[var(--fg-muted)] mb-4">{offer.tagline}</p>
+                <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ${
+                  offer.accent
+                    ? "border-[#050508]/20 bg-[#050508]/10 text-[#050508]"
+                    : "border-[var(--accent)]/30 bg-[var(--accent)]/[0.07] text-[var(--accent)]"
+                }`}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  {offer.badge}
+                </span>
               </div>
 
               <ul className="space-y-3 mb-8 flex-1">
@@ -123,13 +127,16 @@ export default function Offers() {
 
               <Link
                 href="/contact/"
-                className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
+                className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all duration-200 ${
                   offer.accent
                     ? "text-[#050508] bg-[var(--accent)] hover:opacity-90"
                     : "text-[var(--fg)] border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)] hover:text-[var(--accent)]"
                 }`}
               >
-                Obtenir un devis
+                Obtenir un devis gratuit
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
             </motion.div>
           ))}

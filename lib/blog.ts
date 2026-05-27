@@ -327,6 +327,223 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "agence-web-romans-sur-isere-drome",
+    title: "Agence web à Romans-sur-Isère (Drôme) : créer votre site internet avec Kama Agency",
+    category: "Local",
+    date: "20 mai 2026",
+    readTime: "6 min",
+    excerpt: "Vous cherchez une agence web à Romans-sur-Isère ou dans la Drôme ? Kama Agency crée des sites vitrine, boutiques Shopify et SaaS pour les entreprises locales et partout en France.",
+    metaTitle: "Agence web Romans-sur-Isère (Drôme) — Kama Agency",
+    metaDescription: "Kama Agency, agence web à Romans-sur-Isère (26). Création de sites vitrine, boutiques Shopify et SaaS sur-mesure. Référencement SEO inclus. Devis gratuit sous 48h.",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&auto=format&fit=crop",
+    intro: "Vous êtes une entreprise, un artisan ou un commerçant basé à Romans-sur-Isère, Valence, Romans, Tain-l'Hermitage ou ailleurs dans la Drôme, et vous cherchez une agence web de confiance pour créer ou refondre votre site internet ? Kama Agency est née ici, dans la Drôme, et nous travaillons avec des clients locaux et nationaux depuis notre création. On vous présente nos services, notre méthode de travail, et pourquoi confier votre projet digital à une agence ancrée dans votre territoire.",
+    sections: [
+      {
+        h2: "Une agence web drômoise pour les entreprises locales",
+        body: "Kama Agency est établie à Romans-sur-Isère (26100), au cœur de la Drôme. Nous accompagnons les entreprises locales — PME, artisans, commerçants, professions libérales — dans la création et l'optimisation de leur présence digitale. Notre ancrage local nous permet de comprendre les enjeux spécifiques du tissu économique drômois : la forte densité de TPE et PME familiales, l'importance du référencement local pour capter une clientèle de proximité, et la nécessité d'avoir un site qui inspire confiance dès le premier regard. Travailler avec une agence locale présente des avantages concrets : vous pouvez nous rencontrer facilement (même si nous travaillons principalement à distance), nous connaissons le marché local, et nous sommes disponibles dans vos créneaux horaires sans décalage. Parmi nos clients drômois récents : un cabinet de kinésithérapie à Valence qui a multiplié par 3 ses prises de rendez-vous en ligne après la refonte de son site, une boutique de vignerons à Crozes-Hermitage qui a lancé sa boutique Shopify avec succès, et une entreprise de BTP à Romans-sur-Isère dont le site génère désormais 5 à 8 devis qualifiés par mois.",
+      },
+      {
+        h2: "Nos services pour les entreprises de la Drôme",
+        body: "Nous proposons l'ensemble des services digitaux dont votre entreprise drômoise a besoin. La création de site vitrine sur-mesure en Next.js est notre cœur de métier : un site professionnel, rapide (score Lighthouse 95+/100), optimisé SEO local et livré en 3 à 5 semaines. Pour les commerçants et artisans qui souhaitent vendre en ligne, nous créons des boutiques Shopify ou WooCommerce sur-mesure — de l'import catalogue à l'intégration du paiement en ligne, en passant par la configuration des options de livraison. Pour les entreprises en croissance qui ont besoin d'un outil digital sur-mesure (intranet, portail client, application web), nous développons des SaaS et applications web avec Next.js et Supabase. Le référencement SEO local est inclus dans chaque prestation : optimisation Google Business Profile, balisage Schema.org LocalBusiness, contenu ciblé sur les requêtes locales (\"agence web Romans-sur-Isère\", \"création site internet Valence\", etc.), et suivi des positions dans Search Console.",
+      },
+      {
+        h2: "La méthode Kama Agency : rapide, transparent, sans mauvaise surprise",
+        body: "Notre processus a été rodé sur des dizaines de projets. La première étape est l'appel de découverte (30 minutes, gratuit et sans engagement) : on cerne vos besoins, votre cible, vos concurrents et vos objectifs business. Sous 48h, vous recevez un devis détaillé avec un planning précis — pas de devis vague \"à partir de\". Le développement se déroule en deux phases : une première version complète livrée en 2 à 3 semaines, puis une phase de retouches de 1 à 2 semaines jusqu'à votre validation. À la livraison, on vous forme à la gestion de votre site (modifications de textes et images sans compétences techniques via le CMS intégré) et on vous remet tous les accès. Après la livraison, on reste disponibles. Pour chaque client drômois, on propose un suivi de 3 mois inclus : monitoring des performances, corrections mineures, et rapport mensuel SEO. La maintenance longue durée est disponible en option, de 50 à 300€/mois selon vos besoins.",
+      },
+      {
+        h2: "Référencement SEO local dans la Drôme : capter les clients de votre zone",
+        body: "Pour une entreprise drômoise, le SEO local est souvent l'opportunité la plus rapide et la plus rentable. Il s'agit d'apparaître en première page de Google quand quelqu'un tape \"plombier Romans-sur-Isère\", \"avocat Valence\" ou \"restaurant Montélimar\". Première étape : l'optimisation de votre fiche Google Business Profile. Une fiche complète (photos, horaires, catégories, description optimisée) vous fait apparaître dans le pack local — les 3 résultats avec carte qui apparaissent en haut des résultats pour les requêtes locales. Deuxième étape : la création de pages localisées sur votre site. Au lieu d'une simple page \"Zone d'intervention\", on crée des pages dédiées par ville qui répondent aux requêtes spécifiques de vos prospects locaux. Troisième étape : la génération d'avis Google. Une fiche GBP avec 30+ avis récents et une note supérieure à 4,5 étoiles capture 73% de clics supplémentaires par rapport à une fiche peu garnie. On vous donne une stratégie concrète pour obtenir des avis réguliers de vos clients satisfaits.",
+      },
+      {
+        h2: "Romans-sur-Isère, Valence, Drôme : où intervient Kama Agency ?",
+        body: "Notre siège est à Romans-sur-Isère, mais nous travaillons avec des clients dans toute la Drôme et au-delà. Dans la Drôme, nos clients sont à Valence, Romans-sur-Isère, Montélimar, Die, Tain-l'Hermitage, Bourg-lès-Valence, Crest, Saint-Paul-Trois-Châteaux, Pierrelatte, et dans les villages alentour. Nous travaillons également avec des clients dans les départements voisins : l'Ardèche (Privas, Aubenas, Annonay), l'Isère (Grenoble, Vienne, Bourgoin-Jallieu), la Savoie et l'Ain. Et bien sûr, partout en France. Étant 100% remote, nous avons des clients à Paris, Lyon, Bordeaux, Marseille, Toulouse et dans toutes les régions françaises. La distance n'a aucun impact sur la qualité ou le délai de nos projets — on utilise des outils de collaboration efficaces (Notion, Figma, Linear, Loom) qui rendent la communication fluide quel que soit l'endroit.",
+      },
+      {
+        h2: "Pourquoi choisir Kama Agency plutôt qu'une agence parisienne ou une plateforme no-code ?",
+        body: "Les grandes agences parisiennes peuvent créer d'excellents sites, mais leurs processus sont souvent lourds, leurs délais longs (3 à 6 mois pour un site vitrine) et leurs tarifs élevés (à partir de 15 000€ pour un site standard). Chez Kama Agency, on livre en 3 à 5 semaines avec un interlocuteur unique, disponible et réactif. Les plateformes no-code (Wix, Squarespace, Jimdo) permettent de créer un site en quelques heures, mais les résultats sont visuellement standardisés (tous les sites se ressemblent), les performances SEO sont médiocres (score Lighthouse souvent sous 60/100), et la personnalisation est très limitée. Avec Kama Agency, chaque site est unique, pensé pour votre marque et vos objectifs, avec des performances qui font la différence sur Google. Notre valeur ajoutée principale : on crée des sites qui rapportent. Pas juste de belles brochures digitales, mais des outils de génération de leads avec des Call-to-Action optimisés, des tunnels de conversion pensés, et un SEO qui attire les bons visiteurs au bon moment.",
+      },
+    ],
+    faq: [
+      {
+        q: "Êtes-vous basés à Romans-sur-Isère ?",
+        a: "Oui, Kama Agency est domiciliée à Romans-sur-Isère (26100, Drôme). Nous travaillons principalement à distance avec nos clients, ce qui nous permet de servir des clients dans toute la France sans surcoût lié à la distance.",
+      },
+      {
+        q: "Puis-je vous rencontrer en personne à Romans-sur-Isère ?",
+        a: "Oui, pour les clients drômois ou de la région Auvergne-Rhône-Alpes, des rencontres en personne sont possibles sur rendez-vous. La majorité de nos échanges se font cependant à distance via appel vidéo, ce qui permet d'être plus efficace et réactif.",
+      },
+      {
+        q: "Combien coûte la création d'un site web à Romans-sur-Isère ?",
+        a: "Nos projets démarrent à partir de 1 000€ pour un site vitrine simple et peuvent aller jusqu'à 50 000€ pour un SaaS sur-mesure. Chaque projet est devisé précisément après un appel de découverte gratuit. Pour les entreprises drômoises, nous proposons les mêmes tarifs qu'à l'échelle nationale — la localisation n'influence pas notre grille tarifaire.",
+      },
+      {
+        q: "Travaillez-vous avec des artisans et TPE locales ?",
+        a: "Absolument. Les artisans, commerçants, professions libérales et petites entreprises représentent une grande partie de nos clients. Nous adaptons notre approche et nos solutions à des budgets PME — pas besoin d'un grand groupe pour avoir un site professionnel et performant.",
+      },
+    ],
+    gradient: "from-green-500 to-emerald-600",
+    externalLinks: [
+      {
+        label: "Google Business Profile — Romans-sur-Isère",
+        url: "https://business.google.com",
+        description: "Optimisez votre fiche Google pour apparaître dans les recherches locales de la Drôme.",
+      },
+      {
+        label: "Chambre de Commerce de la Drôme",
+        url: "https://www.drome.cci.fr",
+        description: "Ressources et accompagnement pour les entreprises du département de la Drôme.",
+      },
+    ],
+  },
+  {
+    slug: "vitesse-chargement-site-core-web-vitals",
+    title: "Vitesse de chargement et Core Web Vitals : le guide complet pour optimiser votre site en 2026",
+    category: "Performance",
+    date: "15 mai 2026",
+    readTime: "8 min",
+    excerpt: "Un site lent perd des clients et des positions Google. Guide complet pour mesurer, comprendre et améliorer vos Core Web Vitals et votre temps de chargement en 2026.",
+    metaTitle: "Core Web Vitals 2026 : guide complet pour optimiser la vitesse de votre site",
+    metaDescription: "Comprendre et améliorer les Core Web Vitals (LCP, INP, CLS) en 2026. Outils, techniques et résultats concrets pour accélérer votre site et gagner des positions Google.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop",
+    intro: "Chaque seconde supplémentaire de chargement coûte en moyenne 7% de conversions. Sur mobile, un site qui met plus de 3 secondes à s'afficher perd 53% de ses visiteurs avant même qu'ils aient vu votre contenu. Les Core Web Vitals — les métriques de performance officielles de Google — impactent directement votre classement dans les résultats de recherche depuis 2021. En 2026, leur poids dans l'algorithme a augmenté et les seuils sont devenus plus stricts. Ce guide vous explique exactement ce que sont les Core Web Vitals, comment les mesurer, et les optimisations concrètes qui font la différence — avec des résultats chiffrés tirés de nos projets.",
+    sections: [
+      {
+        h2: "Les 3 Core Web Vitals expliqués simplement",
+        body: "Google mesure la qualité de l'expérience utilisateur via trois métriques principales. LCP (Largest Contentful Paint) : le temps nécessaire pour afficher l'élément visuel principal de la page — l'image hero, le titre principal ou le bloc de texte le plus grand. Un bon LCP est inférieur à 2,5 secondes. Au-delà de 4 secondes, Google considère votre page comme \"mauvaise\" et la pénalise dans les classements. En pratique, le LCP est souvent dégradé par une image hero non optimisée (trop lourde, non convertie en WebP), un hébergement lent, ou des ressources bloquantes (CSS, JavaScript) qui retardent le rendu. INP (Interaction to Next Paint) : remplace le FID (First Input Delay) depuis mars 2024. Mesure la réactivité de votre page à toutes les interactions utilisateur — clics, saisies, scrolls. Un bon INP est inférieur à 200ms. Un INP élevé se ressent concrètement : le clic sur un bouton prend 1 à 2 secondes à réagir, la navigation entre pages est saccadée. CLS (Cumulative Layout Shift) : mesure la stabilité visuelle de la page — à quel point les éléments bougent de façon inattendue pendant le chargement. Score CLS bon : inférieur à 0,1. Un CLS élevé donne l'impression que la page \"saute\" — un texte que vous vous apprêtez à lire se déplace soudainement parce qu'une image ou une pub s'est chargée.",
+      },
+      {
+        h2: "Comment mesurer vos Core Web Vitals en 5 minutes",
+        body: "Deux outils complémentaires sont indispensables. Google PageSpeed Insights (pagespeed.web.dev) : entrez l'URL de votre page et obtenez en quelques secondes votre score sur 100, vos métriques LCP/INP/CLS, et une liste de recommandations priorisées par impact. Testez systématiquement la version mobile (onglet Mobile) — les scores mobiles pèsent davantage dans l'algorithme Google. Google Search Console : l'onglet \"Expérience sur la page\" vous donne les données réelles de terrain (données CrUX — Chrome UX Report) sur des vraies visites de vrais utilisateurs sur vos pages. C'est beaucoup plus représentatif que les tests en laboratoire de PageSpeed Insights. Si vos données de terrain montrent \"Médiocre\" alors que PageSpeed affiche 90/100, c'est que votre hébergement est lent pour les utilisateurs réels, ou que des scripts tiers (analytics, chat, publicités) ralentissent la page en conditions réelles. Troisième outil utile : Lighthouse dans Chrome DevTools (F12 → Onglet Lighthouse). Il vous donne un audit complet de la performance, de l'accessibilité, du SEO et des bonnes pratiques.",
+      },
+      {
+        h2: "Les 7 optimisations qui améliorent le plus le LCP",
+        body: "L'image hero en WebP/AVIF avec dimensions fixes : convertissez votre image principale en format WebP (30% plus léger que JPEG) ou AVIF (50% plus léger), et spécifiez toujours les attributs width et height pour éviter le layout shift pendant le chargement. En Next.js, le composant Image gère tout cela automatiquement. Préchargement de l'image hero : ajoutez une balise link rel=\"preload\" dans le head pour charger l'image hero en priorité absolue avant tout autre élément. Cela peut réduire le LCP de 0,5 à 1,5 seconde. Hébergement sur CDN proche de l'utilisateur : si votre serveur est à Amsterdam et 80% de vos visiteurs sont en France, chaque requête subit une latence inutile. Vercel, Netlify et Cloudflare proposent des CDN mondiaux qui servent les assets depuis les datacenters les plus proches. Suppression des polices bloquantes : le chargement des polices web peut bloquer le rendu. Utilisez font-display: swap pour afficher une police système en attendant et éviter le texte invisible. Élimination des scripts tiers bloquants : chaque pixel de tag manager, chaque script de chat ou de pub bloquants peut rajouter 0,3 à 1 seconde au LCP. Chargez-les en defer ou async, ou en lazy loading après l'interaction utilisateur. Compression serveur : Gzip ou Brotli sur tous les assets textuels (HTML, CSS, JS). Brotli est 15 à 20% plus efficace que Gzip et est supporté par 95%+ des navigateurs modernes. Cache aggressif : mettez en cache les assets statiques (images, CSS, JS) avec un max-age de 31536000 (1 an) et invalider via cache-busting sur les URLs.",
+      },
+      {
+        h2: "Corriger un INP élevé : les principales causes et solutions",
+        body: "Un INP élevé est souvent causé par du JavaScript qui s'exécute sur le thread principal et bloque les interactions. Les coupables les plus fréquents : les analytics et tag managers lourds (Google Tag Manager avec 20+ balises peut ajouter 200 à 500ms au INP), les scripts de chat en temps réel (Intercom, Drift, Crisp — chargez-les uniquement sur les pages où ils sont utiles, ou déclenchez-les après une interaction utilisateur), et les bibliothèques JavaScript inutilement grandes (charger toute la bibliothèque Lodash pour utiliser 3 fonctions est une erreur classique). Solutions techniques concrètes : code splitting pour ne charger que le JavaScript nécessaire à chaque page, lazy loading des composants non critiques avec React.lazy() et Suspense, et exécution des tâches longues en arrière-plan avec Web Workers ou requestIdleCallback pour éviter de bloquer le thread principal. Sur WordPress : l'extension WP Rocket avec son option de différer les scripts JavaScript résout 70% des problèmes INP sans développement. Sur Next.js : le code splitting est automatique et les Server Components ne génèrent pas de JavaScript côté client — c'est l'un des grands avantages du framework pour les performances INP.",
+      },
+      {
+        h2: "Éliminer le CLS : stabiliser visuellement votre page",
+        body: "Le CLS est souvent le plus simple à corriger. Les causes principales : les images sans dimensions définies. Si vous ne spécifiez pas width et height sur vos balises img, le navigateur ne réserve pas d'espace pendant le chargement — quand l'image arrive, elle pousse tout le contenu vers le bas. Solution : toujours spécifier width et height, ou utiliser CSS aspect-ratio. Les publicités et bannières sans espace réservé. Si une bannière pub se charge après le contenu textuel, elle déplace tout. Réservez l'espace exact avec un conteneur CSS de hauteur fixe, même si la pub n'est pas encore chargée. Les polices web qui changent la taille du texte. Le font swap (remplacement d'une police système par la police web chargée) peut provoquer un layout shift si les tailles de caractères diffèrent. Utilisez font-display: optional si le CLS est critique — la police web ne se charge que si elle est déjà en cache. Les injections dynamiques de contenu. Si vous injectez du contenu en haut de la page après le chargement initial (ex: bannière cookie, notification, offre), cela cause un CLS important. Positionnez ces éléments en overlay (position: fixed) pour ne pas décaler le contenu existant.",
+      },
+      {
+        h2: "Résultats concrets : ce qu'une optimisation Core Web Vitals change vraiment",
+        body: "Les chiffres sont éloquents. Sur l'un de nos projets clients (site vitrine d'un cabinet d'avocats à Lyon) : avant optimisation, score Lighthouse 54/100, LCP 4,8s, CLS 0.22, taux de rebond 74%. Après 3 jours d'optimisation (compression images WebP, lazy loading, suppression plugins inutiles) : score 91/100, LCP 1,9s, CLS 0.04, taux de rebond 58%. Résultat après 60 jours : +3 positions sur les mots-clés principaux, +34% de formulaires de contact remplis. Sur un e-commerce Shopify client (prêt-à-porter) : LCP de 6,2s → 2,1s après optimisation du thème et des images. Résultat : taux de conversion +18%, panier moyen en hausse de 12% (les utilisateurs naviguaient davantage dans le catalogue, plus rapide à charger). Ces résultats confirment ce que Google affirme : la corrélation entre performance et conversions est directe et mesurable. Pour chaque site que nous livrons, nous visons systématiquement un score Lighthouse 90+ sur mobile avant le déploiement en production.",
+      },
+    ],
+    faq: [
+      {
+        q: "Mon site a un score PageSpeed de 45/100, est-ce grave ?",
+        a: "Un score de 45/100 indique des problèmes significatifs de performance. Google considère les pages avec un score sous 50 comme \"à améliorer\". Cela se traduit concrètement par une perte de positions SEO, un taux de rebond élevé et un impact négatif sur les conversions. Une optimisation sérieuse peut généralement amener un site de 45 à 80-90/100 en 1 à 2 jours de travail.",
+      },
+      {
+        q: "Les Core Web Vitals impactent-ils vraiment le classement Google ?",
+        a: "Oui, Google a intégré les Core Web Vitals dans son algorithme depuis 2021 via le \"Page Experience\" signal. Ils ne déterminent pas seuls le classement (la pertinence du contenu reste primordiale), mais ils font la différence entre deux pages de qualité équivalente. Sur des mots-clés compétitifs, optimiser ses Core Web Vitals peut faire gagner 2 à 5 positions — ce qui peut représenter 30 à 50% de trafic supplémentaire.",
+      },
+      {
+        q: "Peut-on avoir un bon score Core Web Vitals avec WordPress ?",
+        a: "Oui, c'est tout à fait possible. Les plugins comme WP Rocket (cache et minification), Imagify (compression images), et un thème léger (Generatepress, Kadence, Astra) permettent d'atteindre 80-90/100. Cependant, il faut être rigoureux dans la sélection des plugins — chaque plugin ajouté peut dégrader les performances. Pour un score 95+/100, un site Next.js custom reste supérieur.",
+      },
+      {
+        q: "Quelle est la différence entre le score PageSpeed et les données de terrain (CrUX) ?",
+        a: "PageSpeed Insights en mode \"laboratoire\" teste votre site dans un environnement contrôlé avec un réseau simulé. Les données CrUX (Chrome UX Report) reflètent l'expérience réelle de vos visiteurs Chrome sur les 28 derniers jours. Les données de terrain sont plus importantes pour le SEO car c'est ce que Google utilise dans son algorithme. Si vous avez 90/100 en labo mais \"Médiocre\" en terrain, votre hébergement ou vos scripts tiers sont probablement en cause.",
+      },
+    ],
+    gradient: "from-blue-500 to-cyan-600",
+    externalLinks: [
+      {
+        label: "Google PageSpeed Insights",
+        url: "https://pagespeed.web.dev",
+        description: "L'outil officiel pour mesurer vos Core Web Vitals et obtenir des recommandations d'optimisation.",
+      },
+      {
+        label: "web.dev — Core Web Vitals",
+        url: "https://web.dev/vitals/",
+        description: "La documentation complète de Google sur les Core Web Vitals et leur impact sur l'expérience utilisateur.",
+      },
+      {
+        label: "Google Search Console",
+        url: "https://search.google.com/search-console",
+        description: "Consultez vos données de terrain réelles et le rapport Expérience sur la page pour votre site.",
+      },
+    ],
+  },
+  {
+    slug: "intelligence-artificielle-site-web-2026",
+    title: "Intelligence artificielle et site web en 2026 : comment l'IA transforme votre présence en ligne",
+    category: "IA",
+    date: "22 mai 2026",
+    readTime: "7 min",
+    excerpt: "Chatbots, personnalisation, génération de contenu, SEO IA : l'intelligence artificielle révolutionne la façon dont les sites web attirent, engagent et convertissent les visiteurs.",
+    metaTitle: "Intelligence artificielle et site web 2026 : guide pratique",
+    metaDescription: "Comment intégrer l'IA dans votre site web en 2026 ? Chatbots OpenAI/Claude, personnalisation, génération de contenu, SEO IA. Guide pratique par Kama Agency.",
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&auto=format&fit=crop",
+    intro: "L'intelligence artificielle n'est plus une technologie réservée aux grandes entreprises tech. En 2026, les PME, artisans et commerçants peuvent intégrer des fonctionnalités IA dans leur site web pour un coût abordable — et les résultats sont souvent spectaculaires. Chatbots qui répondent instantanément à vos clients à 3h du matin, recommandations de produits personnalisées qui augmentent le panier moyen, contenu SEO généré en quelques minutes, analyse prédictive des comportements visiteurs : voici un tour d'horizon complet de ce que l'IA peut apporter concrètement à votre présence en ligne en 2026.",
+    sections: [
+      {
+        h2: "Chatbots IA : transformer chaque visiteur en prospect qualifié",
+        body: "Les chatbots de première génération (FAQ statiques avec réponses pré-écrites) ont laissé la place à de véritables assistants conversationnels alimentés par GPT-4o ou Claude 3.5 Sonnet. Ces nouveaux chatbots comprennent le langage naturel, s'adaptent au contexte de la conversation et peuvent répondre à des questions complexes que vous n'avez pas anticipées. Impact concret sur les conversions : selon nos données clients, un chatbot IA bien configuré réduit le taux de rebond de 15 à 25% et augmente les formulaires de contact de 20 à 40%. Pourquoi ? Parce qu'il répond immédiatement aux questions des visiteurs qui, autrement, repartent sans avoir trouvé l'information cherchée. Chez Kama Agency, nous intégrons des chatbots basés sur l'API Anthropic Claude (le même modèle qui alimente Claude.ai) dans les sites de nos clients. Le chatbot est entraîné sur le contenu de votre site, votre FAQ, vos fiches produits et vos documents d'entreprise — il répond en votre nom, dans votre ton, avec précision. Les questions hors-scope (\"quel est votre numéro SIRET ?\") génèrent automatiquement un formulaire de contact avec l'information contextualisée, pour qu'aucun prospect ne soit perdu.",
+      },
+      {
+        h2: "Personnalisation IA : l'expérience unique pour chaque visiteur",
+        body: "La personnalisation est l'une des applications IA les plus ROI-positives pour les sites e-commerce et les plateformes SaaS. Au lieu de montrer le même contenu à tous vos visiteurs, un moteur de personnalisation IA adapte dynamiquement ce que chaque visiteur voit selon son comportement de navigation, ses achats passés, sa localisation, l'heure de visite et son device. Exemples concrets : un visiteur qui a regardé 3 fois la même fiche produit se voit proposer une offre personnalisée \"exclusivement pour vous\" lors de sa 4ème visite. Un visiteur depuis mobile avec une IP parisienne voit en haut de page les produits les plus populaires en Île-de-France cette semaine. Un client fidèle (reconnecté) voit des recommendations basées sur ses achats passés dès la homepage. Les plateformes e-commerce headless Next.js + Shopify Storefront API sont particulièrement adaptées à ce type de personnalisation — on peut servir du contenu différent selon des règles métier complexes sans sacrifier les performances. Pour les SaaS, l'onboarding personnalisé (où l'interface s'adapte au profil de l'utilisateur lors de sa première connexion) réduit le taux d'abandon de 35 à 50% selon les études récentes.",
+      },
+      {
+        h2: "Génération de contenu IA : accélérer votre stratégie éditoriale",
+        body: "En 2026, la génération de contenu IA est devenue un outil standard dans les agences web et les équipes marketing. Utilisée correctement, elle multiplie par 3 à 5 la vitesse de production de contenu sans sacrifier la qualité. Ce que l'IA fait bien : les premières drafts d'articles de blog, la rédaction de fiches produits à partir d'un brief, la génération de variantes pour les A/B tests, la création de meta descriptions et titres SEO pour des centaines de pages, la traduction et l'adaptation culturelle de contenu. Ce que l'IA ne fait pas seule : l'expertise réelle (témoignages clients, données propriétaires, expérience terrain), le ton de marque unique, les décisions éditoriales stratégiques, et la vérification factuelle des informations. Notre approche chez Kama Agency : on utilise l'IA pour la structure et le premier jet, les experts humains pour l'expertise et la validation. Résultat : des articles de 1 500 mots produits en 2 heures au lieu de 2 jours, avec une qualité SEO élevée. Point important : Google ne pénalise pas les contenus assistés par IA à condition qu'ils apportent une valeur réelle. Ce qu'il pénalise, c'est le contenu sans expertise, générique et sans profondeur — IA ou non.",
+      },
+      {
+        h2: "IA et SEO : les nouvelles règles du jeu avec Google AI Overviews",
+        body: "L'introduction des AI Overviews (réponses générées par IA en haut des résultats Google) a changé les règles du SEO. Certaines requêtes informationnelles, autrefois sources de trafic abondant, génèrent maintenant beaucoup moins de clics car Google répond directement dans les SERP. Mais une opportunité émerge : être cité comme source dans ces AI Overviews. Les pages citées dans les AI Overviews reçoivent en moyenne 3× plus de trafic qualifié que sans cette citation — ce sont des visiteurs convaincus par la réponse IA qui viennent chercher la source originale. Pour apparaître dans les AI Overviews : structurez vos contenus en réponses directes et précises, utilisez des données factuelles vérifiables (statistiques, chiffres, études), implémentez les données structurées Schema.org FAQPage et Article, et construisez une autorité de domaine dans votre secteur via des backlinks de qualité. L'IA impact aussi la recherche vocale : les assistants vocaux (Google Assistant, Siri) utilisent les AI Overviews pour formuler leurs réponses. Optimiser pour la recherche vocale signifie répondre à des questions naturelles en langage courant, avec des réponses concises de 2 à 3 phrases parfaites pour être lues à voix haute.",
+      },
+      {
+        h2: "Automatisation IA des processus business via votre site web",
+        body: "Au-delà du contenu visible, l'IA peut automatiser de nombreux processus backend liés à votre site web. Classification et priorisation des leads : un modèle de scoring IA peut analyser les données du formulaire de contact (taille d'entreprise, budget indiqué, secteur d'activité, mots-clés du message) et attribuer automatiquement une priorité à chaque lead entrant. Les leads chauds sont notifiés en temps réel, les leads froids reçoivent une séquence email automatique. Service client automatisé : en connectant votre chatbot IA à votre CRM et votre base de données commandes, les clients peuvent suivre leur commande, demander un remboursement ou modifier leur abonnement directement via le chat — sans intervention humaine. Génération de devis automatique : pour les agences, consultants et prestataires de services, un configurateur IA peut générer un devis personnalisé en temps réel selon les réponses de l'utilisateur à un questionnaire structuré. Cela remplace les appels de découverte pour les projets simples et filtre les prospects non qualifiés. Recommandations de contenu : sur un blog ou site e-commerce, un algorithme de recommandation IA (similaire à YouTube ou Netflix) augmente le temps passé sur le site de 25 à 40% et réduit le taux de rebond.",
+      },
+      {
+        h2: "Comment intégrer l'IA dans votre site web : par où commencer",
+        body: "Pour une PME qui part de zéro, voici la roadmap recommandée. Étape 1 — Chatbot IA (budget : 200 à 500€/mois pour l'API + configuration initiale) : c'est le levier le plus rapide et le plus visible. Un chatbot bien configuré est opérationnel en 2 à 3 semaines et produit des résultats immédiats sur les leads. Étape 2 — Automatisation du service client (budget : intégré au chatbot si bien configuré) : connectez le chatbot à votre CRM (HubSpot, Pipedrive, Notion) pour que chaque conversation génère automatiquement une fiche prospect avec le contexte complet. Étape 3 — Génération de contenu assistée (budget : 50 à 150€/mois pour ChatGPT Plus ou Claude Pro) : formez votre équipe à utiliser l'IA pour accélérer la production de contenu blog et fiches produits. Créez des prompts spécifiques à votre ton de marque. Étape 4 — Personnalisation (budget : selon la plateforme, de gratuit avec Shopify Sections à 500€+/mois pour des solutions custom) : commencez par les recommandations produits sur les pages e-commerce, puis étendez à la personnalisation des pages d'accueil. Chez Kama Agency, nous accompagnons nos clients dans chacune de ces étapes, de l'intégration technique à la formation des équipes.",
+      },
+    ],
+    faq: [
+      {
+        q: "Quel est le coût d'un chatbot IA pour un site web ?",
+        a: "Un chatbot IA basique (FAQ intelligente, capture de leads) coûte entre 100 et 300€/mois tout inclus (coût API + hébergement). Un chatbot avancé connecté à votre CRM et base de données coûte entre 300 et 800€/mois. Le développement initial varie de 1 000 à 5 000€ selon la complexité. Le ROI est généralement atteint en 2 à 4 mois grâce à la qualification automatique des leads et la réduction du temps de service client.",
+      },
+      {
+        q: "Quelle IA utiliser pour un chatbot de site web : ChatGPT ou Claude ?",
+        a: "Les deux sont d'excellentes options. GPT-4o (OpenAI) est le plus connu et dispose du plus grand écosystème d'intégrations. Claude 3.5 Sonnet (Anthropic) est particulièrement performant sur la compréhension de documents longs et les tâches nécessitant une réflexion nuancée — idéal pour des chatbots spécialisés (juridique, médical, technique). Nous utilisons les deux selon les projets, parfois en combinaison.",
+      },
+      {
+        q: "Les contenus générés par IA sont-ils détectés et pénalisés par Google ?",
+        a: "Google ne pénalise pas les contenus IA en tant que tels, mais les contenus de faible qualité, sans expertise réelle et sans valeur ajoutée. Un contenu IA bien travaillé, enrichi d'expertise humaine et de données concrètes, se classera très bien. Ce qui est pénalisé : le contenu généré en masse et publié sans révision, les articles génériques qui ne disent rien de nouveau, et les contenus qui manquent de signaux E-E-A-T (Experience, Expertise, Authority, Trust).",
+      },
+      {
+        q: "Peut-on intégrer une IA dans un site WordPress existant ?",
+        a: "Oui. Il existe des plugins WordPress pour intégrer ChatGPT ou Claude dans des formulaires, des chatbots et des éléments de personnalisation. Cependant, pour des fonctionnalités avancées (personnalisation en temps réel, recommandations IA complexes), une architecture Next.js headless offre beaucoup plus de flexibilité et de performances.",
+      },
+    ],
+    gradient: "from-indigo-500 to-violet-600",
+    externalLinks: [
+      {
+        label: "API Anthropic Claude",
+        url: "https://www.anthropic.com/api",
+        description: "L'API Claude pour intégrer une IA conversationnelle avancée dans votre site web ou application.",
+      },
+      {
+        label: "OpenAI API",
+        url: "https://platform.openai.com",
+        description: "La plateforme OpenAI pour accéder à GPT-4o et intégrer l'IA dans vos projets web.",
+      },
+      {
+        label: "Vercel AI SDK",
+        url: "https://sdk.vercel.ai",
+        description: "Le SDK officiel pour intégrer des fonctionnalités IA dans les applications Next.js avec streaming et hooks React.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

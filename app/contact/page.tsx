@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/sections/ContactForm";
+import ContactFAQ from "@/components/sections/ContactFAQ";
 import { SITE_URL, SITE_NAME, CONTACT } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -162,6 +163,9 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        {/* Full FAQ */}
+        <ContactFAQ />
       </main>
     </>
   );

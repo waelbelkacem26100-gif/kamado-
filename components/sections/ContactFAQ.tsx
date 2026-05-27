@@ -1,33 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 import { faqs } from "@/lib/faq";
 
-export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(0);
+export default function ContactFAQ() {
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-24 md:py-32 px-6">
+    <section id="faq" className="py-20 px-6 border-t border-[var(--border)]">
       <div className="max-w-4xl mx-auto">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
-            FAQ
+            FAQ complète
           </motion.span>
-          <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
-            Vos questions, nos réponses
+          <motion.h2 variants={fadeUp} className="text-2xl md:text-3xl font-bold text-[var(--fg)]">
+            Toutes vos questions
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-lead mt-4 max-w-xl mx-auto">
-            Tout ce que vous vouliez savoir avant de démarrer un projet avec nous.
-          </motion.p>
         </motion.div>
 
         <motion.div
@@ -37,7 +33,7 @@ export default function FAQ() {
           viewport={defaultViewport}
           className="space-y-3"
         >
-          {faqs.slice(0, 4).map((faq, i) => (
+          {faqs.map((faq, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
@@ -84,30 +80,6 @@ export default function FAQ() {
               </AnimatePresence>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="mt-10 text-center flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Link
-            href="/contact/#faq"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[var(--accent)]/30 text-sm font-semibold text-[var(--accent)] hover:bg-[var(--accent)]/10 transition-all duration-200"
-          >
-            Voir toutes les questions
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-          <p className="text-sm text-[var(--fg-muted)]">
-            ou{" "}
-            <Link href="/contact/" className="text-[var(--accent)] hover:underline font-medium">
-              écrivez-nous directement
-            </Link>
-          </p>
         </motion.div>
       </div>
     </section>

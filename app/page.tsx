@@ -10,6 +10,7 @@ import Projects from "@/components/sections/Projects";
 import TerminalSection from "@/components/sections/TerminalSection";
 import Reviews from "@/components/sections/Reviews";
 import BlogPreview from "@/components/sections/BlogPreview";
+import CTABand from "@/components/sections/CTABand";
 import ZoneIntervention from "@/components/sections/ZoneIntervention";
 import Process from "@/components/sections/Process";
 import FAQ from "@/components/sections/FAQ";
@@ -170,6 +171,7 @@ export default function Home() {
       <div className="section-fade-in"><Reviews /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><BlogPreview /></div>
+      <div className="section-fade-in"><CTABand /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><ZoneIntervention /></div>
       <div className="section-divider" />
