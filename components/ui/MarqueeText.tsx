@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface MarqueeTextProps {
@@ -10,19 +11,26 @@ interface MarqueeTextProps {
 
 export default function MarqueeText({ items, direction = "left", speed = 30 }: MarqueeTextProps) {
   const duplicated = [...items, ...items];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsPaused(!entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div ref={containerRef} className="overflow-hidden">
       <motion.div
         className="flex gap-10 whitespace-nowrap"
-        animate={{
-          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
-        transition={{
-          duration: speed,
-          ease: "linear",
-          repeat: Infinity,
-        }}
+        animate={isPaused ? {} : { x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"] }}
+        transition={isPaused ? {} : { duration: speed, ease: "linear", repeat: Infinity }}
       >
         {duplicated.map((item, i) => (
           <span

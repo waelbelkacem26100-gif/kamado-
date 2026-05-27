@@ -10,6 +10,8 @@ export default function Background() {
     const mount = mountRef.current;
     if (!mount) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -21,7 +23,7 @@ export default function Background() {
     camera.position.z = 200;
 
     /* ── Layer 1 — Dense white starfield (far background) ── */
-    const bgCount = 1800;
+    const bgCount = isMobile ? 360 : 720;
     const bgPos = new Float32Array(bgCount * 3);
     for (let i = 0; i < bgCount; i++) {
       bgPos[i * 3]     = (Math.random() - 0.5) * 1200;
@@ -35,7 +37,7 @@ export default function Background() {
     scene.add(bgStars);
 
     /* ── Layer 2 — Mid-range green energy particles ── */
-    const midCount = 900;
+    const midCount = isMobile ? 180 : 360;
     const midPos = new Float32Array(midCount * 3);
     const midSizes = new Float32Array(midCount);
     for (let i = 0; i < midCount; i++) {
@@ -51,7 +53,7 @@ export default function Background() {
     scene.add(midStars);
 
     /* ── Layer 3 — Foreground bright stars ── */
-    const fgCount = 120;
+    const fgCount = isMobile ? 24 : 48;
     const fgPos = new Float32Array(fgCount * 3);
     for (let i = 0; i < fgCount; i++) {
       fgPos[i * 3]     = (Math.random() - 0.5) * 400;
@@ -64,7 +66,7 @@ export default function Background() {
     scene.add(new THREE.Points(fgGeo, fgMat));
 
     /* ── Nebula cloud — Purple ── */
-    const nebCount = 400;
+    const nebCount = isMobile ? 80 : 160;
     const nebPos1 = new Float32Array(nebCount * 3);
     for (let i = 0; i < nebCount; i++) {
       const theta = Math.random() * Math.PI * 2;
@@ -95,7 +97,7 @@ export default function Background() {
     scene.add(new THREE.Points(neb2Geo, neb2Mat));
 
     /* ── Milky Way band ── */
-    const mwCount = 1200;
+    const mwCount = isMobile ? 240 : 480;
     const mwPos = new Float32Array(mwCount * 3);
     for (let i = 0; i < mwCount; i++) {
       const x = (Math.random() - 0.5) * 1400;
@@ -112,10 +114,13 @@ export default function Background() {
     let animId: number;
     let scrollY = 0;
     let t = 0;
+    let isActive = !document.hidden;
+
     const onScroll = () => { scrollY = window.scrollY; };
     window.addEventListener("scroll", onScroll, { passive: true });
 
     const animate = () => {
+      if (!isActive) return;
       animId = requestAnimationFrame(animate);
       t += 0.0003;
       bgStars.rotation.y += 0.000025;
@@ -126,6 +131,13 @@ export default function Background() {
       camera.position.x = Math.sin(t) * 1.5;
       renderer.render(scene, camera);
     };
+
+    const onVisibility = () => {
+      isActive = !document.hidden;
+      if (isActive) animate();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+
     animate();
 
     const onResize = () => {
@@ -139,6 +151,7 @@ export default function Background() {
       cancelAnimationFrame(animId);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
+      document.removeEventListener("visibilitychange", onVisibility);
       [bgGeo, midGeo, fgGeo, neb1Geo, neb2Geo, mwGeo].forEach(g => g.dispose());
       [bgMat, midMat, fgMat, neb1Mat, neb2Mat, mwMat].forEach(m => m.dispose());
       renderer.dispose();

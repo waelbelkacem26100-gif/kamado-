@@ -13,9 +13,10 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (isMobile) {
-      /* Pas de Lenis sur mobile, juste rafraîchir les positions ScrollTrigger */
+    if (prefersReduced || isMobile) {
+      /* Pas de Lenis sur mobile ou si reduced-motion activé, juste rafraîchir les positions ScrollTrigger */
       ScrollTrigger.refresh();
       return;
     }

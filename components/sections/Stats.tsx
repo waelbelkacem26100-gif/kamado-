@@ -8,6 +8,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const started = useRef(false);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -22,11 +23,12 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
           const step = 16;
           const increment = target / (duration / step);
           let current = 0;
-          const timer = setInterval(() => {
+          timerRef.current = setInterval(() => {
             current += increment;
             if (current >= target) {
               setCount(target);
-              clearInterval(timer);
+              clearInterval(timerRef.current!);
+              timerRef.current = null;
             } else {
               setCount(Math.floor(current));
             }
@@ -37,7 +39,13 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timerRef.current !== null) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
+    };
   }, [target]);
 
   return (

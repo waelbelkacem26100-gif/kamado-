@@ -103,3 +103,9 @@ export const lineReveal: Variants = {
     transition: { duration: 0.7, ease: easeApple },
   },
 };
+
+/* ─── Reduced motion fallback ─── */
+export const reducedVariant: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3 } },
+};

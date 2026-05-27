@@ -18,8 +18,8 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://images.unsplash.com https://cdn.simpleicons.org",
-      "connect-src 'self' https://api.web3forms.com",
+      "img-src 'self' data: blob: https://images.unsplash.com https://cdn.simpleicons.org https://unpkg.com",
+      "connect-src 'self' https://api.web3forms.com https://unpkg.com",
       "frame-ancestors 'none'",
     ].join("; "),
   },
@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
+  compiler: { removeConsole: process.env.NODE_ENV === "production" },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },

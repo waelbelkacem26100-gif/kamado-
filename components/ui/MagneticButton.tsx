@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface MagneticButtonProps {
@@ -20,8 +20,13 @@ export default function MagneticButton({
 }: MagneticButtonProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isTouch, setIsTouch] = useState(false);
+  useEffect(() => {
+    setIsTouch(window.matchMedia('(pointer: coarse)').matches);
+  }, []);
 
   const onMouseMove = (e: React.MouseEvent) => {
+    if (isTouch) return;
     const rect = ref.current?.getBoundingClientRect();
     if (!rect) return;
     const cx = rect.left + rect.width / 2;
@@ -39,7 +44,7 @@ export default function MagneticButton({
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      animate={{ x: position.x, y: position.y }}
+      animate={{ x: isTouch ? 0 : position.x, y: isTouch ? 0 : position.y }}
       transition={{ type: "spring", stiffness: 200, damping: 18, mass: 0.5 }}
       className={className}
       onClick={onClick}

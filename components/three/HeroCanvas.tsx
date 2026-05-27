@@ -33,6 +33,8 @@ export default function HeroCanvas() {
     const mount = mountRef.current;
     if (!mount) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const width  = mount.clientWidth  || window.innerWidth;
     const height = mount.clientHeight || window.innerHeight;
 
@@ -46,7 +48,7 @@ export default function HeroCanvas() {
     const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
     camera.position.z = 100;
 
-    const count     = 3000;
+    const count     = isMobile ? 600 : 1200;
     const positions = new Float32Array(count * 3);
     const sizes     = new Float32Array(count);
     const opacities = new Float32Array(count);
@@ -88,8 +90,10 @@ export default function HeroCanvas() {
 
     let clock  = 0;
     let animId: number;
+    let isVisible = true;
 
     const animate = () => {
+      if (!isVisible) return;
       animId = requestAnimationFrame(animate);
       clock += 0.0008;
 
@@ -108,6 +112,16 @@ export default function HeroCanvas() {
 
       renderer.render(scene, camera);
     };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) animate();
+      },
+      { threshold: 0 }
+    );
+    observer.observe(mount);
+
     animate();
 
     const onResize = () => {
@@ -122,6 +136,7 @@ export default function HeroCanvas() {
 
     return () => {
       cancelAnimationFrame(animId);
+      observer.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
       geometry.dispose();

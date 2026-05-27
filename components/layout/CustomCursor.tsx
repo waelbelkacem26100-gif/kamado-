@@ -27,12 +27,6 @@ export default function CustomCursor() {
       }
     };
 
-    const onEnter = (e: Event) => {
-      const el = e.currentTarget as HTMLElement;
-      targetScale = el.dataset.cursorGrow ? 3 : 1.8;
-    };
-    const onLeave = () => { targetScale = 1; };
-
     window.addEventListener("mousemove", onMove);
 
     /* Délégation d'événements au lieu de querySelectorAll au mount */

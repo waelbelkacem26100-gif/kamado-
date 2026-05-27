@@ -19,7 +19,7 @@ export default function GlobeCanvas() {
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(width, height)
-    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     el.appendChild(renderer.domElement)
 
     // Globe avec three-globe
