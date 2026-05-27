@@ -17,7 +17,7 @@ const expertiseCategories = [
 
 const realisationsLinks = [
   { label: "ScreenBuild", tag: "SaaS", href: "/projets/screenbuild/" },
-  { label: "Clustea", tag: "SaaS B2B", href: "/projets/clustea/" },
+  { label: "Clustea", tag: "SaaS SEO", href: "/projets/clustea/" },
   { label: "Couvetoile", tag: "Site vitrine", href: "/projets/couvetoile/" },
   { label: "Brainrot Club", tag: "Shopify", href: "/projets/brainrot-club/" },
 ];

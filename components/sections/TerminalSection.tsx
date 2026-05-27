@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, slideLeft, slideRight, defaultViewport } from "@/lib/animations";
 
 const STEPS = [
-  { num: "01", title: "Gestion d'équipes",         desc: "Invitez vos collaborateurs et organisez vos projets en quelques clics" },
-  { num: "02", title: "Workflows automatisés",     desc: "Créez des processus sans code, gagnez en efficacité opérationnelle" },
-  { num: "03", title: "Dashboard analytique",      desc: "Visualisez les performances de vos équipes en temps réel" },
+  { num: "01", title: "Audit SEO automatisé",       desc: "Analyse technique complète de votre site en quelques secondes" },
+  { num: "02", title: "Recommandations IA",          desc: "Priorisez les actions à fort impact sur votre ranking Google" },
+  { num: "03", title: "Suivi des performances",     desc: "Mesurez la progression de vos positions Google en temps réel" },
 ];
 
-const dashStats = [
-  { label: "Tâches complétées", value: "1 284", delta: "+12%", color: "#10b981" },
-  { label: "Membres actifs",    value: "47",     delta: "+3",   color: "#a855f7" },
-  { label: "Projets en cours",  value: "9",      delta: "2 en retard", color: "#f97316" },
+const seoStats = [
+  { label: "Positions top 10", value: "142",  delta: "+18 ce mois", color: "#10b981" },
+  { label: "Score technique",  value: "94",   delta: "↑ +6 pts",    color: "#a855f7" },
+  { label: "Mots-clés suivis", value: "380",  delta: "3 nouveaux",  color: "#3b82f6" },
 ];
 
-const barData = [42, 67, 55, 80, 91, 74, 88];
+const barData   = [55, 72, 61, 84, 93, 78, 91];
 const barLabels = ["L", "M", "M", "J", "V", "S", "D"];
 
 function DashboardMockup() {
@@ -35,14 +35,14 @@ function DashboardMockup() {
           <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
           <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
         </div>
-        <span className="text-xs text-white/30 ml-2 font-mono">clustea — dashboard</span>
+        <span className="text-xs text-white/30 ml-2 font-mono">clustea — seo dashboard</span>
       </div>
 
       {/* Body */}
       <div className="p-5 space-y-4">
         {/* Stat cards */}
         <div className="grid grid-cols-3 gap-3">
-          {dashStats.map((s) => (
+          {seoStats.map((s) => (
             <div
               key={s.label}
               className="rounded-xl p-3"
@@ -55,18 +55,18 @@ function DashboardMockup() {
           ))}
         </div>
 
-        {/* Bar chart */}
+        {/* Bar chart — trafic organique */}
         <div
           className="rounded-xl p-4"
           style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.05)" }}
         >
-          <p className="text-[10px] text-white/40 mb-3">Activité hebdomadaire</p>
+          <p className="text-[10px] text-white/40 mb-3">Trafic organique hebdomadaire</p>
           <div className="flex items-end gap-2 h-[72px]">
             {barData.map((v, i) => (
               <div key={i} className="flex-1 flex flex-col items-center gap-1">
                 <motion.div
                   className="w-full rounded-sm"
-                  style={{ background: i === 4 ? "#a855f7" : "rgba(168,85,247,0.3)" }}
+                  style={{ background: i === 4 ? "#10b981" : "rgba(16,185,129,0.3)" }}
                   initial={{ height: 0 }}
                   whileInView={{ height: `${(v / maxBar) * 64}px` }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -78,12 +78,12 @@ function DashboardMockup() {
           </div>
         </div>
 
-        {/* Task list */}
+        {/* Audit tasks */}
         <div className="space-y-2">
           {[
-            { label: "Intégration Stripe Billing", done: true,  tag: "Dev" },
-            { label: "Onboarding flow v2",         done: false, tag: "Design" },
-            { label: "Dashboard permissions",      done: false, tag: "Dev" },
+            { label: "Balises title dupliquées (3 pages)",  done: true,  tag: "Critique" },
+            { label: "Core Web Vitals — LCP à optimiser",   done: false, tag: "Moyen" },
+            { label: "Maillage interne insuffisant",        done: false, tag: "Faible" },
           ].map((t, i) => (
             <div key={i} className="flex items-center gap-2.5">
               <div
@@ -104,7 +104,7 @@ function DashboardMockup() {
               </span>
               <span
                 className="text-[9px] font-semibold px-1.5 py-0.5 rounded"
-                style={{ background: "rgba(168,85,247,0.15)", color: "#a855f7" }}
+                style={{ background: "rgba(16,185,129,0.15)", color: "#10b981" }}
               >
                 {t.tag}
               </span>
@@ -133,10 +133,10 @@ export default function TerminalSection() {
             Projet phare
           </motion.span>
           <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
-            Clustea — SaaS B2B
+            Clustea — SaaS SEO
           </motion.h2>
           <motion.p variants={fadeUp} className="text-lead mt-4 max-w-xl mx-auto">
-            Plateforme de gestion d&apos;équipes et de workflows. MVP en production en 8 semaines.
+            Automatise l&apos;analyse et l&apos;optimisation du référencement naturel de vos sites. MVP en production en 8 semaines.
           </motion.p>
         </motion.div>
 
@@ -160,24 +160,13 @@ export default function TerminalSection() {
             viewport={defaultViewport}
             className="space-y-8"
           >
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {["Next.js 15", "TypeScript", "Prisma", "Supabase"].map((t) => (
-                <span
-                  key={t}
-                  className="text-xs font-medium px-3 py-1 rounded-full border"
-                  style={{ borderColor: "rgba(168,85,247,0.3)", color: "#a855f7", background: "rgba(168,85,247,0.08)" }}
-                >
-                  {t}
-                </span>
-              ))}
-              <span
-                className="text-xs font-semibold px-3 py-1 rounded-full"
-                style={{ background: "rgba(16,185,129,0.12)", color: "#10b981", border: "1px solid rgba(16,185,129,0.25)" }}
-              >
-                8 sem — MVP en production
-              </span>
-            </div>
+            {/* Badge seul */}
+            <span
+              className="inline-flex text-xs font-semibold px-3 py-1.5 rounded-full"
+              style={{ background: "rgba(16,185,129,0.12)", color: "#10b981", border: "1px solid rgba(16,185,129,0.25)" }}
+            >
+              SaaS SEO — 8 sem en production
+            </span>
 
             <div className="space-y-6">
               {STEPS.map((step) => (
@@ -185,9 +174,9 @@ export default function TerminalSection() {
                   <div
                     className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold"
                     style={{
-                      background: "rgba(168,85,247,0.12)",
-                      color:      "#a855f7",
-                      border:     "1px solid rgba(168,85,247,0.25)",
+                      background: "rgba(16,185,129,0.12)",
+                      color:      "#10b981",
+                      border:     "1px solid rgba(16,185,129,0.25)",
                     }}
                   >
                     {step.num}
@@ -205,7 +194,7 @@ export default function TerminalSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-opacity hover:opacity-90"
-              style={{ background: "#a855f7", color: "#fff" }}
+              style={{ background: "#10b981", color: "#fff" }}
             >
               Découvrir Clustea
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

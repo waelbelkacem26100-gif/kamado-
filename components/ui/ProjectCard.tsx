@@ -25,18 +25,6 @@ export default function ProjectCard({ project, large = false }: ProjectCardProps
           {/* Overlay au hover */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
 
-          {/* Tag stack */}
-          <div className="absolute top-4 left-4 flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            {project.stack.slice(0, 3).map((tech) => (
-              <span
-                key={tech}
-                className="text-xs font-medium px-2.5 py-1 rounded-full bg-white/20 text-white backdrop-blur-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
           {/* Nom du projet centré */}
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-white font-bold text-2xl md:text-3xl tracking-tight opacity-30 group-hover:opacity-0 transition-opacity duration-300">

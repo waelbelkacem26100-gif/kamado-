@@ -216,17 +216,6 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               </div>
             )}
 
-            {/* Stack pills — hidden on mobile for featured to avoid overlap */}
-            <div className={`absolute bottom-4 right-4 flex gap-1.5 flex-wrap justify-end ${isFeatured ? "hidden sm:flex max-w-[40%]" : "max-w-[60%]"}`}>
-              {project.stack.slice(0, 2).map((tech) => (
-                <span
-                  key={tech}
-                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/85 backdrop-blur-sm border border-white/12 whitespace-nowrap shrink-0"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
 
           {/* Content */}
@@ -235,19 +224,6 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               <div>
                 <h3 className="text-lg font-bold text-white mb-1.5">{project.name}</h3>
                 <p className="text-sm text-white/50 leading-relaxed line-clamp-2">{project.tagline}</p>
-                {/* Stack pills under image on mobile for featured card */}
-                {isFeatured && (
-                  <div className="flex flex-wrap gap-1.5 mt-2 sm:hidden">
-                    {project.stack.slice(0, 2).map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-white/5 text-white/70 border border-white/10 whitespace-nowrap"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                )}
                 {isFeatured && (
                   <a
                     href={project.url}

@@ -79,7 +79,7 @@ export default function ProjectPageClient({ project, prevProject, nextProject }:
               { label: "Rôle", value: project.role },
               { label: "Durée", value: project.duration },
               { label: "Lien", value: "Voir le projet →", href: project.url },
-              { label: "Stack", value: project.stack.slice(0, 3).join(", ") },
+              { label: "Livraison", value: project.duration },
             ].map((item) => (
               <motion.div key={item.label} variants={fadeUp}>
                 <p className="text-xs text-[var(--fg-muted)] uppercase tracking-widest mb-1">{item.label}</p>

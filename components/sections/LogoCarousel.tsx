@@ -6,7 +6,7 @@ const clients = [
   { name: "Brainrot Club", tag: "E-commerce Shopify", color: "#a855f7", href: "/projets/brainrot-club/" },
   { name: "Couvetoile",    tag: "Site vitrine",        color: "#0891b2", href: "/projets/couvetoile/" },
   { name: "ScreenBuild",   tag: "SaaS IA",             color: "#3b82f6", href: "/projets/screenbuild/" },
-  { name: "Clustea",       tag: "SaaS B2B",            color: "#10b981", href: "/projets/clustea/" },
+  { name: "Clustea",       tag: "SaaS SEO",            color: "#10b981", href: "/projets/clustea/" },
 ];
 
 interface Tech {
