@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,38 +8,37 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
-  /* Stocker la référence pour un cleanup propre */
-  const rafCallbackRef = useRef<((time: number) => void) | null>(null);
-
   useEffect(() => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (prefersReduced || isMobile) {
-      /* Pas de Lenis sur mobile ou si reduced-motion activé, juste rafraîchir les positions ScrollTrigger */
       ScrollTrigger.refresh();
       return;
     }
 
     const lenis = new Lenis({
-      duration: 1.4,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 0,
+      infinite: false,
     });
 
     lenis.on("scroll", ScrollTrigger.update);
 
-    /* Référence stable pour le cleanup */
-    const rafCallback = (time: number) => lenis.raf(time * 1000);
-    rafCallbackRef.current = rafCallback;
-    gsap.ticker.add(rafCallback);
-    gsap.ticker.lagSmoothing(0);
+    /* RAF natif — passe un DOMHighResTimeStamp exact à lenis.raf()
+       (le gsap.ticker passe des secondes × 1000 ≠ timestamp absolu) */
+    let rafId: number;
+    function raf(time: DOMHighResTimeStamp) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
 
     return () => {
-      if (rafCallbackRef.current) {
-        gsap.ticker.remove(rafCallbackRef.current);
-        rafCallbackRef.current = null;
-      }
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
