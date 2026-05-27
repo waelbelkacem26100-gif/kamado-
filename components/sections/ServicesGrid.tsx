@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 
@@ -91,6 +92,7 @@ const services = [
     slug: "creation-site-vitrine",
     accent: "var(--accent)",
     Icon: IconVitrine,
+    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80&auto=format&fit=crop",
   },
   {
     num: "02",
@@ -99,6 +101,7 @@ const services = [
     slug: "boutique-shopify",
     accent: "#a855f7",
     Icon: IconShopify,
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop",
   },
   {
     num: "03",
@@ -107,6 +110,7 @@ const services = [
     slug: "saas-sur-mesure",
     accent: "#3b82f6",
     Icon: IconSaaS,
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&q=80&auto=format&fit=crop",
   },
   {
     num: "04",
@@ -115,6 +119,7 @@ const services = [
     slug: "referencement-seo",
     accent: "#f97316",
     Icon: IconSEO,
+    image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&q=80&auto=format&fit=crop",
   },
   {
     num: "05",
@@ -123,6 +128,7 @@ const services = [
     slug: "webdesign-sur-mesure",
     accent: "#ec4899",
     Icon: IconDesign,
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80&auto=format&fit=crop",
   },
   {
     num: "06",
@@ -131,6 +137,7 @@ const services = [
     slug: "chatbot-ia",
     accent: "#10b981",
     Icon: IconAI,
+    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80&auto=format&fit=crop",
   },
 ];
 
@@ -181,53 +188,48 @@ export default function ServicesGrid() {
                 style={{ background: service.accent }}
               />
 
-              {/* Icon area — replaces image */}
-              <div className="relative h-44 overflow-hidden flex-shrink-0 flex items-center justify-center">
-                {/* Subtle radial bg glow */}
+              {/* Image + SVG icon overlay */}
+              <div className="relative h-44 overflow-hidden flex-shrink-0">
+                {/* Background image */}
+                <motion.div
+                  className="absolute inset-0"
+                  whileHover={{ scale: 1.06 }}
+                  transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                >
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </motion.div>
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                {/* Accent tint */}
                 <div
                   className="absolute inset-0"
-                  style={{
-                    background: `radial-gradient(ellipse 70% 70% at 50% 60%, ${service.accent}12 0%, transparent 70%)`,
-                  }}
+                  style={{ background: `radial-gradient(ellipse 60% 60% at 50% 80%, ${service.accent}18 0%, transparent 70%)` }}
                 />
                 {/* Watermark number */}
                 <span
-                  className="absolute right-4 bottom-0 font-black leading-none select-none pointer-events-none"
-                  style={{
-                    fontSize: "6rem",
-                    color: service.accent,
-                    opacity: 0.07,
-                    letterSpacing: "-0.05em",
-                  }}
+                  className="absolute right-3 bottom-1 font-black leading-none select-none pointer-events-none"
+                  style={{ fontSize: "5rem", color: service.accent, opacity: 0.18, letterSpacing: "-0.05em" }}
                   aria-hidden="true"
                 >
                   {service.num}
                 </span>
-                {/* Grid lines decoration */}
-                <svg className="absolute inset-0 w-full h-full opacity-[0.04]" viewBox="0 0 300 176" preserveAspectRatio="none" aria-hidden="true">
-                  {[40, 80, 120, 160, 200, 240].map((x) => (
-                    <line key={x} x1={x} y1="0" x2={x} y2="176" stroke="white" strokeWidth="0.5" />
-                  ))}
-                  {[44, 88, 132].map((y) => (
-                    <line key={y} x1="0" y1={y} x2="300" y2={y} stroke="white" strokeWidth="0.5" />
-                  ))}
-                </svg>
-                {/* Animated icon */}
-                <motion.div
-                  className="relative z-10 flex items-center justify-center w-20 h-20 rounded-2xl"
+                {/* SVG icon centered overlay */}
+                <div
+                  className="absolute left-4 bottom-4 flex items-center justify-center w-12 h-12 rounded-xl"
                   style={{
-                    background: `${service.accent}10`,
-                    border: `1px solid ${service.accent}25`,
-                    boxShadow: `0 0 30px ${service.accent}18`,
-                  }}
-                  whileHover={{
-                    scale: 1.12,
-                    boxShadow: `0 0 50px ${service.accent}35`,
-                    transition: { duration: 0.3 },
+                    background: `${service.accent}18`,
+                    border: `1px solid ${service.accent}35`,
+                    boxShadow: `0 0 20px ${service.accent}25`,
                   }}
                 >
                   <service.Icon color={service.accent} />
-                </motion.div>
+                </div>
               </div>
 
               {/* Content */}
