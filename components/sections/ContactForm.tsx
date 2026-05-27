@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
-import { CONTACT, WEB3FORMS_KEY } from "@/lib/constants";
+import { CONTACT } from "@/lib/constants";
 
 interface FormData {
   prenom: string;
@@ -118,36 +118,13 @@ export default function ContactForm() {
     setSendError(false);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          name: `${form.prenom} ${form.nom}`.trim(),
-          email: form.email,
-          subject: `Nouveau projet — ${form.type || "Contact"} | Kama Agency`,
-          message: [
-            `Prénom : ${form.prenom || "—"}`,
-            `Nom : ${form.nom}`,
-            `Email : ${form.email}`,
-            `Téléphone : ${form.telephone || "—"}`,
-            `Société : ${form.societe || "—"}`,
-            `Poste : ${form.poste || "—"}`,
-            ``,
-            `Type de projet : ${form.type || "Non précisé"}`,
-            `Budget estimé : ${form.budget || "Non précisé"}`,
-            `Délai souhaité : ${form.delai || "Non précisé"}`,
-            `Comment nous a trouvé : ${form.source || "Non précisé"}`,
-            ``,
-            `Description du projet :`,
-            form.message,
-          ].join("\n"),
-          from_name: "Kama Agency Contact Form",
-          replyto: form.email,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
       });
       const data = await res.json();
-      if (data.success) setSubmitted(true);
+      if (res.ok && data.success) setSubmitted(true);
       else setSendError(true);
     } catch {
       setSendError(true);
