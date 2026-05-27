@@ -1,58 +1,105 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
-
-  const springX = useSpring(mouseX, { damping: 28, stiffness: 400, mass: 0.5 });
-  const springY = useSpring(mouseY, { damping: 28, stiffness: 400, mass: 0.5 });
-
-  const scale = useMotionValue(1);
-  const springScale = useSpring(scale, { damping: 20, stiffness: 300 });
+  const outerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    if (isTouch) return;
+
+    document.documentElement.style.cursor = "none";
+
+    let mouseX = -100, mouseY = -100;
+    let followerX = -100, followerY = -100;
+    let rafId: number;
+    let scale = 1;
+    let targetScale = 1;
+
     const onMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (innerRef.current) {
+        innerRef.current.style.transform =
+          `translate(${mouseX - 3}px, ${mouseY - 3}px)`;
+      }
     };
 
-    const onEnterLink = () => scale.set(2.2);
-    const onLeaveLink = () => scale.set(1);
+    const onEnter = (e: Event) => {
+      const el = e.currentTarget as HTMLElement;
+      targetScale = el.dataset.cursorGrow ? 3 : 2.0;
+    };
+    const onLeave = () => { targetScale = 1; };
 
     window.addEventListener("mousemove", onMove);
 
-    const interactive = document.querySelectorAll("a, button, [data-cursor-grow]");
+    const interactive = document.querySelectorAll<HTMLElement>(
+      "a, button, [data-cursor-grow]"
+    );
     interactive.forEach((el) => {
-      el.addEventListener("mouseenter", onEnterLink);
-      el.addEventListener("mouseleave", onLeaveLink);
+      el.addEventListener("mouseenter", onEnter);
+      el.addEventListener("mouseleave", onLeave);
+      el.style.cursor = "none";
     });
 
+    const animate = () => {
+      rafId = requestAnimationFrame(animate);
+      followerX += (mouseX - followerX) * 0.12;
+      followerY += (mouseY - followerY) * 0.12;
+      scale     += (targetScale - scale) * 0.1;
+
+      if (outerRef.current) {
+        const size = 36 * scale;
+        outerRef.current.style.transform =
+          `translate(${followerX - size / 2}px, ${followerY - size / 2}px) scale(${scale})`;
+      }
+    };
+    animate();
+
     return () => {
+      cancelAnimationFrame(rafId);
       window.removeEventListener("mousemove", onMove);
+      document.documentElement.style.cursor = "";
       interactive.forEach((el) => {
-        el.removeEventListener("mouseenter", onEnterLink);
-        el.removeEventListener("mouseleave", onLeaveLink);
+        el.removeEventListener("mouseenter", onEnter);
+        el.removeEventListener("mouseleave", onLeave);
+        el.style.cursor = "";
       });
     };
-  }, [mouseX, mouseY, scale]);
+  }, []);
 
   return (
-    <motion.div
-      ref={cursorRef}
-      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
-      style={{
-        x: springX,
-        y: springY,
-        translateX: "-50%",
-        translateY: "-50%",
-        scale: springScale,
-      }}
-    >
-      <div className="w-4 h-4 rounded-full bg-white" />
-    </motion.div>
+    <>
+      {/* Outer follower */}
+      <div
+        ref={outerRef}
+        className="fixed top-0 left-0 z-[9999] pointer-events-none"
+        style={{ willChange: "transform" }}
+        aria-hidden="true"
+      >
+        <div
+          className="w-9 h-9 rounded-full border mix-blend-difference"
+          style={{
+            borderColor: "#00D1FF",
+            boxShadow: "0 0 12px rgba(0,209,255,0.4)",
+          }}
+        />
+      </div>
+
+      {/* Inner dot */}
+      <div
+        ref={innerRef}
+        className="fixed top-0 left-0 z-[9999] pointer-events-none"
+        style={{ willChange: "transform" }}
+        aria-hidden="true"
+      >
+        <div
+          className="w-1.5 h-1.5 rounded-full"
+          style={{ background: "#00D1FF" }}
+        />
+      </div>
+    </>
   );
 }

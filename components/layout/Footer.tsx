@@ -3,32 +3,60 @@ import { CONTACT, SITE_NAME } from "@/lib/constants";
 import NewsletterForm from "@/components/ui/NewsletterForm";
 
 const services = [
-  { label: "Site vitrine", href: "/services/creation-site-vitrine/" },
+  { label: "Site vitrine",    href: "/services/creation-site-vitrine/" },
   { label: "Boutique Shopify", href: "/services/boutique-shopify/" },
-  { label: "SaaS sur-mesure", href: "/services/saas-sur-mesure/" },
+  { label: "SaaS sur-mesure",  href: "/services/saas-sur-mesure/" },
   { label: "Référencement SEO", href: "/services/referencement-seo/" },
-  { label: "Webdesign", href: "/services/webdesign-sur-mesure/" },
-  { label: "Chatbot & IA", href: "/services/chatbot-ia/" },
+  { label: "Webdesign",        href: "/services/webdesign-sur-mesure/" },
+  { label: "Chatbot & IA",     href: "/services/chatbot-ia/" },
 ];
 
 const company = [
-  { label: "Accueil", href: "/" },
-  { label: "Nos Services", href: "/services/" },
+  { label: "Accueil",          href: "/" },
+  { label: "Nos Services",     href: "/services/" },
   { label: "Nos réalisations", href: "/projets/" },
-  { label: "Blog", href: "/blog/" },
-  { label: "Contact", href: "/contact/" },
+  { label: "Blog",             href: "/blog/" },
+  { label: "Contact",          href: "/contact/" },
   { label: "Mentions légales", href: "/mentions-legales/" },
 ];
 
 export default function Footer() {
   return (
     <footer
-      className="border-t px-6 pt-16 pb-10"
-      style={{ borderColor: "rgba(255,255,255,0.07)", backgroundColor: "#0a0a0a", color: "#f0f0f0" }}
+      className="relative border-t overflow-hidden px-6 pt-16 pb-10"
+      style={{ borderColor: "rgba(255,255,255,0.07)", backgroundColor: "#0A0A0A", color: "#f0f0f0" }}
     >
-      <div className="max-w-6xl mx-auto">
+      {/* Watermark KAMA */}
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 select-none pointer-events-none"
+        aria-hidden="true"
+        style={{
+          fontSize:         "clamp(120px, 20vw, 280px)",
+          fontWeight:       800,
+          letterSpacing:    "-0.05em",
+          lineHeight:       1,
+          opacity:          0.022,
+          background:       "linear-gradient(135deg, #00D1FF 0%, #ffffff 50%, #5CE1FF 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor:  "transparent",
+          backgroundClip:   "text",
+          userSelect:       "none",
+          whiteSpace:       "nowrap",
+        }}
+      >
+        KAMA
+      </div>
+
+      {/* Top separator gradient */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(0,209,255,0.15) 30%, rgba(0,209,255,0.3) 50%, rgba(0,209,255,0.15) 70%, transparent)" }}
+      />
+
+      <div className="relative max-w-6xl mx-auto">
         {/* 4-column grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-4">
@@ -42,7 +70,7 @@ export default function Footer() {
             <a
               href={`mailto:${CONTACT.email}`}
               className="text-xs font-medium hover:underline transition-colors"
-              style={{ color: "#00ff87" }}
+              style={{ color: "#00D1FF" }}
             >
               {CONTACT.email}
             </a>
@@ -64,7 +92,7 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-[#00D1FF]"
                     style={{ color: "rgba(240,240,240,0.5)" }}
                   >
                     {s.label}
@@ -84,7 +112,7 @@ export default function Footer() {
                 <li key={c.href}>
                   <Link
                     href={c.href}
-                    className="text-sm transition-colors hover:text-white"
+                    className="text-sm transition-colors hover:text-[#00D1FF]"
                     style={{ color: "rgba(240,240,240,0.5)" }}
                   >
                     {c.label}
@@ -103,12 +131,12 @@ export default function Footer() {
               Conseils web, SEO et IA — 1 email par mois, sans spam.
             </p>
             <NewsletterForm />
-            <div className="flex gap-3">
+            <div className="flex gap-3 mt-4">
               <a
                 href={CONTACT.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00ff87] hover:text-[#00ff87]"
+                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00D1FF] hover:text-[#00D1FF]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
                 aria-label="LinkedIn"
               >
@@ -121,7 +149,7 @@ export default function Footer() {
                 href={CONTACT.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00ff87] hover:text-[#00ff87]"
+                className="w-9 h-9 rounded-lg border flex items-center justify-center transition-colors hover:border-[#00D1FF] hover:text-[#00D1FF]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
                 aria-label="Twitter / X"
               >
@@ -131,7 +159,7 @@ export default function Footer() {
               </a>
               <Link
                 href="/contact/"
-                className="h-9 px-4 rounded-lg border flex items-center text-xs font-semibold transition-all hover:border-[#00ff87] hover:text-[#00ff87]"
+                className="h-9 px-4 rounded-lg border flex items-center text-xs font-semibold transition-all hover:border-[#00D1FF] hover:text-[#00D1FF]"
                 style={{ borderColor: "rgba(255,255,255,0.1)", color: "rgba(240,240,240,0.5)" }}
               >
                 Démarrer →
@@ -148,8 +176,8 @@ export default function Footer() {
           <span>© 2026 {SITE_NAME}. Tous droits réservés.</span>
           <div className="flex items-center gap-1.5">
             <span
-              className="inline-flex h-1.5 w-1.5 rounded-full"
-              style={{ background: "#00ff87" }}
+              className="inline-flex h-1.5 w-1.5 rounded-full animate-pulse"
+              style={{ background: "#00D1FF" }}
             />
             <span>Disponible pour nouveaux projets</span>
           </div>

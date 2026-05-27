@@ -7,6 +7,7 @@ import ChiffresKeys from "@/components/sections/ChiffresKeys";
 import ValueProp from "@/components/sections/ValueProp";
 import Offers from "@/components/sections/Offers";
 import Projects from "@/components/sections/Projects";
+import TerminalSection from "@/components/sections/TerminalSection";
 import Reviews from "@/components/sections/Reviews";
 import BlogPreview from "@/components/sections/BlogPreview";
 import ZoneIntervention from "@/components/sections/ZoneIntervention";
@@ -164,6 +165,8 @@ export default function Home() {
       <div className="section-fade-in"><ValueProp /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><Projects /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><TerminalSection /></div>
       <div className="section-fade-in"><Reviews /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><BlogPreview /></div>

@@ -1,57 +1,179 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { staggerContainer, fadeUp, defaultViewport } from "@/lib/animations";
 import { projects } from "@/lib/projects";
 
-function ProjectCard3D({ project }: { project: typeof projects[0] }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [glowing, setGlowing] = useState(false);
+gsap.registerPlugin(ScrollTrigger);
+
+const accentMap: Record<string, string> = {
+  screenbuild:   "#3b82f6",
+  clustea:       "#10b981",
+  couvetoile:    "#f97316",
+  "brainrot-club": "#a855f7",
+};
+
+const metricMap: Record<string, { value: string; label: string }> = {
+  screenbuild:     { value: "−90%", label: "temps développement" },
+  clustea:         { value: "8 sem", label: "MVP en production" },
+  couvetoile:      { value: "×2,4", label: "leads qualifiés" },
+  "brainrot-club": { value: "+47%", label: "taux de conversion" },
+};
+
+export default function Projects() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef     = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024);
+    const onResize = () => setIsMobile(window.innerWidth < 1024);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  /* ── GSAP horizontal scroll ── */
+  useGSAP(
+    () => {
+      if (isMobile) return;
+      const track     = trackRef.current;
+      const container = containerRef.current;
+      if (!track || !container) return;
+
+      const scrollDist = () => track.scrollWidth - window.innerWidth + 96;
+
+      gsap.to(track, {
+        x: () => -scrollDist(),
+        ease: "none",
+        scrollTrigger: {
+          trigger:          container,
+          start:            "top top",
+          end:              () => `+=${scrollDist()}`,
+          scrub:            1.5,
+          pin:              true,
+          anticipatePin:    1,
+          invalidateOnRefresh: true,
+        },
+      });
+    },
+    { scope: containerRef, dependencies: [isMobile] }
+  );
+
+  return (
+    <section id="projets" className="py-24 md:py-32">
+      {/* Header */}
+      <div className="px-6">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={defaultViewport}
+          className="max-w-7xl mx-auto mb-12"
+        >
+          <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
+            Réalisations
+          </motion.span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
+              Nos derniers projets
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-sm text-[var(--fg-muted)] md:text-right max-w-xs">
+              {isMobile ? "Swipez pour voir tous les projets" : "Scrollez pour explorer nos réalisations →"}
+            </motion.p>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Cards — horizontal scroll on desktop, grid on mobile */}
+      {isMobile ? (
+        <div className="px-6">
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-7xl mx-auto"
+          >
+            {projects.map((project) => (
+              <motion.div key={project.slug} variants={fadeUp}>
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      ) : (
+        <div ref={containerRef} className="overflow-hidden">
+          <div
+            ref={trackRef}
+            className="flex gap-6 pl-12 pr-24"
+            style={{ width: "max-content" }}
+          >
+            {projects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function ProjectCard({ project }: { project: (typeof projects)[0] }) {
+  const ref      = useRef<HTMLDivElement>(null);
+  const accent   = accentMap[project.slug] ?? "#00D1FF";
+  const metric   = metricMap[project.slug];
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
 
   const onMouseMove = (e: React.MouseEvent) => {
     const rect = ref.current?.getBoundingClientRect();
     if (!rect) return;
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    setRotation({
-      x: ((y - rect.height / 2) / rect.height) * -12,
-      y: ((x - rect.width / 2) / rect.width) * 12,
+    setTilt({
+      x: ((e.clientY - rect.top)  / rect.height - 0.5) * -14,
+      y: ((e.clientX - rect.left) / rect.width  - 0.5) *  14,
     });
   };
 
   return (
-    <motion.div variants={fadeUp} style={{ perspective: "800px" }}>
+    <div
+      ref={ref}
+      onMouseMove={onMouseMove}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => { setTilt({ x: 0, y: 0 }); setHovered(false); }}
+      style={{ perspective: "900px", width: "680px", maxWidth: "85vw", flexShrink: 0 }}
+    >
       <motion.div
-        ref={ref}
-        onMouseMove={onMouseMove}
-        onMouseEnter={() => setGlowing(true)}
-        onMouseLeave={() => {
-          setRotation({ x: 0, y: 0 });
-          setGlowing(false);
-        }}
-        animate={{ rotateX: rotation.x, rotateY: rotation.y }}
-        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        animate={{ rotateX: tilt.x, rotateY: tilt.y }}
+        transition={{ type: "spring", stiffness: 200, damping: 22 }}
         className="will-change-transform"
       >
         <Link
-          href={`/projets/${project.slug}`}
-          className={`group block rounded-2xl border overflow-hidden transition-all duration-300 ${
-            glowing
-              ? "border-[var(--accent)]/60 shadow-[0_0_40px_var(--accent-glow)]"
-              : "border-[var(--border)]"
-          }`}
+          href={`/projets/${project.slug}/`}
+          className="group block rounded-3xl border overflow-hidden transition-all duration-500"
+          style={{
+            borderColor: hovered ? `${accent}50` : "rgba(255,255,255,0.07)",
+            boxShadow:   hovered ? `0 0 50px ${accent}22, 0 24px 60px rgba(0,0,0,0.4)` : "0 8px 40px rgba(0,0,0,0.3)",
+            background:  "rgba(255,255,255,0.03)",
+            backdropFilter: "blur(12px)",
+          }}
         >
-          {/* Zone image */}
-          <div className="relative h-52 overflow-hidden bg-[var(--bg-secondary)]">
+          {/* Accent top bar */}
+          <div
+            className="h-[2px] transition-opacity duration-300"
+            style={{ background: accent, opacity: hovered ? 1 : 0 }}
+          />
 
-            {/* Photo de fond avec zoom au hover */}
+          {/* Image */}
+          <div className="relative h-80 overflow-hidden bg-[#141414]">
             <motion.div
               className="absolute inset-0"
-              whileHover={{ scale: 1.06 }}
+              animate={{ scale: hovered ? 1.06 : 1 }}
               transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <Image
@@ -59,41 +181,37 @@ function ProjectCard3D({ project }: { project: typeof projects[0] }) {
                 alt={project.name}
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 640px) 90vw, 680px"
               />
             </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
 
-            {/* Overlay gradient coloré (garde l'identité du projet) */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent`}
-            />
-
-            {/* Overlay hover "Voir le projet" */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 z-10 flex items-center justify-center">
-              <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white border border-white/40 bg-white/10 backdrop-blur-sm">
-                Voir le projet
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              </span>
-            </div>
-
-            {/* Browser frame miniature en haut */}
-            <div className="absolute inset-x-4 top-4 h-6 rounded-lg bg-black/40 backdrop-blur-sm border border-white/20 flex items-center gap-1.5 px-2.5 z-10">
-              <div className="flex gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-400/80" />
-                <div className="w-1.5 h-1.5 rounded-full bg-yellow-400/80" />
-                <div className="w-1.5 h-1.5 rounded-full bg-green-400/80" />
+            {/* Browser chrome */}
+            <div className="absolute inset-x-4 top-4 h-7 rounded-lg bg-black/40 backdrop-blur-sm border border-white/20 flex items-center gap-2 px-3">
+              <div className="flex gap-1.5">
+                <div className="w-2 h-2 rounded-full bg-red-400/80" />
+                <div className="w-2 h-2 rounded-full bg-yellow-400/80" />
+                <div className="w-2 h-2 rounded-full bg-green-400/80" />
               </div>
               <div className="flex-1 h-3 bg-white/10 rounded-full" />
             </div>
 
-            {/* Stack badges en bas */}
-            <div className="absolute bottom-3 left-3 flex flex-wrap gap-1.5 z-10">
+            {/* Metric badge */}
+            {metric && (
+              <div
+                className="absolute bottom-4 left-4 px-3 py-1.5 rounded-xl backdrop-blur-sm border text-sm font-bold"
+                style={{ color: accent, background: `${accent}18`, borderColor: `${accent}35` }}
+              >
+                {metric.value} <span className="font-normal text-xs opacity-70">{metric.label}</span>
+              </div>
+            )}
+
+            {/* Stack pills */}
+            <div className="absolute bottom-4 right-4 flex gap-1.5 flex-wrap justify-end">
               {project.stack.slice(0, 2).map((tech) => (
                 <span
                   key={tech}
-                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-sm border border-white/15"
+                  className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-black/50 text-white/85 backdrop-blur-sm border border-white/12"
                 >
                   {tech}
                 </span>
@@ -101,15 +219,22 @@ function ProjectCard3D({ project }: { project: typeof projects[0] }) {
             </div>
           </div>
 
-          {/* Infos */}
-          <div className="p-5" style={{ background: "rgba(255,255,255,0.04)", backdropFilter: "blur(8px)" }}>
+          {/* Content */}
+          <div className="p-6">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <h3 className="font-semibold text-[var(--fg)]">{project.name}</h3>
-                <p className="text-xs text-[var(--fg-muted)] mt-1 line-clamp-2">{project.tagline}</p>
+                <h3 className="text-lg font-bold text-white mb-1.5">{project.name}</h3>
+                <p className="text-sm text-white/50 leading-relaxed line-clamp-2">{project.tagline}</p>
               </div>
-              <div className="flex-shrink-0 w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center text-[var(--fg-muted)] group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-[#050508] transition-all duration-300">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <div
+                className="flex-shrink-0 w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300"
+                style={{
+                  borderColor:     hovered ? accent : "rgba(255,255,255,0.1)",
+                  background:      hovered ? `${accent}18` : "transparent",
+                  color:           hovered ? accent : "rgba(255,255,255,0.4)",
+                }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </div>
@@ -117,41 +242,6 @@ function ProjectCard3D({ project }: { project: typeof projects[0] }) {
           </div>
         </Link>
       </motion.div>
-    </motion.div>
-  );
-}
-
-export default function Projects() {
-  return (
-    <section id="projets" className="py-24 md:py-32 px-6">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="text-center mb-14"
-        >
-          <motion.span variants={fadeUp} className="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] block mb-4">
-            Réalisations
-          </motion.span>
-          <motion.h2 variants={fadeUp} className="text-section font-bold text-[var(--fg)]">
-            Nos derniers projets
-          </motion.h2>
-        </motion.div>
-
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-        >
-          {projects.map((project) => (
-            <ProjectCard3D key={project.slug} project={project} />
-          ))}
-        </motion.div>
-      </div>
-    </section>
+    </div>
   );
 }
