@@ -74,6 +74,102 @@ const trustItems = [
   { icon: "⭐", text: "5/5 — 12 avis clients" },
 ];
 
+/* ─── Floating label input ─── */
+function FloatingInput({
+  label,
+  value,
+  type = "text",
+  error,
+  optional,
+  onChange,
+  placeholder,
+}: {
+  label: string;
+  value: string;
+  type?: string;
+  error?: string;
+  optional?: boolean;
+  onChange: (v: string) => void;
+  placeholder?: string;
+}) {
+  const [focused, setFocused] = useState(false);
+  const floated = focused || value !== "";
+
+  return (
+    <div>
+      <div className="relative">
+        <input
+          type={type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
+          placeholder={floated ? (placeholder ?? "") : ""}
+          className={`w-full px-4 pt-6 pb-2.5 rounded-xl border bg-[var(--surface)] text-[var(--fg)] text-sm outline-none transition-all duration-200 focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_var(--accent-glow)] ${
+            error ? "border-red-500/60" : focused ? "border-[var(--accent)]" : "border-[var(--border)]"
+          }`}
+        />
+        <label
+          className={`absolute left-4 pointer-events-none select-none transition-all duration-200 ${
+            floated
+              ? "top-2 text-[10px] font-semibold uppercase tracking-wide"
+              : "top-1/2 -translate-y-1/2 text-sm"
+          }`}
+          style={{ color: floated ? (error ? "#f87171" : "var(--accent)") : "var(--fg-muted)" }}
+        >
+          {label}
+          {optional && <span className="font-normal opacity-60 normal-case tracking-normal"> (opt.)</span>}
+        </label>
+      </div>
+      {error && <p className="text-xs text-red-400 mt-1.5">{error}</p>}
+    </div>
+  );
+}
+
+/* ─── Floating label select ─── */
+function FloatingSelect({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: string[];
+  onChange: (v: string) => void;
+}) {
+  const floated = value !== "";
+  return (
+    <div className="relative">
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`w-full px-4 pt-6 pb-2.5 rounded-xl border bg-[var(--surface)] text-[var(--fg)] text-sm outline-none transition-all duration-200 focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_var(--accent-glow)] border-[var(--border)] appearance-none ${
+          !value ? "text-[var(--fg-muted)]" : ""
+        }`}
+      >
+        <option value="" disabled />
+        {options.map((o) => <option key={o} value={o}>{o}</option>)}
+      </select>
+      <label
+        className={`absolute left-4 pointer-events-none select-none transition-all duration-200 ${
+          floated ? "top-2 text-[10px] font-semibold uppercase tracking-wide" : "top-1/2 -translate-y-1/2 text-sm"
+        }`}
+        style={{ color: floated ? "var(--accent)" : "var(--fg-muted)" }}
+      >
+        {label}
+      </label>
+      <svg
+        className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+        width="12" height="12" viewBox="0 0 24 24" fill="none"
+        stroke="var(--fg-muted)" strokeWidth="2"
+      >
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+    </div>
+  );
+}
+
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>({
     prenom: "", nom: "", email: "", telephone: "", societe: "", poste: "",
@@ -132,11 +228,6 @@ export default function ContactForm() {
       setLoading(false);
     }
   };
-
-  const base = "w-full px-4 py-3 rounded-xl border bg-[var(--surface)] text-[var(--fg)] text-sm placeholder:text-[var(--fg-muted)] outline-none transition-all duration-200 focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_var(--accent-glow)]";
-  const inputClass = (field: keyof FormErrors) =>
-    `${base} ${errors[field] ? "border-red-500/60" : "border-[var(--border)]"}`;
-  const plain = `${base} border-[var(--border)]`;
 
   return (
     <section id="contact" className="py-24 md:py-32 px-6">
@@ -204,75 +295,51 @@ export default function ContactForm() {
                   01 — Vos coordonnées
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Prénom <span className="text-[var(--fg-muted)] font-normal">(optionnel)</span></label>
-                    <input
-                      type="text"
-                      placeholder="Jean"
-                      value={form.prenom}
-                      onChange={(e) => handleChange("prenom", e.target.value)}
-                      className={plain}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Nom *</label>
-                    <input
-                      type="text"
-                      placeholder="Dupont"
-                      value={form.nom}
-                      onChange={(e) => handleChange("nom", e.target.value)}
-                      className={inputClass("nom")}
-                    />
-                    {errors.nom && <p className="text-xs text-red-400 mt-1.5">{errors.nom}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Email professionnel *</label>
-                    <input
-                      type="email"
-                      placeholder="jean@entreprise.fr"
-                      value={form.email}
-                      onChange={(e) => handleChange("email", e.target.value)}
-                      className={inputClass("email")}
-                    />
-                    {errors.email && <p className="text-xs text-red-400 mt-1.5">{errors.email}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">
-                      Téléphone <span className="text-[var(--fg-muted)] font-normal">(optionnel)</span>
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="06 12 34 56 78"
-                      value={form.telephone}
-                      onChange={(e) => handleChange("telephone", e.target.value)}
-                      className={inputClass("telephone")}
-                    />
-                    {errors.telephone && <p className="text-xs text-red-400 mt-1.5">{errors.telephone}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">
-                      Société / Entreprise <span className="text-[var(--fg-muted)] font-normal">(optionnel)</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Mon Entreprise SAS"
-                      value={form.societe}
-                      onChange={(e) => handleChange("societe", e.target.value)}
-                      className={plain}
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">
-                      Votre poste <span className="text-[var(--fg-muted)] font-normal">(optionnel)</span>
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Dirigeant, Responsable marketing..."
-                      value={form.poste}
-                      onChange={(e) => handleChange("poste", e.target.value)}
-                      className={plain}
-                    />
-                  </div>
+                  <FloatingInput
+                    label="Prénom"
+                    value={form.prenom}
+                    optional
+                    placeholder="Jean"
+                    onChange={(v) => handleChange("prenom", v)}
+                  />
+                  <FloatingInput
+                    label="Nom"
+                    value={form.nom}
+                    error={errors.nom}
+                    placeholder="Dupont"
+                    onChange={(v) => handleChange("nom", v)}
+                  />
+                  <FloatingInput
+                    label="Email professionnel"
+                    value={form.email}
+                    type="email"
+                    error={errors.email}
+                    placeholder="jean@entreprise.fr"
+                    onChange={(v) => handleChange("email", v)}
+                  />
+                  <FloatingInput
+                    label="Téléphone"
+                    value={form.telephone}
+                    type="tel"
+                    optional
+                    error={errors.telephone}
+                    placeholder="06 12 34 56 78"
+                    onChange={(v) => handleChange("telephone", v)}
+                  />
+                  <FloatingInput
+                    label="Société / Entreprise"
+                    value={form.societe}
+                    optional
+                    placeholder="Mon Entreprise SAS"
+                    onChange={(v) => handleChange("societe", v)}
+                  />
+                  <FloatingInput
+                    label="Votre poste"
+                    value={form.poste}
+                    optional
+                    placeholder="Dirigeant, Responsable marketing..."
+                    onChange={(v) => handleChange("poste", v)}
+                  />
                 </div>
               </div>
 
@@ -284,50 +351,30 @@ export default function ContactForm() {
                   02 — Votre projet
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Type de projet</label>
-                    <select
-                      value={form.type}
-                      onChange={(e) => handleChange("type", e.target.value)}
-                      className={`${plain} ${!form.type ? "text-[var(--fg-muted)]" : ""}`}
-                    >
-                      <option value="" disabled>Sélectionner...</option>
-                      {typeOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Budget estimé</label>
-                    <select
-                      value={form.budget}
-                      onChange={(e) => handleChange("budget", e.target.value)}
-                      className={`${plain} ${!form.budget ? "text-[var(--fg-muted)]" : ""}`}
-                    >
-                      <option value="" disabled>Sélectionner...</option>
-                      {budgetOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Délai souhaité</label>
-                    <select
-                      value={form.delai}
-                      onChange={(e) => handleChange("delai", e.target.value)}
-                      className={`${plain} ${!form.delai ? "text-[var(--fg-muted)]" : ""}`}
-                    >
-                      <option value="" disabled>Sélectionner...</option>
-                      {delaiOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--fg)] mb-2">Comment nous avez-vous trouvé ?</label>
-                    <select
-                      value={form.source}
-                      onChange={(e) => handleChange("source", e.target.value)}
-                      className={`${plain} ${!form.source ? "text-[var(--fg-muted)]" : ""}`}
-                    >
-                      <option value="" disabled>Sélectionner...</option>
-                      {sourceOptions.map((o) => <option key={o} value={o}>{o}</option>)}
-                    </select>
-                  </div>
+                  <FloatingSelect
+                    label="Type de projet"
+                    value={form.type}
+                    options={typeOptions}
+                    onChange={(v) => handleChange("type", v)}
+                  />
+                  <FloatingSelect
+                    label="Budget estimé"
+                    value={form.budget}
+                    options={budgetOptions}
+                    onChange={(v) => handleChange("budget", v)}
+                  />
+                  <FloatingSelect
+                    label="Délai souhaité"
+                    value={form.delai}
+                    options={delaiOptions}
+                    onChange={(v) => handleChange("delai", v)}
+                  />
+                  <FloatingSelect
+                    label="Comment nous avez-vous trouvé ?"
+                    value={form.source}
+                    options={sourceOptions}
+                    onChange={(v) => handleChange("source", v)}
+                  />
                 </div>
               </div>
 
@@ -345,7 +392,9 @@ export default function ContactForm() {
                     placeholder="Décrivez votre projet en détail : objectifs, fonctionnalités souhaitées, audience cible, concurrents de référence, contraintes techniques ou graphiques particulières, avez-vous déjà un site existant ?..."
                     value={form.message}
                     onChange={(e) => handleChange("message", e.target.value)}
-                    className={`${inputClass("message")} resize-none`}
+                    className={`w-full px-4 py-3 rounded-xl border bg-[var(--surface)] text-[var(--fg)] text-sm placeholder:text-[var(--fg-muted)] outline-none transition-all duration-200 focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_var(--accent-glow)] resize-none ${
+                      errors.message ? "border-red-500/60" : "border-[var(--border)]"
+                    }`}
                   />
                   {errors.message && <p className="text-xs text-red-400 mt-1.5">{errors.message}</p>}
                   <div className="flex items-center justify-between mt-1.5">
