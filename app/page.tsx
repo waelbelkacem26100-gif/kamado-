@@ -4,11 +4,11 @@ import LogoCarousel from "@/components/sections/LogoCarousel";
 import ServicesGrid from "@/components/sections/ServicesGrid";
 import ProblemSolution from "@/components/sections/ProblemSolution";
 import ChiffresKeys from "@/components/sections/ChiffresKeys";
-import ValueProp from "@/components/sections/ValueProp";
+import BentoGrid from "@/components/sections/BentoGrid";
 import Offers from "@/components/sections/Offers";
 import Projects from "@/components/sections/Projects";
 import TerminalSection from "@/components/sections/TerminalSection";
-import Reviews from "@/components/sections/Reviews";
+import Testimonials from "@/components/sections/Testimonials";
 import BlogPreview from "@/components/sections/BlogPreview";
 import CTABand from "@/components/sections/CTABand";
 import ZoneIntervention from "@/components/sections/ZoneIntervention";
@@ -163,12 +163,13 @@ export default function Home() {
       <div className="section-divider" />
       <div className="section-fade-in"><ChiffresKeys /></div>
       <div className="section-divider" />
-      <div className="section-fade-in"><ValueProp /></div>
+      <div className="section-fade-in"><BentoGrid /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><Projects /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><TerminalSection /></div>
-      <div className="section-fade-in"><Reviews /></div>
+      <div className="section-divider" />
+      <div className="section-fade-in"><Testimonials /></div>
       <div className="section-divider" />
       <div className="section-fade-in"><BlogPreview /></div>
       <div className="section-fade-in"><CTABand /></div>

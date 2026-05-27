@@ -93,17 +93,22 @@ export default function Hero() {
       {/* Three.js particle canvas */}
       {!shouldReduce && <HeroCanvas />}
 
-      {/* Ambient glow */}
+      {/* Ambient glow + cosmos nebulae */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {/* Primary green glow */}
         <div
           className="absolute rounded-full blur-[160px]"
-          style={{
-            width: 600, height: 600,
-            background: "var(--accent)",
-            top: "25%", left: "50%",
-            transform: "translateX(-50%)",
-            opacity: 0.06,
-          }}
+          style={{ width: 600, height: 600, background: "var(--accent)", top: "25%", left: "50%", transform: "translateX(-50%)", opacity: 0.06 }}
+        />
+        {/* Purple nebula — left */}
+        <div
+          className="cosmos-nebula-purple"
+          style={{ width: 500, height: 500, top: "10%", left: "-8%", opacity: 0.09 }}
+        />
+        {/* Indigo nebula — right */}
+        <div
+          className="cosmos-nebula-indigo"
+          style={{ width: 400, height: 400, bottom: "15%", right: "-5%", opacity: 0.07 }}
         />
       </div>
 
