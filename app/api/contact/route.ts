@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
   const { error } = await resend.emails.send({
     from: "Kama Agency <contact@kamaagency.com>",
-    to: "contact@kamaagency.com",
+    to: "wbendou.pro@gmail.com",
     replyTo: email,
     subject: `Nouveau projet — ${type || "Contact"} | Kama Agency`,
     text: [
