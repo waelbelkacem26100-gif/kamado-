@@ -21,6 +21,7 @@ export interface BlogPost {
   metaDescription: string;
   keywords: string[];
   isPilier?: boolean;
+  noindex?: boolean;
   intro: string;
   sections: BlogSection[];
   faq: { q: string; a: string }[];
@@ -120,6 +121,7 @@ export const posts: BlogPost[] = [
     metaTitle: "Shopify vs WooCommerce 2026 : comparatif complet",
     metaDescription: "Shopify ou WooCommerce en 2026 ? Comparatif complet des coûts, performances, SEO et facilité de gestion. L'avis d'experts de l'agence Kama Agency pour choisir la bonne plateforme.",
     keywords: ["Shopify vs WooCommerce", "boutique en ligne", "e-commerce 2026", "Shopify France", "WooCommerce", "plateforme e-commerce", "comparatif Shopify"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&auto=format&fit=crop",
     intro: "Shopify vs WooCommerce. C'est la question que nous posent presque tous nos clients e-commerce avant de démarrer un projet. Et en 2026, la réponse n'est pas aussi simple qu'un \"l'un est mieux que l'autre\". Ces deux plateformes servent des besoins différents, avec des modèles économiques opposés et des implications techniques très distinctes. Après avoir travaillé sur des dizaines de boutiques sur les deux plateformes — de la boutique artisanale à l'e-commerce à 7 chiffres — voici notre analyse complète, sans langue de bois, avec des chiffres réels et des exemples concrets tirés de nos projets.",
     sections: [
@@ -188,7 +190,7 @@ export const posts: BlogPost[] = [
   {
     slug: "pourquoi-nextjs-standard-agences-web-premium",
     title: "Pourquoi Next.js est devenu le standard des agences web premium en 2026",
-    category: "Développement",
+    category: "Création Web",
     date: "28 avril 2026",
     readTime: "7 min",
     excerpt: "Performance, SEO, expérience développeur : Next.js coche toutes les cases. Voici pourquoi nous l'avons adopté comme framework principal chez Kama Agency.",
@@ -264,7 +266,7 @@ export const posts: BlogPost[] = [
   {
     slug: "cout-site-web-2026",
     title: "Combien coûte un site web en 2026 : tarifs, facteurs de prix et retour sur investissement",
-    category: "Tarifs",
+    category: "Création Web",
     date: "17 mai 2026",
     readTime: "9 min",
     excerpt: "Site vitrine, boutique e-commerce ou SaaS : les prix varient de 500€ à 100 000€. Guide complet des tarifs 2026 pour budgéter votre projet web sans mauvaise surprise.",
@@ -272,6 +274,7 @@ export const posts: BlogPost[] = [
     metaDescription: "Combien coûte un site web en 2026 ? Site vitrine (500-8 000€), e-commerce (1 500-15 000€), SaaS (10 000€+). Guide complet des tarifs et facteurs de prix par Kama Agency.",
     keywords: ["prix site web 2026", "coût site internet", "tarif agence web", "budget site web", "site vitrine prix", "e-commerce prix", "ROI site web"],
     isPilier: true,
+    noindex: true,
     image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&q=80&auto=format&fit=crop",
     intro: "\"Combien ça coûte un site web ?\" — c'est la question que nous recevons le plus souvent. Et la réponse honnête est : ça dépend. En 2026, le prix d'un site web peut aller de 500€ pour un site vitrine simple à plusieurs centaines de milliers d'euros pour une application web complexe. Cette fourchette large s'explique par des différences fondamentales de complexité, de technologie et d'expertise. Dans ce guide, on vous donne les vrais prix du marché français, les facteurs qui font varier les tarifs, et surtout comment calculer le retour sur investissement de votre projet pour savoir si l'investissement en vaut la peine.",
     sections: [
@@ -411,13 +414,14 @@ export const posts: BlogPost[] = [
   {
     slug: "vitesse-chargement-site-core-web-vitals",
     title: "Vitesse de chargement et Core Web Vitals : le guide complet pour optimiser votre site en 2026",
-    category: "Performance",
+    category: "SEO",
     date: "15 mai 2026",
     readTime: "8 min",
     excerpt: "Un site lent perd des clients et des positions Google. Guide complet pour mesurer, comprendre et améliorer vos Core Web Vitals et votre temps de chargement en 2026.",
     metaTitle: "Core Web Vitals 2026 : guide complet pour optimiser la vitesse de votre site",
     metaDescription: "Comprendre et améliorer les Core Web Vitals (LCP, INP, CLS) en 2026. Outils, techniques et résultats concrets pour accélérer votre site et gagner des positions Google.",
     keywords: ["Core Web Vitals", "vitesse chargement site", "LCP INP CLS", "PageSpeed Insights", "optimisation performance web", "SEO technique", "score Lighthouse"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&auto=format&fit=crop",
     intro: "Chaque seconde supplémentaire de chargement coûte en moyenne 7% de conversions. Sur mobile, un site qui met plus de 3 secondes à s'afficher perd 53% de ses visiteurs avant même qu'ils aient vu votre contenu. Les Core Web Vitals — les métriques de performance officielles de Google — impactent directement votre classement dans les résultats de recherche depuis 2021. En 2026, leur poids dans l'algorithme a augmenté et les seuils sont devenus plus stricts. Ce guide vous explique exactement ce que sont les Core Web Vitals, comment les mesurer, et les optimisations concrètes qui font la différence — avec des résultats chiffrés tirés de nos projets.",
     sections: [
@@ -486,13 +490,14 @@ export const posts: BlogPost[] = [
   {
     slug: "intelligence-artificielle-site-web-2026",
     title: "Intelligence artificielle et site web en 2026 : comment l'IA transforme votre présence en ligne",
-    category: "IA",
+    category: "Création Web",
     date: "22 mai 2026",
     readTime: "7 min",
     excerpt: "Chatbots, personnalisation, génération de contenu, SEO IA : l'intelligence artificielle révolutionne la façon dont les sites web attirent, engagent et convertissent les visiteurs.",
     metaTitle: "Intelligence artificielle et site web 2026 : guide pratique",
     metaDescription: "Comment intégrer l'IA dans votre site web en 2026 ? Chatbots OpenAI/Claude, personnalisation, génération de contenu, SEO IA. Guide pratique par Kama Agency.",
     keywords: ["intelligence artificielle site web", "chatbot IA", "IA e-commerce", "personnalisation IA", "AI Overviews SEO", "Claude API", "automatisation IA"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&auto=format&fit=crop",
     intro: "L'intelligence artificielle n'est plus une technologie réservée aux grandes entreprises tech. En 2026, les PME, artisans et commerçants peuvent intégrer des fonctionnalités IA dans leur site web pour un coût abordable — et les résultats sont souvent spectaculaires. Chatbots qui répondent instantanément à vos clients à 3h du matin, recommandations de produits personnalisées qui augmentent le panier moyen, contenu SEO généré en quelques minutes, analyse prédictive des comportements visiteurs : voici un tour d'horizon complet de ce que l'IA peut apporter concrètement à votre présence en ligne en 2026.",
     sections: [
@@ -636,6 +641,7 @@ export const posts: BlogPost[] = [
     metaTitle: "Refonte site web 2026 : quand et comment refaire son site internet ?",
     metaDescription: "Quand refaire son site web ? Les 7 signaux qui justifient une refonte, le processus complet et les pièges à éviter. Guide expert par Kama Agency.",
     keywords: ["refonte site web", "refaire son site internet", "refonte site internet", "quand refaire son site", "moderniser site web", "migration site web"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=85&auto=format&fit=crop",
     intro: "Votre site web a 4 ans. Il a été créé sur WordPress avec un thème premium qui a l&apos;air de plus en plus daté. Son score PageSpeed est à 52/100 sur mobile. Votre concurrent vient de lancer un nouveau site magnifique. Vos leads stagnent depuis 18 mois. Faut-il tout refondre, ou simplement optimiser l&apos;existant ? C&apos;est la question que nous posent le plus souvent nos clients. La réponse honnête : la refonte n&apos;est pas toujours la bonne solution — mais quand elle est justifiée, son ROI peut être spectaculaire. Voici comment trancher.",
     sections: [
@@ -773,6 +779,14 @@ export const posts: BlogPost[] = [
         h2: "Quel budget prévoir pour une agence SEO efficace en France",
         body: "Le marché français se divise en quatre gammes. Moins de 500€/mois : suivi de base, quelques optimisations techniques, rapports mensuels. Peu de création de contenu, pas de netlinking sérieux. Adapté à des sites avec peu de concurrence et des objectifs modestes. 500 à 1 500€/mois : suivi actif, création de 2 à 4 articles par mois, quelques backlinks de qualité, optimisations techniques régulières. C&apos;est le minimum pour des résultats significatifs sur des mots-clés modérément compétitifs en 6 à 12 mois. 1 500 à 4 000€/mois : stratégie SEO complète, création de contenu pilier + satellites, netlinking sérieux, audit technique régulier, suivi des positions hebdomadaire. Les résultats sont visibles en 3 à 6 mois sur des mots-clés compétitifs. C&apos;est le budget recommandé pour des entreprises avec des objectifs de croissance ambitieux. 4 000€+/mois : SEO agressif sur des marchés très compétitifs (finance, santé, assurance, e-commerce à fort CA). Équipe dédiée, production de contenu intensive, campagnes de netlinking premium. Dans tous les cas, évitez les engagements supérieurs à 6 mois sur les premiers contrats — une agence SEO sérieuse peut montrer des résultats préliminaires en 3 mois.",
       },
+      {
+        h2: "Les pièges contractuels à éviter avant de signer",
+        body: "Le contrat que vous signez avec une agence SEO est aussi important que la qualité de ses prestations. Premier piège : les engagements supérieurs à 12 mois sans clause de sortie anticipée. Si les résultats ne sont pas au rendez-vous à 6 mois, vous devez pouvoir rompre sans pénalité excessive. Exigez une clause de résiliation avec 30 à 60 jours de préavis maximum. Deuxième piège : la propriété des livrables. Certaines agences conservent la propriété des contenus créés, des backlinks obtenus et même des accès Google Search Console et Analytics. Stipulez noir sur blanc que tous les contenus, données et accès restent votre propriété à la résiliation. Troisième piège : les indicateurs flous. «&nbsp;Amélioration de votre visibilité SEO&nbsp;» n&apos;est pas un objectif mesurable. Exigez des KPIs précis : positions cibles sur X mots-clés, trafic organique mensuel minimum, nombre de backlinks à obtenir. Quatrième piège : les sous-traitants non déclarés. Certaines agences revendent les mandats à des freelances ou à des sous-traitants étrangers. Demandez qui réalise concrètement les travaux et exigez une transparence sur la composition de l&apos;équipe. Cinquième piège : les rapports automatisés sans analyse. Un rapport généré par un outil sans commentaire humain n&apos;a pas de valeur. Votre agence doit interpréter les données, expliquer les variations et proposer des actions correctives.",
+      },
+      {
+        h2: "Comment évaluer les résultats et piloter votre agence SEO",
+        body: "Le suivi de votre prestataire SEO ne doit pas se limiter à la lecture passive des rapports mensuels. Adoptez une approche active. Suivez les positions en temps réel sur 10 à 15 mots-clés stratégiques via Google Search Console (gratuit) ou un outil comme Semrush. Mesurez l&apos;évolution du trafic organique mois par mois dans Google Analytics 4, en isolant le canal «&nbsp;Organic Search&nbsp;» et en excluant le trafic branded (votre nom de marque). Vérifiez que les nouveaux contenus produits sont bien indexés dans Google Search Console — un article non indexé ne peut pas ranker. Auditez la qualité des backlinks obtenus via Ahrefs ou Majestic : un domaine référent de qualité a un DR (Domain Rating) supérieur à 30 et publie du contenu éditorial réel dans votre secteur. Organisez un point mensuel de 45 minutes avec votre chef de projet SEO pour revoir les positions, analyser les concurrents et valider les prochaines actions. Un bon indicateur de la santé de votre relation agence : si votre interlocuteur peut vous expliquer en 2 minutes précisément ce qui a été fait le mois précédent et pourquoi, vous êtes en bonnes mains.",
+      },
     ],
     faq: [
       {
@@ -786,6 +800,14 @@ export const posts: BlogPost[] = [
       {
         q: "Peut-on faire du SEO efficace sans agence, en interne ?",
         a: "Oui, si vous avez une personne dédiée avec les compétences techniques (audit, balisage Schema, vitesse), éditoriales (création de contenu expert) et de netlinking. En pratique, constituer cette expertise en interne coûte plus cher qu&apos;une agence pour les PME. Un bon compromis : une agence pour la stratégie et le netlinking, une personne interne pour la production de contenu.",
+      },
+      {
+        q: "Quelles sont les clauses indispensables dans un contrat d&apos;agence SEO ?",
+        a: "Trois clauses sont non-négociables : (1) la propriété intégrale de tous les livrables (contenus, backlinks, accès) à la résiliation ; (2) une clause de résiliation avec 30 à 60 jours de préavis maximum sans pénalité excessive ; (3) des KPIs mesurables et contractualisés (positions cibles, trafic organique minimum, volume de liens). Tout contrat sans ces trois clauses vous expose à des risques significatifs.",
+      },
+      {
+        q: "Comment différencier le SEO white hat du black hat ?",
+        a: "Le SEO white hat respecte les guidelines de Google : contenus originaux et utiles, liens obtenus naturellement ou par prospection éditoriale, optimisations techniques transparentes. Le black hat cherche à tromper l&apos;algorithme : fermes de liens, contenu dupliqué, cloaking, keyword stuffing. Le white hat produit des résultats durables en 6 à 12 mois. Le black hat peut générer des gains rapides suivis d&apos;une pénalité Google qui efface tout le trafic. Toute agence sérieuse documente ses méthodes et ne craint pas de vous les expliquer.",
       },
     ],
     gradient: "from-teal-500 to-cyan-600",
@@ -812,6 +834,7 @@ export const posts: BlogPost[] = [
     metaTitle: "SEO local 2026 : guide complet Google Business Profile",
     metaDescription: "Comment optimiser votre SEO local en 2026 ? Google Business Profile, avis, citations NAP, pages locales. Guide complet pour dominer le pack local Google.",
     keywords: ["SEO local", "Google Business Profile", "pack local Google", "référencement local", "GBP optimisation", "avis Google", "citation NAP", "agence SEO local"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1553484771-047a44eee27a?w=800&q=85&auto=format&fit=crop",
     intro: "En France, 46% de toutes les recherches Google ont une intention locale. «&nbsp;Restaurant Lyon&nbsp;», «&nbsp;plombier urgence Paris 15&nbsp;», «&nbsp;coiffeur près de chez moi&nbsp;» — des millions de requêtes quotidiennes qui débouchent directement sur des appels téléphoniques et des visites en magasin. Et dans 44% de ces recherches, les utilisateurs cliquent sur le pack local — les trois résultats avec carte qui apparaissent au-dessus des résultats organiques classiques. Apparaître dans ce pack local est la priorité absolue pour toute entreprise qui sert une clientèle locale. Voici la méthode complète en 2026.",
     sections: [
@@ -874,6 +897,7 @@ export const posts: BlogPost[] = [
     metaTitle: "Audit SEO 2026 : checklist complète pour analyser votre site",
     metaDescription: "Checklist d&apos;audit SEO complet 2026 : technique, contenu, maillage, autorité. Analysez et corrigez tous les facteurs qui freinent votre référencement naturel.",
     keywords: ["audit SEO", "checklist SEO", "analyse SEO site web", "audit référencement", "SEO technique checklist", "audit site internet", "erreurs SEO"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80&auto=format&fit=crop",
     intro: "Un audit SEO est la radiographie de votre site web. Il révèle les problèmes techniques invisibles qui plombent votre référencement, les opportunités de contenu manquées, et les failles d&apos;autorité qui vous maintiennent derrière vos concurrents. En agence, un audit SEO complet coûte entre 800 et 3 000€. Avec cette checklist, vous pouvez en réaliser une version solide en 3 à 6 heures avec des outils gratuits. Voici la méthode complète structurée en 5 piliers.",
     sections: [
@@ -1000,6 +1024,7 @@ export const posts: BlogPost[] = [
     metaTitle: "Taux de conversion e-commerce 2026 : 12 techniques CRO éprouvées",
     metaDescription: "Doublez votre taux de conversion e-commerce en 2026 : pages produit, checkout, email abandon panier, social proof, UX mobile. 12 techniques CRO concrètes par Kama Agency.",
     keywords: ["taux de conversion e-commerce", "CRO boutique en ligne", "optimisation conversion Shopify", "augmenter ventes boutique", "abandon panier", "UX e-commerce", "A/B testing"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&q=80&auto=format&fit=crop",
     intro: "Le taux de conversion moyen d&apos;une boutique en ligne en France est de 1,5 à 2%. Cela signifie que sur 100 visiteurs, 98 repartent sans acheter. Même si vous portez votre taux de 1,5% à 3% — ce qui est tout à fait atteignable — vous doublez votre chiffre d&apos;affaires sans dépenser un centime de plus en publicité. C&apos;est la magie du CRO (Conversion Rate Optimization). Voici 12 techniques concrètes, testées sur nos projets clients, pour améliorer significativement votre taux de conversion.",
     sections: [
@@ -1214,13 +1239,14 @@ export const posts: BlogPost[] = [
   {
     slug: "wordpress-vs-nextjs-comparatif",
     title: "WordPress ou Next.js : quel CMS choisir pour votre site en 2026 ?",
-    category: "Développement",
+    category: "Création Web",
     date: "11 mai 2026",
     readTime: "8 min",
     excerpt: "WordPress règne sur 43% du web. Next.js monte en flèche chez les agences premium. Comparatif honnête pour savoir lequel choisir selon votre projet et votre budget.",
     metaTitle: "WordPress vs Next.js 2026 : lequel choisir pour votre site ?",
     metaDescription: "WordPress ou Next.js en 2026 ? Comparatif complet : performances, SEO, coût, facilité de gestion et cas d'usage. Guide expert pour choisir le bon framework.",
     keywords: ["WordPress vs Next.js", "WordPress ou Next.js", "comparatif CMS 2026", "Next.js performance", "WordPress headless", "quel framework choisir", "agence web Next.js"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=85&auto=format&fit=crop",
     intro: "WordPress ou Next.js ? C'est la question que nous posent de plus en plus souvent nos clients en 2026. WordPress reste le CMS le plus utilisé au monde avec 43% de parts de marché, une communauté immense et une facilité de prise en main reconnue. Next.js, lui, s'est imposé comme le standard des agences premium grâce à des performances Lighthouse 95+/100 et une architecture moderne. Le choix entre les deux n'est pas universel — il dépend de votre projet, votre budget et vos besoins de gestion. Voici notre comparatif honnête, basé sur des années de projets sur les deux plateformes.",
     sections: [
@@ -1338,7 +1364,7 @@ export const posts: BlogPost[] = [
   {
     slug: "tarif-agence-web-province-vs-paris",
     title: "Tarifs agence web : province vs Paris — quelle différence en 2026 ?",
-    category: "Tarifs",
+    category: "Création Web",
     date: "9 mai 2026",
     readTime: "6 min",
     excerpt: "Une agence web parisienne facture 2 à 3 fois plus qu'une agence provinciale pour la même qualité. Voici pourquoi, et comment choisir la meilleure option pour votre projet.",
@@ -2573,6 +2599,7 @@ export const posts: BlogPost[] = [
     metaTitle: "Agence web Romans-sur-Isère 2025 : comment bien choisir",
     metaDescription: "Comment choisir une agence web à Romans-sur-Isère en 2025 ? Guide complet : critères de sélection, types de projets web locaux, tarifs et Kama Agency, votre agence web romanaise.",
     keywords: ["agence web Romans-sur-Isère", "création site web Romans", "agence web Drôme", "site internet Romans-sur-Isère", "développeur web Romans"],
+    noindex: true,
     image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=85&auto=format&fit=crop",
     intro: "Romans-sur-Isère, ville de 35 000 habitants dans la Drôme, abrite plus de 2 800 entreprises actives dans des secteurs aussi variés que l'artisanat, le commerce, le BTP et les services. Moins de 30% d'entre elles disposent d'un site web professionnel optimisé pour le référencement local. Cette réalité représente une opportunité concrète : une PME romanaise avec un bon site web peut dominer sa catégorie sur Google en moins de 6 mois.",
     sections: [

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Fond sombre arrondi -->
+  <rect width="32" height="32" rx="7" fill="#0a0a0a"/>
+  <!-- Barre verticale gauche -->
+  <rect x="3" y="4" width="5.5" height="24" rx="2.5" fill="#f0f0f0"/>
+  <!-- Bras supérieur — vert accent -->
+  <path d="M8.5 15 L26 4" stroke="#00ff87" stroke-width="5.5" stroke-linecap="round"/>
+  <!-- Bras inférieur -->
+  <path d="M8.5 15 L26 28" stroke="#f0f0f0" stroke-width="5.5" stroke-linecap="round"/>
+</svg>

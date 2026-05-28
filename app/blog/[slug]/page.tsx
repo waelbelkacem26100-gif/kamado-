@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.metaTitle,
     description: post.metaDescription,
     alternates: { canonical: `${SITE_URL}/blog/${post.slug}/` },
+    ...(post.noindex && { robots: { index: false, follow: true } }),
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
