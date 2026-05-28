@@ -9,6 +9,7 @@ import JsonLd from "@/components/layout/JsonLd";
 import Background from "@/components/layout/Background";
 import PageTransition from "@/components/layout/PageTransition";
 import ScrollProgress from "@/components/layout/ScrollProgress";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const geist = Geist({
@@ -127,6 +128,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </LenisProvider>
         </Providers>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
