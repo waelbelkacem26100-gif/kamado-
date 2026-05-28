@@ -45,15 +45,42 @@ export default async function BlogPage({ params }: Props) {
   const post = getPost(slug);
   if (!post) notFound();
 
+  const wordCount = post.sections.reduce((acc, s) => acc + s.body.split(" ").length, 0) + post.intro.split(" ").length;
+
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
+    keywords: post.keywords?.join(", "),
+    articleSection: post.category,
+    wordCount,
     datePublished: post.date,
-    author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
-    publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+    dateModified: post.dateModified ?? post.date,
+    image: {
+      "@type": "ImageObject",
+      url: post.image,
+      width: 1200,
+      height: 630,
+    },
+    author: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`,
+        width: 200,
+        height: 60,
+      },
+    },
     url: `${SITE_URL}/blog/${post.slug}/`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}/` },
     inLanguage: "fr-FR",
   };
 

@@ -9,7 +9,23 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/404", "/500"],
+        disallow: ["/api/", "/_next/", "/404", "/500", "/*?*"],
+      },
+      {
+        userAgent: "GPTBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "ChatGPT-User",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "CCBot",
+        disallow: ["/"],
+      },
+      {
+        userAgent: "anthropic-ai",
+        disallow: ["/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

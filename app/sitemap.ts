@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/blog/${p.slug}/`,
     lastModified: now,
     changeFrequency: "weekly" as const,
-    priority: 0.8,
+    priority: p.isPilier ? 0.85 : 0.75,
   }));
 
   return [
