@@ -1,53 +1,60 @@
 # CLAUDE.md — Kama Agency
+> Lis ce fichier EN ENTIER avant toute action.
+> Ne pose aucune question dont la réponse est ici.
 
-## Projet
+---
 
-| Champ | Valeur |
-|---|---|
-| Nom | Kama Agency |
-| URL prod | https://kamaagency.com |
-| Chemin local | `C:\Users\waelb\OneDrive\Bureau\kamado` |
-| Déploiement | GitHub → Vercel (auto-deploy sur push `main`) |
-| Framework | Next.js 15.5 App Router, TypeScript strict |
+## PROJET
+- **Nom** : kamaagency.com
+- **Stack** : Next.js 15 App Router + TypeScript strict + Tailwind CSS v4
+- **Déploiement** : Vercel via push GitHub (branche `main`)
+- **Repo** : https://github.com/waelbelkacem26100-gif/kamado-
+- **Chemin local** : `C:\Users\waelb\OneDrive\Bureau\kamado`
 
-## Commandes
+---
 
+## COMMANDES
 ```bash
 # Développement (Turbopack)
-cd "C:\Users\waelb\OneDrive\Bureau\kamado" && npm run dev
+npm run dev
 
-# Build prod (vider .next avant si EINVAL)
+# Build production
 Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue
 npm run build
 
-# Lint
-npm run lint
+# Deploy
+git push origin main
+
+# TypeScript check
+npx tsc --noEmit
 ```
 
-> **Note PowerShell** : Le Bash tool réinitialise le cwd sur `C:\Users\waelb\Desktop\kamado` (vide). Toujours utiliser le PowerShell tool avec `Push-Location "C:\Users\waelb\OneDrive\Bureau\kamado"` ou chemins absolus.
+> **Bash tool** : réinitialise le cwd sur `Desktop\kamado` (vide).
+> Toujours utiliser le **PowerShell tool** avec `Push-Location "C:\Users\waelb\OneDrive\Bureau\kamado"`.
 
-## Env vars
+---
 
-| Variable | Emplacement |
-|---|---|
-| `RESEND_API_KEY` | `.env.local` uniquement — ne JAMAIS committer |
-| `NEXT_PUBLIC_GA_ID` | `.env.local` + Vercel Dashboard (G-0JG8BC596P) |
+## VARIABLES D'ENVIRONNEMENT
+```
+NEXT_PUBLIC_GA_ID=G-0JG8BC596P        # dans .env.local + Vercel Dashboard
+RESEND_API_KEY=re_UDGNfFU2_...        # dans .env.local uniquement — NE JAMAIS committer
+```
+> Google Search Console token `jLA41AIAjJ9o95yAdnShagpFrg3Vemd1IOBYHhft1_4` dans `app/layout.tsx` → **NE JAMAIS TOUCHER**.
 
-> **Google Search Console** token `jLA41AIAjJ9o95yAdnShagpFrg3Vemd1IOBYHhft1_4` dans `app/layout.tsx` — NE JAMAIS TOUCHER.
+---
 
-## Architecture
-
+## ARCHITECTURE
 ```
 kamado/
 ├── app/
-│   ├── layout.tsx              ← RootLayout, GA4, fonts, metadata globale
-│   ├── page.tsx                ← Homepage
+│   ├── layout.tsx                    ← RootLayout, GA4, fonts Geist+Syne, metadata
+│   ├── page.tsx                      ← Homepage (Hero → LogoCarousel → ServicesGrid → … → FAQ → ContactForm)
 │   ├── a-propos/page.tsx
-│   ├── agence-web/[city]/page.tsx   ← 9 pages locales générées
-│   ├── agence-web-[city]/page.tsx   ← RÉSIDU — à supprimer (git rm)
+│   ├── agence-web/[city]/page.tsx    ← 9 pages locales (LocalBusiness + FAQPage + BreadcrumbList JSON-LD)
+│   ├── agence-web-[city]/page.tsx    ← RÉSIDU à supprimer (git rm -r)
 │   ├── blog/
 │   │   ├── page.tsx
-│   │   └── [slug]/page.tsx
+│   │   └── [slug]/page.tsx           ← BlogPosting + FAQPage + BreadcrumbList JSON-LD
 │   ├── contact/page.tsx
 │   ├── mentions-legales/page.tsx
 │   ├── not-found.tsx
@@ -58,193 +65,238 @@ kamado/
 │   │   ├── page.tsx
 │   │   └── [slug]/page.tsx
 │   ├── tarifs/page.tsx
-│   ├── sitemap.ts
+│   ├── sitemap.ts                    ← ~80 URLs (home + 17 services + 41 blog + 9 villes + projets + fixes)
 │   └── robots.ts
 ├── components/
 │   ├── animations/variants.ts
 │   ├── layout/
-│   │   ├── Background.tsx
+│   │   ├── Background.tsx            ← 6 couches Three.js (voir section dédiée)
 │   │   ├── CustomCursor.tsx
 │   │   ├── Footer.tsx
 │   │   ├── Header.tsx
-│   │   ├── JsonLd.tsx          ← Organisation + LocalBusiness schema global
-│   │   ├── LenisProvider.tsx
+│   │   ├── JsonLd.tsx                ← Organisation + LocalBusiness schema global
+│   │   ├── LenisProvider.tsx         ← Smooth scroll (voir section dédiée)
 │   │   ├── PageTransition.tsx
-│   │   ├── Providers.tsx       ← ThemeProvider (next-themes)
+│   │   ├── Providers.tsx             ← ThemeProvider next-themes (defaultTheme="dark")
 │   │   └── ScrollProgress.tsx
-│   ├── sections/               ← Sections homepage et pages
+│   ├── sections/
 │   │   ├── Hero.tsx, About.tsx, BentoGrid.tsx, Blog.tsx, BlogPreview.tsx
 │   │   ├── ChiffresKeys.tsx, Contact.tsx, ContactFAQ.tsx, ContactForm.tsx
-│   │   ├── CTABand.tsx, FAQ.tsx, Intro.tsx, LogoCarousel.tsx
-│   │   ├── Offers.tsx, PressBar.tsx, ProblemSolution.tsx, Process.tsx
-│   │   ├── Projects.tsx, Reviews.tsx, ServicesGrid.tsx, Stack.tsx
-│   │   ├── Stats.tsx, TerminalSection.tsx, Testimonials.tsx
-│   │   ├── ValueProp.tsx, ZoneIntervention.tsx
+│   │   ├── CTABand.tsx, FAQ.tsx, Intro.tsx, LogoCarousel.tsx, Offers.tsx
+│   │   ├── PressBar.tsx, ProblemSolution.tsx, Process.tsx, Projects.tsx
+│   │   ├── Reviews.tsx, ServicesGrid.tsx, Stack.tsx, Stats.tsx
+│   │   ├── TerminalSection.tsx, Testimonials.tsx, ValueProp.tsx, ZoneIntervention.tsx
 │   ├── three/
-│   │   ├── GlobeCanvas.tsx     ← Globe Three.js (page contact ?)
-│   │   └── HeroCanvas.tsx      ← Canvas 3D hero
+│   │   ├── GlobeCanvas.tsx           ← Globe interactif (voir section dédiée)
+│   │   └── HeroCanvas.tsx            ← Canvas 3D hero (1200 particles + mouse parallax)
 │   └── ui/
 │       ├── BackButton.tsx, FadeInUp.tsx, Logo.tsx, MagneticButton.tsx
-│       ├── MarqueeText.tsx, NewsletterForm.tsx, ProjectCard.tsx
-│       └── SectionReveal.tsx
+│       ├── MarqueeText.tsx, NewsletterForm.tsx, ProjectCard.tsx, SectionReveal.tsx
 ├── lib/
-│   ├── blog.ts                 ← Interface BlogPost + tableau posts[]
-│   ├── cities.ts               ← Interface CityData + tableau cities[] (9 villes)
-│   ├── constants.ts            ← SITE_URL, SITE_NAME, CONTACT, STATS, STACK_MARQUEE
+│   ├── blog.ts                       ← Interface BlogPost + tableau posts[] (41 articles)
+│   ├── cities.ts                     ← Interface CityData + tableau cities[] (9 villes)
+│   ├── constants.ts                  ← SITE_URL, SITE_NAME, CONTACT, STATS, STACK_MARQUEE
 │   ├── faq.ts
-│   ├── services.ts             ← 17 services avec FAQ (6 questions/service)
-│   ├── projects.ts
+│   ├── services.ts                   ← 17 services + 6 FAQ questions chacun
+│   ├── projects.ts                   ← 4 projets (Clustea, ScreenBuild, Couvetoile, Brainrot Club)
 │   └── animations.ts
-└── public/
-    ├── favicon.ico, icon.svg, apple-touch-icon.png
-    └── manifest.json
+├── public/
+│   ├── favicon.ico, icon.svg, apple-touch-icon.png, manifest.json
+├── docs/
+│   └── seo/progress.md              ← Suivi 20 articles SEO (20/20 complétés)
+├── CLAUDE.md                         ← CE FICHIER
+├── next.config.ts                    ← trailingSlash:true, CSP, images AVIF/WebP
+└── .env.local                        ← NE JAMAIS COMMITTER
 ```
 
-## Stack technique
+---
 
-| Couche | Technologie |
-|---|---|
-| Framework | Next.js 15 App Router + TypeScript strict |
-| Styles | Tailwind CSS v4 (`@import "tailwindcss"` dans globals.css) |
-| Animations | Framer Motion v12 + GSAP ScrollTrigger |
-| Scroll | Lenis v1.3.23 (smooth scroll) |
-| 3D | Three.js via @react-three/fiber + three-globe |
-| Emails | Resend v6 (API route `/api/contact`) |
-| Analytics | Google Analytics 4 via @next/third-parties (`afterInteractive`) |
-| Thème | next-themes (dark/light) |
-| Fonts | Geist (corps) + Syne (titres, 700/800) |
+## DESIGN SYSTEM
 
-## Design system
+### CSS Variables (globals.css)
+| Token | Dark | Light |
+|---|---|---|
+| `--bg` | `#0a0a0a` | `#ffffff` |
+| `--bg-secondary` | `#141414` | `#f5f5f5` |
+| `--fg` | `#f0f0f0` | `#000000` |
+| `--fg-muted` | `rgba(240,240,240,0.45)` | `rgba(0,0,0,0.5)` |
+| `--accent` | `#00ff87` | `#00c853` |
+| `--accent-hover` | `#44ffaa` | `#00a847` |
+| `--border` | `rgba(255,255,255,0.07)` | `rgba(0,0,0,0.1)` |
+| `--surface` | `rgba(255,255,255,0.04)` | `rgba(0,0,0,0.04)` |
 
-### CSS variables clés
+### Thème
+- **Mode par défaut** : dark (`Providers.tsx` → `defaultTheme="dark"`)
+- **Fonts** : Geist (corps, `--font-geist-sans`) + Syne (titres h1/h2, `--font-syne-var`, weight 700/800)
+- **Breakpoint mobile** : `768px`
+- **Particules accent** : `0x00ff87` (Background layer 2)
+
+### Tailwind v4
 ```css
-var(--background)      /* fond principal */
-var(--foreground)      /* texte principal */
-var(--border)          /* bordures subtiles */
-var(--muted)           /* texte secondaire */
+/* globals.css */
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark, .dark *));
+/* Variables mappées via @theme inline */
 ```
 
-### Conventions
-- Titres display : font Syne, weight 700-800
-- Corps : font Geist, weight 400-600
-- Couleurs accent : gradients Tailwind (cyan→blue, orange→amber, etc.)
-- Bordures : `border border-[var(--border)]`
-- Cartes : `rounded-2xl` ou `rounded-3xl`
-- Espacement sections : `py-24 md:py-32`
-- Pas d'emojis sauf si explicitement demandé
+### Utilitaires classes
+```
+.glass        → backdrop-filter blur(16px), bg:surface, border:border, rounded-[20px]
+.glow-cyan    → box-shadow accent-glow
+.noise-overlay → body::after (opacity 0.032, z-index 9998)
+```
 
-## SEO — ce qui est en place
+---
 
-### Données structurées Schema.org
-- `Organisation` + `LocalBusiness` → `components/layout/JsonLd.tsx` (global)
-- `FAQPage` → pages services + blog
-- `BreadcrumbList` → pages services, blog, villes
-- `BlogPosting` + `Person` → `app/blog/[slug]/page.tsx`
-- `LocalBusiness` + `FAQPage` + `BreadcrumbList` → `app/agence-web/[city]/page.tsx`
+## COMPOSANTS CRITIQUES
 
-### Sitemap (`app/sitemap.ts`)
-~60 URLs : home + 17 services + 23 blog + 4 projets + 9 villes + pages fixes
-Priority : home 1.0, services 0.9, villes 0.85, blog 0.8
+### Background.tsx
+6 couches Three.js — `fixed inset-0 z-[-1]` :
+1. **bgStars** — Starfield blanc dense (720 desktop / 360 mobile), opacity 0.09
+2. **midStars** — Particules vertes énergie (360 / 180), couleur `0x00ff87`, opacity 0.18
+3. **fgStars** — Étoiles brillantes premier plan (48 / 24), opacity 0.35
+4. **neb1** — Nébuleuse violette `0xa855f7`, AdditiveBlending, opacity 0.07
+5. **neb2** — Nébuleuse indigo `0x6366f1`, AdditiveBlending, opacity 0.06
+6. **mwStars** — Bande Voie Lactée `0xddeeff` (480 / 240), opacity 0.06
 
-### Robots (`app/robots.ts`)
-`User-agent: * Allow: / Sitemap: https://kamaagency.com/sitemap.xml`
+Règles :
+- `setPixelRatio(Math.min(devicePixelRatio, 1.5))`
+- Parallax scroll : `camera.position.y = -scrollY * 0.012`
+- `scroll` listener : `{ passive: true }`
+- `visibilitychange` : pause animation quand onglet masqué
+- **isMobile** (`< 768`) : réduit les comptes de particules, ne désactive PAS le parallax
 
-## Pages locales (9 villes)
+### GlobeCanvas.tsx
+- Package `three-globe`
+- Rayon natif du globe = 100 unités monde
+- **Camera** : `PerspectiveCamera(50, ..., 1, 3000)`, `position.z = 250`
+- `setPixelRatio(Math.min(devicePixelRatio, 2))`
+- Drag interactif : mousedown/mousemove + touch
+- Auto-rotation : `globe.rotation.y += 0.0015` quand pas en drag
+- **4 points** :
+  - Paris : `{ lat: 48.85, lng: 2.35 }`
+  - Bruxelles : `{ lat: 50.85, lng: 4.35 }`
+  - Genève : `{ lat: 46.20, lng: 6.15 }`
+  - Montréal : `{ lat: 45.50, lng: -73.57 }`
+- Couleur points : `#00ff88`
+- Container : `width: 100%, height: 100%, minHeight: 360px`
+- Importé via `next/dynamic` + `ssr: false`
 
-Fichier : `lib/cities.ts` → `app/agence-web/[city]/page.tsx`
+### LenisProvider.tsx
+- Smooth scroll **désactivé** sur mobile `< 768px` ET `prefers-reduced-motion`
+- Config : `duration: 1.2`, `wheelMultiplier: 0.8`, `touchMultiplier: 0`
+- Synchronisé GSAP ScrollTrigger via `lenis.on("scroll", ScrollTrigger.update)`
+- **RAF natif** — jamais `gsap.ticker` (passe des secondes × 1000 ≠ timestamp absolu)
+- **Jamais** `addEventListener("scroll")` natif dans les autres composants
 
-| Slug | Ville |
-|---|---|
-| romans-sur-isere | Romans-sur-Isère |
-| valence | Valence |
-| grenoble | Grenoble |
-| lyon | Lyon |
-| paris | Paris |
-| bordeaux | Bordeaux |
-| marseille | Marseille |
-| toulouse | Toulouse |
-| nantes | Nantes |
+### HeroCanvas.tsx
+- 1200 particules Three.js + parallax souris
+- `dynamic import + ssr: false`
 
-## Blog (`lib/blog.ts`)
+---
 
-### Interface BlogPost
+## BLOG — Format lib/blog.ts
+
+Les articles sont des **objets TypeScript** dans `lib/blog.ts` (pas MDX).
+
 ```typescript
-{
+interface BlogPost {
   slug: string
   title: string
-  category: string         // "SEO" | "Création Web" | "E-commerce" | "SaaS" | "Local"
-  date: string             // "12 mai 2026"
+  category: string           // "SEO" | "Création Web" | "E-commerce" | "SaaS" | "Local"
+  date: string               // "28 mai 2026"
   dateModified?: string
-  readTime: string         // "8 min"
+  readTime: string           // "8 min"
   excerpt: string
-  metaTitle: string        // max 60 cars
-  metaDescription: string  // max 155 cars
+  metaTitle: string          // max 60 cars
+  metaDescription: string    // max 155 cars
   keywords: string[]
   isPilier?: boolean
-  intro: string            // 80-100 mots, stat dans les 50 premiers mots
-  sections: { h2: string; body: string }[]   // 6-7 sections pour piliers, 4 pour satellites
-  faq: { q: string; a: string }[]            // 5 questions piliers, 3 satellites
-  gradient: string         // "from-X-500 to-Y-600"
-  image: string            // URL Unsplash (w=800&q=85&auto=format&fit=crop)
+  intro: string              // 80-100 mots, stat dans les 50 premiers mots
+  sections: { h2: string; body: string }[]  // 6 pilier / 4 satellite
+  faq: { q: string; a: string }[]           // 5 pilier / 3 satellite
+  gradient: string           // "from-X-500 to-Y-600"
+  image: string              // Unsplash ?w=800&q=85&auto=format&fit=crop
   externalLinks: { label: string; url: string; description: string }[]
 }
 ```
 
-### Posts existants (41 articles au 2026-05-28)
-| Slug | Catégorie | Pilier |
-|---|---|---|
-| seo-2026-nouveaux-criteres-google | SEO | oui |
-| shopify-vs-woocommerce-2026 | E-commerce | non |
-| pourquoi-nextjs-standard-agences-web-premium | Création Web | non |
-| cout-site-web-2026 | Création Web | oui |
-| agence-web-romans-sur-isere-drome | Local | non |
-| vitesse-chargement-site-core-web-vitals | SEO | non |
-| intelligence-artificielle-site-web-2026 | Création Web | non |
-| creation-site-vitrine-professionnel | Création Web | non |
-| refonte-site-web-quand-comment | Création Web | non |
-| site-web-artisan-pme | Création Web | non |
-| agence-seo-france-comment-choisir | SEO | non |
-| seo-local-google-business-profile | SEO | non |
-| audit-seo-complet-checklist | SEO | non |
-| creation-boutique-en-ligne-guide | E-commerce | non |
-| optimisation-taux-conversion-ecommerce | E-commerce | non |
-| agence-web-valence-drome | Local | non |
-| agence-web-auvergne-rhone-alpes | Local | non |
-| creation-site-web-grenoble-isere | Local | non |
-| wordpress-vs-nextjs-comparatif | Création Web | non |
-| shopify-headless-nextjs-performance | E-commerce | non |
-| tarif-agence-web-province-vs-paris | Création Web | non |
+Le body de chaque section est du **plain text** (rendu via `<p>{section.body}</p>`).
+Pas de markdown, pas de HTML dans les strings body.
 
-## Services (17 services dans `lib/services.ts`)
-Chaque service : 6 questions FAQ enrichies (prix, géo, technique, process)
+---
 
-## Règles de performance
-- Pas de `use client` inutile — préférer Server Components
-- Images : toujours URL Unsplash avec `w=800&q=85&auto=format&fit=crop`
-- Fonts : `display: swap`, `preload: true` sur Geist
-- GA4 : chargé via `@next/third-parties` (afterInteractive, pas bloquant)
-- Lenis : smooth scroll global, pas de scroll natif hors canvas 3D
+## PROJETS RÉFÉRENCÉS (lib/projects.ts)
 
-## Git — règles importantes
-- Commit messages : utiliser des tirets (pas d'apostrophes) → évite les erreurs shell
-- Format : `git commit -m @'...'@` (here-string single-quote PowerShell)
-- Ne jamais committer `.env.local`, `.next/`, `node_modules/`
-- Branche principale : `main`
+| Slug | Nom | Type | URL |
+|---|---|---|---|
+| `clustea` | Clustea | SaaS SEO | clustea.com |
+| `screenbuild` | ScreenBuild | SaaS screenshot→Shopify | screenbuild.com |
+| `couvetoile` | Couvetoile | Site vitrine artisan couvreur | couvetoile.fr |
+| `brainrot-club` | Brainrot Club | Shopify dropshipping / e-commerce | brainrot-club.com |
 
-## À faire / À nettoyer
-- [ ] Supprimer `app/agence-web-[city]/page.tsx` (résidu, ne pas garder)
-- [ ] Remplacer le placeholder téléphone `"+33-XXXXXXXXX"` dans `JsonLd.tsx`
-- [ ] Créer profil Clutch.co et Sortlist.fr (backlinks)
-- [ ] Ajouter `NEXT_PUBLIC_GA_ID` dans Vercel Dashboard
+---
 
-## Déjà fait (SEO & technique)
-- [x] GA4 installé via @next/third-parties
-- [x] Google Search Console vérifié (token dans layout.tsx)
-- [x] Sitemap.ts avec ~60 URLs prioritisées
-- [x] Robots.ts configuré
-- [x] Schema.org complet (Organisation, LocalBusiness, FAQPage, BreadcrumbList, BlogPosting, Person)
-- [x] 9 pages locales /agence-web/[city]/ avec JSON-LD
-- [x] FAQ enrichie sur 17 services (6 questions/service)
-- [x] Blog : articles similaires filtrés par catégorie (3 cartes)
-- [x] 41 articles de blog en place (21 existants + 20 nouveaux cocons SEO)
-- [x] Maillage interne blog → services → homepage
+## SEO — État au 2026-05-28
+
+### Données structurées Schema.org
+- `Organisation` + `LocalBusiness` → `JsonLd.tsx` (global, toutes les pages)
+- `FAQPage` → pages services + blog
+- `BreadcrumbList` → services, blog, villes
+- `BlogPosting` + `Person` → `app/blog/[slug]/page.tsx`
+- `LocalBusiness` + `FAQPage` + `BreadcrumbList` → `app/agence-web/[city]/page.tsx`
+
+### Sitemap (app/sitemap.ts)
+~80 URLs — home + 17 services + 41 blog (isPilier=0.85, satellite=0.75) + 9 villes (0.85) + projets + pages fixes
+
+### GA4
+Installé via `@next/third-parties` dans `app/layout.tsx` :
+```tsx
+<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+```
+Stratégie `afterInteractive` — ne bloque pas le LCP.
+
+---
+
+## RÈGLES PERFORMANCES ABSOLUES
+- `setPixelRatio(Math.min(devicePixelRatio, 2))` sur GlobeCanvas
+- `setPixelRatio(Math.min(devicePixelRatio, 1.5))` sur Background
+- `visibilitychange` → pause animation sur onglet masqué (Background)
+- `viewport={{ once: true }}` sur tous les `whileInView` Framer Motion
+- `dynamic import + ssr: false` pour **tous** les composants Three.js
+- **Jamais** `addEventListener("scroll")` natif — toujours Lenis ou `{ passive: true }`
+- Images : Unsplash avec `?w=800&q=85&auto=format&fit=crop` (auto-WebP/AVIF)
+- `next.config.ts` : `compress: true`, `images.formats: ["avif", "webp"]`, `trailingSlash: true`
+
+---
+
+## DÉJÀ FAIT — NE PAS REFAIRE
+- [x] GA4 installé (@next/third-parties, afterInteractive)
+- [x] Google Search Console configuré + sitemap soumis
+- [x] Clustea mis en projet phare (slug `clustea`)
+- [x] Performances Background.tsx optimisées (6 couches réduites)
+- [x] Lenis fluide desktop, désactivé mobile < 768px
+- [x] 9 pages locales /agence-web/[city]/ avec JSON-LD complet
+- [x] FAQ enrichie 17 services (6 questions/service)
+- [x] Blog : articles similaires filtrés par catégorie (3 cards)
+- [x] 41 articles de blog (21 existants + 20 cocons SEO)
+- [x] Sitemap ~80 URLs
+- [x] next.config.ts : CSP + security headers + trailingSlash
+
+---
+
+## TÂCHES EN COURS
+- [ ] Supprimer `app/agence-web-[city]/` (git rm -r — résidu route partielle)
+- [ ] Remplacer `"+33-XXXXXXXXX"` par vrai numéro dans `JsonLd.tsx`
+- [ ] Continents visibles sur le globe (image satellite actuellement — utiliser image topo)
+- [ ] Créer profils Clutch.co et Sortlist.fr (backlinks)
+- [ ] Ajouter `NEXT_PUBLIC_GA_ID` dans Vercel Dashboard si pas encore fait
+
+---
+
+## INSTRUCTION DE REPRISE
+Si les tokens s'épuisent :
+```
+Lis CLAUDE.md puis docs/seo/progress.md
+et reprends exactement là où tu t'es arrêté.
+```
