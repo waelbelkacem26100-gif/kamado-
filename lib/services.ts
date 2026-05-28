@@ -69,6 +69,18 @@ export const services: Service[] = [
         q: "Est-ce que je pourrai modifier mon site moi-même après la livraison ?",
         a: "Absolument. Nous intégrons toujours un CMS (système de gestion de contenu) qui vous permet de modifier vos textes, images et actualités sans aucune connaissance technique. Nous vous formons également à son utilisation.",
       },
+      {
+        q: "Quelle technologie utilisez-vous pour créer des sites vitrine ?",
+        a: "Nous utilisons Next.js (React) pour les sites nécessitant des performances maximales et un SEO technique irréprochable — score Lighthouse 95+ garanti. Pour les clients qui souhaitent gérer leur contenu facilement, nous proposons aussi WordPress avec un thème enfant sur-mesure. Nous choisissons la technologie la plus adaptée à votre projet et à vos besoins.",
+      },
+      {
+        q: "Mon site vitrine sera-t-il bien référencé sur Google dès le départ ?",
+        a: "Oui, le SEO technique est intégré dès la conception : structure HTML sémantique, balises title et meta optimisées, données structurées Schema.org, sitemap XML, images en WebP, temps de chargement sous 2 secondes. Nous configurons également Google Search Console pour indexer votre site rapidement après la mise en ligne.",
+      },
+      {
+        q: "Travaillez-vous avec des artisans, PME et indépendants partout en France ?",
+        a: "Oui, nous accompagnons des clients partout en France — Paris, Lyon, Bordeaux, Marseille, Toulouse, Nantes, et bien sûr en Drôme et en Auvergne-Rhône-Alpes. 100% de nos projets se déroulent en remote avec des visioconférences régulières.",
+      },
     ],
     gradient: "from-cyan-500 to-blue-600",
     highlights: [
@@ -134,6 +146,18 @@ export const services: Service[] = [
       {
         q: "Prenez-vous en charge la migration depuis une autre plateforme ?",
         a: "Oui, nous gérons les migrations depuis WooCommerce, PrestaShop, Wix ou toute autre plateforme. Nous transférons vos produits, clients, commandes et contenus en préservant votre référencement SEO existant.",
+      },
+      {
+        q: "Peut-on vendre en France et à l'international avec une boutique Shopify ?",
+        a: "Oui, Shopify est nativement conçu pour le commerce international : gestion multi-devises, multi-langues, taxes par pays, modes de paiement locaux (CB, PayPal, Klarna). Nous configurons votre boutique pour vendre en France et à l'étranger dès le lancement.",
+      },
+      {
+        q: "Comment améliorer le taux de conversion de ma boutique Shopify ?",
+        a: "Nous optimisons votre boutique pour la conversion (CRO) : tunnel d'achat simplifié, preuve sociale visible, urgence et rareté, upsell et cross-sell au panier, fiches produit persuasives. Nos clients constatent en moyenne +30 à +50% de taux de conversion après optimisation.",
+      },
+      {
+        q: "Combien coûte la création d'une boutique Shopify sur-mesure ?",
+        a: "Nos boutiques Shopify sur-mesure démarrent à partir de 1 500 € pour une boutique simple, et de 3 000 à 8 000 € pour un projet avec intégrations avancées (email marketing, CRM, multi-devises). Devis détaillé après appel de découverte.",
       },
     ],
     gradient: "from-green-500 to-emerald-600",
@@ -201,6 +225,18 @@ export const services: Service[] = [
         q: "Puis-je garder mon contenu existant ?",
         a: "Oui. Nous migrons votre contenu existant vers le nouveau site. Nous en profitons généralement pour l'optimiser : réécriture des balises meta, amélioration de la structure des titres et optimisation des images.",
       },
+      {
+        q: "Une refonte de site améliore-t-elle le positionnement Google ?",
+        a: "Oui, si elle est bien préparée. Amélioration des performances techniques, contenu optimisé, meilleure structure HTML — tous ces éléments contribuent à un meilleur SEO. Nos refontes incluent un audit SEO avant/après pour mesurer l'impact réel sur les positions.",
+      },
+      {
+        q: "Combien de temps dure une refonte de site en moyenne ?",
+        a: "Une refonte complète prend généralement 4 à 8 semaines selon la taille du site. Refonte légère (design seul) : 2 à 4 semaines. Refonte complète avec migration CMS : 6 à 10 semaines. Votre site reste en ligne pendant toute la durée des travaux.",
+      },
+      {
+        q: "Peut-on refaire uniquement le design sans toucher au code back-end ?",
+        a: "Oui, c'est possible selon votre technologie actuelle. Nous pouvons refaire l'habillage visuel en conservant votre base de données et votre logique métier. Cette approche est plus rapide et moins risquée pour les sites avec des fonctionnalités complexes.",
+      },
     ],
     gradient: "from-orange-500 to-amber-600",
     highlights: [
@@ -266,6 +302,18 @@ export const services: Service[] = [
       {
         q: "Ai-je besoin d'un budget publicité pour commencer ?",
         a: "Pas nécessairement. Nous pouvons vous montrer des stratégies organiques (contenu, réseaux sociaux, SEO) pour générer du trafic sans budget pub. Cependant, un budget initial de 300 à 500 € en publicité payante accélère significativement l'acquisition des premières ventes.",
+      },
+      {
+        q: "Le dropshipping est-il encore rentable en 2026 ?",
+        a: "Oui, avec la bonne approche. Le dropshipping générique low-cost est saturé, mais les boutiques de niche bien construites avec une vraie marque et un marketing ciblé continuent de générer d'excellentes marges. La clé est de choisir la bonne niche et d'investir dans un site professionnel qui inspire confiance.",
+      },
+      {
+        q: "Comment gérer les retours produits en dropshipping ?",
+        a: "Nous vous aidons à rédiger une politique de retour claire et rassurante. Selon votre fournisseur, les retours peuvent être gérés directement ou via vous. Nous configurons les emails automatiques de gestion des retours dans votre boutique Shopify pour minimiser la charge manuelle.",
+      },
+      {
+        q: "Combien coûte la création d'une boutique dropshipping clé en main ?",
+        a: "Une boutique dropshipping sur-mesure chez Kama Agency démarre à partir de 1 200 €, incluant le design Shopify, la configuration des fournisseurs, l'automatisation des commandes et la formation. Devis précis après un appel de 30 minutes.",
       },
     ],
     gradient: "from-purple-500 to-violet-600",
@@ -333,6 +381,18 @@ export const services: Service[] = [
         q: "Pouvez-vous créer uniquement les maquettes sans le développement ?",
         a: "Oui, nous proposons des prestations de design seul si vous avez déjà une équipe de développement. Nous livrons les maquettes Figma avec un guide de style complet et des notes pour les développeurs.",
       },
+      {
+        q: "Quel est le prix d'un webdesign sur-mesure ?",
+        a: "Le webdesign sur-mesure (maquettes Figma uniquement) démarre à partir de 800 € pour un site simple. Pour un projet complet avec design et développement intégré, nos sites vitrine sont à partir de 1 500 €. Devis précis après appel de découverte.",
+      },
+      {
+        q: "Combien de temps faut-il pour créer une maquette Figma complète ?",
+        a: "Pour un site vitrine de 5 à 8 pages, la maquette est livrée en 1 à 2 semaines. Un projet plus complexe (10+ pages, design system complet) peut nécessiter 2 à 3 semaines. Nous incluons 2 cycles de révisions majeures.",
+      },
+      {
+        q: "Proposez-vous des animations et des micro-interactions dans les designs ?",
+        a: "Oui, les animations sont intégrées nativement dans nos développements (Framer Motion sur Next.js). Nous créons des transitions fluides, des effets de scroll et des micro-interactions qui rendent l'expérience mémorable sans jamais pénaliser les performances.",
+      },
     ],
     gradient: "from-pink-500 to-rose-600",
     highlights: [
@@ -398,6 +458,18 @@ export const services: Service[] = [
       {
         q: "Pouvez-vous améliorer mon SaaS existant ?",
         a: "Absolument. L'audit UX d'un SaaS existant est souvent l'un des investissements les plus rentables. Nous identifions les points de friction qui causent du churn et les opportunités d'amélioration qui augmentent l'engagement et la rétention.",
+      },
+      {
+        q: "Quel est le coût d'un audit UX complet ?",
+        a: "Un audit UX complet démarre à partir de 800 € pour un site vitrine ou une boutique. Pour un SaaS ou une application complexe, comptez 1 500 à 3 000 € selon la profondeur de l'analyse. L'audit inclut un rapport priorisé avec des recommandations actionnables.",
+      },
+      {
+        q: "Quelle est la différence entre UX design et UX research ?",
+        a: "L'UX research consiste à comprendre les utilisateurs : entretiens, tests, analytics, heatmaps. L'UX design consiste à créer des solutions basées sur ces recherches : wireframes, prototypes, interfaces. Chez Kama Agency, nous pratiquons les deux pour des interfaces vraiment centrées sur vos utilisateurs.",
+      },
+      {
+        q: "Peut-on améliorer seulement une partie de notre interface sans tout refaire ?",
+        a: "Oui, c'est souvent la meilleure approche. Nous ciblons les pages ou les flux qui ont le plus fort impact sur la conversion (page produit, tunnel de paiement, onboarding). Des interventions ciblées et bien exécutées peuvent améliorer les conversions de 20 à 50% sans refonte complète.",
       },
     ],
     gradient: "from-blue-500 to-indigo-600",
@@ -465,6 +537,18 @@ export const services: Service[] = [
         q: "Pouvez-vous moderniser mon logo existant sans tout changer ?",
         a: "Oui, c'est ce qu'on appelle le restyling ou le rebranding partiel. Nous pouvons moderniser votre logo en conservant son essence et sa reconnaissance tout en lui donnant un look contemporain. Cette approche est souvent recommandée pour les marques établies.",
       },
+      {
+        q: "Combien coûte la création d'une identité visuelle complète ?",
+        a: "Une identité visuelle complète (logo + charte graphique + fichiers sources + guide d'utilisation) démarre à partir de 800 €. Pour un projet incluant les déclinaisons print et digital, les templates réseaux sociaux et la signature email, comptez 1 200 à 2 500 €.",
+      },
+      {
+        q: "Faut-il créer son identité visuelle avant ou après son site web ?",
+        a: "Idéalement avant. Votre identité visuelle définit les couleurs, la typographie et l'univers graphique du site. Construire un site sans charte préalable oblige souvent à des corrections coûteuses. Si vous n'avez pas encore d'identité, nous pouvons les créer ensemble en parallèle.",
+      },
+      {
+        q: "Livrez-vous les fichiers sources en vectoriel ?",
+        a: "Oui, nous livrons tous les fichiers sources en formats vectoriels (SVG, AI/EPS) pour un usage illimité en impression haute résolution, et en formats raster (PNG transparent, JPG) pour le web. Vous avez la propriété intellectuelle complète de tous les éléments créés.",
+      },
     ],
     gradient: "from-amber-500 to-orange-600",
     highlights: [
@@ -530,6 +614,18 @@ export const services: Service[] = [
       {
         q: "Quelle est la différence entre le SEO et le SEA (publicité Google Ads) ?",
         a: "Le SEA (Google Ads) génère du trafic immédiat mais s'arrête dès que vous coupez votre budget. Le SEO génère un trafic organique gratuit qui persiste dans le temps. Les deux sont complémentaires : le SEA pour des résultats rapides, le SEO pour une présence durable et rentable.",
+      },
+      {
+        q: "Quel est le tarif mensuel d'une prestation SEO chez Kama Agency ?",
+        a: "Nos prestations SEO mensuelles démarrent à partir de 400 € par mois pour un suivi de base (optimisation on-page, rapport mensuel, 1 article). Un accompagnement complet avec création de contenu et netlinking est entre 800 et 1 500 €/mois selon la compétitivité de votre secteur.",
+      },
+      {
+        q: "Faites-vous du SEO local pour les entreprises en Drôme, Isère et Rhône-Alpes ?",
+        a: "Oui, c'est notre zone de prédilection. Nous connaissons le tissu économique local et optimisons votre présence pour les recherches géolocalisées en Drôme, Isère, Ardèche, Savoie et dans toute la région Auvergne-Rhône-Alpes.",
+      },
+      {
+        q: "Un site Next.js est-il mieux référencé qu'un site WordPress ?",
+        a: "Next.js peut atteindre de meilleures performances techniques (Lighthouse 95+, LCP sous 1 seconde) qui impactent positivement le SEO. WordPress, bien optimisé, peut aussi très bien se référencer. La différence réside surtout dans la vitesse de chargement et la qualité du code — deux facteurs que Google valorise en 2026.",
       },
     ],
     gradient: "from-teal-500 to-cyan-600",
@@ -597,6 +693,18 @@ export const services: Service[] = [
         q: "Faut-il changer d'hébergeur pour améliorer les performances ?",
         a: "Pas forcément, mais l'hébergement est un facteur important. Si votre hébergeur est sous-dimensionné, nous vous conseillerons des alternatives performantes. Un bon hébergement peut à lui seul améliorer vos scores de 20 à 30 points.",
       },
+      {
+        q: "Quel est le coût d'une optimisation Core Web Vitals ?",
+        a: "L'optimisation démarre à partir de 500 € pour un audit complet avec rapport de recommandations. La mise en œuvre des correctifs est facturée selon les heures nécessaires, généralement entre 300 et 1 500 € selon la complexité technique de votre site.",
+      },
+      {
+        q: "Quelle est la différence entre PageSpeed Insights et Lighthouse ?",
+        a: "Lighthouse est l'outil de mesure en laboratoire (conditions contrôlées). PageSpeed Insights affiche à la fois les données de laboratoire et les données de terrain réelles (CrUX) collectées depuis de vrais utilisateurs Chrome. Les données de terrain sont les plus importantes pour le SEO.",
+      },
+      {
+        q: "Combien de temps faut-il pour améliorer les Core Web Vitals ?",
+        a: "Les corrections rapides (images non optimisées, ressources bloquantes) peuvent être appliquées en 1 à 3 jours. Un audit + correctifs complets prennent en général 2 à 3 semaines. Vous recevez un rapport avant/après avec les scores Lighthouse comparatifs.",
+      },
     ],
     gradient: "from-lime-500 to-green-600",
     highlights: [
@@ -662,6 +770,18 @@ export const services: Service[] = [
       {
         q: "Proposez-vous de la formation à l'analyse de données ?",
         a: "Oui. Nous vous formons à lire et interpréter vos données, à utiliser les rapports personnalisés que nous avons créés pour vous, et à prendre des décisions basées sur vos analytics. Notre objectif est de vous rendre autonome dans le pilotage de votre business.",
+      },
+      {
+        q: "Quel est le coût de mise en place d'un tracking analytique complet ?",
+        a: "La configuration d'un tracking GA4 complet (événements clés, conversions, tableaux de bord Looker Studio) démarre à partir de 500 €. Pour un tracking e-commerce avancé avec Meta Pixel et GTM, comptez 800 à 1 500 € selon la complexité.",
+      },
+      {
+        q: "GA4 est-il conforme au RGPD ?",
+        a: "GA4 peut être rendu conforme au RGPD avec la bonne configuration : anonymisation des IPs, durée de conservation des données réduite, désactivation des signaux Google si nécessaire, et bannière de consentement correctement implémentée. Nous configurons tout cela dans nos prestations analytics.",
+      },
+      {
+        q: "Peut-on récupérer les données historiques d'Universal Analytics dans GA4 ?",
+        a: "Non, GA4 ne peut pas importer les données historiques d'Universal Analytics (désactivé en juillet 2023). En revanche, si vous avez exporté vos données UA dans BigQuery ou Google Sheets, nous pouvons les connecter à Looker Studio pour avoir une vue historique complète.",
       },
     ],
     gradient: "from-violet-500 to-purple-600",
@@ -729,6 +849,18 @@ export const services: Service[] = [
         q: "Qui sera propriétaire du code source ?",
         a: "Vous. Le code source est entièrement le vôtre à la livraison. Nous vous le remettons sur un repository Git privé (GitHub ou GitLab) que vous contrôlez. Aucun lock-in technologique ni dépendance envers Kama Agency.",
       },
+      {
+        q: "Quelle est la différence entre un SaaS et une application web classique ?",
+        a: "Un SaaS est une application web hébergée dans le cloud, accessible via abonnement, conçue pour plusieurs clients (multi-tenant). Elle inclut la gestion des abonnements (Stripe), des rôles et permissions, un tableau de bord par client, et une architecture scalable. Une application web classique est généralement mono-client ou sans modèle d'abonnement.",
+      },
+      {
+        q: "Comment gérez-vous les abonnements et la facturation dans un SaaS ?",
+        a: "Nous intégrons Stripe comme moteur de facturation : abonnements mensuels ou annuels, plans multiples (freemium, pro, enterprise), upgrades/downgrades automatiques, portail client self-service, facturation par siège ou à l'usage. Stripe est le standard de l'industrie et gère la conformité PCI automatiquement.",
+      },
+      {
+        q: "Pouvez-vous héberger notre SaaS sur nos propres serveurs ?",
+        a: "Oui. Bien que nous recommandions Vercel + Supabase pour leur rapidité et scalabilité, nous pouvons déployer votre SaaS sur VPS (Hetzner, OVH, AWS) ou dans votre infrastructure on-premise si vos contraintes réglementaires l'exigent (RGPD, données sensibles).",
+      },
     ],
     gradient: "from-sky-500 to-blue-600",
     highlights: [
@@ -794,6 +926,18 @@ export const services: Service[] = [
       {
         q: "Ma boutique Shopify peut-elle être migrée vers un thème sur-mesure ?",
         a: "Oui. Nous développons des thèmes Shopify entièrement sur-mesure à partir de zéro, en utilisant le système de sections OS 2.0. Votre boutique gagne en performance, en différenciation et en flexibilité de gestion.",
+      },
+      {
+        q: "Shopify Liquid est-il difficile à apprendre pour modifier soi-même son thème ?",
+        a: "Liquid a une courbe d'apprentissage modérée. Pour des modifications simples (textes, couleurs, sections), votre équipe peut s'en charger rapidement. Pour des modifications structurelles ou des fonctionnalités avancées, faire appel à un développeur Liquid certifié comme Kama Agency reste recommandé.",
+      },
+      {
+        q: "Combien coûte le développement d'un thème Shopify Liquid entièrement sur-mesure ?",
+        a: "Un thème Shopify OS 2.0 sur-mesure complet démarre à partir de 2 500 €. Ce tarif inclut toutes les sections configurables, les templates de pages et les tests cross-navigateurs. La personnalisation d'un thème existant (modifications ciblées) est facturée à partir de 300 € selon le scope.",
+      },
+      {
+        q: "Les personnalisations Liquid affectent-elles les mises à jour Shopify ?",
+        a: "Si vous travaillez sur un thème enfant ou sur un thème entièrement sur-mesure (notre approche), les mises à jour Shopify n'affectent pas vos personnalisations. Nous documentons tout le code pour faciliter les évolutions futures.",
       },
     ],
     gradient: "from-emerald-500 to-teal-600",
@@ -861,6 +1005,18 @@ export const services: Service[] = [
         q: "Proposez-vous des formations à WordPress pour mon équipe ?",
         a: "Oui. Nous incluons une formation à la gestion du contenu dans toutes nos livraisons WordPress. Nous pouvons également proposer des formations approfondies pour vos équipes marketing afin qu'elles soient totalement autonomes dans la gestion quotidienne du site.",
       },
+      {
+        q: "Quel hébergeur recommandez-vous pour un site WordPress en France ?",
+        a: "Pour les performances et le support en français, nous recommandons O2Switch (100% FR, prix imbattable), WP Engine (performances premium, backup quotidien) ou Kinsta (hébergement géré haut de gamme). Nous gérons la migration et la configuration de l'hébergement dans nos prestations.",
+      },
+      {
+        q: "Combien coûte un site WordPress sur-mesure chez Kama Agency ?",
+        a: "Un site WordPress sur-mesure avec thème enfant Gutenberg démarre à partir de 1 200 €. Pour un site plus complexe avec des types de contenu avancés (ACF), e-commerce WooCommerce ou fonctionnalités sur-mesure, comptez entre 2 000 et 5 000 €. Devis gratuit sous 48h.",
+      },
+      {
+        q: "WordPress ou Next.js : quelle technologie pour mon site ?",
+        a: "WordPress est idéal si vous avez besoin de gérer beaucoup de contenu facilement et que votre équipe n'est pas technique. Next.js est préférable pour des performances maximales (Lighthouse 95+), un SEO technique supérieur et des fonctionnalités interactives avancées. Nous vous conseillons après avoir compris votre projet.",
+      },
     ],
     gradient: "from-blue-600 to-indigo-700",
     highlights: [
@@ -926,6 +1082,18 @@ export const services: Service[] = [
       {
         q: "Utilisez-vous TypeScript systématiquement ?",
         a: "Oui. Tous nos projets Next.js sont développés en TypeScript strict. TypeScript détecte les erreurs à la compilation plutôt qu'en production, améliore la maintenabilité du code et facilite la collaboration sur des projets de longue durée. C'est un standard non négociable pour nous.",
+      },
+      {
+        q: "Next.js convient-il aux petits sites vitrine ou uniquement aux grandes applications ?",
+        a: "Next.js s'adapte à tous les projets, des simples sites vitrine aux applications complexes. Pour un site vitrine, il offre des performances Lighthouse 95+ et un SEO technique excellent. Pour une application SaaS, il gère l'authentification, les APIs et le rendu hybride. C'est notre framework par défaut pour tout nouveau projet.",
+      },
+      {
+        q: "Quel est le coût moyen d'un développement Next.js ?",
+        a: "Un site marketing Next.js complet démarre à partir de 1 500 €. Une application avec authentification et tableau de bord est entre 3 000 et 8 000 €. Un SaaS complet à partir de 5 000 €. Tous nos projets Next.js incluent TypeScript strict, tests et déploiement Vercel.",
+      },
+      {
+        q: "Vercel est-il obligatoire pour déployer un site Next.js ?",
+        a: "Non, Next.js peut être déployé sur n'importe quel hébergeur Node.js : Railway, Netlify, DigitalOcean, Hetzner, ou même un VPS OVH. Vercel reste notre recommandation principale pour sa facilité, sa performance et son intégration native avec Next.js. Nous choisissons avec vous selon votre budget et vos contraintes.",
       },
     ],
     gradient: "from-slate-500 to-gray-700",
@@ -993,6 +1161,18 @@ export const services: Service[] = [
         q: "Que se passe-t-il quand le chatbot ne sait pas répondre ?",
         a: "Le chatbot est configuré pour reconnaître ses limites et transférer proprement la conversation à votre équipe. Il peut envoyer une notification à vos commerciaux, créer un ticket de support ou proposer au visiteur de laisser ses coordonnées pour un rappel humain.",
       },
+      {
+        q: "Combien coûte l'intégration d'un chatbot IA sur mon site web ?",
+        a: "Un chatbot IA sur-mesure démarre à partir de 1 500 €, incluant la configuration du modèle, l'entraînement sur vos données, l'intégration sur votre site et les tests qualité. Les frais d'API mensuels (OpenAI ou Anthropic) sont en supplément, généralement entre 20 et 100 €/mois selon votre volume.",
+      },
+      {
+        q: "Le chatbot IA peut-il être intégré sur une boutique Shopify ou un site WordPress ?",
+        a: "Oui, nous intégrons nos chatbots IA sur n'importe quelle plateforme : Shopify (via script ou app), WordPress, Next.js, ou n'importe quel site avec accès au HTML. L'intégration prend généralement 1 à 2 jours une fois le chatbot configuré.",
+      },
+      {
+        q: "Faut-il un abonnement mensuel pour maintenir le chatbot ?",
+        a: "Il y a deux coûts récurrents : les frais d'API du modèle IA (proportionnels à votre volume de conversations, généralement 20 à 100 €/mois) et optionnellement un forfait de maintenance Kama Agency pour les mises à jour de la base de connaissance et les optimisations (à partir de 150 €/mois).",
+      },
     ],
     gradient: "from-violet-500 to-indigo-600",
     highlights: [
@@ -1059,6 +1239,18 @@ export const services: Service[] = [
         q: "Peut-on automatiser des processus spécifiques à notre secteur ?",
         a: "Absolument. Nous avons automatisé des processus dans l'e-commerce, l'immobilier, les services B2B, la restauration et les cabinets de conseil. Chaque secteur a ses spécificités — nous les prenons en compte pour créer des automatisations vraiment adaptées.",
       },
+      {
+        q: "Quelle est la différence entre n8n et Make (Integromat) ?",
+        a: "n8n est open-source et peut être hébergé sur vos propres serveurs (idéal pour les données sensibles), avec des coûts prévisibles. Make est une solution SaaS cloud plus accessible pour les équipes non-techniques, avec un catalogue d'intégrations très large. Nous recommandons n8n pour les entreprises qui ont des contraintes RGPD strictes.",
+      },
+      {
+        q: "Combien d'heures peut-on économiser avec des automatisations IA ?",
+        a: "Nos clients économisent en moyenne 15 à 30 heures de travail manuel par semaine dès le premier mois, selon les processus automatisés. L'automatisation des réponses emails, de la gestion des leads et de la génération de rapports représente souvent les gains les plus rapides.",
+      },
+      {
+        q: "Les automatisations fonctionnent-elles si on change d'outils métier ?",
+        a: "Oui, elles sont conçues pour être adaptables. Si vous changez de CRM ou d'outil de communication, nous mettons à jour les connecteurs correspondants. C'est pour cette raison que nous documentons toutes les automatisations et formons votre équipe à les comprendre.",
+      },
     ],
     gradient: "from-fuchsia-500 to-pink-600",
     highlights: [
@@ -1124,6 +1316,18 @@ export const services: Service[] = [
       {
         q: "Nos données sont-elles utilisées pour entraîner les modèles d'OpenAI ou Anthropic ?",
         a: "Non, si vous utilisez l'API (et non les interfaces web). Les données envoyées via l'API ne sont pas utilisées pour entraîner les modèles par défaut. Nous configurons vos appels API pour respecter les accords de confidentialité d'OpenAI et Anthropic.",
+      },
+      {
+        q: "Quelle est la différence entre GPT-4 et Claude pour les intégrations professionnelles ?",
+        a: "GPT-4o (OpenAI) excelle en génération créative, code et multimodal (images + texte). Claude 3.5 Sonnet (Anthropic) est supérieur pour l'analyse de longs documents, le suivi d'instructions complexes et la sécurité. Nous choisissons le modèle le plus adapté à votre cas d'usage et combinons les deux si nécessaire.",
+      },
+      {
+        q: "Peut-on intégrer une API IA sur un site WordPress ou Shopify existant ?",
+        a: "Oui, via des plugins personnalisés (WordPress) ou des apps Shopify sur-mesure, nous connectons les APIs IA à n'importe quelle plateforme. Génération de descriptions produit, réponses automatiques aux commentaires, suggestions personnalisées — tout est possible sans refonte complète du site.",
+      },
+      {
+        q: "Comment calculer le ROI d'une intégration IA dans notre produit ?",
+        a: "Nous définissons avec vous des KPIs avant le lancement : heures économisées, coût par lead, taux de conversion, volume de contenu généré. Après 30 jours de production, nous comparons les métriques avant/après. La plupart de nos intégrations IA atteignent le ROI en moins de 3 mois.",
       },
     ],
     gradient: "from-cyan-500 to-violet-600",
