@@ -3,6 +3,7 @@ import { SITE_URL } from "@/lib/constants";
 import { services } from "@/lib/services";
 import { projects } from "@/lib/projects";
 import { posts } from "@/lib/blog";
+import { cities } from "@/lib/cities";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
@@ -28,6 +29,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p.isPilier ? 0.85 : 0.75,
   }));
 
+  const cityUrls: MetadataRoute.Sitemap = cities.map((c) => ({
+    url: `${SITE_URL}/agence-web/${c.slug}/`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
   return [
     { url: `${SITE_URL}/`,               lastModified: now, changeFrequency: "weekly",  priority: 1.0 },
     { url: `${SITE_URL}/services/`,      lastModified: now, changeFrequency: "monthly", priority: 0.9 },
@@ -40,5 +48,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceUrls,
     ...blogUrls,
     ...projectUrls,
+    ...cityUrls,
   ];
 }

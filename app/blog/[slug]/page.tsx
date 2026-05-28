@@ -209,23 +209,41 @@ export default async function BlogPage({ params }: Props) {
             </section>
           )}
 
-          {/* Other posts */}
-          <div className="mt-8">
-            <div className="flex items-center justify-between mb-5">
-              <h2 className="text-base font-semibold text-[var(--fg)]">Autres articles</h2>
-              <Link href="/blog/" className="text-xs font-semibold text-[var(--accent)] hover:underline">
-                Voir tous →
-              </Link>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {posts.filter((p) => p.slug !== post.slug).map((p) => (
-                <Link key={p.slug} href={`/blog/${p.slug}/`}
-                  className="text-sm px-4 py-2 rounded-full border border-[var(--border)] text-[var(--fg-muted)] hover:border-[var(--accent)]/40 hover:text-[var(--accent)] transition-all duration-200">
-                  {p.category} — {p.title.substring(0, 40)}...
-                </Link>
-              ))}
-            </div>
-          </div>
+          {/* Articles similaires */}
+          {(() => {
+            const similar = posts
+              .filter((p) => p.slug !== post.slug && p.category === post.category)
+              .slice(0, 3);
+            const fallback = posts.filter((p) => p.slug !== post.slug).slice(0, 3);
+            const related = similar.length >= 2 ? similar : fallback;
+            return (
+              <div className="mt-12 pt-10 border-t border-[var(--border)]">
+                <div className="flex items-center justify-between mb-6">
+                  <h2 className="text-base font-semibold text-[var(--fg)]">Articles similaires</h2>
+                  <Link href="/blog/" className="text-xs font-semibold text-[var(--accent)] hover:underline">
+                    Voir tous →
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {related.map((p) => (
+                    <Link
+                      key={p.slug}
+                      href={`/blog/${p.slug}/`}
+                      className="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/40 transition-all duration-200"
+                    >
+                      <span className="text-[10px] font-semibold tracking-wider uppercase text-[var(--accent)] block mb-2">
+                        {p.category}
+                      </span>
+                      <p className="text-sm font-semibold text-[var(--fg)] leading-snug group-hover:text-[var(--accent)] transition-colors line-clamp-2 mb-2">
+                        {p.title}
+                      </p>
+                      <span className="text-xs text-[var(--fg-muted)]">{p.readTime} de lecture</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
         </div>
       </div>
     </>
