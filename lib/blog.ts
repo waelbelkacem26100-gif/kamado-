@@ -1211,6 +1211,188 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "wordpress-vs-nextjs-comparatif",
+    title: "WordPress ou Next.js : quel CMS choisir pour votre site en 2026 ?",
+    category: "Développement",
+    date: "11 mai 2026",
+    readTime: "8 min",
+    excerpt: "WordPress règne sur 43% du web. Next.js monte en flèche chez les agences premium. Comparatif honnête pour savoir lequel choisir selon votre projet et votre budget.",
+    metaTitle: "WordPress vs Next.js 2026 : lequel choisir pour votre site ?",
+    metaDescription: "WordPress ou Next.js en 2026 ? Comparatif complet : performances, SEO, coût, facilité de gestion et cas d'usage. Guide expert pour choisir le bon framework.",
+    keywords: ["WordPress vs Next.js", "WordPress ou Next.js", "comparatif CMS 2026", "Next.js performance", "WordPress headless", "quel framework choisir", "agence web Next.js"],
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=85&auto=format&fit=crop",
+    intro: "WordPress ou Next.js ? C'est la question que nous posent de plus en plus souvent nos clients en 2026. WordPress reste le CMS le plus utilisé au monde avec 43% de parts de marché, une communauté immense et une facilité de prise en main reconnue. Next.js, lui, s'est imposé comme le standard des agences premium grâce à des performances Lighthouse 95+/100 et une architecture moderne. Le choix entre les deux n'est pas universel — il dépend de votre projet, votre budget et vos besoins de gestion. Voici notre comparatif honnête, basé sur des années de projets sur les deux plateformes.",
+    sections: [
+      {
+        h2: "Architecture et philosophie : deux approches fondamentalement différentes",
+        body: "WordPress est un CMS traditionnel : le serveur génère du HTML à chaque requête en interrogeant une base de données MySQL. L'interface d'administration permet de gérer contenus, médias et plugins via une interface graphique. Cette simplicité est sa force principale — n'importe qui peut mettre à jour un article ou changer une image sans compétences techniques. Next.js est un framework JavaScript basé sur React. Il génère les pages statiquement à la compilation (SSG), côté serveur à la demande (SSR) ou de façon hybride (ISR). Il n'y a pas d'interface de gestion native — vous avez besoin soit de coder les contenus directement, soit de connecter un CMS headless (Sanity, Contentful, Notion) pour l'édition. Cette séparation frontend/backend est sa force : performances maximales, architecture flexible, et liberté totale sur le code. La conséquence pratique : WordPress est prêt à l'emploi pour n'importe qui. Next.js nécessite un développeur pour la configuration initiale, mais livre une base technique incomparablement supérieure.",
+      },
+      {
+        h2: "Performances : Next.js gagne haut la main",
+        body: "C'est là où l'écart est le plus flagrant. Un site Next.js correctement configuré atteint systématiquement 90 à 100/100 sur Google Lighthouse. Le code splitting automatique (chaque page ne charge que le JavaScript nécessaire), le rendu statique (HTML pré-généré servi depuis un CDN), l'optimisation automatique des images (WebP/AVIF, lazy loading, responsive) et le prefetching intelligent des pages liées font de Next.js une machine à performances. WordPress, en revanche, peut atteindre de bonnes performances — mais ça demande du travail. Un WordPress non optimisé avec un thème Avada ou Divi se retrouve facilement à 30-50/100 sur mobile. Avec les bons outils (WP Rocket, Imagify, Generatepress, hébergement Kinsta), on peut atteindre 80-90/100. Mais c'est un effort constant qui peut être annulé par une mauvaise mise à jour de plugin. Sur nos projets : sites Next.js → Lighthouse mobile 95-100/100 en standard. Sites WordPress optimisés → 75-88/100 avec suivi actif. Cette différence de performance se traduit directement en positions SEO sur les mots-clés concurrentiels.",
+      },
+      {
+        h2: "SEO : avantages et limites des deux plateformes",
+        body: "WordPress a longtemps été considéré comme le meilleur choix SEO grâce à des plugins comme Yoast SEO ou Rank Math qui rendent l'optimisation accessible aux non-développeurs. Gestion des balises title/meta par page, redirection 301 intégrée, sitemap automatique, contrôle total des URLs — WordPress couvre tous les fondamentaux SEO facilement. Next.js intègre le SEO directement dans le framework via l'API Metadata. La génération de pages statiques garantit que Googlebot reçoit du HTML complet et indexable immédiatement — contrairement aux SPAs React qui peuvent poser des problèmes d'indexation. Les balises canoniques, Open Graph, Twitter Cards, et hreflang sont gérés typesafe en TypeScript. L'avantage Next.js en SEO vient surtout des performances : des Core Web Vitals meilleurs se traduisent par de meilleures positions sur des mots-clés compétitifs. Pour 95% des projets, les deux plateformes permettent d'atteindre les mêmes résultats SEO. Next.js a un léger avantage sur les mots-clés compétitifs grâce aux performances, WordPress a l'avantage de l'accessibilité pour les équipes sans développeurs.",
+      },
+      {
+        h2: "Coût total et facilité de maintenance",
+        body: "WordPress : le logiciel est gratuit, mais les coûts s'accumulent vite. Hébergement performant (Kinsta, WP Engine) : 20 à 100€/mois. Thème premium : 50 à 300€. Plugins essentiels (Yoast Premium, WP Rocket, Imagify, formulaires) : 200 à 600€/an. Développeur WordPress pour la maintenance et les évolutions : 60 à 100€/h. Le risque majeur de WordPress : les mises à jour. Une mise à jour de plugin mal testée peut casser votre site en production. Il faut impérativement un environnement de staging et une procédure de test avant chaque mise à jour majeure. Next.js : le framework est open-source et gratuit. L'hébergement sur Vercel coûte 0 à 20€/mois pour la plupart des sites (Free plan ou Pro à 20€/mois). Pas de plugins à acheter. En revanche, toute modification nécessite un développeur React/Next.js — moins répandus que les développeurs WordPress, donc tarif horaire plus élevé (80 à 150€/h). La maintenance est quasi-nulle hors ajouts de fonctionnalités : pas de plugins à mettre à jour, pas de base de données à sauvegarder.",
+      },
+      {
+        h2: "Notre verdict : qui devrait choisir quoi",
+        body: "Choisissez WordPress si : votre équipe gère le contenu en autonomie (articles, actualités, fiches produits simples) et n'a pas de développeur en interne, vous avez un budget de développement initial limité (< 3 000€) et acceptez les compromis de performance, vous avez déjà un site WordPress avec du contenu et du trafic et voulez une évolution, pas une refonte totale, ou vous cherchez un écosystème de plugins très riche pour des fonctionnalités spécifiques (LMS, membership, etc.). Choisissez Next.js si : votre site est un actif business stratégique sur lequel vous investissez pour générer des leads, vous avez ou pouvez financer un développeur React/Next.js pour les évolutions, vous visez des performances Lighthouse 95+/100 et les meilleures positions SEO possibles, vous construisez un SaaS, une application web, ou un e-commerce headless performant, ou votre budget de développement initial est supérieur à 4 000€ et vous voulez un ROI maximal sur le long terme. Règle pratique Kama Agency : projets < 2 500€ → WordPress avec thème custom ; projets > 4 000€ → Next.js sur-mesure.",
+      },
+    ],
+    faq: [
+      {
+        q: "Peut-on migrer de WordPress vers Next.js sans perdre son SEO ?",
+        a: "Oui, à condition de planifier correctement la migration. L'essentiel est de préserver toutes les URLs existantes avec des redirections 301, de conserver le contenu des pages performantes, et de soumettre le nouveau sitemap à Google Search Console immédiatement après le lancement. Une migration bien gérée récupère 90 à 95% du trafic organique existant en 4 à 8 semaines.",
+      },
+      {
+        q: "WordPress headless avec Next.js : c'est quoi ?",
+        a: "C'est une architecture hybride : WordPress gère le contenu via son interface familière et expose les données via son API REST ou GraphQL. Next.js consomme ces données pour générer le frontend. On obtient la facilité de gestion WordPress côté éditorial et les performances Next.js côté utilisateur. C'est une excellente option pour les clients attachés à WordPress qui veulent moderniser leurs performances.",
+      },
+      {
+        q: "Faut-il savoir coder pour utiliser Next.js ?",
+        a: "Pour créer et modifier le site, oui — Next.js est un framework de développement, pas un CMS no-code. En revanche, une fois le site livré avec un CMS headless connecté (Sanity, Contentful), vos équipes peuvent modifier le contenu via une interface intuitive sans toucher au code. Le développeur n'intervient que pour les changements structurels.",
+      },
+    ],
+    gradient: "from-slate-500 to-gray-600",
+    externalLinks: [
+      {
+        label: "Documentation officielle Next.js",
+        url: "https://nextjs.org/docs",
+        description: "La référence complète pour maîtriser Next.js et l'App Router.",
+      },
+      {
+        label: "WordPress.org",
+        url: "https://wordpress.org",
+        description: "Le site officiel de WordPress open-source avec toute la documentation.",
+      },
+    ],
+  },
+  {
+    slug: "shopify-headless-nextjs-performance",
+    title: "Shopify Headless + Next.js : l'architecture e-commerce qui change tout en 2026",
+    category: "E-commerce",
+    date: "10 mai 2026",
+    readTime: "8 min",
+    excerpt: "Shopify gère vos produits et paiements, Next.js crée une expérience utilisateur ultra-rapide. Cette architecture headless est devenue le standard des e-commerces premium.",
+    metaTitle: "Shopify Headless + Next.js 2026 : guide complet de l'architecture",
+    metaDescription: "Shopify Headless avec Next.js : comment ça fonctionne, avantages, coût et cas d'usage. L'architecture e-commerce premium pour les boutiques à fort CA.",
+    keywords: ["Shopify headless", "Shopify Next.js", "headless commerce", "Shopify Storefront API", "e-commerce Next.js", "boutique headless", "Shopify performance"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=85&auto=format&fit=crop",
+    intro: "Le e-commerce headless existe depuis plusieurs années, mais en 2026 il est devenu accessible aux boutiques de taille intermédiaire grâce à la maturité des outils. L'idée est simple : Shopify gère ce qu'il fait mieux que personne (catalogue produits, paiements sécurisés, gestion des commandes, apps) pendant que Next.js construit une expérience utilisateur sur-mesure, ultra-rapide et entièrement personnalisée. Résultat : les performances Lighthouse d'un site statique et la puissance backend de Shopify, sans compromis. Voici tout ce que vous devez savoir pour décider si cette architecture est adaptée à votre boutique.",
+    sections: [
+      {
+        h2: "Comprendre le modèle headless : séparation du backend et du frontend",
+        body: "Dans un Shopify classique (aussi appelé \"traditional\" ou \"coupled\"), le frontend (ce que voit l'utilisateur) et le backend (gestion des produits, commandes, paiements) sont indissociables — vous êtes limité aux thèmes Shopify et à Liquid, le langage de template de Shopify. En headless, le backend Shopify reste intact mais le frontend est remplacé par une application Next.js qui communique avec Shopify via la Storefront API (API GraphQL dédiée au frontend). Concrètement : vos produits, collections, prix et stocks sont toujours gérés dans l'admin Shopify. Le paiement passe toujours par Shopify Checkout (sécurisé et conforme PCI-DSS). Mais l'expérience de navigation — homepage, pages produit, catégories, recherche, panier — est entièrement conçue en React et générée statiquement par Next.js. Ce découplage offre une liberté totale sur le design et l'UX, sans les contraintes de Liquid ni les limitations des thèmes.",
+      },
+      {
+        h2: "Les avantages concrets : performance, conversion et SEO",
+        body: "Performance : c'est l'avantage le plus immédiat. Un thème Shopify standard (Dawn, Debut, ou un thème premium) atteint typiquement 60-80/100 sur Lighthouse mobile. Une boutique headless Next.js bien optimisée atteint 90-100/100. Chaque page produit est générée statiquement à la compilation et servie depuis un CDN mondial — le chargement est pratiquement instantané. Notre client Brainrot Club est passé de 1,2% à 3,8% de taux de conversion après migration vers une architecture headless Next.js + Shopify — soit +217% sur le taux de conversion avec le même trafic. SEO : les pages produit et catégories sont du HTML statique complet, immédiatement indexable par Google. Pas de problèmes d'hydratation JavaScript. Les métadonnées OpenGraph sont générées dynamiquement côté serveur avec les vraies données produit. Design sur-mesure : avec Next.js, chaque pixel de votre boutique est contrôlable. Animations Framer Motion, transitions de page fluides, personnalisation du panier, pages de collection entièrement custom — impossible à réaliser proprement avec un thème Liquid.",
+      },
+      {
+        h2: "La Storefront API : le pont entre Shopify et Next.js",
+        body: "La Storefront API de Shopify est une API GraphQL publique qui expose les données nécessaires au frontend : produits, variantes, collections, prix, disponibilité des stocks, gestion du panier (Cart API), et initiation du checkout. Chaque boutique Shopify a accès à cette API gratuitement — pas de plan spécial nécessaire. L'intégration se fait via le SDK officiel @shopify/storefront-api-client (anciennement @shopify/hydrogen-react) ou directement avec des requêtes GraphQL custom. Exemple de ce qu'on peut faire : récupérer 50 produits d'une collection triés par popularité avec leurs variantes, prix soldés, images haute résolution et métafields personnalisés, en une seule requête GraphQL. En Next.js App Router, ces données sont récupérées dans des Server Components et les pages sont générées statiquement avec ISR (Incremental Static Regeneration) — les pages se mettent à jour automatiquement quand un produit change dans l'admin Shopify, via les webhooks Shopify qui déclenchent la revalidation.",
+      },
+      {
+        h2: "Pour qui cette architecture est-elle adaptée ?",
+        body: "L'architecture headless Next.js + Shopify n'est pas adaptée à tout le monde. Elle est justifiée quand : votre boutique génère plus de 30 000€ de CA mensuel (l'investissement se rentabilise via la hausse de conversion), vous avez des exigences de design très spécifiques impossibles à réaliser avec un thème Liquid standard, vous avez des fonctionnalités frontend complexes (personnalisation en temps réel, configurateurs de produits, expériences interactives), ou vous êtes dans un secteur où les performances sont un avantage compétitif majeur (mode premium, technologie, B2B). Elle est moins adaptée si : vous démarrez votre boutique et n'avez pas encore validé votre marché (mieux vaut commencer avec un thème Shopify rapide), votre équipe n'a pas de développeur React disponible pour les évolutions, ou votre budget de développement est inférieur à 8 000€ (un bon thème Shopify custom livrera 80% des bénéfices pour 30% du coût). Notre approche : on commence souvent par un thème Shopify custom optimisé, et on propose la migration headless quand le CA justifie l'investissement.",
+      },
+      {
+        h2: "Coût et délai d'une boutique headless Next.js + Shopify",
+        body: "Une boutique e-commerce headless Next.js + Shopify représente un investissement significatif mais un ROI calculable. Développement initial : 12 000 à 25 000€ selon la complexité (nombre de templates produit, fonctionnalités custom, intégrations apps). Délai : 8 à 16 semaines selon la complexité. Hébergement : Vercel Pro (20€/mois) + Shopify plan Advanced (299€/mois) ou Shopify Plus (2 000€/mois pour les boutiques > 500K€/an). Ce qu'on inclut dans une boutique headless chez Kama Agency : pages produit et collection statiques avec ISR, panier côté client avec React Context, checkout Shopify natif (sécurisé, testé), intégration Klaviyo pour l'email marketing, recherche produit avec Shopify Search & Discovery, pages de blog SEO en Next.js, migration SEO complète avec redirections 301 si existant, score Lighthouse 90+ garanti. Pour calculer le ROI : si votre taux de conversion passe de 1,5% à 3% avec le même trafic de 10 000 visites/mois et un panier moyen de 80€, le gain mensuel est de (3% - 1,5%) × 10 000 × 80 = 12 000€/mois. Un développement à 15 000€ est remboursé en 1,25 mois.",
+      },
+    ],
+    faq: [
+      {
+        q: "Peut-on utiliser les apps Shopify avec une boutique headless ?",
+        a: "Partiellement. Les apps qui s'intègrent via la Storefront API ou des webhooks fonctionnent normalement (Klaviyo, Recharge, Yotpo). Les apps qui injectent du code Liquid dans les thèmes Shopify ne sont pas compatibles avec le frontend headless. C'est un point à vérifier pour chaque app avant de choisir l'architecture headless.",
+      },
+      {
+        q: "Shopify Hydrogen est-il la même chose que Next.js headless ?",
+        a: "Shopify Hydrogen est le framework headless officiel de Shopify, basé sur Remix.js. C'est une alternative à Next.js pour construire des boutiques headless. L'avantage de Next.js : écosystème plus large, plus de développeurs disponibles, déploiement Vercel simplifié. L'avantage d'Hydrogen : conçu spécifiquement pour Shopify, meilleure intégration native avec les APIs Shopify.",
+      },
+      {
+        q: "Le checkout Shopify est-il personnalisable en headless ?",
+        a: "Shopify impose son checkout natif même en architecture headless — vous ne pouvez pas le remplacer. En revanche, avec Shopify Plus, vous pouvez personnaliser l'apparence du checkout (Checkout Extensibility) et ajouter des extensions custom. Pour les boutiques Shopify standard, le checkout est standardisé. C'est un compromis acceptable — le checkout Shopify est l'un des plus performants et rassurants du marché.",
+      },
+    ],
+    gradient: "from-green-500 to-emerald-600",
+    externalLinks: [
+      {
+        label: "Shopify Storefront API — Documentation",
+        url: "https://shopify.dev/docs/api/storefront",
+        description: "La documentation officielle de la Storefront API GraphQL pour le headless commerce.",
+      },
+      {
+        label: "Vercel — E-commerce Next.js",
+        url: "https://vercel.com/templates/next.js/commerce",
+        description: "Le template officiel Next.js Commerce pour démarrer une boutique headless.",
+      },
+    ],
+  },
+  {
+    slug: "tarif-agence-web-province-vs-paris",
+    title: "Tarifs agence web : province vs Paris — quelle différence en 2026 ?",
+    category: "Tarifs",
+    date: "9 mai 2026",
+    readTime: "6 min",
+    excerpt: "Une agence web parisienne facture 2 à 3 fois plus qu'une agence provinciale pour la même qualité. Voici pourquoi, et comment choisir la meilleure option pour votre projet.",
+    metaTitle: "Tarifs agence web province vs Paris 2026 : quelle différence ?",
+    metaDescription: "Agence web à Paris ou en province ? Comparatif des tarifs 2026, différences de qualité et critères de choix. Une agence web de province peut livrer plus pour moins cher.",
+    keywords: ["tarif agence web province", "agence web Paris prix", "agence web pas chère qualité", "coût agence web France", "agence web province vs Paris", "prix agence web 2026"],
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=85&auto=format&fit=crop",
+    intro: "Paris concentre les agences web les plus connues de France. Des noms qui résonnent, des portfolios impressionnants, des bureaux en open space dans le Marais ou à Station F. Et des tarifs en conséquence : 1 200 à 2 000€ par jour, des devis à 15 000€ pour un site vitrine. En province — Bordeaux, Lyon, Nantes, Grenoble, Romans-sur-Isère — des agences produisent exactement le même niveau de qualité pour 40 à 60% moins cher. Dans un monde 100% remote où la distance ne change rien à la qualité du code, ce différentiel de prix est-il justifié ?",
+    sections: [
+      {
+        h2: "Pourquoi les agences parisiennes sont plus chères",
+        body: "La différence de tarif entre Paris et la province n'est pas une question de qualité — c'est une question de coûts fixes. Un bureau de 200m² dans le 2ème arrondissement à Paris coûte 8 000 à 15 000€/mois. Le même bureau à Romans-sur-Isère ou Nantes : 1 500 à 3 000€/mois. Un développeur senior à Paris a un salaire brut de 55 000 à 75 000€/an. Le même profil à Lyon ou Bordeaux : 45 000 à 60 000€. Ces coûts fixes plus élevés se répercutent directement dans les devis clients. Une agence parisienne avec 10 employés et un bureau dans Paris intramuros doit facturer entre 1 500 et 2 000€/jour pour rester rentable. Une agence provinciale en remote avec 5 freelances collaborateurs peut facturer 700 à 1 000€/jour en restant très confortable. La réalité du marché en 2026 : 80% des projets web se font entièrement à distance. Les réunions clients se font en visio. Le code est pushé sur GitHub, visible en preview Vercel en temps réel. La localisation de l'agence n'a aucun impact sur la qualité du livrable.",
+      },
+      {
+        h2: "Ce que vous payez vraiment avec une agence parisienne premium",
+        body: "Au-delà des coûts fixes, une agence parisienne établie offre des avantages réels — mais tous ne justifient pas le surcoût. Ce qui est réel : la réputation et les références dans des secteurs premium (luxe, finance, grands groupes), les processus plus formalisés avec chefs de projet dédiés, les capacités à absorber de très gros projets (> 100 000€) avec des équipes larges, et parfois une expertise sectorielle très spécifique construite sur des années de projets similaires. Ce qui est du marketing : le bureau \"cool\" que vous ne verrez jamais si vous travaillez à distance, la taille de l'équipe (un projet est toujours pris en charge par 2-3 personnes, que l'agence compte 10 ou 100 employés), et la notoriété de la marque — aucun de vos clients finaux ne saura quelle agence a fait votre site. La question à se poser : payez-vous pour la qualité intrinsèque du livrable, ou pour le prestige de l'adresse dans le devis ?",
+      },
+      {
+        h2: "La montée en puissance des agences 100% remote en province",
+        body: "Depuis 2020, le travail 100% remote a définitivement normalisé les agences provinciales. Les meilleures agences web de province utilisent aujourd'hui exactement les mêmes outils, technologies et processus que les parisiennes : Figma pour les maquettes, GitHub pour le code, Linear ou Notion pour le suivi de projet, Loom pour les vidéos explicatives, Vercel pour les previews clients en temps réel. Sur les technologies, il n'y a aucune différence : Next.js, Shopify, Supabase, Stripe, React — ce sont des technologies open-source mondiales, accessibles partout. Un développeur Next.js à Romans-sur-Isère écrit le même code qu'un développeur Next.js à Paris — et il sera peut-être plus concentré, moins distrait par les événements networking et les afterworks. Notre agence, Kama Agency, est basée à Romans-sur-Isère (Drôme) et intervient pour des clients partout en France, y compris Paris, Lyon et Bordeaux. Nos livrables atteignent systématiquement Lighthouse 95+/100 — le même niveau que les meilleures agences parisiennes, pour des tarifs 40 à 60% inférieurs.",
+      },
+      {
+        h2: "Comment choisir la bonne agence, quelle que soit sa localisation",
+        body: "La localisation d'une agence est l'un des critères les moins importants en 2026. Voici ce qui compte vraiment. Le portfolio récent et vérifiable : demandez des URLs de projets livrés dans les 12 derniers mois. Testez les sites sur PageSpeed Insights — un Lighthouse mobile à 90+ est un signal de qualité technique. Les références clients accessibles : une agence confiante vous donne 2-3 contacts clients que vous pouvez appeler. Un refus ou une hésitation doit alerter. La transparence sur le processus : qui travaille sur votre projet ? Quel est le planning semaine par semaine ? Comment se font les révisions ? Les agences sérieuses ont des processus clairs et documentés. La réactivité en avant-vente : si une agence met 5 jours à répondre à votre demande de devis, elle mettra probablement 5 jours à répondre à vos retours en cours de projet. Le tarif journalier réaliste : moins de 400€/jour → freelance junior ou offshore. 400-800€/jour → freelance senior ou petite agence provinciale. 800-1500€/jour → agence établie avec processus. Plus de 1500€/jour → grande agence parisienne ou cabinet de conseil digital. Le budget minimum pour un site vitrine de qualité en France en 2026 est de 2 000€. En dessous, attendez-vous à un template revendu ou à un travail externalisé à l'étranger.",
+      },
+    ],
+    faq: [
+      {
+        q: "Une agence web en province peut-elle rivaliser avec une agence parisienne ?",
+        a: "Absolument. En 2026, la qualité technique — code, performances, SEO — ne dépend pas de la géographie mais de l'expertise de l'équipe. Les technologies (Next.js, Shopify, Figma, Vercel) sont mondiales et accessibles partout. Les meilleures agences provinciales livrent la même qualité que les parisiennes pour 40 à 60% moins cher, simplement parce que leurs coûts fixes sont inférieurs.",
+      },
+      {
+        q: "Est-ce risqué de travailler avec une agence à distance ?",
+        a: "Non, à condition d'avoir un contrat clair avec des jalons définis, des livrables précis et des conditions de paiement progressif (30% au démarrage, 40% à la livraison de la maquette validée, 30% à la mise en ligne). La distance ne change rien au risque d'un projet — un partenaire à Paris peut aussi mal gérer un projet qu'un partenaire à Bordeaux.",
+      },
+      {
+        q: "Faut-il une agence web locale pour le SEO local ?",
+        a: "Non. Le SEO local (Google Business Profile, pages locales, citations NAP) est une discipline digitale qui se pratique entièrement à distance. Une agence basée à Paris peut optimiser le SEO local d'un restaurant à Grenoble aussi efficacement qu'une agence grenobloise — ce qui compte, c'est l'expertise SEO, pas la proximité géographique.",
+      },
+    ],
+    gradient: "from-orange-500 to-amber-600",
+    externalLinks: [
+      {
+        label: "Clutch — Annuaire agences web France",
+        url: "https://clutch.co/fr/web-designers/france",
+        description: "Comparez les agences web françaises avec leurs avis clients vérifiés et leurs portfolios.",
+      },
+      {
+        label: "Google PageSpeed Insights",
+        url: "https://pagespeed.web.dev",
+        description: "Testez les performances des sites de votre agence candidate avant de signer.",
+      },
+    ],
+  },
 ];
 
 export function getPost(slug: string): BlogPost | undefined {

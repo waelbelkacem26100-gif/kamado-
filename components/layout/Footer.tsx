@@ -16,6 +16,7 @@ const company = [
   { label: "Nos Services",     href: "/services/" },
   { label: "Nos réalisations", href: "/projets/" },
   { label: "Blog",             href: "/blog/" },
+  { label: "À propos",         href: "/a-propos/" },
   { label: "Contact",          href: "/contact/" },
   { label: "Mentions légales", href: "/mentions-legales/" },
 ];

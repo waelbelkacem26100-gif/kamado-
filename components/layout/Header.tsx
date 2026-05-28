@@ -29,6 +29,7 @@ const navItems: { id: string; label: string; href: string; dropdown?: DropdownId
   { id: "expertise",    label: "Nos Services",       href: "/services/",  dropdown: "expertise" },
   { id: "realisations", label: "Nos Réalisations",  href: "/projets/",   dropdown: "realisations" },
   { id: "blog",         label: "Blog",              href: "/blog/" },
+  { id: "a-propos",     label: "À propos",          href: "/a-propos/" },
   { id: "contact",      label: "Contact",           href: "/contact/" },
 ];
 

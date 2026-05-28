@@ -42,11 +42,18 @@ export default function JsonLd() {
     },
     areaServed: [
       { "@type": "Country", name: "France" },
-      { "@type": "City", name: "Paris" },
+      { "@type": "City", name: "Romans-sur-Isère" },
+      { "@type": "City", name: "Valence" },
+      { "@type": "City", name: "Grenoble" },
       { "@type": "City", name: "Lyon" },
+      { "@type": "City", name: "Paris" },
       { "@type": "City", name: "Bordeaux" },
       { "@type": "City", name: "Marseille" },
-      { "@type": "City", name: "Romans-sur-Isère" },
+      { "@type": "City", name: "Toulouse" },
+      { "@type": "City", name: "Nantes" },
+      { "@type": "City", name: "Strasbourg" },
+      { "@type": "City", name: "Montélimar" },
+      { "@type": "City", name: "Chambéry" },
     ],
     openingHoursSpecification: [
       {
@@ -224,11 +231,31 @@ export default function JsonLd() {
     },
   };
 
+  const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/#founder`,
+    name: "Wael Belkacem",
+    jobTitle: "Fondateur & Développeur Lead",
+    url: `${SITE_URL}/a-propos/`,
+    worksFor: { "@id": `${SITE_URL}/#organization` },
+    knowsAbout: [
+      "Next.js", "React", "TypeScript", "Shopify", "Supabase",
+      "SEO technique", "Intelligence artificielle", "UX/UI Design",
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Romans-sur-Isère",
+      postalCode: "26100",
+      addressCountry: "FR",
+    },
+  };
+
   return (
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify([organization, website, webPage]),
+        __html: JSON.stringify([organization, website, webPage, person]),
       }}
     />
   );

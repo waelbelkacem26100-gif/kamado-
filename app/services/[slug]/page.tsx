@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { services, getService } from "@/lib/services";
 import type { ServiceStep } from "@/lib/services";
+import { posts } from "@/lib/blog";
 import { SITE_URL, SITE_NAME } from "@/lib/constants";
 import BackButton from "@/components/ui/BackButton";
 
@@ -40,6 +41,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
   };
 }
+
+const relatedBlogSlugs: Record<string, string[]> = {
+  "creation-site-vitrine": ["creation-site-vitrine-professionnel", "refonte-site-web-quand-comment", "cout-site-web-2026"],
+  "refonte-de-site":       ["refonte-site-web-quand-comment", "wordpress-vs-nextjs-comparatif", "vitesse-chargement-site-core-web-vitals"],
+  "boutique-shopify":      ["creation-boutique-en-ligne-guide", "shopify-vs-woocommerce-2026", "optimisation-taux-conversion-ecommerce"],
+  "dropshipping":          ["creation-boutique-en-ligne-guide", "shopify-vs-woocommerce-2026", "shopify-headless-nextjs-performance"],
+  "shopify-liquid":        ["shopify-vs-woocommerce-2026", "shopify-headless-nextjs-performance", "optimisation-taux-conversion-ecommerce"],
+  "referencement-seo":     ["agence-seo-france-comment-choisir", "seo-local-google-business-profile", "audit-seo-complet-checklist"],
+  "optimisation-core-web-vitals": ["vitesse-chargement-site-core-web-vitals", "audit-seo-complet-checklist", "seo-2026-nouveaux-criteres-google"],
+  "analytics-et-suivi":    ["audit-seo-complet-checklist", "seo-2026-nouveaux-criteres-google", "vitesse-chargement-site-core-web-vitals"],
+  "saas-sur-mesure":       ["pourquoi-nextjs-standard-agences-web-premium", "intelligence-artificielle-site-web-2026", "cout-site-web-2026"],
+  "nextjs-et-react":       ["pourquoi-nextjs-standard-agences-web-premium", "wordpress-vs-nextjs-comparatif", "vitesse-chargement-site-core-web-vitals"],
+  "wordpress":             ["wordpress-vs-nextjs-comparatif", "cout-site-web-2026", "refonte-site-web-quand-comment"],
+  "chatbot-ia":            ["intelligence-artificielle-site-web-2026", "pourquoi-nextjs-standard-agences-web-premium", "cout-site-web-2026"],
+  "automatisation-ia":     ["intelligence-artificielle-site-web-2026", "seo-2026-nouveaux-criteres-google", "cout-site-web-2026"],
+  "integration-api-ia":    ["intelligence-artificielle-site-web-2026", "pourquoi-nextjs-standard-agences-web-premium", "shopify-headless-nextjs-performance"],
+  "webdesign-sur-mesure":  ["creation-site-vitrine-professionnel", "cout-site-web-2026", "vitesse-chargement-site-core-web-vitals"],
+  "ux-ui-design":          ["creation-site-vitrine-professionnel", "optimisation-taux-conversion-ecommerce", "vitesse-chargement-site-core-web-vitals"],
+  "identite-visuelle":     ["creation-site-vitrine-professionnel", "cout-site-web-2026", "refonte-site-web-quand-comment"],
+};
 
 const serviceImages: Record<string, string> = {
   "creation-site-vitrine":
@@ -469,6 +490,37 @@ export default async function ServicePage({ params }: Props) {
             </Link>
           </div>
         </section>
+
+        {/* ─── Articles liés ─── */}
+        {(() => {
+          const slugList = relatedBlogSlugs[slug] ?? [];
+          const related = slugList.map((s) => posts.find((p) => p.slug === s)).filter(Boolean);
+          if (related.length === 0) return null;
+          return (
+            <section className="py-16 px-6 bg-[var(--bg-secondary)]">
+              <div className="max-w-5xl mx-auto">
+                <h2 className="text-lg font-semibold text-[var(--fg)] mb-6">Articles liés</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {related.map((post) => post && (
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}/`}
+                      className="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/40 transition-all duration-200"
+                    >
+                      <span className="text-[10px] font-semibold tracking-wider uppercase text-[var(--accent)] block mb-2">
+                        {post.category}
+                      </span>
+                      <p className="text-sm font-semibold text-[var(--fg)] leading-snug group-hover:text-[var(--accent)] transition-colors line-clamp-2">
+                        {post.title}
+                      </p>
+                      <p className="text-xs text-[var(--fg-muted)] mt-2">{post.readTime} de lecture</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        })()}
 
         {/* ─── Autres services ─── */}
         <section className="pb-20 px-6">
