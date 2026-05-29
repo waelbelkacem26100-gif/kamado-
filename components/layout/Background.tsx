@@ -112,12 +112,8 @@ export default function Background() {
     scene.add(new THREE.Points(mwGeo, mwMat));
 
     let animId: number;
-    let scrollY = 0;
     let t = 0;
     let isActive = !document.hidden;
-
-    const onScroll = () => { scrollY = window.scrollY; };
-    window.addEventListener("scroll", onScroll, { passive: true });
 
     const animate = () => {
       if (!isActive) return;
@@ -127,7 +123,6 @@ export default function Background() {
       bgStars.rotation.x += 0.000008;
       midStars.rotation.y += 0.00005;
       midStars.rotation.z = Math.sin(t * 0.4) * 0.002;
-      camera.position.y = -scrollY * 0.012;
       camera.position.x = Math.sin(t) * 1.5;
       renderer.render(scene, camera);
     };
@@ -149,7 +144,6 @@ export default function Background() {
 
     return () => {
       cancelAnimationFrame(animId);
-      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       document.removeEventListener("visibilitychange", onVisibility);
       [bgGeo, midGeo, fgGeo, neb1Geo, neb2Geo, mwGeo].forEach(g => g.dispose());
